@@ -24,7 +24,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 >Hola, mi nombre es Ruben Tomasella, soy de la ciudad de Goya, Corrientes Argentina,  estudié Ing Electronica en Capital Federal y tengo 37 años. Estoy tomando el curso para expandir mi conocimiento en el área de programación y trabajar en ello. Me interesa mucho la opción de trabajar virtual que ofrece la programación y además de su amplia oferta laboral.
 
 ### Agustín Benitez:
->Hola! Soy Agustín Benitez, soy de Colegiales, Ciudad de Buenos Aires - soy Lic. en Recursos Humanos y tengo 32 años. Previamente abandoné la carrera de sistemas, estudiar programación es un pendiente que tenía en la vida y, en este momento, una oportunidad para cambiar de rubro laboral. Además soy DJ de música electrónica y un apasionado por la fotografía.  
+```Hola! Soy Agustín Benitez, soy de Colegiales, Ciudad de Buenos Aires - soy Lic. en Recursos Humanos y tengo 32 años. Previamente abandoné la carrera de sistemas, estudiar programación es un pendiente que tenía en la vida y, en este momento, una oportunidad para cambiar de rubro laboral. Además soy DJ de música electrónica y un apasionado por la fotografía.  ```
  
 ### Delfina Callegari:
 >Hola, me llamo Delfina Callegari y tengo 19 años. Vivo en Tigre, Buenos Aires y estudió Administración. Me encanta aprender cosas nuevas y estar en constante movimiento. Considero la programación como un idioma fundamental para la sociedad en la que vivimos y nos espera.
@@ -34,7 +34,8 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 
 ## Buscar inspiración en referentes del mercado :department_store:
 
-Swellboards https://swellboards.com/?gclid=Cj0KCQjwgYSTBhDKARIsAB8KukusiqSn3ssGpU3gj9A0raj93EvKhub0y6n1EFPlwuM29jOSCu-s9gkaAou4EALw_wcB
+### Swellboards 
+https://swellboards.com/?gclid=Cj0KCQjwgYSTBhDKARIsAB8KukusiqSn3ssGpU3gj9A0raj93EvKhub0y6n1EFPlwuM29jOSCu-s9gkaAou4EALw_wcB
 
 :heavy_exclamation_mark: Nos gustó:
 El pop-up del chat
@@ -49,7 +50,7 @@ No posee sistema de compras(carrito)
 Footer, muy básico.
 No posee redes sociales implementadas
 
-Wtop https://www.iurop.cl/
+### Wtop https://www.iurop.cl/
 
 :heavy_exclamation_mark: Nos gustó:
 En el footer , agrega una lista de accesos rápidos a determinados items.
@@ -62,7 +63,7 @@ Menú del header, poco visible, no resalta.
 Link de redes sociales poco desarrollado.
 
 
-Erizos store https://www.erizosstore.com/
+### Erizos store https://www.erizosstore.com/
 
 :heavy_exclamation_mark: Nos gustó:
 El diseño y temática
@@ -78,7 +79,7 @@ Sitio medio oscuro, pocos colores, muy juntó todo.
 
 
 
-Tienda de surf http://www.tiendadesurf.com.ar/index.php/neoprenen.html
+### Tienda de surf http://www.tiendadesurf.com.ar/index.php/neoprenen.html
 
 :heavy_exclamation_mark: Nos gustó:
 Solo vende cosas de surf
@@ -87,7 +88,15 @@ Solo vende cosas de surf
 Por la estética que presentan:
 https://baibai.surf/
 
+---
+
+## Wireframe y Boceto del sitio
+
+### Wireframes en Figma
+
+Parte 1 - https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf 
+
+Parte 2 - https://www.figma.com/file/zFrWTG7olHnyaq06tPGufP/Take-off-surf-pt.2 
 
 
-4. Crear un wireframe y un boceto del sitio
 
