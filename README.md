@@ -96,6 +96,8 @@ La estética que presentan.
 
 ## Wireframe y Boceto del sitio
 
+Los wireframes del sitio se pueden encontrar en la carpeta Wireframes. Debajo se encuentran los mismos editables en Figma.
+
 ### Wireframes en Figma
 
 Parte 1 - https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf 
