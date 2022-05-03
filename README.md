@@ -1,8 +1,8 @@
-# Grupo 07 - Take Off Surf
+# Grupo 07 - Take Off Surf :surfer:
 
 ---
 
-## Breve descripcion del proyecto - temática del Market Place
+## Breve descripcion del proyecto - temática del Market Place 
 
 **Take Off Surf** se basa en un e-commerce de tablas de surf. Se ofrecerá tanto tablas comerciales como personalizadas donde a partir de opciones predeterminadas el usuario interactivamente podrá ir diseñando su tabla al mismo tiempo que vé cómo quedaría. 
 
@@ -12,10 +12,10 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 
 ---
 
-## Breve descripción de los integrantes del equipo
+## Breve descripción de los integrantes del equipo :busts_in_silhouette:
 
 ### Mayra Adamov:
-Hola! Soy Mayra Adamov,tengo 21 años. Soy de Moron, provincia de Buenos Aires, Argentina. Actualmente estudio Biología en la Universidad de Ciencias Exactas y Naturales. Me interesa bastante el mundo de la programación, ya que esta bastante ligado a mi carrera aunque no lo parezca. Me gusta aprender y poder mejorar cada dia!
+>Hola! Soy Mayra Adamov, tengo 21 años. Soy de Moron, provincia de Buenos Aires, Argentina. Actualmente estudio Biología en la Universidad de Ciencias Exactas y Naturales. Me interesa bastante el mundo de la programación, ya que esta bastante ligado a mi carrera aunque no lo parezca. Me gusta aprender y poder mejorar cada dia!
 
 ### Felix Ugarte:
 >Hola! Mi nombre es Félix Ugarte y soy de General Rodríguez de la Provincia de Buenos Aires pero vivo hace más de 10 años en Capital Federal. Tengo 32 años. Me decidí finalmente a estudiar programación entendiendo lo importante que puede llegar a ser hoy en día saber sobre este amplio mundo el cual es totalmente nuevo en mi vida. Si es posible y se logra dar, me gustaría cambiar de trabajo hacia este nuevo rumbo y ver hacia donde me lleva.
@@ -32,42 +32,46 @@ Hola, me llamo Delfina Callegari y tengo 19 años. Vivo en Tigre, Buenos Aires y
 ---
 
 
-## Buscar inspiración en referentes del mercado
+## Buscar inspiración en referentes del mercado :department_store:
 
 Swellboards https://swellboards.com/?gclid=Cj0KCQjwgYSTBhDKARIsAB8KukusiqSn3ssGpU3gj9A0raj93EvKhub0y6n1EFPlwuM29jOSCu-s9gkaAou4EALw_wcB
-Nos gustó:
+
+:heavy_exclamation_mark: Nos gustó:
 El pop-up del chat
 El reed de las tablas y de las imágenes del sitio (colores llamativos)
 Las actividades extras que ofrecen abajo
 Buena descripción de producto y fotos.(imagenes grandes y coloridas)
 Se expande el menú del header al colocar el mouse sobre él.
-No gusto:
+
+:x: No gusto:
  ( la búsqueda , la sección de escuelas y tiendas (poca información)
 No posee sistema de compras(carrito)
 Footer, muy básico.
 No posee redes sociales implementadas
 
 Wtop https://www.iurop.cl/
-Nos gustó:
+
+:heavy_exclamation_mark: Nos gustó:
 En el footer , agrega una lista de accesos rápidos a determinados items.
 Buen buscador
 El sistema del carrito de compras, bien implementado.
-No gusto:
+
+:x: No gusto:
 Las imágenes del slider muy grandes, no caben en la pantalla de la pc.
 Menú del header, poco visible, no resalta.
 Link de redes sociales poco desarrollado.
 
 
 Erizos store https://www.erizosstore.com/
-Nos gustó:
+
+:heavy_exclamation_mark: Nos gustó:
 El diseño y temática
 Buen footer y barra de suscripción.
 Tiene un menú por marcas.(y una leve descripción de cada una).
 En la parte de “nosotros” tiene un mapa para dónde encontrarlos y sus direcciones.(aunque con poco diseño esa parte).
 posee un slider en el fondo con temas variados(publicaciones sobre surf y otras cosas)
 
-
-No gusto:
+:x: No gusto:
 No posee link de redes sociales
 Los productos son expuestos en slider.
 Sitio medio oscuro, pocos colores, muy juntó todo.
@@ -75,7 +79,8 @@ Sitio medio oscuro, pocos colores, muy juntó todo.
 
 
 Tienda de surf http://www.tiendadesurf.com.ar/index.php/neoprenen.html
-Nos gustó:
+
+:heavy_exclamation_mark: Nos gustó:
 Solo vende cosas de surf
 
 
