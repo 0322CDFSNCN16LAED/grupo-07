@@ -27,7 +27,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 >Hola! Soy Agustín Benitez, soy de Colegiales, Ciudad de Buenos Aires - soy Lic. en Recursos Humanos y tengo 32 años. Previamente abandoné la carrera de sistemas, estudiar programación es un pendiente que tenía en la vida y, en este momento, una oportunidad para cambiar de rubro laboral. Además soy DJ de música electrónica y un apasionado por la fotografía.  
  
 ### Delfina Callegari:
-Hola, me llamo Delfina Callegari y tengo 19 años. Vivo en Tigre, Buenos Aires y estudió Administración. Me encanta aprender cosas nuevas y estar en constante movimiento. Considero la programación como un idioma fundamental para la sociedad en la que vivimos y nos espera.
+>Hola, me llamo Delfina Callegari y tengo 19 años. Vivo en Tigre, Buenos Aires y estudió Administración. Me encanta aprender cosas nuevas y estar en constante movimiento. Considero la programación como un idioma fundamental para la sociedad en la que vivimos y nos espera.
 
 ---
 
