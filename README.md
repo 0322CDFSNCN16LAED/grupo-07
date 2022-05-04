@@ -104,7 +104,7 @@ Parte 1 - https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf
 
 Parte 2 - https://www.figma.com/file/zFrWTG7olHnyaq06tPGufP/Take-off-surf-pt.2 
 
-Parte 3 - https://www.figma.com/file/vYhwoxUIWAFfGDa5gkosl2/Escuelas-de-Surf-pt.3?node-id=0%3A1
+Parte 3 - https://www.figma.com/file/vYhwoxUIWAFfGDa5gkosl2/pt.3?node-id=0%3A1
 
 
 
