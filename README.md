@@ -2,9 +2,9 @@
 
 ---
 
-## Breve descripcion del proyecto - temática del Market Place 
+## Breve descripcion del proyecto 
 
-**Take Off Surf** se basa en un e-commerce de tablas de surf. Se ofrecerá tanto tablas comerciales como personalizadas donde a partir de opciones predeterminadas el usuario interactivamente podrá ir diseñando su tabla al mismo tiempo que vé cómo quedaría. 
+**Take Off Surf** es un e-commerce de tablas de surf. Las mismas pueden ser comerciales como personalizadas, donde a partir de opciones predeterminadas el usuario interactivamente podrá ir diseñando su tabla al mismo tiempo que ve cómo quedaría. 
 
 También, pagando una suscripción, las diferentes escuelas de surf podrán ofrecer información sobre sus servicios a la comunidad surfista.
 
@@ -12,7 +12,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 
 ---
 
-## Breve descripción de los integrantes del equipo :busts_in_silhouette:
+## Integrantes del equipo :busts_in_silhouette:
 
 ### Mayra Adamov:
 >Hola! Soy Mayra Adamov, tengo 21 años. Soy de Moron, provincia de Buenos Aires, Argentina. Actualmente estudio Biología en la Universidad de Ciencias Exactas y Naturales. Me interesa bastante el mundo de la programación, ya que esta bastante ligado a mi carrera aunque no lo parezca. Me gusta aprender y poder mejorar cada dia!
@@ -32,7 +32,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 ---
 
 
-## Buscar inspiración en referentes del mercado :department_store:
+## Inspiración en referentes del mercado :department_store:
 
 ### Swellboards 
 :link: https://swellboards.com/
@@ -103,6 +103,8 @@ Los wireframes del sitio se pueden encontrar en la carpeta Wireframes. Debajo se
 Parte 1 - https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf 
 
 Parte 2 - https://www.figma.com/file/zFrWTG7olHnyaq06tPGufP/Take-off-surf-pt.2 
+
+Parte 3 - https://www.figma.com/file/vYhwoxUIWAFfGDa5gkosl2/Escuelas-de-Surf-pt.3?node-id=0%3A1
 
 
 
