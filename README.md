@@ -106,5 +106,7 @@ Parte 2 - https://www.figma.com/file/zFrWTG7olHnyaq06tPGufP/Take-off-surf-pt.2
 
 Parte 3 - https://www.figma.com/file/vYhwoxUIWAFfGDa5gkosl2/pt.3?node-id=0%3A1
 
+### Tablero de Trabajo
 
+https://trello.com/b/t9s2jP8Q/tablero
 
