@@ -1,4 +1,4 @@
-# Grupo 07 - Take Off Surf :surfer:
+# Grupo 07 - Take Off Surf
 
 ---
 
