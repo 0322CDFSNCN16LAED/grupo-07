@@ -1,19 +1,29 @@
 body{
-    font-family: 'Roboto', sans-serif;
+    
+    font-family: 'Archivo Narrow', sans-serif;
     font-size: 12px;
     margin: auto;
     padding: 0px;
 }
 
 
+footer{
+    border: 1px solid black;
+}
 
-
+.section-footer{
+    padding-top: 20px;
+    color:#118f75
+}
 
 
 
 .size-logo-footer{
 
     width: 30%;
+    height: 30%;
+    padding-top: 10%;
+   
 }
 
 
@@ -44,15 +54,23 @@ body{
 }
 
 
+.size-img-footer{
+    width: 100%;
+    text-align: ri;
+    position:absolute;
+    opacity: 0.3;
+}
+
+
 .copyright{
     
     color:white;
-    background-color: gray;
+    background-color:gray;
     text-align: center;
 }
 .accesos-footer{
-
 margin: auto;
+background-color: #118f75;
 }
 
 .nav-accesos-footer{
@@ -60,19 +78,24 @@ margin: auto;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    color:white;
     font-size: small;
-    background-color: lightgray;  
+    
     
 }
 .nav-accesos-footer li{
   list-style: none;  
   margin: 2%;
+
 }
 
 .nav-accesos-footer li a{
     text-decoration: none;
     font-weight: bold;
+    color:black
+  }
+
+  .footer{
+      background-image: none;
   }
 
 
