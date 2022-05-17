@@ -34,7 +34,7 @@ body{
 .img-fondo-footer{
     width: 100%;
     opacity: 0.3;
-    position:absolute;
+    position: absolute;
     }
 
 .texto-footer{
@@ -52,11 +52,14 @@ body{
     font-size: medium;
 
 }
+.column1-2 ul li a{
+    text-decoration: none;
+    }
+
 
 
 .size-img-footer{
     width: 100%;
-    text-align: ri;
     position:absolute;
     opacity: 0.3;
 }
