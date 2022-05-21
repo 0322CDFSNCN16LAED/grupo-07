@@ -1,18 +1,47 @@
-body{
-    
-    font-family: 'Archivo Narrow', sans-serif;
-    font-size: 12px;
-    margin: auto;
-    padding: 0px;
+* {
+    box-sizing: border-box;
 }
 
+h1 {
+    margin: 0;
+}
+  
+body {
+    font-family: "Mukta", sans-serif;
+    font-size: 12px;
+}
 
+/* Nav */
+.nav-section {
+    padding: 0;
+}
 
+.nav-section li a {
+    color: black;
+    text-decoration: none; /*saqué el subrayado*/
+}
 
+.nav-section li {
+    list-style: none; /*saqué los dots*/
+}
 
+/* Burger menu */
+.burger-menu{
+    text-align: center;
+}
 
+.burger-menu i {
+    padding: 8px;
+    background-color: #1baa4b;
+    color: #ebebeb;
+    border-radius: 5px;
+}
 
-/* css footer*/
+.hide{
+    display: none;
+}
+
+/* footer*/
 
 footer{
     position:relative;

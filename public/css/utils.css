@@ -1,0 +1,51 @@
+/* Width */
+.w-50{
+    width: 50%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+
+
+/* Padding */
+.p-8{
+    padding: 8px;
+}
+
+/* Margin */
+.mt-8{
+    margin-top: 8px;
+}
+
+.mb-8{
+    margin-bottom: 8px;
+}
+
+.mx-8 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/* Flex */
+.flex {
+    display: flex;
+}
+
+.fx-wrap{
+    flex-wrap: wrap;
+}
+
+.fx-align-center {
+    align-items: center;
+}
+
+.fx-space-between{
+    justify-content: space-between;
+}
+
+/* Size */
+.em-10{
+    font-size: 2em;
+}
