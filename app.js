@@ -3,7 +3,7 @@ const express = require("express");
 
 const app = express();
 
-const PORT = 3333;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log("Estamos corriendo en el puerto " + PORT);
 });
