@@ -1,32 +1,35 @@
-<<<<<<< HEAD:public/css/style.css
 body{
     
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: "Mukta", sans-serif;
     font-size: 12px;
     margin: auto;
     padding: 0px;   
-    background-color:white
-=======
+    background-color:white;
+}
 * {
     box-sizing: border-box;
->>>>>>> c30ffd680b290f098c7ef851ed3b9c6e16c17e09:public/css/theme.css
 }
 
 h1 {
     margin: 0;
 }
   
-body {
-    font-family: "Mukta", sans-serif;
-    font-size: 12px;
+
+
+.logo-header{
+    width: 300px;
+
 }
+
+
 
 /* Nav */
 .nav-section {
     padding: 0;
 }
 
-<<<<<<< HEAD:public/css/style.css
+
+
 /* css imganes surf*/
 
 .img-surf{
@@ -161,12 +164,10 @@ border: solid 1px black;
 
 
 
-=======
 .nav-section li a {
     color: black;
     text-decoration: none; /*saqué el subrayado*/
 }
->>>>>>> c30ffd680b290f098c7ef851ed3b9c6e16c17e09:public/css/theme.css
 
 .nav-section li {
     list-style: none; /*saqué los dots*/
