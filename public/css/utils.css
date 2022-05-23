@@ -45,7 +45,21 @@
     justify-content: space-between;
 }
 
+/* Border */
+.radius-50{
+    border-radius: 50%;
+}
+
 /* Size */
 .em-10{
     font-size: 2em;
+}
+
+@media (min-width: 576px){
+    
+}
+
+
+@media (min-width: 769px){
+    
 }
