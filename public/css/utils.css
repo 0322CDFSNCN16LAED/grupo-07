@@ -7,6 +7,14 @@
     width: 100%;
 }
 
+.w-300{
+    width: 300px;
+}
+
+/* Text position*/
+.text-center{
+    text-align: center;
+}
 
 
 /* Padding */
