@@ -3,8 +3,143 @@ body{
     font-family: 'Archivo Narrow', sans-serif;
     font-size: 12px;
     margin: auto;
-    padding: 0px;
+    padding: 0px;   
+    background-color:white
 }
+
+
+
+/* css imganes surf*/
+
+.img-surf{
+    margin: auto;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+}
+
+
+.img-surf ul li {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+ul.slider{
+    width: 100%;
+    position: relative;
+    height: 100px;
+}
+ul.slider li{
+    position:absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity 0.5s;
+}
+ul.slider li img{
+    width: 100%;
+    height:400px;
+    object-fit: cover;
+}
+
+ul.slider li:first-child{
+  opacity: 1;
+}
+
+ul.slider li:target{
+    opacity: 1;
+  }
+
+
+
+.indice ul{
+    display:  flex;
+   justify-content: center;
+}
+
+.indice ul li{
+    text-align: center;
+    font-size: 30px;
+    width: 30px;
+    list-style:none;
+    text-decoration:none;
+    margin-right: 10px;
+    background-color: gray;
+    border-radius: 100%;
+}
+.indice li a{ 
+    text-decoration:none;
+    color:yellow
+}
+
+
+/* css productos */
+
+
+.secciones{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+.titulo-secciones {
+    font-size: 40px;
+    font-weight: bold;
+}
+.contenedor-productos{
+    display:flex;
+    justify-content: space-between;
+}
+
+.producto img{
+    width: 100%;
+    height: 300px;
+    border: solid 1px black;
+    
+}
+
+.descrip-producto {
+    display: flex;
+    justify-content: space-around;
+}
+.descrip-producto p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+}
+.producto h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+
+.contenedor-marcas{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-marcas img{
+width: 100%;
+height: 100px;
+border: solid 1px black;
+}
+
+
+.contenedor-escuelas{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-escuelas img {
+width: 100%;
+height: 200px;
+border: solid 1px black;
+}
+
 
 
 
@@ -18,37 +153,40 @@ footer{
     position:relative;
 }
 
+.img-fondo-footer{
+    width: 100%;
+    height: 450px;
+    position:absolute;
+    opacity: 0.3;
+
+}
+
 .section-footer{
     color:#118f75;
     font-size: medium;
 }
 
-
-.size-logo-footer{
-
-    width: 20%;
-    height: 20%;   
-}
-
-
-.column1-2{
-    display:flex;
-    justify-content: space-around;
-}
-
-.footer-img{
+.footer-img-leyenda{
     display: flex;
 }
 
-.img-fondo-footer{
-    width: 100%;
-    height: 340px;
-    opacity: 0.3;
+.size-logo-footer{
+
+    width: 10%;
+    height: 10%;  
+    padding-left: 15px;
+ 
 }
 
 .texto-footer{
     text-align: center;
     font-weight: bold;
+    padding: 15px;
+}
+
+.column1-2{
+    display:flex;
+    justify-content: space-around;
 }
 
 .footer-columm1{
@@ -61,18 +199,10 @@ footer{
     font-size: medium;
 
 }
+
 .column1-2 ul li a{
     text-decoration: none;
     }
-
-.img-fondo-footer{
-    width: 100%;
-    height: 340px;
-    position:absolute;
-    opacity: 0.3;
-
-}
-
 
 .copyright{
     
@@ -81,32 +211,6 @@ footer{
     text-align: center;
     font-size: medium;
 }
-.accesos-footer{
-margin: auto;
-background-color: #118f75;
-}
-
-.nav-accesos-footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    font-size: small;
-    padding: 5%;   
-    
-}
-
-.nav-accesos-footer li{
-  list-style: none;  
-  margin: 2%;
-  font-size: 25px;
-}
-
-.nav-accesos-footer li a{
-    text-decoration: none;
-    font-weight: bold;
-    color:black
-  }
 
  .firma-grupo{
      color:blueviolet;
