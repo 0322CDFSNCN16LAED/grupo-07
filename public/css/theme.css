@@ -212,7 +212,7 @@ border: solid 1px black;
 }
 
 /* Logo */
-div {
+/* div {
     width: 200px;
     height: 200px;
     display: block;
@@ -331,3 +331,40 @@ footer{
      text-decoration: underline;    
  }
 
+.register {
+    position: static;
+}
+
+.fb-side-banner {
+    width: 100wv;
+    display: none
+}
+
+.form-box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    align-content: flex-start;
+
+    padding: 3rem;
+}
+
+.reg-form-box,
+.reg-inp {
+    display: block;
+    width: 90%;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.register-form {
+    background-color: lightgray;
+  border: none;
+  width: 85vw;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 20px;
+}
