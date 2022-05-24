@@ -7,8 +7,8 @@
     width: 100%;
 }
 
-.w-300{
-    width: 300px;
+.w-25{
+    width: 25%;
 }
 
 /* Text position*/
@@ -31,9 +31,14 @@
     margin-bottom: 8px;
 }
 
-.mx-8 {
-    margin-left: 8px;
-    margin-right: 8px;
+.mx-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.my-5{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /* Flex */
@@ -53,14 +58,27 @@
     justify-content: space-between;
 }
 
+.fx-end{
+    justify-content: end;
+}
+
+.fx-column{
+    flex-direction: column;
+}
+
 /* Border */
 .radius-50{
     border-radius: 50%;
 }
 
 /* Size */
-.em-10{
+.em-2{
     font-size: 2em;
+}
+
+/* Position */
+.pn-relative{
+    position: relative;
 }
 
 @media (min-width: 576px){

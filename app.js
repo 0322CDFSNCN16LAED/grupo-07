@@ -45,3 +45,16 @@ app.get("/carrito", (req, res) => {
   // funcion controladora o handler
   res.sendFile(path.join(__dirname, "views/carrito.html"));
 });
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+

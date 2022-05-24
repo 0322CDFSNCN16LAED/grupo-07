@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     
     font-family: "Mukta", sans-serif;
@@ -7,14 +11,14 @@ body{
     background-color:white;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-h1 {
+h1{
     margin: 0;
 }
 
+h2{
+    font-size: 40px;
+    font-weight: bold;
+}
 
 /* Colors */
 
@@ -56,6 +60,10 @@ h1 {
      width:50%;
 }
 
+.bg-water-green{
+    background-color: #0C7256;
+}
+
 /* Font size */
 .font-heading {
     font-size: 24px;
@@ -73,6 +81,7 @@ h1 {
     font-size: 2em;
 }
 
+
 /* Nav */
 .nav-section {
     padding: 0;
@@ -80,28 +89,10 @@ h1 {
 
 
 
-/* css imganes surf*/
-
-.img-surf{
-    margin: auto;
-    width: 100%;
-    height: 400px;
-    background-color: white;
-}
+/* Slideshow */
 
 
-.img-surf ul li {
-   padding: 0;
-   margin: 0;
-   list-style: none;
-}
-
-ul.slider{
-    width: 100%;
-    position: relative;
-    height: 100px;
-}
-ul.slider li{
+.slide-item{
     position:absolute;
     left: 0;
     top: 0;
@@ -110,25 +101,24 @@ ul.slider li{
     height: inherit;
     transition: opacity 0.5s;
 }
-ul.slider li img{
+
+.slide-item img{
     width: 100%;
     height:400px;
     object-fit: cover;
 }
 
-ul.slider li:first-child{
+.slide-item:first-child{
   opacity: 1;
 }
 
-ul.slider li:target{
+.slide-item:target{
     opacity: 1;
-  }
-
-
+}
 
 .indice ul{
     display:  flex;
-   justify-content: center;
+    justify-content: center;
 }
 
 .indice ul li{
@@ -138,17 +128,16 @@ ul.slider li:target{
     list-style:none;
     text-decoration:none;
     margin-right: 10px;
-    background-color: gray;
+    background-color: rgba(180, 179, 179, 0.603);
     border-radius: 100%;
 }
 .indice li a{ 
     text-decoration:none;
-    color:yellow
+    color:#122373;
 }
 
 
-/* css productos */
-
+/* Productos */
 
 .secciones{
     margin-top: 20px;
@@ -157,10 +146,7 @@ ul.slider li:target{
     background-color: lightgray;
 }
 
-.titulo-secciones {
-    font-size: 40px;
-    font-weight: bold;
-}
+
 .contenedor-productos{
     display:flex;
     justify-content: space-between;
@@ -210,27 +196,7 @@ width: 100%;
 height: 200px;
 border: solid 1px black;
 }
-
-/* Logo */
-div {
-    width: 200px;
-    height: 200px;
-    display: block;
-    position: relative;
-  }
-  
-  div::after {
-    content: "";
-    background: url(image.jpg);
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-  }
-
+   
 /* Nav */
 .nav-section li a {
     color: black;
@@ -258,6 +224,56 @@ div {
     display: none;
 }
 */
+
+.secciones{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+.titulo-secciones {
+    font-size: 40px;
+    font-weight: bold;
+}
+.contenedor-productos{
+    display:flex;
+    justify-content: space-between;
+}
+
+.producto img{
+    width: 100%;
+    height: 300px;
+    border: solid 1px black;
+
+}
+
+.descrip-producto {
+    display: flex;
+    justify-content: space-around;
+}
+.descrip-producto p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+}
+.producto h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+
+.contenedor-marcas{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-marcas img{
+width: 100%;
+height: 100px;
+border: solid 1px black;
+}
 
 /* footer*/
 
@@ -331,3 +347,79 @@ footer{
      text-decoration: underline;    
  }
 
+/* Slides */
+ .slides {
+    padding: 8px;
+    width: 100%;
+    height: 420px;
+    display: block;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
