@@ -2,4 +2,31 @@
     .nav-bar{
         display: none;
     }
+
+
+
+
+
+
+
+
+
+
+    /*producto*/
+
+
+    .descripcion-productos {
+        display: flex;
+        justify-content: space-between;
+
+      
+    }
+    
+    .container-caract-productos {
+        display: flex;
+    }     
+
+
+
+
 }
