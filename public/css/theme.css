@@ -15,11 +15,14 @@ h1{
     margin: 0;
 }
 
-h2{
-    font-size: 40px;
-    font-weight: bold;
+a:link {
+    color: black;
+    text-decoration: none;
 }
 /* Colors */
+.bg-white{
+    background-color: white;
+}
 
 .font-green{
     color: #c1dd50;
@@ -63,9 +66,23 @@ h2{
     background-color: #0C7256;
 }
 
+.bg-light-gray{
+    background-color: lightgray
+}
+
+.bg-gray{
+    background-color: gray;
+}
+
+.bg-olive{
+    background-color: olive;
+}
+
+
 /* Font size */
 .font-heading {
     font-size: 24px;
+    font-weight: bold;
 }
 .font-large {
     font-size: 18px;
@@ -83,123 +100,10 @@ h2{
 
 /* Nav */
 .nav-section {
-    padding: 0;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-
-
-/* Slideshow */
-
-
-.slide-item{
-    position:absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    transition: opacity 0.5s;
-}
-
-.slide-item img{
-    width: 100%;
-    height:400px;
-    object-fit: cover;
-}
-
-.slide-item:first-child{
-  opacity: 1;
-}
-
-.slide-item:target{
-    opacity: 1;
-}
-
-.indice ul{
-    display:  flex;
-    justify-content: center;
-}
-
-.indice ul li{
-    text-align: center;
-    font-size: 30px;
-    width: 30px;
-    list-style:none;
-    text-decoration:none;
-    margin-right: 10px;
-    background-color: rgba(180, 179, 179, 0.603);
-    border-radius: 100%;
-}
-.indice li a{ 
-    text-decoration:none;
-    color:#122373;
-}
-
-
-/* Productos */
-
-.secciones{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: lightgray;
-}
-
-.titulo-secciones {
-    font-size: 40px;
-    font-weight: bold;
-}
-.contenedor-productos{
-    display:flex;
-    justify-content: space-between;
-}
-
-.producto img{
-    width: 100%;
-    height: 300px;
-    border: solid 1px black;
-    
-}
-
-.descrip-producto {
-    display: flex;
-    justify-content: space-around;
-}
-.descrip-producto p {
-    font-size: 20px;
-    padding: 5px;
-    margin: 0px;
-}
-.producto h3 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0px;
-
-}
-
-
-.contenedor-marcas{
-    display: flex;
-    justify-content: space-around;
-}
-.contenedor-marcas img{
-width: 100%;
-height: 100px;
-border: solid 1px black;
-}
-
-
-.contenedor-escuelas{
-    display: flex;
-    justify-content: space-around;
-}
-.contenedor-escuelas img {
-width: 100%;
-height: 200px;
-border: solid 1px black;
-}
-   
-/* Nav */
 .nav-section li a {
     color: black;
     text-decoration: none; /*saqué el subrayado*/
@@ -216,43 +120,14 @@ border: solid 1px black;
 
 .burger-menu i {
     padding: 8px;
-    background-color: #122373;
+    background-color: #0C7256;
     color: #ebebeb;
     border-radius: 5px;
 }
 
-/*
-.hide{
-    display: none;
-}
-*/
-
-.secciones{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: lightgray;
-}
-
-.titulo-secciones {
-    font-size: 40px;
-    font-weight: bold;
-}
-.contenedor-productos{
-    display:flex;
-    justify-content: space-between;
-}
-
-.producto img{
-    width: 100%;
-    height: 300px;
-    border: solid 1px black;
-
-}
-
-.descrip-producto {
-    display: flex;
-    justify-content: space-around;
+/* Products*/
+.product img {
+    aspect-ratio: 4/4;
 }
 .descrip-producto p {
     font-size: 20px;
@@ -349,6 +224,9 @@ footer{
      text-decoration: underline;    
  }
 
+
+ /* register.html */
+
 .register {
     position: static;
 }
@@ -367,26 +245,31 @@ footer{
     align-content: flex-start;
 
     padding: 3rem;
-
     font-size: 15px;
 }
+
 input[class="reg-inp"] {
     font-size:13px;
 }
 
 .form-box h2 {
-padding-left: 10px;
+padding-left: 30px;
+font-size: 30px;
 }
 
+.reg-form-image {
+    display: none;
+}
 
 .reg-form-box,
 .reg-inp {
-    display: block;
+    display: flex;
     width: 80%;
     align-items: center;
+    justify-content: center;
     padding: 10px;
-    margin-right: 20px;
-   
+    margin-right: 0px;
+   text-align: justify;
     
 }
 
@@ -398,16 +281,29 @@ padding-left: 10px;
 .register-form {
     display: flex;
     flex-direction: column;
-    background-color: #808000;
-  border: none;
-  width: 75vw;
-  border-radius: 12px;
-  padding: 12px;
-  margin-left: 20px;
-  margin-right: 20px;
-  justify-content:center;
- 
+    background-color: rgb(215, 214, 170, 0.8);
+    border: none;
+    width: 75vw;
+    border-radius: 12px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
 }
+
+.reg-form-button {
+  flex-grow: 1;
+  align-self: stretch;
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  height: 40px;
+}
+
 /* Slides */
  .slides {
     padding: 8px;
@@ -483,4 +379,23 @@ input:checked + .slide-container .nav label { display: block; }
 .nav-dots .nav-dot:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
+}
+/* Footer*/
+.footer-article li a {
+    color: black;
+    text-decoration: none; /*saqué el subrayado*/
+}
+
+.footer-article li {
+    list-style: none; /*saqué los dots*/
+}
+
+
+/* background for register.html */
+
+.reg-main {
+    background-image: url(/images/register/reg-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
