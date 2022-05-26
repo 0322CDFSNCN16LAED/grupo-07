@@ -21,31 +21,42 @@
     <link rel = "stylesheet" href = "/css/styles-desktop.css"/>
 </head>
 
-<body>
+<body class="bg-light-gray w-100">
 
-    <header class="p-8">
+    <header class="p-8 bg-olive w-100">
        
         <div class="flex fx-align-center">
-        <h1 class="w-50">
-            <img  class="w-50 em-2" src="/images/logo/logo2.jpg" alt="Take Off Surf" />
+        <h1 class="w-50 w-desktop-20">
+            <img  class="w-50 em-2" src="/images/logo/logo2.png" alt="Take Off Surf" />
         </h1> 
 
-        <nav class="p-8 w-50 nav-section fx-space-between fx-column">
-            <ul class="mb-8 flex fx-column text-center">
-                <li class="my-5"><a href="#"> Contact us </a></li>
-                <li class="my-5"><a href="/login"> Log in </a></li>
-                <li class="my-5"><a href="/register"> Register </a></li>
+        <form class="flex p-8 w-50 w-desktop-40">
+            <div class="form-field w-100 mb-0">
+              <div class="input-with-button">
+                <input class="form-input" type="text" name="search" placeholder="Buscar productos, escuelas y más" />
+                <button class="input-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+        </form>
+
+        <nav class="w-50 nav-section w-desktop-40 hide desktop-fx">
+            <ul class="mb-8 flex fx-wrap">
+                <li class="p-8"><a href="#"><i class="em-1 p-8 far fa-address-book"></i>Contactanos</a></li>
+                <li class="p-8"><a href="/login"><i class="em-1 p-8 fas fa-user"></i>Iniciar sesión</a></li>
+                <li class="p-8"><a href="/register"><i class="em-1 p-8 fas fa-sign-in-alt"></i>Registrate</a></li>
             </ul>
         </nav>
         </div>
 
-        <nav class="w-100 bg-light-blue">            
+        <nav class="w-100 hide tablet-fx">            
             <ul class="nav-section w-100 fx-space-between mb-8 flex">
-                <li class="mx-10"><a href="#"> Inicio </a></li>
-                <li class="mx-10"><a href="/productos"> Productos </a></li>
-                <li class="mx-10"><a href="/escuelas-de-surf"> Escuelas de Surf</a></li>
-                <li class="mx-10"><a href="/nosotros"> Nosotros </a></li>
-                <li class="mx-10"><a href="/carrito"> Carrito </a></li>
+                <li class="mx-10"><a class="font-medium" href="#"> Inicio </a></li>
+                <li class="mx-10"><a class="font-medium" href="/productos"> Productos </a></li>
+                <li class="mx-10"><a class="font-medium" href="/escuelas-de-surf"> Escuelas de Surf</a></li>
+                <li class="mx-10"><a class="font-medium" href="/nosotros"> Nosotros </a></li>
+                <li class="mx-10"><a class="font-medium" href="/carrito"> Carrito </a></li>
             </ul>            
         </nav>
         
@@ -56,250 +67,263 @@
     
     </header>
     
-    <main class="p-8">
-
-        <section class="p-8 w-100">
-        <ul class="slides">
-            <input type="radio" name="radio-btn" id="img-1" checked />
-            <li class="slide-container">
-            <div class="slide">
-              <img src="./images/img-surf/img1.jpg" />
+    <main class="w-100 p-8 m-center">
+          
+        <section class="flex fx-wrap mt-16 fx-align-center">
+    
+            <h2 class="font-heading mb-8 w-100 text-center">Tablas</h2>
+            
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla1.jpg" alt="Tabla de surf"/>
+                    <div class="flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de surf</h3>
+                        <p class="font-large w-50 text-center">$6.770</p>
+                        <p class="font-medium w-50 text-center">40% OFF</p>
+                    </div>
+                </article>
             </div>
-            </li>
-        
-            <input type="radio" name="radio-btn" id="img-2" />
-            <li class="slide-container">
-                <div class="slide">
-                  <img src="./images/img-surf/img2.jpg" />
-                </div>
-            </li>
-        
-            <input type="radio" name="radio-btn" id="img-3" />
-            <li class="slide-container">
-                <div class="slide">
-                  <img src="./images/img-surf/img3.jpg"/>
-                </div>
-            </li>
-        
-            <input type="radio" name="radio-btn" id="img-4" />
-            <li class="slide-container">
-                <div class="slide">
-                  <img src="./images/img-surf/img4.jpg"/>
-                </div>
-            </li>
-        
-            <input type="radio" name="radio-btn" id="img-5" />
-            <li class="slide-container">
-                <div class="slide">
-                  <img src="/images/img-surf/img5" />
-                </div>
-            </li>
-        
-            <input type="radio" name="radio-btn" id="img-6" />
-            <li class="slide-container">
-                <div class="slide">
-                  <img src="./images/img-surf/img4.jpg" />
-                </div>
-            </li>
-        
-            <li class="nav-dots">
-              <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-              <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-              <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-              <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-              <label for="img-5" class="nav-dot" id="img-dot-5"></label>
-              <label for="img-6" class="nav-dot" id="img-dot-6"></label>
-            </li>
-        </ul>
-        </section>
-    
-        <section class="seccion-productos">
-          
-          <section class="secciones">
-          
-          <h2>Tablas</h2>
-          
-          <div class="contenedor-productos">
-          
-              <article class="producto">
-                  <a href="#"><img src="/images/tablas/tabla1.jpg" alt="Tabla 1"></a>
-                  <div class="descrip-producto">
-                      <p class="precio">$6.770</p>
-                      <p class="descuento">40% OFF</p>
-                  </div> 
-                      <h3 class="nombre-producto">Tabla de surf</h3>
-          
-              </article>
-          
-          
-              <article class="producto">
-                  <a href="#"><img src="/images/tablas/tabla2.jpg" alt="Tabla 2"></a>
-                  <div class="descrip-producto">
-                      <p class="precio">$6.000</p>
-                      <p class="descuento">20% OFF</p>
-                  </div> 
-                      <h3 class="nombre-producto">Wodeen table</h3>
-              </article>
-          
-          
-              <article class="producto">
-                  <a href="#"><img src="/images/tablas/tabla3.jpg" alt="Tabla 3"></a>
-                  <div class="descrip-producto">
-                      <p class="precio">$3.000</p>
-                      <p class="descuento">40% OFF</p>
-                  </div> 
-                      <h3 class="nombre-producto">Stand up table</h3>
-              </article>
-          
-          
-              <article class="producto">
-                  <a href="#"><img src="/images/tablas/tabla4.jpg" alt="Tabla 4"></a>
-                  <div class="descrip-producto">
-                      <p class="precio">$1.770</p>
-                      <p class="descuento">60% OFF</p>
-                  </div> 
-                      <h3 class="nombre-producto"> tabla de barrenar</h3>
-              </article>
-          
-              <article class="producto">
-                  <a href="#"><img src="/images/tablas/tabla3.jpg" alt="Tabla 3"></a>
-                  <div class="descrip-producto">
-                      <p class="precio">$3.000</p>
-                      <p class="descuento">40% OFF</p>
-                  </div> 
-                      <h3 class="nombre-producto">Stand up table</h3>
-              </article>
-          
-              </div>
-          
-          </section>
-          
-          <section class="secciones"> 
-          
-              <h2 class="titulo-secciones">Accesorios</h2>
-          
-              <div class="contenedor-productos">
-          
-                  <article class="producto">
-                      <a href="#"><img src="/images/Accesorios/correa.jpg" alt="Correa"></a> 
-                      <div class="descrip-producto">
-                          <p class="precio">$500</p>
-                          <p class="descuento">10% OFF</p>
-                      </div> 
-                          <h3 class="nombre-producto">Correa de sujecion</h3>
-          
-                  </article>
-          
-          
-                  <article class="producto">
-                      <a href="#"><img src="/images/Accesorios/funda.jpg" alt="Funda de tabla"></a> 
-                      <div class="descrip-producto">
-                          <p class="precio">$2.000</p>
-                          <p class="descuento">15% OFF</p>
-                      </div> 
-                          <h3 class="nombre-producto">Funda de tabla</h3>
-                  </article>
-          
-          
-                  <article class="producto">
-                      <a href="#"><img src="/images/Accesorios/parafina.jpg" alt="Parafina"></a> 
-                      <div class="descrip-producto">
-                          <p class="precio">$200</p>
-                          <p class="descuento">50% OFF</p>
-                      </div> 
-                          <h3 class="nombre-producto">Parafina en barra</h3>
-                  </article>
-          
-          
-                  <article class="producto">
-                      <a href="#"><img src="/images/Accesorios/quilla.jpg" alt="Quilla"></a> 
-                      <div class="descrip-producto">
-                          <p class="precio">$1.770</p>
-                          <p class="descuento">15% OFF</p>
-                      </div> 
-                          <h3 class="nombre-producto">Juego de Quillas </h3>
-                  </article>
-          
-                  </div>
-          
-          </section>
-          
-          <section class="secciones"> 
-          
-              <h2 class="titulo-secciones">Nuestras Marcas</h2>
-          
-              <div class="contenedor-marcas">
-          
-                      <a href="#"><img src="/images/Marcas/billabong.jpg" alt="billabong"></a>
-                      <a href="#"><img src="/images/Marcas/oneil.jpg" alt="oneil"></a> 
-                      <a href="#"><img src="/images/Marcas/quicksilver.jpg" alt="quicksilver"></a> 
-                      <a href="#"><img src="/images/Marcas/rip-curl.jpg" alt="rip-curl"></a> 
-                      <a href="#"><img src="/images/Marcas/bicsurf.jpg" alt="bicsurf"></a> 
-          
-              </div>
-          
-          </section>
-          
-          <section class="secciones"> 
-          
-              <h2 class="titulo-secciones">Nuestras Escuelas</h2>
-          
-              <div class="contenedor-escuelas">
-          
-          
-                      <a href="https://www.youtube.com/watch?v=KhZoTBuxHKY"><img src="/Videos/video1.jpg" alt="billabong"></a>
-                      <a href="https://www.youtube.com/watch?v=x8dg7XKu_CI"><img src="/Videos/video2.jpg" alt="hawai"></a>
-                      <a href="https://www.youtube.com/watch?v=1_azHA9quYg"><img src="/Videos/video3.jpg" alt="hawai"></a>
-                      <a href="https://www.youtube.com/watch?v=tLB0We5SU2M"><img src="/Videos/video4.jpg" alt="brasil"></a>
-          
-              </div>
-          
-          </section>
-          
-          
-          
-          
-          </section>
 
-<footer>
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla2.jpg" alt="Tabla de madera"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de madera</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla3.jpg" alt="Stand up table"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Stand up table</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive" >
+                    <img class="w-100" src="/images/tablas/tabla4.jpg" alt="Tabla de surf"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de barrenar</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla1.jpg" alt="Tabla de surf"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de surf</h3>
+                        <p class="font-large w-50 text-center">$6.770</p>
+                        <p class="font-medium w-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla2.jpg" alt="Tabla de madera"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de madera</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/tablas/tabla3.jpg" alt="Stand up table"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Stand up table</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive" >
+                    <img class="w-100" src="/images/tablas/tabla4.jpg" alt="Tabla de surf"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Tabla de barrenar</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+        <section class="flex fx-wrap mt-16 fx-align-center">
     
-    <img class="img-fondo-footer" src="./images/footer/bg-img.jpg" alt="Tematic image">
+            <h2 class="font-heading mb-8 w-100 text-center">Accesorios</h2>
+            
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/correa.jpg" alt="Correa de sujeción"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Correa de sujeción</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-cente">40% OFF</p>
+                        
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/funda.jpg" alt="Funda de tabla"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Funda de tabla</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                        
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/parafina.jpg" alt="Parafina en barra"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Parafina en barra</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/quilla.jpg" alt="Juego de quillas"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Juego de quillas</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/correa.jpg" alt="Correa de sujeción"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Correa de sujeción</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-cente">40% OFF</p>
+                        
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/funda.jpg" alt="Funda de tabla"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Funda de tabla</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                        
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/parafina.jpg" alt="Parafina en barra"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Parafina en barra</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-olive">
+                    <img class="w-100" src="/images/Accesorios/quilla.jpg" alt="Juego de quillas"/>
+                    <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center">Juego de quillas</h3>
+                        <p class="font-medium fx-grow-50 text-center">$6.770</p>
+                        <p class="font-medium fx-grow-50 text-center">40% OFF</p>
+                    </div>
+                </article>
+            </div>
+                
+            </section>
+            
+            <section class="w-100 ">
+                <h2 class="font-heading mb-8 w-100">Nuestras Marcas</h2>
+                <div class="flex fx-align-center">
+                    <img class="w-25 p-8" src="/images/marcas/billabong-logo.png" alt="Billabong logo">
+                    <img class="w-25 p-8" src="/images/marcas/oneill-logo.png" alt="Oneill logo">
+                    <img class="w-25 p-8" src="/images/marcas/quicksilver-Logo.png" alt="Quicksilver logo">
+                    <img class="w-25 p-8" src="/images/marcas/rip-curl-logo.png" alt="Rip curl logo">
+                </div>
+  
+            </section>
+          
+            <section class="w-100">
+                <h2 class="font-heading mb-8 w-100">Nuestras Escuelas</h2>
+                <div class="flex fx-wrap fx-align-center mt-16">
+                    <article class="w-50 w-desktop-25 p-8" >
+                        <a href="https://www.youtube.com/watch?v=KhZoTBuxHKY">
+                        <img class="w-100" src="/Videos/video1.jpg" alt="billabong"></a>
+                    </article>
+                    <article class="w-50 w-desktop-25 p-8" >
+                        <a class="w-100 px-10" href="https://www.youtube.com/watch?v=x8dg7XKu_CI">
+                        <img class="w-100" src="/Videos/video2.jpg" alt="hawai"></a>
+                    </article>
+                    <article class="w-50 w-desktop-25 p-8" >
+                        <a href="https://www.youtube.com/watch?v=1_azHA9quYg">
+                        <img class="w-100" src="/Videos/video3.jpg" alt="billabong"></a>
+                    </article>
+                    <article class="w-50 w-desktop-25 p-8" >
+                        <a href="https://www.youtube.com/watch?v=tLB0We5SU2M">
+                        <img class="w-100" src="/Videos/video4.jpg" alt="billabong"></a>
+                    </article>        
+            </section>
+       
+  
+    
+    </main>
+
+    <footer class="footer p-8 bg-olive w-100">
         
-    <section class="section-footer">
-                  
-    <section class="footer-img-leyenda">
-        <img class="size-logo-footer" src="./images/Logo/logo2.jpg" alt="Logo Take off surf">
-        <p class="texto-footer">  Take off surf: Somos una empresa joven con la mision de contectar a surfistas ...
-                mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no
-                strud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-        </p>         
-    </section>      
-              
-                      
-    <section class="column1-2">     
-        <ul>   
-            <i class="footer-columm1"> Informacion</i>
-            <li> <i class="fas fa-envelope"></i><a href="#" >Contacto</a></li>
-            <li> <i class="fas fa-question-circle"></i><a href="#">Preguntas frecuentes</a></li>
-            <li> <i class="fas fa-book-open"></i><a href="#"> Terminos y condiciones</a></li>
-            <li> <i class="fas fa-credit-card"></i><a href="#"> Medios de Pago</a></li>
-        </ul>
-            <ul>  
-                <i class="footer-columm2"> Redes</i>
-                <li><i class="fab fa-instagram-square"></i><a href="#"> Instagram</a></li>
-                <li><i class="fab fa-facebook"></i><a href="#">Facebook</a></li>
-                <li><i class="fab fa-twitter"></i><a href="#">Twiter</a></li>
+        <div class="flex fx-wrap">
+            <article class="footer-article w-100 w-tablet-50">
+            <h2>Informacion</h2>
+            <ul class="p-8">
+                <li><i class="em-1 p-8 fas fa-envelope"></i><a href="#" >Contacto</a></li>
+                <li><i class="em-1 p-8 fas fa-question-circle"></i><a href="#">Preguntas frecuentes</a></li>
+                <li><i class="em 1 p-8 fas fa-book-open"></i><a href="#"> Terminos y condiciones</a></li>
+                <li><i class="em-1 p-8 fas fa-credit-card"></i><a href="#"> Medios de Pago</a></li>
             </ul>
-        </section>    
-    
-        <section>
-            <p class="copyright">Copyright <i class="fas fa-copyright"></i> 2022-2022 TAKE OFF SURF S.R.L.Todos los derechos reservados.</p>
-        </section> 
-        <div>
-            <p class="firma-grupo">  @Grupo_7_Development_Group   </p>
+        </article>
+
+        <article class="footer-article w-100 w-tablet-50">
+            <h2>Redes</h2>
+            <ul class="p-8">
+                <li><i class="em-1 p-8 fab fa-instagram-square"></i><a href="#"> Instagram</a></li>
+                <li><i class="em-1 p-8 fab fa-facebook"></i><a href="#">Facebook</a></li>
+                <li><i class="em-1 p-8 fab fa-twitter"></i><a href="#">Twiter</a></li>
+            </ul>
+        </article>
         </div>
         
-    </section>  
+
+        <div class="w-100">
+            <p>Copyright <i class="fas fa-copyright"></i> 2022-2022 TAKE OFF SURF S.R.L.Todos los derechos reservados.</p>
+        </div>
     </footer>
     
 </body>
