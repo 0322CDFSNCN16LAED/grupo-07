@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Off Surf - Formulario de Registro</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel = "stylesheet" href = "/css/normalize.css"/>
+    <link rel = "stylesheet" href = "/css/utils.css"/>
+    <link rel = "stylesheet" href = "/css/theme.css"/>
+    <link rel = "stylesheet" href = "/css/styles-tablet.css"/>
+    <link rel = "stylesheet" href = "/css/styles-desktop.css"/>
+
+</head>
+<body>
+
+    <header class="p-8 bg-olive w-100">
+       
+        <div class="flex fx-align-center">
+        <h1 class="w-50 w-desktop-20">
+            <img  class="w-50 em-2" src="/images/logo/logo2.png" alt="Take Off Surf" />
+        </h1> 
+
+        <form class="flex p-8 w-50 w-desktop-40">
+            <div class="form-field w-100 mb-0">
+              <div class="input-with-button">
+                <input class="form-input" type="text" name="search" placeholder="Buscar productos, escuelas y más" />
+                <button class="input-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+        </form>
+
+        <nav class="w-50 nav-section w-desktop-40 hide desktop-fx">
+            <ul class="mb-8 flex fx-wrap">
+                <li class="p-8"><a href="#"><i class="em-1 p-8 far fa-address-book"></i>Contactanos</a></li>
+                <li class="p-8"><a href="/login"><i class="em-1 p-8 fas fa-user"></i>Iniciar sesión</a></li>
+                <li class="p-8"><a href="/register"><i class="em-1 p-8 fas fa-sign-in-alt"></i>Registrate</a></li>
+            </ul>
+        </nav>
+        </div>
+
+        <nav class="w-100 hide tablet-fx">            
+            <ul class="nav-section w-100 fx-space-between mb-8 flex">
+                <li class="mx-10"><a class="font-medium" href="#"> Inicio </a></li>
+                <li class="mx-10"><a class="font-medium" href="/productos"> Productos </a></li>
+                <li class="mx-10"><a class="font-medium" href="/escuelas-de-surf"> Escuelas de Surf</a></li>
+                <li class="mx-10"><a class="font-medium" href="/nosotros"> Nosotros </a></li>
+                <li class="mx-10"><a class="font-medium" href="/carrito"> Carrito </a></li>
+            </ul>            
+        </nav>
+        
+       
+        <div class="burger-menu font-heading tablet-hide mt-8 text-center">
+            <i class="fas fa-bars"></i>
+        </div>        
+    
+    </header>
+    <main class="reg-main">
+        <div class="">
+           <!--
+            <div class="fb-side-banner">
+
+            <img  src="/public/images/register/reg-side-banner.jpg" alt="Register">
+            </div> 
+        -->
+
+            <div class="form-box">
+                <form class="register-form" action="/" method="get">
+                    <h2 class="reg-form-title">Formulario de Registro</h2>
+                    <div class="reg-form-image">
+                        <img>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="first-name" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="last-name" id="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="mail" name="email" id="email" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="password" name="password" id="password" placeholder="Contraseña">
+                    </div>
+                    <div class="reg-inp reg-form-date-select">
+                        <input class="reg-inp" type="date" name="birthday" id="nacimiento">
+                    </div>
+                    <div class="reg-form-box">
+                        <input type="checkbox" id="checkpoint" name="checkpoint" value="checkpoint" required>
+                        <label for="checkpoint">Al continuar, doy fe de entender y aceptar la política de privacidad, los términos y condiciones y los términos de uso del sitio web. Al clickear “únete ahora” reconozco aceptar formar parte del programa de beneficios de Take off Surf y recibir ofertas exclusivas en mi correo electrónico. Puede desuscibirse en cualquier momento clickeando elboton “desuscribir” ubicado en el final de los correos electrónicos recibidos.</label>
+                    </div>
+                    <div class="reg-form-box">
+                        <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Enviar</button>
+                    </div>
+                    <div class="reg-form-box">
+                        <button class="reg-form-button" type="submit" value="Resetear" name="resetear">Resetear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="register-login-bar">
+
+        </div>
+    </main>
+        <footer class="footer p-8 bg-olive w-100">
+        
+        <div class="flex fx-wrap">
+            <article class="footer-article w-100 w-tablet-50">
+            <h2>Informacion</h2>
+            <ul class="p-8">
+                <li><i class="em-1 p-8 fas fa-envelope"></i><a href="#" >Contacto</a></li>
+                <li><i class="em-1 p-8 fas fa-question-circle"></i><a href="#">Preguntas frecuentes</a></li>
+                <li><i class="em 1 p-8 fas fa-book-open"></i><a href="#"> Terminos y condiciones</a></li>
+                <li><i class="em-1 p-8 fas fa-credit-card"></i><a href="#"> Medios de Pago</a></li>
+            </ul>
+        </article>
+
+        <article class="footer-article w-100 w-tablet-50">
+            <h2>Redes</h2>
+            <ul class="p-8">
+                <li><i class="em-1 p-8 fab fa-instagram-square"></i><a href="#"> Instagram</a></li>
+                <li><i class="em-1 p-8 fab fa-facebook"></i><a href="#">Facebook</a></li>
+                <li><i class="em-1 p-8 fab fa-twitter"></i><a href="#">Twiter</a></li>
+            </ul>
+        </article>
+        </div>
+        
+
+        <div class="w-100">
+            <p>Copyright <i class="fas fa-copyright"></i> 2022-2022 TAKE OFF SURF S.R.L.Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

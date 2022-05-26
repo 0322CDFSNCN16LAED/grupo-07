@@ -19,7 +19,6 @@ a:link {
     color: black;
     text-decoration: none;
 }
-
 /* Colors */
 .bg-white{
     background-color: white;
@@ -428,6 +427,257 @@ padding: 0px;
 .product img {
     aspect-ratio: 4/4;
 }
+.descrip-producto p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+}
+.producto h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+
+.contenedor-marcas{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-marcas img{
+width: 100%;
+height: 100px;
+border: solid 1px black;
+}
+
+/* footer*/
+
+footer{
+    position:relative;
+}
+
+.img-fondo-footer{
+    width: 100%;
+    height: 450px;
+    position:absolute;
+    opacity: 0.3;
+
+}
+
+.section-footer{
+    color:#118f75;
+    font-size: medium;
+}
+
+.footer-img-leyenda{
+    display: flex;
+}
+
+.size-logo-footer{
+
+    width: 10%;
+    height: 10%;  
+    padding-left: 15px;
+ 
+}
+
+.texto-footer{
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.column1-2{
+    display:flex;
+    justify-content: space-around;
+}
+
+.footer-columm1{
+    font-weight: bold;
+    font-size: medium;
+
+}
+.footer-columm2{
+    font-weight: bold;
+    font-size: medium;
+
+}
+
+.column1-2 ul li a{
+    text-decoration: none;
+    }
+
+.copyright{
+    
+    color:white;
+    background-color:gray;
+    text-align: center;
+    font-size: medium;
+}
+
+ .firma-grupo{
+     color:blueviolet;
+     font-size: small;
+     text-align: center;
+     text-decoration: underline;    
+ }
+
+
+ /* register.html */
+
+.register {
+    position: static;
+}
+
+.fb-side-banner {
+    width: 100wv;
+    display: none
+}
+
+.form-box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    align-content: flex-start;
+
+    padding: 3rem;
+    font-size: 15px;
+}
+
+input[class="reg-inp"] {
+    font-size:13px;
+}
+
+.form-box h2 {
+padding-left: 30px;
+font-size: 30px;
+}
+
+.reg-form-image {
+    display: none;
+}
+
+.reg-form-box,
+.reg-inp {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 0px;
+   text-align: justify;
+    
+}
+
+.reg-form-box,
+.reg-inp label {
+    width: 80%;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(215, 214, 170, 0.8);
+    border: none;
+    width: 75vw;
+    border-radius: 12px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-form-button {
+  flex-grow: 1;
+  align-self: stretch;
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  height: 40px;
+}
+
+/* Slides */
+ .slides {
+    padding: 8px;
+    width: 100%;
+    height: 420px;
+    display: block;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 /* Footer*/
 .footer-article li a {
     color: black;
@@ -437,3 +687,16 @@ padding: 0px;
 .footer-article li {
     list-style: none; /*saqué los dots*/
 }
+<<<<<<< HEAD
+=======
+
+
+/* background for register.html */
+
+.reg-main {
+    background-image: url(/images/register/reg-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+>>>>>>> 59f049ee3ed1da8890ad951fccff0f03e7ee3f49
