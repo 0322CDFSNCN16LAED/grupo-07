@@ -45,3 +45,4 @@ app.get("/carrito", (req, res) => {
   // funcion controladora o handler
   res.sendFile(path.join(__dirname, "views/carrito.html"));
 });
+
