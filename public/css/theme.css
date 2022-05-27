@@ -19,7 +19,6 @@ a:link {
     color: black;
     text-decoration: none;
 }
-
 /* Colors */
 .bg-white{
     background-color: white;
@@ -115,6 +114,7 @@ a:link {
 }
 
 /* Burger menu */
+
 .burger-menu{
     text-align: center;
 }
@@ -126,11 +126,196 @@ a:link {
     border-radius: 5px;
 }
 
+.descrip-producto {
+    display: flex;
+    justify-content: space-around;
+}
+.descrip-producto p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+}
+.producto h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+/* Slides */
+ .slides {
+    padding: 8px;
+    width: 100%;
+    height: 420px;
+    display: block;
+    position: relative;
+}
+
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+/*html productos*/
+
+.box-producto{
+    width: 100%;
+    background-color: white;
+}
+
+.descripcion-productos {
+    display:block;
+    padding: 10px;
+
+}
+
+.img-productos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-productos-mini{
+    margin: 0px;
+    padding: 10px;
+}
+
+
+.img-productos-mini li{
+list-style: none;
+margin: 0px;
+padding: 0px;
+}
+.img-productos-mini img{
+    width: 40px;
+    border: solid lightseagreen 1px;
+    border-radius: 15%;
+}
+
+
+.img-productos-principal{
+    width: 100%;
+}
+.img-productos-principal img{
+    width: 100%;
+}
+
+
+.detalles-productos{
+    border: solid lightseagreen 1px;
+    padding: 0px 10px;
+    border-radius: 3%;
+}
+
+.titulo-productos{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container-caract-productos {
+    display: block;
+}
+
+.caract-productos {
+    font-size: 15px;
+}
+.detalles-productos ul li{
+    font-size: 15px;
+}
+
+.precio-productos{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.boton-comprar{
+    border: solid black 2px;
+    background-color: lightcoral;
+    text-decoration: none;
+    color:blue;
+    border-radius: 10%;  
+    font-size: 20px; 
+
+}
+
+.agregar-carrito{
+    font-size: 15px;
+    color: olive; 
+
+}
+
 /* Products*/
 .product img {
     aspect-ratio: 4/4;
 }
-
 /* Footer*/
 .footer-article li a {
     color: black;
@@ -139,4 +324,14 @@ a:link {
 
 .footer-article li {
     list-style: none; /*saqué los dots*/
+}
+
+
+/* background for register.html */
+
+.reg-main {
+    background-image: url(/images/register/reg-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
