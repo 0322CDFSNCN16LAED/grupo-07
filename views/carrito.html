@@ -65,20 +65,96 @@
         </div>        
     </header>
 
-    <img class="w-100" src="/images/img-surf/img-carrito.jpg" alt="Imagen surf">
-
     <main class="w-100 p-8 m-center">
-       <div>
-           <p>Inicio / Carrito de compras</p>
-       </div>
 
+        <div class="w-100 p-8 m-center">
+            <ul class="nav-section w-50  mb-8 flex">
+                <li class="mx-10"><a href="/">Inicio</a></li>
+                <li class="mx-10">/</li>
+                <li class="mx-10"><a href="/carrito">Carrito</a></li>
+            </ul>
+        </div>
+    
+        <div class="banner-carrito">
+            <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf">
+            <div><h2>Carrito</h2></div>
+        </div>
 
+        <section class="mb-24">
+            <table class="carrito-table">
 
+                <tr>
+                    <th class="w-22">Producto</th>
+                    <th class="w-22">Cantidad</th>
+                    <th class="w-22">Precio</th>
+                    <th class="w-18"></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </th>
+
+                    <th>
+                        <input type="number" name="cant-carrito" id="cant-carrito">
+                    </th>
+
+                    <th>
+                        $100.000
+                    </th>
+
+                    <th>
+                        <i class="fas fa-times"></i>
+                    </th>
+                </tr>      
+
+                <tr>
+                    <th>
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </th>
+
+                    <th>
+                        <input type="number" name="cant-carrito" id="cant-carrito">
+                    </th>
+
+                    <th>
+                        $100.000
+                    </th>
+
+                    <th>
+                        <i class="fas fa-times"></i>
+                    </th>
+                </tr>      
+
+            </table>
+        </section>
+
+        <div class="mb-24 p-8 w-100">
+            <table class="text-right">
+                
+                <tr>
+                    <th>Envío</th>
+                    <th>$0</th>
+                </tr>                 
+                
+                <tr>
+                    <th>Total del pedido:</th>
+                    <th>200.000</th>
+                </tr>
+               
+            </table>
+        </div>
+        
+        <div class="mb-24 w-100 p-8 m-center">
+            <button type="submit" href="/productos.html" class="button">Seguir comprando</button>
+            <button type="submit" href="/pagar.html" class="button">Pagar</button>            
+        </div>
 
     </main>
-
-
-
 
     <footer class="footer p-8 bg-olive w-100">
         

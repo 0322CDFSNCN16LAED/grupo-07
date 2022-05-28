@@ -142,89 +142,7 @@ a:link {
 
 }
 
-/* Slides */
- .slides {
-    padding: 8px;
-    width: 100%;
-    height: 420px;
-    display: block;
-    position: relative;
-}
-
-
-.slides * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-}
-
-.slides input { display: none; }
-
-.slide-container { display: block; }
-
-.slide {
-    top: 0;
-    opacity: 0;
-    width: 609px;
-    height: 420px;
-    display: block;
-    position: absolute;
-
-    transform: scale(0);
-
-    transition: all .7s ease-in-out;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-
-
-input:checked + .slide-container  .slide {
-    opacity: 1;
-
-    transform: scale(1);
-
-    transition: opacity 1s ease-in-out;
-}
-
-input:checked + .slide-container .nav label { display: block; }
-
-.nav-dots {
-  width: 100%;
-  bottom: 9px;
-  height: 11px;
-  display: block;
-  position: absolute;
-  text-align: center;
-
-}
-
-.nav-dots .nav-dot {
-  top: -5px;
-  width: 11px;
-  height: 11px;
-  margin: 0 4px;
-  position: relative;
-  border-radius: 100%;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.nav-dots .nav-dot:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
-
-/*html productos*/
+/* html productos */
 
 .box-producto{
     width: 100%;
@@ -316,6 +234,7 @@ padding: 0px;
 .product img {
     aspect-ratio: 4/4;
 }
+
 /* Footer*/
 .footer-article li a {
     color: black;
@@ -335,3 +254,64 @@ padding: 0px;
     background-attachment: fixed;
     background-size: cover;
 }
+
+
+/* Carrito */
+.banner-carrito {
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-carrito img{
+    width: 100%;
+}
+
+.banner-carrito div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: olive;
+}
+
+.carrito-table{
+    padding: 8px;
+    width: 100%;
+}
+
+.carrito-table tr {
+    border-bottom: 1px solid black;
+}
+
+.carrito-table tr th{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.carrito-table tr th input{
+    width: 3em;
+    border-color: none;
+}
+
+
+  .carrito-button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.button{
+    width: 100%;
+    padding: 4px;
+    border-radius: 1px;
+    border: none;
+    margin-bottom: 24px;
+    background-color: olive;
+}
+
