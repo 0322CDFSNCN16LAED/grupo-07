@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views/home.html"));
 });
 
+app.get("/home", (req, res) => {
+  // funcion controladora o handler
+  res.sendFile(path.join(__dirname, "views/home.html"));
+});
+
 app.get("/login", (req, res) => {
   // funcion controladora o handler
   res.sendFile(path.join(__dirname, "views/login.html"));
@@ -44,5 +49,10 @@ app.get("/nosotros", (req, res) => {
 app.get("/carrito", (req, res) => {
   // funcion controladora o handler
   res.sendFile(path.join(__dirname, "views/carrito.html"));
+});
+
+app.get("/pagar", (req, res) => {
+  // funcion controladora o handler
+  res.sendFile(path.join(__dirname, "views/pagar.html"));
 });
 

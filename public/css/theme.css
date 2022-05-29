@@ -283,13 +283,24 @@ padding: 0px;
 }
 
 .carrito-table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     border-bottom: 1px solid black;
 }
 
 .carrito-table tr th{
+    font-size: 16px;
+    width: 22%;
     text-align: center;
     padding-top: 8px;
     padding-bottom: 8px;
+}
+
+.carrito-table tr th img{
+    width: 100%;
+    text-align: center;
 }
 
 .carrito-table tr th input{
@@ -297,16 +308,7 @@ padding: 0px;
     border-color: none;
 }
 
-
-  .carrito-button{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 24px;
-    width: 100%;
-}
-
-.button{
+.carrito-button{
     width: 100%;
     padding: 4px;
     border-radius: 1px;
