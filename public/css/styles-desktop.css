@@ -1,5 +1,7 @@
 @media (min-width: 769px){
-
+    button:hover{
+        background-color: rgb(73, 73, 0);
+    }
 
 }
 
