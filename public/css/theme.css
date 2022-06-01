@@ -49,11 +49,7 @@ a:link {
 }
 
 .font-light-blue{
-    color: #20AFD9;
-}
-
-.bg-light-blue{
-    background-color: #20AFD9;
+    color: #afe0fc;
 }
 
 .header-logo{
@@ -74,8 +70,8 @@ a:link {
     background-color: gray;
 }
 
-.bg-olive{
-    background-color: olive;
+.bg-light-blue{
+    background-color: #afe0fc;
 }
 
 
@@ -314,6 +310,7 @@ padding: 0px;
 }
 
 /* Footer*/
+
 .footer-article li a {
     color: black;
     text-decoration: none; /*saqué el subrayado*/
@@ -352,7 +349,7 @@ padding: 0px;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
-    color: olive;
+    color: #afe0fc;
 }
 
 .carrito-table{
@@ -392,6 +389,45 @@ padding: 0px;
     border-radius: 1px;
     border: none;
     margin-bottom: 24px;
-    background-color: olive;
+    background-color: #afe0fc;
 }
+
+.ocean { 
+    padding: 8px;
+    opacity: 0.5;
+    width:100%;
+    position:relative;
+    bottom:2%;
+    left:0;
+    background: #015871;
+  }
+  
+  .wave {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    position: absolute;
+    bottom: 0;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+  
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
 
