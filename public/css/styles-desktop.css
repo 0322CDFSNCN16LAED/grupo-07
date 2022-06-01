@@ -3,5 +3,15 @@
         background-color: rgb(73, 73, 0);
     }
 
+    .descripcion-productos {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+      
+    }
+    
+ 
+
 }
 

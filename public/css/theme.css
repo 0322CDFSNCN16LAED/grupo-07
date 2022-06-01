@@ -144,8 +144,15 @@ a:link {
 
 /* html productos */
 
+.container{
+    width: 90%;
+    margin:auto;
+    background-color: aliceblue;
+}
+
 .box-producto{
     width: 100%;
+
     background-color: white;
 }
 
@@ -155,31 +162,34 @@ a:link {
 
 }
 
+
+
 .img-productos{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .img-productos-mini{
-    margin: 0px;
-    padding: 10px;
+    margin: 0px 20px;
+    padding: 5px;
+    width: 15%;
 }
 
 
 .img-productos-mini li{
 list-style: none;
-margin: 0px;
+margin: 0px ;
 padding: 0px;
 }
 .img-productos-mini img{
-    width: 40px;
+    width: 100%;
     border: solid lightseagreen 1px;
     border-radius: 15%;
 }
 
 
 .img-productos-principal{
-    width: 100%;
+    width: 60%;
 }
 .img-productos-principal img{
     width: 100%;
@@ -193,42 +203,110 @@ padding: 0px;
 }
 
 .titulo-productos{
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
+    margin: 20px 0px;
 }
 
-.container-caract-productos {
-    display: block;
+.modelo-producto{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: blue;
+
 }
 
 .caract-productos {
-    font-size: 15px;
+    font-size: 30px;
+    font-weight: bold;
+
 }
+
+   
+.lista-caracteristicas li{
+    font-size: 20px;
+    list-style: none;
+}                  
+
+
 .detalles-productos ul li{
     font-size: 15px;
 }
 
 .precio-productos{
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
     margin: 0px;
 }
+.contado-productos{
+    font-size: 30px;
+    color:green;
+    margin: 0px;
+}
+.cuotas-productos{
+    font-size: 30px;
+    color:blue;
+    margin: 0px;
+
+}
+
+.boton-compra-container{
+    border: solid black 2px;
+    border-radius: 3%; 
+    background-color: #20AFD9;
+}
 
 .boton-comprar{
-    border: solid black 2px;
-    background-color: lightcoral;
+    
+    font-weight: bold;
     text-decoration: none;
-    color:blue;
-    border-radius: 10%;  
-    font-size: 20px; 
+    color: white;
+    
+    font-size: 25px;
+    padding: 0px 10px;
+    width: 100%;
 
 }
 
 .agregar-carrito{
-    font-size: 15px;
-    color: olive; 
+    font-size: 25px;
+    color: blue; 
+    margin: 0px 10px;
 
 }
+
+
+.descripcion-general{
+ display:flex;
+
+
+}
+
+.texto-descripcion{
+    width: 100%;
+    font-size: 20px;
+
+}
+
+
+.medios-pagos{
+    padding: 0px 10px;
+    border-radius: 3%;
+    border: solid black 2px;
+}
+
+.medios-pagos i{
+   font-size: 20px;
+   color: black;
+   font-weight: bold;
+   padding: 5px;
+
+}
+
+
+
+
+
 
 /* Products*/
 .product img {

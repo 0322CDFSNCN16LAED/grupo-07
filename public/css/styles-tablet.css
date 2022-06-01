@@ -3,15 +3,5 @@
         display: none;
     }
 
-    .descripcion-productos {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-      
-    }
-    
-    .container-caract-productos {
-        display: flex;
-    }     
+   
 }
