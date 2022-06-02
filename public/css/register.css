@@ -1,0 +1,79 @@
+
+ /* register.html */
+
+.register {
+    position: static;
+}
+
+.fb-side-banner {
+    width: 100wv;
+    display: none
+}
+
+.form-box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    align-content: flex-start;
+
+    padding: 3rem;
+    font-size: 15px;
+}
+
+input[class="reg-inp"] {
+    font-size:13px;
+}
+
+.form-box h2 {
+padding-left: 30px;
+font-size: 30px;
+}
+
+.reg-form-image {
+    display: none;
+}
+
+.reg-form-box,
+.reg-inp {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 0px;
+   text-align: justify;
+    
+}
+
+.reg-form-box,
+.reg-inp label {
+    width: 80%;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(215, 214, 170, 0.8);
+    border: none;
+    width: 75vw;
+    border-radius: 12px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-form-button {
+  flex-grow: 1;
+  align-self: stretch;
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  height: 40px;
+}
