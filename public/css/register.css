@@ -15,7 +15,7 @@
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content:space-around;
-    align-items:center;
+    align-items: center;
     align-content: flex-start;
 
     padding: 3rem;
@@ -76,4 +76,22 @@ font-size: 30px;
   padding: 10px;
   font-size: 16px;
   height: 40px;
+}
+
+/* tablet */
+@media (max-width: 576px){
+.register-form{
+    width: 95vw;
+    border-radius: 12px;
+
+}
+.reg-form-box,
+.reg-inp {
+    width: 90%
+}
+}
+
+/* laptop */
+@media (min-width: 769px){
+
 }
