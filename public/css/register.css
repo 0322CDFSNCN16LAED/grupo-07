@@ -55,7 +55,7 @@ font-size: 30px;
 .register-form {
     display: flex;
     flex-direction: column;
-    background-color: rgb(215, 214, 170, 0.8);
+    background-color: rgb(175, 224, 252, 0.8);
     border: none;
     width: 75vw;
     border-radius: 12px;
