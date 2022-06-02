@@ -141,6 +141,197 @@ a:link {
 /* html productos */
 
 
+.container{
+    width: 90%;
+    margin:auto;
+    background-color: aliceblue;
+    margin-top: 20px;
+}
+
+.box-producto{
+    width: 100%;
+
+    background-color: white;
+}
+
+.descripcion-productos {
+    display:block;
+    padding: 10px;
+
+}
+
+
+
+.img-productos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-productos-mini{
+    margin: 0px 20px;
+    padding: 5px;
+    width: 15%;
+}
+
+
+.img-productos-mini li{
+list-style: none;
+margin: 0px ;
+padding: 0px;
+}
+.img-productos-mini img{
+    width: 100%;
+    border: solid lightseagreen 1px;
+    border-radius: 15%;
+}
+
+
+.img-productos-principal{
+    width: 60%;
+}
+.img-productos-principal img{
+    width: 100%;
+}
+
+
+.detalles-productos{
+    border: solid lightseagreen 1px;
+    padding: 0px 10px;
+    border-radius: 3%;
+}
+
+.titulo-productos{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.modelo-producto{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: blue;
+
+}
+
+.caract-productos {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+   
+.lista-caracteristicas li{
+    font-size: 20px;
+    list-style: none;
+}                  
+
+
+.detalles-productos ul li{
+    font-size: 15px;
+}
+
+.precio-productos{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px;
+}
+.contado-productos{
+    font-size: 20px;
+    color:green;
+    margin: 0px;
+}
+.cuotas-productos{
+    font-size: 20px;
+    color:blue;
+    margin: 0px;
+
+}
+.cantidad-productos{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px;
+}
+.cantidad-items{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.boton-compra-container{
+    border: solid black 2px;
+    border-radius: 3%; 
+    background-color: #20AFD9;
+}
+
+.boton-comprar{
+    
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    
+    font-size: 25px;
+    padding: 0px 10px;
+    width: 100%;
+
+}
+
+.agregar-carrito{
+    font-size: 20px;
+    color: black; 
+    margin: 0px 10px;
+
+}
+
+
+.container-caract-productos{
+    padding: 20px;
+
+}
+
+
+.descripcion-general{
+ display:flex;
+
+
+}
+
+.texto-descripcion{
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+
+}
+
+
+.medios-pagos{
+    padding: 0px 10px;
+    border-radius: 3%;
+
+}
+.medios-pagos h2 {
+ font-size: 15px;
+ color: blue;
+ text-decoration:underline;
+}
+
+.medios-pagos i{
+   font-size: 15px;
+   color: blue;
+   font-weight: bold;
+}
+
+.tablas-relacionadas{
+
+    padding: 20px;
+}
+
+.accesorios-relacionados{
+    padding: 20px;
+
+}
+
+
+
 /* Products*/
 .product img {
     aspect-ratio: 4/4;
