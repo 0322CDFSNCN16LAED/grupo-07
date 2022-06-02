@@ -10,5 +10,6 @@ router.get("/login", mainController.login);
 router.get("/nosotros", mainController.nosotros);
 router.get("/escuelas-de-surf", mainController.escuelas);
 router.get("/carrito", mainController.carrito);
+router.get("/crear-productos", mainController.creacion);
 
 module.exports = router;

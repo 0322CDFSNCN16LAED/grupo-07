@@ -281,12 +281,10 @@ padding: 0px;
 
 }
 
-
 .container-caract-productos{
     padding: 20px;
 
 }
-
 
 .descripcion-general{
  display:flex;
@@ -300,7 +298,6 @@ padding: 0px;
     padding: 20px;
 
 }
-
 
 .medios-pagos{
     padding: 0px 10px;
@@ -328,10 +325,6 @@ padding: 0px;
     padding: 20px;
 
 }
-
-
-
-
 
 
 /* Products*/
@@ -437,7 +430,7 @@ padding: 0px;
     width: 100%;
     margin-bottom: 20px;
     padding: 8px;
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg); 
     position: absolute;
     bottom: 0;
     width: 6400px;

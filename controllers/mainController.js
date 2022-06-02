@@ -20,6 +20,9 @@ const mainController = {
   carrito: function (req, res) {
       res.render("carrito")
   },
+  creacion: function (req, res) {
+    res.render("crear-productos")
+  }
 };
 
 

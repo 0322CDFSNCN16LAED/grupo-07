@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/register.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main>
+
+        <div class="">
+            <!--
+             <div class="fb-side-banner">
+ 
+             <img  src="/public/images/register/reg-side-banner.jpg" alt="Register">
+             </div> 
+         -->
+ 
+             <div class="form-box">
+                 <form class="register-form" action="/" method="get">
+                     <h2 class="reg-form-title">Creación productos</h2>
+                     <div class="reg-form-image">
+                         <img>
+                     </div>
+                     <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="name-product" id="name-product" placeholder="Nombre del producto">
+                     </div>
+
+                     <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="feature-product" id="feature-product" placeholder="Caracteristicas">
+                     </div>
+
+                     <div class="reg-form-box">
+                         <label for="">Imagen del producto</label>
+                         <input class="reg-inp" type="file" name="img-product" id="img-product" placeholder="Imagen del producto">
+                     </div>
+
+
+                     <div class="reg-form-box">
+                         <label for="">Categoría</label>
+                        <select class="reg-inp" name="categoria">
+                            <option value="tabla">Tablas</option>
+                            <option value="accesorio">Accesorio</option>
+                        </select>
+                     </div>
+
+                     <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="description-product" id="description-product" placeholder="Descripción">
+                    </div>
+
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="price-product" id="price-product" placeholder="Precio">
+                    </div>
+                
+                     <div class="reg-form-box">
+                         <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Enviar</button>
+                     </div>
+                     <div class="reg-form-box">
+                         <button class="reg-form-button" type="submit" value="Resetear" name="resetear">Resetear</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+         <div class="register-login-bar">
+ 
+         </div>
+
+
+    </main>
+
+
+    <%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>
