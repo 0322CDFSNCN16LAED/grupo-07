@@ -10,16 +10,28 @@ app.listen(PORT, () => {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-//camino | path | ruta
-app.get("/", (req, res) => {
-  // funcion controladora o handler
-  res.sendFile(path.join(__dirname, "views/home.html"));
-});
 
-app.get("/home", (req, res) => {
+// rutas con ejs
+
+app.set("view engine", "ejs");
+
+const mainRoutes = require('./routes/main-router');
+app.use('/', mainRoutes);
+
+
+
+
+/*
+//camino | path | ruta
+//app.get("/", (req, res) => {
+  // funcion controladora o handler
+  //res.sendFile(path.join(__dirname, "views/home.html"));
+//});
+
+//app.get("/home", (req, res) => {
   // funcion controladora o handler
   res.sendFile(path.join(__dirname, "views/home.html"));
-});
+//});
 
 app.get("/login", (req, res) => {
   // funcion controladora o handler
@@ -56,3 +68,4 @@ app.get("/pagar", (req, res) => {
   res.sendFile(path.join(__dirname, "views/pagar.html"));
 });
 
+*/
