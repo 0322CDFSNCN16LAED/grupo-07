@@ -144,6 +144,7 @@ a:link {
     width: 90%;
     margin:auto;
     background-color: aliceblue;
+    margin-top: 20px;
 }
 
 .box-producto{
@@ -199,13 +200,13 @@ padding: 0px;
 }
 
 .titulo-productos{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     margin: 20px 0px;
 }
 
 .modelo-producto{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px 0px;
     color: blue;
@@ -230,20 +231,29 @@ padding: 0px;
 }
 
 .precio-productos{
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     margin: 0px;
 }
 .contado-productos{
-    font-size: 30px;
+    font-size: 20px;
     color:green;
     margin: 0px;
 }
 .cuotas-productos{
-    font-size: 30px;
+    font-size: 20px;
     color:blue;
     margin: 0px;
 
+}
+.cantidad-productos{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px;
+}
+.cantidad-items{
+    font-size: 15px;
+    margin-left: 5px;
 }
 
 .boton-compra-container{
@@ -265,9 +275,15 @@ padding: 0px;
 }
 
 .agregar-carrito{
-    font-size: 25px;
-    color: blue; 
+    font-size: 20px;
+    color: black; 
     margin: 0px 10px;
+
+}
+
+
+.container-caract-productos{
+    padding: 20px;
 
 }
 
@@ -281,6 +297,7 @@ padding: 0px;
 .texto-descripcion{
     width: 100%;
     font-size: 20px;
+    padding: 20px;
 
 }
 
@@ -288,14 +305,27 @@ padding: 0px;
 .medios-pagos{
     padding: 0px 10px;
     border-radius: 3%;
-    border: solid black 2px;
+
+}
+.medios-pagos h2 {
+ font-size: 15px;
+ color: blue;
+ text-decoration:underline;
 }
 
 .medios-pagos i{
-   font-size: 20px;
-   color: black;
+   font-size: 15px;
+   color: blue;
    font-weight: bold;
-   padding: 5px;
+}
+
+.tablas-relacionadas{
+
+    padding: 20px;
+}
+
+.accesorios-relacionados{
+    padding: 20px;
 
 }
 

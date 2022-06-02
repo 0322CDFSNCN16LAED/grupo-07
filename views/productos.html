@@ -23,9 +23,9 @@
 
 <body class="bg-light-gray w-100">
 
-    <header class="p-8 bg-olive w-100">
+    <header class="p-8 bg-light-blue w-100">
        
-        <div class="flex fx-align-center">
+        <div class="flex fx-align-center" >
         <h1 class="w-50 w-desktop-20 text-center">
             <img  class="w-50 em-2" src="/images/logo/logo-take-off-surf.png" alt="Take Off Surf" />
         </h1> 
@@ -95,14 +95,24 @@
                 <p class="precio-productos">$10000   </p>
                 <p class="contado-productos">30% OFF en un pago $7000 </p>
                 <p class="cuotas-productos"> o 12 cuotas fijas de $1000 </p>
+                <p class="cantidad-productos">Cantidad de productos: 
+                <select class="cantidad-items" name="Cantidad">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select></p>
+
                 <p class="text-center boton-compra-container"><a class="boton-comprar" href="/"> Comprar </a></p>
                 <p><a class="agregar-carrito fas fa-shopping-cart" href="/"> Agregar al carrito</a></p>
                 <div class="medios-pagos"> 
                    <h2 >Medios de pago</h2> 
-                    <p><i class="fab fa-cc-visa"> Visa </i></p>
-                    <p> <i class="fab fa-cc-mastercard"> Mastercard </i></p>
-                    <p></p>  <i class="fab fa-cc-amex">American Express</i></p>
-                    <p> <i class="fas fa-money-bill-wave"> Efectivo/deposito/transferencia</i></p>
+                    <p><i class="fab fa-cc-visa">  Visa</i>
+                    <i class="fab fa-cc-mastercard">  Mastercard </i></p>
+                    <p><i class="fab fa-cc-amex">  American Express</i>
+                    <i class="fas fa-money-bill-wave">  Efectivo/transferencia</i></p>
                 </div>
 
             </div>    
@@ -135,9 +145,9 @@
      </section>
             
     </article>
-    <section class="flex fx-wrap mt-16 fx-align-center">
+    <section class="flex fx-wrap mt-16 fx-align-center tablas-relacionadas">
     
-        <h2 class="font-heading mb-8 w-100 text-left">Productos Relacionados</h2>
+        <h2 class="font-heading mb-8 w-100 text-left ">Productos Relacionados</h2>
         
         <div class="w-50 w-desktop-25 p-8">
             <article class="product mb-8 bg-olive">
@@ -185,9 +195,9 @@
 
     </section>
 
-    <section class="flex fx-wrap mt-16 fx-align-center">
+    <section class="flex fx-wrap mt-16 fx-align-center accesorios-relacionados">
     
-        <h2 class="font-heading mb-8 w-100 text-left">Accesorios Relacionados</h2>
+        <h2 class="font-heading mb-8 w-100 text-left ">Accesorios Relacionados</h2>
         
         <div class="w-50 w-desktop-25 p-8">
             <article class="product mb-8 bg-olive">
@@ -239,8 +249,8 @@
     </section>
 
    
-    <footer class="footer p-8 bg-olive w-100">
-        
+    <footer class="footer p-8 w-100">
+
         <div class="flex fx-wrap">
             <article class="footer-article w-100 w-tablet-50">
             <h2>Informacion</h2>
@@ -266,6 +276,12 @@
         <div class="w-100">
             <p>Copyright <i class="fas fa-copyright"></i> 2022-2022 TAKE OFF SURF S.R.L.Todos los derechos reservados.</p>
         </div>
+        
+        <div class="ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>  
+
     </footer>
 
 
