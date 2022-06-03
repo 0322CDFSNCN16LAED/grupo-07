@@ -51,18 +51,23 @@
     .sch-list{
         display: flex;
         width: 400px;
+        height: 800px;
+        overflow: auto;
 }
     .schools-map{
         flex-wrap: wrap;
         display: flex;
         flex: 1;
 }
+.osm-map {
+    width: auto;
+}
 }
 
 /* title bar */
 
 .schools-titlebar {
-    position: absolute;
+    position: relative;
     width: 100vw;
     background-color: whitesmoke;
     color:black;
