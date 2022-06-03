@@ -1,0 +1,9 @@
+.schools-main {
+    display: flex;
+
+}
+
+.sch-list {
+    flex-direction: column;
+}
+
