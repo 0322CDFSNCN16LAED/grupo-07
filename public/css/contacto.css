@@ -1,0 +1,21 @@
+
+
+
+.first-section{
+    display: flex;
+    width: 100%;
+
+}
+
+.second-section{
+    display: flex;
+    width: 100%;
+}
+
+.asunto{
+    width: 50%;
+}
+
+.coments{
+    width: 100%;
+}
