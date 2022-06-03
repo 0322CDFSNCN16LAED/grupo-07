@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/register.css"/>
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+</head>
+<body>
+
+<%- include ('./partials/header') %> 
+
+    <main class="reg-main">
+        <div class="">
+ 
+
+            <div class="form-box">
+                <form class="register-form" action="/" method="get">
+                    <h2 class="reg-form-title">Contactanos</h2>
+                    <div class="reg-form-image">
+                        <img>
+                    </div>
+                    <section class="first-section">
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="first-name" id="nombre" required placeholder="Nombre">
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="last-name" id="apellido" required placeholder="Apellido">
+                    </div>
+                    </section>
+                    <section class="second-section ">
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="tel" name="tel" id="telefono" placeholder="Telefono">
+                    </div>
+                    </section>
+                    <div class="reg-inp reg-form-date-select asunto " >
+                        <input class="reg-inp" type="asunto" name="asunto" id="Asunto" placeholder="Asunto">
+                    </div>
+                    <div class="reg-inp reg-form-date-select coments">
+                        <textarea class="reg-inp reg-form-date-select" name="comentario" required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea> 
+                                     
+                    </div>
+                    
+                    <div class="reg-form-box">
+                        <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Enviar</button>
+                    </div>
+                    <div class="reg-form-box">
+                        <button class="reg-form-button" type="reset" value="Resetear" name="resetear">Resetear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="register-login-bar">
+
+        </div>
+    </main>
+<%- include ('./partials/footer') %> 
+</body>
+</html>

@@ -140,6 +140,29 @@ a:link {
 
 /* html productos */
 
+.banner-producto{
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.banner-producto img{
+    width: 100%;
+
+}
+
+.banner-producto div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #afe0fc;
+}
+
+
 .container{
     width: 90%;
     margin:auto;
@@ -281,10 +304,12 @@ padding: 0px;
 
 }
 
+
 .container-caract-productos{
     padding: 20px;
 
 }
+
 
 .descripcion-general{
  display:flex;
@@ -298,6 +323,7 @@ padding: 0px;
     padding: 20px;
 
 }
+
 
 .medios-pagos{
     padding: 0px 10px;
@@ -325,6 +351,7 @@ padding: 0px;
     padding: 20px;
 
 }
+
 
 
 /* Products*/
@@ -377,7 +404,8 @@ padding: 0px;
 
 .carrito-table{
     padding: 8px;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .carrito-table tr {
@@ -413,6 +441,7 @@ padding: 0px;
     border: none;
     margin-bottom: 24px;
     background-color: #afe0fc;
+   
 }
 
 .ocean { 

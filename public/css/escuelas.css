@@ -1,0 +1,77 @@
+.main-pos {
+    position: relative;
+}
+
+.schools-main {
+    display: flex;  
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+}
+
+.sch-list {
+    margin: 15px;
+    flex-direction: column;
+    background-color: rgb(175, 224, 252, 0.6);
+    border-radius: 10px;
+}
+
+.sch-ind {
+    border-bottom: 10px white solid;
+    padding: 14px;
+    flex-wrap: nowrap;
+}
+
+.sch-name {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: green
+}
+.sch-address {
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+}
+.sch-phone,
+.sch-email {
+    width: 50%;
+}
+
+/* maps  */
+.schools-map {
+    display: none;
+}
+
+@media (min-width: 769px){
+
+    .schools-main{
+        justify-content: flex-start;
+    }
+    .sch-list{
+        display: flex;
+        width: 400px;
+        height: 800px;
+        overflow: auto;
+}
+    .schools-map{
+        flex-wrap: wrap;
+        display: flex;
+        flex: 1;
+}
+.osm-map {
+    width: auto;
+}
+}
+
+/* title bar */
+
+.schools-titlebar {
+    position: relative;
+    width: 100vw;
+    background-color: whitesmoke;
+    color:black;
+    font-size: 25px;
+    padding: 20px 0px 20px 35px;
+    font-weight: 600;
+}

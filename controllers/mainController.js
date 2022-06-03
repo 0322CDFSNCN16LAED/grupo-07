@@ -22,7 +22,10 @@ const mainController = {
   },
   creacion: function (req, res) {
     res.render("crear-productos")
-  }
+  },
+  contacto: function (req,res){
+    res.render("contacto");
+  },
 };
 
 
