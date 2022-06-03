@@ -140,6 +140,7 @@ a:link {
 
 /* html productos */
 
+
 .container{
     width: 90%;
     margin:auto;
@@ -281,10 +282,12 @@ padding: 0px;
 
 }
 
+
 .container-caract-productos{
     padding: 20px;
 
 }
+
 
 .descripcion-general{
  display:flex;
@@ -298,6 +301,7 @@ padding: 0px;
     padding: 20px;
 
 }
+
 
 .medios-pagos{
     padding: 0px 10px;
@@ -325,6 +329,7 @@ padding: 0px;
     padding: 20px;
 
 }
+
 
 
 /* Products*/
