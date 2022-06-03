@@ -140,6 +140,28 @@ a:link {
 
 /* html productos */
 
+.banner-producto{
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.banner-producto img{
+    width: 100%;
+
+}
+
+.banner-producto div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #afe0fc;
+}
+
 
 .container{
     width: 90%;
@@ -382,7 +404,8 @@ padding: 0px;
 
 .carrito-table{
     padding: 8px;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .carrito-table tr {
@@ -418,6 +441,7 @@ padding: 0px;
     border: none;
     margin-bottom: 24px;
     background-color: #afe0fc;
+   
 }
 
 .ocean { 
