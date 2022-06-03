@@ -7,3 +7,21 @@
     flex-direction: column;
 }
 
+.sch-ind {
+    height: 10em;
+    padding: 14px;
+    flex-wrap: nowrap;
+}
+
+.sch-name {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: green
+}
+.sch-address {
+    width: 100%;
+}
+.sch-phone,
+.sch-email {
+    width: 50%
+}
