@@ -5,13 +5,20 @@
 
     .descripcion-productos {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
+        text-align: center;
+    }
 
-      
+    /* Nosotros */
+    .section-nosotros{
+        text-align: center;
     }
     
- 
+    .datos-nosotros ul li{
+        width: 33%
+    }
+
 
 }
 

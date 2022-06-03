@@ -422,10 +422,10 @@ padding: 0px;
     position:relative;
     bottom:2%;
     left:0;
-    background: #015871;
-  }
+    overflow-x: clip;
+}
   
-  .wave {
+.wave {
     height: 100%;
     width: 100%;
     margin-bottom: 20px;
@@ -437,20 +437,59 @@ padding: 0px;
     height: 198px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
-  }
+}
   
-  .wave:nth-of-type(2) {
+.wave:nth-of-type(2) {
     top: -175px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
     opacity: 1;
-  }
+}
   
-  @keyframes wave {
+@keyframes wave {
     0% {
       margin-left: 0;
     }
     100% {
       margin-left: -1600px;
     }
-  }
+}
 
+/* Nosotros */
+
+.img-nosotros{
+    padding: 8px;
+    width: 100%;
+}
+
+.img-nosotros img{
+    width: 100%;
+}
+
+.datos-nosotros{
+    background-color: #afe0fc;
+    width: 100%;
+}
+
+.datos-nosotros ul{
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.datos-nosotros ul li{
+    width: 100%;
+    margin-top: 2px;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.datos-nosotros ul li i{
+    font-size: 2em;
+    width: 100%;
+    padding: 8px;
+}
