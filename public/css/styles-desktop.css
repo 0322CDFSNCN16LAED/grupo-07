@@ -16,9 +16,12 @@
     }
     
     .datos-nosotros ul li{
-        width: 33%
+        width: 33%;
     }
 
+    .datos-nosotros ul li i:hover{
+        color: #4b7994;
+    }
 
 }
 
