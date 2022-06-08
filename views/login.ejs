@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/register.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main>
+
+<div class="log">
+        
+    <section class="form-login">
+        <h3>Iniciar sesión</h3>
+        <p>Usuario</p>
+        
+        <input type="text" placeholder="Escriba su usuario" name="uname" required>
+        <p>Contraseña</p>
+        <input type="password" placeholder="Escriba su contraseña" name="psw" required>
+        
+        <button class="boton" type="submit">Ingresar</button>
+
+        <div>
+        <label class="recordarme">
+        <input class="boton2" type="checkbox" checked="checked" name="remember"> Recordarme
+        </label>
+        </div>
+        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+        </div>
+        
+
+    </section>
+</div>
+
+          
+</main>
+
+
+<%- include ('./partials/footer') %> 
+
+</body>
+
+
+</html>
