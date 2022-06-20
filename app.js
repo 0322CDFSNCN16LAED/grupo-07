@@ -11,7 +11,7 @@ app.listen(PORT, () => {
 app.use(express.static(path.join(__dirname, "public")));
 
 
-// rutas con ejs
+// rutas con ejsdos
 
 app.set("view engine", "ejs");
 
