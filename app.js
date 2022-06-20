@@ -20,7 +20,6 @@ app.use('/', mainRoutes);
 
 
 
-
 /*
 //camino | path | ruta
 //app.get("/", (req, res) => {
