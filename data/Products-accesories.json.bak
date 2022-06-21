@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "type": "Correa",
+    "description": "in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum",
+    "price": 4101.3,
+    "discount": 18,
+    "category": "Accesorios",
+    "image": "Correa_1.jpg",
+    "mark": "Billabong",
+    "comments": "arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio"
+  },
+  {
+    "id": 2,
+    "type": "Traje neoprene",
+    "description": "dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique",
+    "price": 1913.1,
+    "discount": 0,
+    "category": "Accesorios",
+    "image": "Traje neoprene_2.jpg",
+    "mark": "Reef",
+    "comments": "rutrum neque aenean auctor gravida sem praesent id massa"
+  },
+  {
+    "id": 3,
+    "type": "Funda",
+    "description": "at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut",
+    "price": 1456.18,
+    "discount": 15,
+    "category": "Accesorios",
+    "image": "Funda_3.jpg",
+    "mark": "Reef",
+    "comments": "tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est"
+  },
+  {
+    "id": 4,
+    "type": "Traje neoprene",
+    "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis",
+    "price": 4934.67,
+    "discount": 15,
+    "category": "Accesorios",
+    "image": "Traje neoprene_4.jpg",
+    "mark": "Quicksilver",
+    "comments": "lacus morbi sem mauris laoreet ut rhoncus aliquet"
+  },
+  {
+    "id": 5,
+    "type": "Quilla",
+    "description": "amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat",
+    "price": 476.63,
+    "discount": 7,
+    "category": "Accesorios",
+    "image": "Quilla_5.jpg",
+    "mark": "Quicksilver",
+    "comments": "morbi non quam nec dui luctus rutrum nulla tellus in"
+  },
+  {
+    "id": 6,
+    "type": "Parafina",
+    "description": "quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas",
+    "price": 1223.96,
+    "discount": 9,
+    "category": "Accesorios",
+    "image": "Parafina_6.jpg",
+    "mark": "Reef",
+    "comments": "pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum"
+  },
+  {
+    "id": 7,
+    "type": "Soporte GO PRO",
+    "description": "lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer",
+    "price": 4896.66,
+    "discount": 10,
+    "category": "Accesorios",
+    "image": "Soporte GO PRO_7.jpg",
+    "mark": "Quicksilver",
+    "comments": "odio justo sollicitudin ut suscipit a feugiat et eros vestibulum"
+  },
+  {
+    "id": 8,
+    "type": "Funda",
+    "description": "hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce",
+    "price": 399.85,
+    "discount": 0,
+    "category": "Accesorios",
+    "image": "Funda_8.jpg",
+    "mark": "Billabong",
+    "comments": "eget"
+  },
+  {
+    "id": 9,
+    "type": "Funda",
+    "description": "et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut",
+    "price": 3124.23,
+    "discount": 0,
+    "category": "Accesorios",
+    "image": "Funda_9.jpg",
+    "mark": "Billabong",
+    "comments": "lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede"
+  },
+  {
+    "id": 10,
+    "type": "Correa",
+    "description": "lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue",
+    "price": 3844.74,
+    "discount": 4,
+    "category": "Accesorios",
+    "image": "Correa_10.jpg",
+    "mark": "Quicksilver",
+    "comments": "luctus et ultrices posuere cubilia curae donec pharetra magna"
+  }
+]
+
+// no se usassssssssssss esta agregado en el de productos

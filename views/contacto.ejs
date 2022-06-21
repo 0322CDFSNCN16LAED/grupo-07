@@ -38,7 +38,7 @@
                     <div class="reg-inp reg-form-date-select asunto " >
                         <input class="reg-inp" type="asunto" name="asunto" id="Asunto" placeholder="Asunto">
                     </div>
-                    <div class="reg-inp reg-form-date-select coments">
+                    <div class="reg-inp reg-form-date-select comments">
                         <textarea class="reg-inp reg-form-date-select" name="comentario" required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea> 
                                      
                     </div>
@@ -60,14 +60,14 @@
         </div>
     </main>
 
-<section class="coments_container">
+<section class="comments_container">
     <h2> Sus comentarios</h2>
-    <% coments.forEach(coments => { %> 
-  <div class="coments_box">
+    <% comments.forEach(comments => { %> 
+  <div class="comments_box">
 
-    <p>Usuario: <%= coments.first_name %> </p>
-    <p>Asunto: <%= coments.issue %> </p>
-    <p>Comentario: <%= coments.coments %> </p>
+    <p>Usuario: <%= comments.first_name %> </p>
+    <p>Asunto: <%= comments.issue %> </p>
+    <p>Comentario: <%= comments.comments %> </p>
 
   </div>
   <% }) %> 

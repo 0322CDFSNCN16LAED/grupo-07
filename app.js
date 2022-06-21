@@ -1,14 +1,15 @@
 const path = require("path");
 const express = require("express");
+const methodOverride = require("method-override");
 
 const app = express();
 
-//const methodOverride = require('method-override');
+
 
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: false }));
-//app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -22,12 +23,6 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log("Estamos corriendo en el puerto " + PORT);
 });
-
-
-
-
-
-
 
 
 

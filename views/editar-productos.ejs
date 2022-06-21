@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/register.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main>
+
+        <div class="">
+            <!--
+             <div class="fb-side-banner">
+ 
+             <img  src="/public/images/register/reg-side-banner.jpg" alt="Register">
+             </div> 
+         -->
+ 
+            <div class="form-box">
+                <form class="edit-form" action="/productos/<%= productToEdit.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <h2 class="reg-form-title">Editar producto: <%= productToEdit.type %> </h2>
+                    <div class="reg-form-image">
+                         <img>
+                    </div>
+                    <div>
+                    <label for="name" class="form-label">Nombre del producto:</label>
+                    </div>
+                    <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="name" id="name" placeholder="Nombre del producto" value="<%= productToEdit.type %>">
+                    </div>
+                    <div>
+                    <label for="description" class="form-label">Descripción:</label>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="description" id="description" placeholder="Descripción" 
+                        value="<%= productToEdit.description %>">
+                    </div>
+                    <div>
+                    <label for="feature-product" class="form-label">Caracteristicas:</label>
+                    </div>
+                    <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="feature-product" id="feature-product" placeholder="Caracteristicas">
+                    </div>
+                    <div>
+                    <label for="brand" class="form-label">Marca:</label>
+                    </div>
+                    <div class="reg-form-box">
+                    <input class="reg-inp" type="text" name="brand" id="brand" placeholder="Marca"  value="<%= productToEdit.brand %>">
+                    </div>
+                    <div>
+                    <label for="image" class="form-label">Imagen:</label>
+                    </div>
+                    <div class="reg-form-box">
+                    <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto"  value="<%= productToEdit.image %>">
+                    </div>
+
+                    <div>
+                        <label for="category" class="form-label">Categoría:</label>
+                    </div>
+                    <div class="reg-form-box"></div>
+                        <select class="reg-inp" name="category" id="category">
+                            <option value="Tablas de Surf">Tablas de Surf</option>
+                            <option value="Accesorios">Accesorios</option>
+                        </select>
+                    <div>
+                        <label for="price" class="form-label">Precio:</label>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="price" id="price" placeholder="Precio"  value="<%= productToEdit.price %>">
+                    </div>
+                     <div>
+                        <label for="discount" class="form-label">Descuento:</label>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="discount" id="discount" placeholder="Descuento"  value="<%= productToEdit.discount %>">
+                    </div>                
+
+                    <div class="reg-form-box">
+                         <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Guardar Producto</button>
+                    </div>
+                 </form>
+             </div>
+         </div>
+
+         <div class="register-login-bar">
+ 
+         </div>
+
+
+    </main>
+
+
+    <%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>

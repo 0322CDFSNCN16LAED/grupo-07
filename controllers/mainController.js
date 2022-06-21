@@ -1,18 +1,14 @@
 
+
 const db = require("../data/db");
-const products = db.getproducts();
-const coments = db.getComents();
+const products = db.getProducts();
+const comments = db.getComments();
 
 
 
 const mainController = {
   home: function (req, res) {
-    
-    res.render("home",{ products:products});
-  },
-  productos: function (req, res) {
-    const index=products.findIndex(products=> products.id==req.params.id)
-    res.render("productos",{product:products[index]});
+    res.render("home",{ products:products });
   },
   register: function (req, res) {
     res.render("register")
@@ -33,7 +29,7 @@ const mainController = {
     res.render("crear-productos")
   },
   contacto: function (req,res){
-    res.render("contacto",{coments:coments});
+    res.render("contacto",{comments:comments});
   }
 };
 

@@ -20,51 +20,53 @@
              </div> 
          -->
  
-             <div class="form-box">
-                 <form class="register-form" action="/" method="get">
-                     <h2 class="reg-form-title">Creación productos</h2>
-                     <div class="reg-form-image">
+            <div class="form-box">
+                <form class="register-form" action="/productos" method="POST" enctype="multipart/form-data">
+                    <h2 class="reg-form-title">Crear producto</h2>
+                    <div class="reg-form-image">
                          <img>
-                     </div>
-                     <div class="reg-form-box">
-                         <input class="reg-inp" type="text" name="name" id="name" placeholder="Nombre del producto">
-                     </div>
-
-                     <div class="reg-form-box">
-                         <input class="reg-inp" type="text" name="feature-product" id="feature-product" placeholder="Caracteristicas">
-                     </div>
-
-                     <div class="reg-form-box">
-                         <label for="">Imagen del producto</label>
-                         <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto">
-                     </div>
-
-
-                     <div class="reg-form-box">
-                         <label for="">Categoría</label>
-                        <select class="reg-inp" name="category">
-                            <option value="tabla">Tablas</option>
-                            <option value="accesorio">Accesorio</option>
-                        </select>
-                     </div>
-
-                     <div class="reg-form-box">
-                        <input class="reg-inp" type="text-box" name="description" id="description" placeholder="Descripción">
+                    </div>
+                    <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="name" id="name" placeholder="Nombre del producto" required>
                     </div>
 
                     <div class="reg-form-box">
-                        <input class="reg-inp" type="text-box" name="price" id="price" placeholder="Precio">
+                        <input class="reg-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
                     </div>
-                
-                     <div class="reg-form-box">
-                         <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Enviar</button>
-                     </div>
-                     <div class="reg-form-box">
-                         <button class="reg-form-button" type="submit" value="Resetear" name="resetear">Resetear</button>
-                     </div>
+                    <div class="reg-form-box">
+                         <input class="reg-inp" type="text" name="feature-product" id="feature-product" placeholder="Caracteristicas">
+                    </div>
+                    <div class="reg-form-box">
+                    <input class="reg-inp" type="text" name="brand" id="brand" placeholder="Marca" required>
+                    </div>
+                    <div class="reg-form-box">
+                         <label for="image" class="form-label">Imagen</label>
+                         <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto">
+                    </div>
+                    <div class="reg-form-box">
+                        <label for="category" class="form-label">Categoría</label>
+                        <select class="reg-inp" name="category" id="category">
+                            <option value="Tablas de Surf">Tablas de Surf</option>
+                            <option value="Accesorios">Accesorios</option>
+                        </select>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="price" id="price" placeholder="Precio" required>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text-box" name="discount" id="discount" placeholder="Descuento" required>
+                    </div>                
+
+                    <div class="reg-form-box">
+                         <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Guardar Producto</button>
+                    </div>
+                    <div class="reg-form-box">
+                        <button class="reg-form-button" type="reset" value="Resetear" name="resetear">Resetear formulario</button>
+                    </div>
                  </form>
              </div>
          </div>
+
          <div class="register-login-bar">
  
          </div>
