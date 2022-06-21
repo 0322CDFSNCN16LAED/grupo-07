@@ -54,8 +54,26 @@
         </div>
         <div class="register-login-bar">
 
+
+
+
         </div>
     </main>
+
+<section class="coments_container">
+    <h2> Sus comentarios</h2>
+    <% coments.forEach(coments => { %> 
+  <div class="coments_box">
+
+    <p>Usuario: <%= coments.first_name %> </p>
+    <p>Asunto: <%= coments.issue %> </p>
+    <p>Comentario: <%= coments.coments %> </p>
+
+  </div>
+  <% }) %> 
+
+</section>
+
 <%- include ('./partials/footer') %> 
 </body>
 </html>

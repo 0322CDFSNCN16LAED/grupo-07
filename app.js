@@ -3,20 +3,32 @@ const express = require("express");
 
 const app = express();
 
+//const methodOverride = require('method-override');
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.urlencoded({ extended: false }));
+//app.use(methodOverride('_method'));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
+
+const mainRoutes = require('./routes/main-router');
+app.use('/', mainRoutes);
+
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log("Estamos corriendo en el puerto " + PORT);
 });
 
-app.use(express.static(path.join(__dirname, "public")));
 
 
-// rutas con ejsdos
 
-app.set("view engine", "ejs");
 
-const mainRoutes = require('./routes/main-router');
-app.use('/', mainRoutes);
+
+
 
 
 

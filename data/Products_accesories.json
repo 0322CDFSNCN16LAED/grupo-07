@@ -8,3 +8,9 @@
 {"id":8,"type":"Funda","description":"hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce","price":399.85,"discount":0,"category":"Accesorios","image":"Funda_8.jpg","mark":"Billabong","coments":"eget"},
 {"id":9,"type":"Funda","description":"et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut","price":3124.23,"discount":0,"category":"Accesorios","image":"Funda_9.jpg","mark":"Billabong","coments":"lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede"},
 {"id":10,"type":"Correa","description":"lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue","price":3844.74,"discount":4,"category":"Accesorios","image":"Correa_10.jpg","mark":"Quicksilver","coments":"luctus et ultrices posuere cubilia curae donec pharetra magna"}]
+
+
+
+
+
+// no se usassssssssssss esta agregado en el de productos

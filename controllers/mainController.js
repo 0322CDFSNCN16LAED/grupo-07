@@ -1,9 +1,18 @@
+
+const db = require("../data/db");
+const products = db.getproducts();
+const coments = db.getComents();
+
+
+
 const mainController = {
   home: function (req, res) {
-    res.render("home");
+    
+    res.render("home",{ products:products});
   },
   productos: function (req, res) {
-    res.render("productos")
+    const index=products.findIndex(products=> products.id==req.params.id)
+    res.render("productos",{product:products[index]});
   },
   register: function (req, res) {
     res.render("register")
@@ -24,17 +33,9 @@ const mainController = {
     res.render("crear-productos")
   },
   contacto: function (req,res){
-    res.render("contacto");
-  },
+    res.render("contacto",{coments:coments});
+  }
 };
 
 
 module.exports = mainController
-
-/// router.get('/', mainController.home);
-///router.get("/productos", mainController.productos);
-///router.get("/register", mainController.register);
-///router.get("/login", mainController.login);
-///router.get("/nosotros", mainController.nosotros);
-///router.get("/escuelas-de-surf", mainController.escuelas);
-///router.get("/carrito", mainController.carrito);

@@ -14,7 +14,7 @@
     <ul class="nav-section w-50  mb-8 flex">
         <li class="mx-10"><a href="/">Inicio</a></li>
         <li class="mx-10">/</li>
-        <li class="mx-10"><a href="/productos">Productos</a></li>
+        <li class="mx-10">Productos</a></li>
     </ul>
 </div>
 
@@ -27,30 +27,31 @@
 
     
     <article class="box-producto">
-          
+      
+        
         <div class="descripcion-productos">
 
         <div class="img-productos">
           
              <ul class="img-productos-mini">
-                <li><img src="/images/tablas/tabla1.jpg" alt="Tabla 1"></li>
-                <li><img src="/images/tablas/tabla1.jpg" alt="Tabla 1"></li>
-                <li><img src="/images/tablas/tabla1.jpg" alt="Tabla 1"></li>
-                <li><img src="/images/tablas/tabla1.jpg" alt="Tabla 1"></li>
+                <li><img src="<%= product.image %> " alt="Tabla 1"></li>
+                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
             </ul>
            
              <div class="img-productos-principal">
-            <img src="/images/tablas/tabla1.jpg" alt="Tabla 1">
+            <img src="<%= product.image %>" alt="Tabla 1">
             </div>
         </div>
         
         <div class="detalles-productos">
-                <p class="titulo-productos">Tabla de Surf </p>
-                 <p class="modelo-producto"> Malibu 9pies triwind</p>  
+                <p class="titulo-productos"><%= product.category %> </p>
+                 <p class="modelo-producto"> <%= product.type %></p>  
              
-                <p class="precio-productos">$10000   </p>
-                <p class="contado-productos">30% OFF en un pago $7000 </p>
-                <p class="cuotas-productos"> o 12 cuotas fijas de $1000 </p>
+                <p class="precio-productos">$ <%= product.price %>   </p>
+                <p class="contado-productos"><%= product.discount %>% OFF en un pago $ <%=Math.ceil(product.price*(100-product.discount)/100) %> </p>
+                <p class="cuotas-productos"> o 12 cuotas fijas de $ <%= Math.ceil(product.price/12) %> </p>
                 
                 <p class="text-center boton-compra-container"><a class="boton-comprar" href="/"> Comprar </a></p>
                 <p><a class="agregar-carrito fas fa-shopping-cart" href="/"> Agregar al carrito</a></p>
@@ -65,29 +66,26 @@
             </div>    
 
         </div>
-        <div class="container-caract-productos">       
+        <% if(product.category=="Tablas de surf") { %>
+        <div class="container-caract-productos">
+                    
             <p class="caract-productos">Caracteristicas </p>
             <ul class="lista-caracteristicas">                
-                <li>Marca: reef</li>
-                <li>Largo: 7 feet</li>
-                <li>Ancho: 2 feet</li>
-                <li>grosor: 1 pulgada</li>
-                <li>volumen: 5 litros</li>
-                <li>Tipo: Mini Malibu </li>
-                <li>Material: Fibra </li>
-                <li>Quillas: TRIN FIN O THRUSTER </li>
+                <li>Marca: <%= product.Mark %></li>
+                <li>Largo: <%= product.long %> pies</li>
+                <li>Nivel de experiencia: <%= product.expertice %></li>
+                <li>Espesor: <%= product.thickness %> pulgadas</li>
+                <li>Volumen: <%= product.volume %> litros</li>
+                <li>Tipo: <%= product.type %></li>
+                <li>Material: <%= product.material %></li>
+                <li>Quillas: <%= product.keels %></li>
             </ul>
         </div>
-       
+        <% } %>
         <section class="descripcion-general">
         <div class="texto-descripcion">
              <h2>Descripcion :</h2>
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quasi quos placeat 
-             quisquam error adipisci atque unde sint esse suscipit accusamus,
-              consequuntur magnam totam minima numquam quidem architecto, tenetur animi.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus doloribus p
-              rovident sed, possimus earum est, aperiam eius animi perferendis c
-              onsectetur dolores a commodi, nisi fugit? Quis voluptatem quasi reiciendis amet?
+             <%= product.description %>
         </div>
      </section>
             
