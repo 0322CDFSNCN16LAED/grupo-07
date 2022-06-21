@@ -24,7 +24,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 >Hola, mi nombre es Ruben Tomasella, soy de la ciudad de Goya, Corrientes Argentina,  estudié Ing Electronica en Capital Federal y tengo 37 años. Estoy tomando el curso para expandir mi conocimiento en el área de programación y trabajar en ello. Me interesa mucho la opción de trabajar virtual que ofrece la programación y además de su amplia oferta laboral.
 
 ### Agustín Benitez:
->Hola! Soy Agustín Benitez, soy de Colegiales, Ciudad de Buenos Aires - soy Lic. en Recursos Humanos y tengo 32 años. Previamente abandoné la carrera de sistemas, estudiar programación es un pendiente que tenía en la vida y, en este momento, una oportunidad para cambiar de rubro laboral. Además soy DJ de música electrónica y un apasionado por la fotografía.
+>Hola! Soy Agustín Benitez, soy de Colegiales, Ciudad de Buenos Aires - soy Lic. en Recursos Humanos y tengo 33 años. Previamente abandoné la carrera de sistemas, estudiar programación es un pendiente que tenía en la vida y, en este momento, una oportunidad para cambiar de rubro laboral. Además soy DJ de música electrónica y un apasionado por la fotografía.
  
 ### Delfina Callegari:
 >Hola, me llamo Delfina Callegari y tengo 19 años. Vivo en Tigre, Buenos Aires y estudió Administración. Me encanta aprender cosas nuevas y estar en constante movimiento. Considero la programación como un idioma fundamental para la sociedad en la que vivimos y nos espera.
