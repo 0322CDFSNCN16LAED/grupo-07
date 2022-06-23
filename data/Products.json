@@ -206,5 +206,15 @@
         "category": "Accesorios",
         "image": "/images/Accesorios/Funda_8.jpg",
         "brand": "Billabong"
+    },
+    {
+        "type": "table",
+        "description": "linda",
+        "brand": "reef",
+        "category": "Accesorios",
+        "price": "5000",
+        "discount": "10",
+        "image": "/images/Accesorios/producto1656020256874.jpg",
+        "id": 17
     }
 ]

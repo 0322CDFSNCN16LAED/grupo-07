@@ -19,26 +19,25 @@ const productsController = {
         res.render("productos", { product: products[index] });
     },
     store: (req,res) => {
+        const newProduct = req.body;
         if(req.file) {
-            const newProduct = req.body;
-            newProduct.image = req.file.filename;
+            newProduct.image = "/images/" + newProduct.category + "/"+ req.file.filename ;
+        } else { newProduct.image ="/images/default-image.png";}
 
-            if (products.length) {
-                newProduct.id = products[products.length - 1].id + 1;
-            } else {
+        if (products.length) {
+                newProduct.id = products[products.length-1].id + 1;
+        } else {
             newProduct.id = 1;
-            }
+        }
+        
             //newProduct.image = "/images/Accesorios/default.png"; // si no hubiera multer
 
-            products.push(newProduct);
+        products.push(newProduct);
 
-            db.saveProducts(products);
+        db.saveProducts(products);
 
-            res.redirect("/");
-        } else {
-            res.render("crear-productos");
-        };
-
+        res.redirect("/productos/" + newProduct.id);
+            
     },
     edit: (req,res) => {
         let id = req.params.id;
