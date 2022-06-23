@@ -43,3 +43,23 @@
 ## Dejar de hacer:
 - Dejar para último momento las tareas asignadas.
 - No comunicarnos con frecuencia.
+
+
+# Retrospectiva Sprint 3
+
+## Comenzar a hacer: 
+- Establecer nuevas pautas ante cada nuevo sprint para coordinar el trabajo a realizar sin modificar el trabajo de otro compañero y lograr una división de tareas eficiente.
+
+## Hacer más:
+- Realizar propuestas con mayor frecuencia para la mejora del proyecto.
+- Mantener el ritmo de trabajo en cada sprint para llegar con el tiempo.
+
+## Continuar haciendo:
+- Trabajo en equipo: proponer, debatir y lograr ponerse de acuerdo en decisiones atinentes al proyecto y la división de las tareas.
+- Mantener la comunicación de manera fluída ante cada desafío que se propone en los sprints.
+
+## Hacer menos:
+- Pensar funcionalidades que todavía no tenemos claras del todo que puedan llegar a demorar el trabajo requerido.
+
+## Dejar de hacer:
+- Dejar para último momento las tareas asignadas.
