@@ -4,10 +4,17 @@ const router = express.Router();
 const multer = require('multer');
 
 const productsController = require('../controllers/productsController');
+const { notStrictEqual } = require('assert');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
-        let carpetaDestino = path.join(__dirname,"../public/images/accesorios/")
+        let carpetaDestino;
+        if(req.body.category=="Tablas de surf"){
+            carpetaDestino = path.join(__dirname,"../public/images/Tablas-de-surf/");
+          }else {
+            carpetaDestino = path.join(__dirname,"../public/images/Accesorios/");
+         }
+       
         cb(null,carpetaDestino);
     },
     filename: (req, file, cb)=> {
@@ -22,8 +29,8 @@ const upload = multer({ storage });
 router.get("/", productsController.index)
 
 ///2. /products/create (GET)
-router.get("/create", productsController.create); 
-
+router.get("/create-accesories", productsController.createAccesories); 
+router.get("/create-tables", productsController.createTables); 
 ///3. /products/:id (GET)
 router.get("/:id", productsController.detail);
 
@@ -37,6 +44,6 @@ router.get("/:id/edit/", productsController.edit);
 router.put("/:id", upload.single("image"), productsController.update);
 
 ///7. /products/:id (DELETE)
-router.delete('/:id', productsController.destroy);
+router.delete('/:id/destroy/', productsController.destroy);
 
 module.exports = router;

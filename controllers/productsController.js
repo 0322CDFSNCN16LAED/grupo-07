@@ -9,8 +9,11 @@ const productsController = {
             products: products,
         });
     },
-    create: (req, res) => {
-        res.render("crear-productos");
+    createAccesories: (req, res) => {
+        res.render("crear-productos-accesories");
+    },
+    createTables: (req, res) => {
+        res.render("crear-productos-tables");
     },
     detail: function (req, res) {
         const index = products.findIndex(
@@ -21,8 +24,17 @@ const productsController = {
     store: (req,res) => {
         const newProduct = req.body;
         if(req.file) {
-            newProduct.image = "/images/" + newProduct.category + "/"+ req.file.filename ;
-        } else { newProduct.image ="/images/default-image.png";}
+            if(newProduct.category=="Tablas de surf"){
+              newProduct.image = "/images/Tablas-de-surf/"+ req.file.filename ;
+            }else {newProduct.image = "/images/Accesorios/"+ req.file.filename ;
+             }
+        } else { 
+            if(newProduct.keels){
+                newProduct.category = "Tablas de surf";
+              }else {
+                     newProduct.category = "Accesorios";}
+            newProduct.image ="/images/default-image.png";
+                }
 
         if (products.length) {
                 newProduct.id = products[products.length-1].id + 1;
@@ -30,8 +42,6 @@ const productsController = {
             newProduct.id = 1;
         }
         
-            //newProduct.image = "/images/Accesorios/default.png"; // si no hubiera multer
-
         products.push(newProduct);
 
         db.saveProducts(products);
@@ -70,10 +80,17 @@ const productsController = {
         res.redirect("/");
     },
     destroy: (req, res) => {
-        const filterProducts = products.filter((prod)=>{
-            return prod.id != req.params.id;
-        });
-        db.saveProducts(filterProducts);
+
+        const index = products.findIndex((p) => p.id == req.params.id);
+         
+        if(products[index].image != 'default-image.png')
+        {
+          fs.unlinkSync( path.join(__dirname,'../public/'+ products[index].image));
+        }
+
+        products.splice(index,1);  
+
+        db.saveProducts(products);
 
         res.redirect('/');
     }

@@ -22,10 +22,11 @@
  
             <div class="form-box">
                 <form class="register-form" action="/productos" method="POST" enctype="multipart/form-data">
-                    <h2 class="reg-form-title">Crear producto</h2>
+                    <h2 class="reg-form-title">Crear Tabla</h2>
                     <div class="reg-form-image">
                          <img>
                     </div>
+                    <input type="hidden" value="Tablas de surf" name="category">
                     <div class="reg-form-box">
                          <input class="reg-inp" type="text" name="type" id="type" placeholder="Nombre del producto" required>
                     </div>
@@ -34,18 +35,36 @@
                         <input class="reg-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
                     </div>
                     <div class="reg-form-box">
-                    <input class="reg-inp" type="text" name="brand" id="brand" placeholder="Marca" required>
+                        <input class="reg-inp" type="text" name="brand" id="brand" placeholder="Marca" required>
                     </div>
+                    
                     <div class="reg-form-box">
-                         <label for="image" class="form-label">Imagen</label>
-                         <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto">
+                        <label for="image" class="form-label">Imagen</label>
+                        <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto">
                     </div>
+                    
                     <div class="reg-form-box">
-                        <label for="category" class="form-label">Categoría</label>
-                        <select class="reg-inp" name="category" id="category">
-                            <option value="Tablas de Surf">Tablas de Surf</option>
-                            <option value="Accesorios">Accesorios</option>
+                        <label for="expertice" class="form-label">Nivel de Experiencia</label>
+                        <select class="reg-inp" name="expertice" id="expertice">
+                            <option value="Principiante">Principiante</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Profesional">Profesional</option>
                         </select>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="number" name="long" id="long" placeholder="Largo" required>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="number" name="thickness" id="thickness" placeholder="Espesor" required>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="number" name="volume" id="volume" placeholder="Volumen" required>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="material" id="material" placeholder="Material de fabricacion" required>
+                    </div>
+                    <div class="reg-form-box">
+                        <input class="reg-inp" type="text" name="keels" id="keels" placeholder=" Quillas" required>
                     </div>
                     <div class="reg-form-box">
                         <input class="reg-inp" type="text-box" name="price" id="price" placeholder="Precio" required>
