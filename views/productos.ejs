@@ -19,7 +19,7 @@
 </div>
 
 <div class="banner-producto">
-    <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf">
+    <img src="/images/img-surf/banner-producto.jpg" alt="Imagen surf">
     <div><h2>Productos</h2></div>
 </div>    
 
@@ -33,16 +33,16 @@
 
         <div class="img-productos">
           
-             <ul class="img-productos-mini">
-                <li><img src="<%= product.image %> " alt="Tabla 1"></li>
-                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
-                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
-                <li><img src="<%= product.image %>" alt="Tabla 1"></li>
-            </ul>
-           
-             <div class="img-productos-principal">
-            <img src="<%= product.image %>" alt="Tabla 1">
+            
+            <div class="img-productos-principal">
+                <img src="<%= product.image %>" alt="Tabla 1">
             </div>
+            <ul class="img-productos-mini">
+               <li><img src="<%= product.image %> " alt="Tabla 1"></li>
+               <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+               <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+               <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+           </ul>
         </div>
         
         <div class="detalles-productos">
@@ -53,9 +53,9 @@
                 <p class="contado-productos"><%= product.discount %>% OFF en un pago $ <%=Math.ceil(product.price*(100-product.discount)/100) %> </p>
                 <p class="cuotas-productos"> o 12 cuotas fijas de $ <%= Math.ceil(product.price/12) %> </p>
                 
-                <p class="text-center boton-compra-container"><a class="boton-comprar" href="/"> Comprar </a></p>
+                <p class="text-center boton-comprar-container"><a class="boton-comprar" href="/"> Comprar </a></p>
                 <p><a class="agregar-carrito fas fa-shopping-cart" href="/"> Agregar al carrito</a></p>
-                <p><a class="boton-edit" href="/productos/<%=product.id %>/edit "> Editar producto</a></p>
+                <p class="text-center boton-edit-container"><a class="boton-edit" href="/productos/<%=product.id %>/edit ">EDITAR PRODUCTO</a></p>
                
                 <div class="medios-pagos"> 
                    <h2 >Medios de pago</h2> 
@@ -65,7 +65,7 @@
                     <i class="fas fa-money-bill-wave">  Efectivo/transferencia</i></p>
                 </div>
                 <form class="destroy-form" action="/productos/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
-                    <p><input class="boton-destroy" type="submit" > Eliminar producto</a></p>
+                    <p class="boton-delete-container text-center"><button type="submit" class=" boton-delete" >ELIMINAR PRODUCTO</button>
                 </form>
             </div>    
 
@@ -96,107 +96,25 @@
     </article>
     <section class="flex fx-wrap mt-16 fx-align-center tablas-relacionadas">
     
-        <h2 class="font-heading mb-8 w-100 text-left ">Productos Relacionados</h2>
+        <h2 class="font-heading mb-8 w-100 text-left ">Productos Relacionados </h2>
+
+        <% products.forEach(products => 
+        {if(products.category ==product.category && products.type ==product.type && products.id!=product.id ) {%> 
+          <div class="w-50 w-desktop-25 p-8">
+                <article class="product mb-8 bg-light-blue" id="1">
+                    <a href="/productos/<%= products.id %>"><img class="w-100" src="<%= products.image %>" alt="Imagen de la tabla"/></a>
+                    <div class="h-27 flex fx-wrap fx-align-center">
+                        <h3 class="font-medium product-title w-100 text-center"><%= products.type %> </h3>
+                        <p class="font-large w-50 text-center">$ <%= products.price %> </p>
+                        <p class="font-medium w-50 text-center"><%= products.discount %> % OFF</p>
+
+                    </div>
+                   
+                </article>
+            </div>
+            <% }}) %>
         
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Tablas-de-surf/tabla1.jpg" alt="Tabla de surf"/></a>
-                <div class="flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Tabla de surf</h3>
-                    <p class="font-large w-50 text-center">$6.770</p>
-                    <p class="font-medium w-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Tablas-de-surf/tabla-7.png" alt="Tabla de madera"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Tabla de madera</h3>
-                    <p class="font-medium fx-grow-50 text-center">$6.770</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Tablas-de-surf/tabla-1.jpeg" alt="Tabla surf Olaian"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Tabla Surf 7' Evolutiva Olain</h3>
-                    <p class="font-medium fx-grow-50 text-center">$30.000</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive" >
-                <a href="/productos"><img class="w-100" src="/images/Tablas-de-surf/tabla-2.jpg" alt="Tabla de surf"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Tabla Malibú  Olaian 500 7'8</h3>
-                    <p class="font-medium fx-grow-50 text-center">$32.770</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-
     </section>
-
-    <section class="flex fx-wrap mt-16 fx-align-center accesorios-relacionados">
-    
-        <h2 class="font-heading mb-8 w-100 text-left ">Accesorios Relacionados</h2>
-        
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Accesorios/correa.jpg" alt="Correa de sujeción"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Correa de sujeción</h3>
-                    <p class="font-medium fx-grow-50 text-center">$6.770</p>
-                    <p class="font-medium fx-grow-50 text-cente">40% OFF</p>
-                    
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Accesorios/funda.jpg" alt="Funda de tabla"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Funda de tabla</h3>
-                    <p class="font-medium fx-grow-50 text-center">$6.770</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                    
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Accesorios/parafina.jpg" alt="Parafina en barra"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Parafina en barra</h3>
-                    <p class="font-medium fx-grow-50 text-center">$6.770</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-
-        <div class="w-50 w-desktop-25 p-8">
-            <article class="product mb-8 bg-olive">
-                <a href="/productos"><img class="w-100" src="/images/Accesorios/quilla.jpg" alt="Juego de quillas"/></a>
-                <div class="p-8 b-top-1 flex fx-wrap fx-align-center">
-                    <h3 class="font-medium product-title w-100 text-center">Juego de quillas</h3>
-                    <p class="font-medium fx-grow-50 text-center">$6.770</p>
-                    <p class="font-medium fx-grow-50 text-center">40% OFF</p>
-                </div>
-            </article>
-        </div>
-        </section>
-
-    </section>
-
    
 <%- include ('./partials/footer') %> 
 

@@ -5,10 +5,17 @@
 
     .descripcion-productos {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
+        justify-content: center;
+        margin: 20px ;
+       
+        
     }
+    .img-productos{
+        width: 100%;
+        
+    }
+
+  
 
     /* Nosotros */
     .section-nosotros{

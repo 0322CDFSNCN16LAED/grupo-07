@@ -19,7 +19,7 @@ const productsController = {
         const index = products.findIndex(
         (products) => products.id == req.params.id
         );
-        res.render("productos", { product: products[index] });
+        res.render("productos", { product: products[index],products:products });
     },
     store: (req,res) => {
         const newProduct = req.body;
@@ -83,7 +83,7 @@ const productsController = {
 
         const index = products.findIndex((p) => p.id == req.params.id);
          
-        if(products[index].image != 'default-image.png')
+        if(products[index].image != '/images/default-image.png')
         {
           fs.unlinkSync( path.join(__dirname,'../public/'+ products[index].image));
         }
@@ -92,7 +92,7 @@ const productsController = {
 
         db.saveProducts(products);
 
-        res.redirect('/');
+        res.redirect("/");
     }
 };
 
