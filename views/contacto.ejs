@@ -14,17 +14,17 @@
  
 
             <div class="form-box">
-                <form class="register-form" action="/" method="get">
+                <form class="register-form" action="/" method="POST">
                     <h2 class="reg-form-title">Contactanos</h2>
                     <div class="reg-form-image">
                         <img>
                     </div>
                     <section class="first-section">
                     <div class="reg-form-box">
-                        <input class="reg-inp" type="text" name="first-name" id="nombre" required placeholder="Nombre">
+                        <input class="reg-inp" type="text" name="first_name" id="first_name" required placeholder="Nombre">
                     </div>
                     <div class="reg-form-box">
-                        <input class="reg-inp" type="text" name="last-name" id="apellido" required placeholder="Apellido">
+                        <input class="reg-inp" type="text" name="last_name" id="last_name" required placeholder="Apellido">
                     </div>
                     </section>
                     <section class="second-section ">
@@ -32,19 +32,19 @@
                         <input class="reg-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
                     </div>
                     <div class="reg-form-box">
-                        <input class="reg-inp" type="tel" name="tel" id="telefono" placeholder="Telefono">
+                        <input class="reg-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
                     </div>
                     </section>
                     <div class="reg-inp reg-form-date-select asunto " >
-                        <input class="reg-inp" type="asunto" name="asunto" id="Asunto" placeholder="Asunto">
+                        <input class="reg-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
                     </div>
                     <div class="reg-inp reg-form-date-select comments">
-                        <textarea class="reg-inp reg-form-date-select" name="comentario" required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea> 
+                        <textarea class="reg-inp reg-form-date-select" name="comments" id="comments"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea> 
                                      
                     </div>
                     
                     <div class="reg-form-box">
-                        <button class="reg-form-button" type="submit" value="Enviar" name="enviar">Enviar</button>
+                        <button class="reg-form-button" type="submit">Enviar</button>
                     </div>
                     <div class="reg-form-box">
                         <button class="reg-form-button" type="reset" value="Resetear" name="resetear">Resetear</button>
