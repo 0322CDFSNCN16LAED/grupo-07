@@ -34,14 +34,13 @@ const mainController = {
   },
   storecoment: function (req,res){
     const newComent=req.body;
-    console.log(req.body);
+    
     if (comments.length) {
       newComent.id = comments[comments.length-1].id + 1; 
         } else {
           newComent.id = 1;
         }
-        console.log(newComent);
-        comments.push(newComent);
+        comments.unshift(newComent);
 
         db.saveComments(comments);
 

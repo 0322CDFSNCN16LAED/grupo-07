@@ -10,8 +10,8 @@ const { notStrictEqual } = require('assert');
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
         let carpetaDestino;
-     
         carpetaDestino = path.join(__dirname,"../data/usersimages/");
+        console.log(carpetaDestino)
         cb(null,carpetaDestino);
     },
     filename: (req, file, cb)=> {

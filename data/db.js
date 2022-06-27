@@ -25,5 +25,11 @@ module.exports = {
     getUsers: function () {
         return JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
     },
+    saveUsers: function (users) {
+        const fileTxt = JSON.stringify(users, null, 4);
+        
+        fs.writeFileSync(usersFilePath, fileTxt);
+    },
+
 
 };

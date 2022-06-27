@@ -34,6 +34,7 @@
                     <div class="reg-form-box">
                         <input class="reg-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
                     </div>
+                    <input type="hidden" value= <%= date = new Date().toLocaleDateString() %> name="date">
                     </section>
                     <div class="reg-inp reg-form-date-select asunto " >
                         <input class="reg-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
@@ -67,6 +68,7 @@
 
     <p>Usuario: <%= comments.first_name %> </p>
     <p>Asunto: <%= comments.issue %> </p>
+    <p>Fecha: <%= comments.date %> </p>
     <p>Comentario: <%= comments.comments %> </p>
 
   </div>
