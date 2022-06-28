@@ -9,6 +9,7 @@ const { notStrictEqual } = require('assert');
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
         let carpetaDestino;
+        console.log(req.body);
         if(req.body.category=="Tablas de surf"){
             carpetaDestino = path.join(__dirname,"../public/images/Tablas-de-surf/");
           }else {
@@ -41,7 +42,7 @@ router.post("/", upload.single('image'), productsController.store);
 router.get("/:id/edit/", productsController.edit);
 
 ////6. /products/:id (PUT)
-router.put("/:id", upload.single("image"), productsController.update);
+router.put("/:id/edit/", upload.single("image"), productsController.update);
 
 ///7. /products/:id (DELETE)
 router.delete('/:id/destroy/', productsController.destroy);

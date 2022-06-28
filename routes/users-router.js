@@ -11,20 +11,19 @@ const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
         let carpetaDestino;
         carpetaDestino = path.join(__dirname,"../data/usersimages/");
-        console.log(carpetaDestino)
         cb(null,carpetaDestino);
-    },
+                                 },
     filename: (req, file, cb)=> {
         let nombreImagen = "usuario" + Date.now() + path.extname(file.originalname)
         cb(null, nombreImagen)
-    }
+                                 }
 });
 
 const upload = multer({ storage });
 
 ///1. /users/login (GET)
 router.get("/login", usersController.loginUser)
-router.post("/login", usersController.detailUser)
+router.post("/login", usersController.checkUser)
 
 ///2. /users/register (GET)
 router.get("/register", usersController.createUser); 
@@ -38,5 +37,8 @@ router.put("/:id", upload.single("image"), usersController.updateUser);
 
 ///5. /products/:id (DELETE)
 router.delete('/:id/destroy/', usersController.destroyUser);
+
+
+router.get("/detail", usersController.detailUser)
 
 module.exports = router;

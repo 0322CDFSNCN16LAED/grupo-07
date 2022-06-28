@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const db = require("../data/db");
+const bcrypt = require ('bcrypt')
 
 const users = db.getUsers();
 
@@ -8,15 +9,22 @@ const usersController = {
     loginUser: (req, res) => {
         res.render("login");
     },
-    detailUser: (req, res) => {
-        res.render("user-detail");
+    checkUser: (req, res) => {
+       //Verificar usuario del login
     },
+    detailUser: (req, res) => {
+    //detalle del usuario
+        res.render("user-detail"); // pagina sin hacer
+    },
+    //vista del registro
     createUser: (req, res) => {
         res.render("register");
     },
     /// guardo usuario
     storeUser: (req, res) => {
         const newUser=req.body;
+        newUser.category= "user";
+        newUser.password=bcrypt.hashSync(newUser.password,10);
         if(req.file) { 
            newUser.image = "/data/usersimages/"+ req.file.filename ;
         } else { 

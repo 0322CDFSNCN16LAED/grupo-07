@@ -50,8 +50,10 @@ const productsController = {
             
     },
     edit: (req,res) => {
+        const products = db.getProducts();
+
         let id = req.params.id;
-        let productToEdit = products.find((product) => product.id == id);
+        let productToEdit = products.find((products) => products.id == id);
 
         res.render("editar-productos", {
             productToEdit: productToEdit
@@ -60,25 +62,27 @@ const productsController = {
     update: (req, res) => {
         const productIndex = products.findIndex((p)=> p.id == req.params.id);
 
-        const product = products[productIndex];
+        const productToEdit = req.body;
+        
+        if(req.file) {
+         //   fs.unlinkSync(path.join(__dirname,"../public", products[productIndex].image));
 
-        product.name = req.body.name;
-        product.description = req.body.description;
-        product.category = req.body.category;
-        product.brand = req.body.brand;
-        product.price = req.body.price;
-        product.discount = req.body.discount;
+            if(productToEdit.category=="Tablas de surf"){
+                productToEdit.image = "/images/Tablas-de-surf/"+ req.file.filename ;
+            }else {
+                productToEdit.image = "/images/Accesorios/"+ req.file.filename ;
+             }
+            } else{  productToEdit.image = products[productIndex].image; }
+                    
+        productToEdit.id= products[productIndex].id;
 
-        if (req.file) {
-            const absoluteRoute = path.join(__dirname,"../../public/images/Accesorios/",product.image);
-            fs.unlinkSync(absoluteRoute);
-            product.image = req.file.filename;
-        }
-
+        products[productIndex]= productToEdit;
+    
         db.saveProducts(products);
 
-        res.redirect("/");
+        res.redirect("/productos/" + products[productIndex].id);
     },
+    
     destroy: (req, res) => {
 
         const index = products.findIndex((p) => p.id == req.params.id);
