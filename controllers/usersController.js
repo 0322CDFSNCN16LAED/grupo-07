@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const db = require("../data/db");
-const bcrypt = require ('bcrypt')
+const bcrypt = require ('bcryptjs')
 
 const users = db.getUsers();
 

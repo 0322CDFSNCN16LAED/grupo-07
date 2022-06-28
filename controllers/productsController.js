@@ -61,11 +61,11 @@ const productsController = {
     },
     update: (req, res) => {
         const productIndex = products.findIndex((p)=> p.id == req.params.id);
-
+        
         const productToEdit = req.body;
         
         if(req.file) {
-         //   fs.unlinkSync(path.join(__dirname,"../public", products[productIndex].image));
+            fs.unlinkSync(path.join(__dirname,"../public", products[productIndex].image));
 
             if(productToEdit.category=="Tablas de surf"){
                 productToEdit.image = "/images/Tablas-de-surf/"+ req.file.filename ;

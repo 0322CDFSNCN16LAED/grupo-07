@@ -9,7 +9,6 @@ const { notStrictEqual } = require('assert');
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
         let carpetaDestino;
-        console.log(req.body);
         if(req.body.category=="Tablas de surf"){
             carpetaDestino = path.join(__dirname,"../public/images/Tablas-de-surf/");
           }else {

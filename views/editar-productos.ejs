@@ -57,41 +57,32 @@
                     <div class="reg-form-box">
                         <input class="reg-inp" type="text-box" name="discount" id="discount" placeholder="Descuento"  value="<%= productToEdit.discount %>">
                     </div>                
-                    <div>
-                    <label for="image" class="form-label">Cambiar Imagen:</label>
-                    </div>
-                    <div class="reg-form-box">
-                    <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto"  value="<%= productToEdit.image %>">
-                    </div>
-                    <div class=" edit-image"  >
-                    <img src="<%=productToEdit.image%>" alt="product_image">
-                    </div>
                     <% if(productToEdit.category=="Tablas de surf"){ %> 
-                    <input type="hidden" value="Tablas de surf" name="category" id="category">
-                    <div>
-                        <label for="category" class="form-label">Nivel de Experiencia:</label>
-                    </div>
-                    <div class="reg-form-box"></div>
+                        <input type="hidden" value="Tablas de surf" name="category" id="category">
+                        <div>
+                            <label for="category" class="form-label">Nivel de Experiencia:</label>
+                        </div>
+                        <div class="reg-form-box"></div>
                         <select class="reg-inp" name="expertice" id="expertice">
                             <option value="Profesional" <% productToEdit.expertice=='Profesional'? "selected" :"" %> >Profesional</option>
                             <option value="Intermedio" <% productToEdit.expertice=='Intermedio'? "selected" :"" %>>Intermedio</option>
                             <option value="Principiante" <% productToEdit.expertice=='Principiante'? "selected" :"" %>>Principiante</option>
                         </select>
-                    <div>
+                        <div>
                             <label for="thickness" class="form-label">Espesor:</label>
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="number" step="0.1" name="thickness" id="thickness" placeholder="Espesor"  value="<%= productToEdit.thickness %>">
-                    </div>   
-                    <div>
-                        <label for="long" class="form-label">Largo:</label>
-                    </div>
-                    <div class="reg-form-box">
-                       <input class="reg-inp" type="number" step="0.1" name="long" id="long" placeholder="Largo"  value="<%= productToEdit.long %>">
-                    </div> 
-                    <div>
-                        <label for="volume" class="form-label">Volumen:</label>
-                    </div>
+                        </div>
+                        <div class="reg-form-box">
+                            <input class="reg-inp" type="number" step="0.1" name="thickness" id="thickness" placeholder="Espesor"  value="<%= productToEdit.thickness %>">
+                        </div>   
+                        <div>
+                            <label for="long" class="form-label">Largo:</label>
+                        </div>
+                        <div class="reg-form-box">
+                            <input class="reg-inp" type="number" step="0.1" name="long" id="long" placeholder="Largo"  value="<%= productToEdit.long %>">
+                        </div> 
+                        <div>
+                            <label for="volume" class="form-label">Volumen:</label>
+                        </div>
                     <div class="reg-form-box">
                        <input class="reg-inp" type="number" step="0.1" name="volume" id="volume" placeholder="Volumen"  value="<%= productToEdit.volume %>">
                     </div> 
@@ -110,6 +101,15 @@
                     <% }else{  %>    
                      <input type="hidden" value="Accesorios" name="category" id="category"> 
                      <% } %> 
+                     <div>
+                        <label for="image" class="form-label">Cambiar Imagen:</label>
+                        </div>
+                        <div class="reg-form-box">
+                        <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto"  value="<%= productToEdit.image %>">
+                        </div>
+                        <div class=" edit-image"  >
+                        <img src="<%=productToEdit.image%>" alt="product_image">
+                        </div>
                     <div class="reg-form-box">
                          <button class="reg-form-button" type="submit" >Guardar Producto</button>
                     </div>
