@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const mainController = require("../controllers/mainController");
 const productsRouter = require("./products-router");
 const usersRouter = require("./users-router");
+
+const mainController = require("../controllers/mainController");
 
 router.get('/', mainController.home);
 

@@ -16,19 +16,32 @@
         
     <section class="form-login">
         <h3>Iniciar sesión</h3>
-        <p>Usuario</p>
-        
-        <input type="text" placeholder="Escriba su usuario" name="uname" required>
-        <p>Contraseña</p>
-        <input type="password" placeholder="Escriba su contraseña" name="psw" required>
-        
-        <button class="boton" type="submit">Ingresar</button>
 
-        <div>
-        <label class="recordarme">
-        <input class="boton2" type="checkbox" checked="checked" name="remember"> Recordarme
-        </label>
-        </div>
+        <% if (typeof errors != "undefined") { %>
+            <p>ERROR</p>
+            <ul>
+                <% for (let i = 0; i < errors.leght; i++){ %>
+                    <li>
+                        <%= errors[i].msg %> 
+                    </li>
+                <% } %> 
+            </ul>
+        <% } %> 
+        
+        <form class="register-form" action="/users/login" method="POST" enctype="multipart/form-data">
+            
+            <label for="">Usuario:</label>
+            <input type="text" placeholder="Escriba su usuario" name="firstName" required>
+            
+            <label for="">Contraseña:</label>
+            <input type="password" placeholder="Escriba su contraseña" name="password" required>
+            
+            <input type="submit" class="boton" value="Login">
+            
+            <input class="boton2" type="checkbox" checked="checked" name="remember"> Recordarme
+            
+        </form>
+        
         <p><a href="#">¿Olvidaste tu contraseña?</a></p>
         </div>
         

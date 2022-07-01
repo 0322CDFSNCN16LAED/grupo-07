@@ -1,52 +1,26 @@
 [
     {
-        "id": 1,
-        "firstName": "Sabina",
-        "lastName": "Tann",
-        "email": "stann0@nymag.com",
-        "password": "sTw3OzC3ljT",
+        "firstName": "Delfina",
+        "lastName": "Callegari",
+        "dni": "44677585",
+        "direction": "Bs As",
+        "email": "delfi@gmail.com",
+        "password": "$2a$10$DO36DLMjXEu9vUvV8lTAUeKfjR4Oaa.g1Df0GJ0QZH1.hsV3iSWI.",
+        "birthdate": "2022-06-06",
         "category": "user",
-        "image": "user_1.jpg",
-        "birthdate": "21/10/2002"
+        "image": "/data/usersimages/default-user.png",
+        "id": 1
     },
     {
-        "id": 2,
-        "firstName": "Katey",
-        "lastName": "Bernardot",
-        "email": "kbernardot1@netvibes.com",
-        "password": "uBNoIsIg9",
+        "firstName": "delfina",
+        "lastName": "callegari",
+        "dni": "12345678",
+        "direction": "Bs As",
+        "email": "delfi@gmai.com",
+        "password": "$2a$10$NvQPby/r8JREI.bCPPPkWesSFNQzRUDNkNoWnWXJKKP5Soer7V2om",
+        "birthdate": "2022-06-30",
         "category": "user",
-        "image": "user_2.jpg",
-        "birthdate": "19/06/1994"
-    },
-    {
-        "id": 3,
-        "firstName": "Vittoria",
-        "lastName": "Kenington",
-        "email": "vkenington2@tinypic.com",
-        "password": "nffco39v",
-        "category": "user",
-        "image": "user_3.jpg",
-        "birthdate": "09/06/1940"
-    },
-    {
-        "id": 4,
-        "firstName": "Kerry",
-        "lastName": "Kinch",
-        "email": "kkinch3@whitehouse.gov",
-        "password": "M54LYispk",
-        "category": "user",
-        "image": "user_4.jpg",
-        "birthdate": "17/07/2012"
-    },
-    {
-        "id": 5,
-        "firstName": "Jud",
-        "lastName": "Wither",
-        "email": "jwither4@webeden.co.uk",
-        "password": "tGzOJpEjQNk",
-        "category": "user",
-        "image": "user_5.jpg",
-        "birthdate": "20/09/1963"
+        "image": "/data/usersimages/default-user.png",
+        "id": 2
     }
 ]

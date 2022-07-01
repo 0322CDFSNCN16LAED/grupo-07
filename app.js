@@ -1,15 +1,14 @@
 const path = require("path");
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require("express-session")
 
 const app = express();
 
-
-
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(session({secret: "Mensaje secreto"}));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
