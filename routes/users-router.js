@@ -5,7 +5,6 @@ const multer = require('multer');
 
 const usersController = require("../controllers/usersController");
 
-const { notStrictEqual } = require('assert');
 const { check } = require('express-validator');
 
 const storage = multer.diskStorage({
@@ -24,9 +23,13 @@ const upload = multer({ storage });
 
 ///1. /users/login (GET)
 router.get("/login", usersController.loginUser)
-router.post("/login",[
+
+const validationResult = [
+    check("firstName").notEmpty().withMessage("Debes completar el nombre."),
     check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
-],usersController.processLogin);
+];
+
+router.post("/login", validationResult ,usersController.processLogin);
 
 ///2. /users/register (GET)
 router.get("/register", usersController.createUser); 

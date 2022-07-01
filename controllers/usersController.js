@@ -74,7 +74,7 @@ const usersController = {
             }
             
             req.session.usuarioLogueado = usuarioALogearse; 
-            res.render("success");
+            res.render("/");
             
             } else {
                 return res.render("login", {errors: errors.erros}); 
