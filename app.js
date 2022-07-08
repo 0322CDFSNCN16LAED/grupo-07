@@ -6,13 +6,10 @@ const cookieParser = require("cookie-parser")
 
 const app = express();
 
-const userLoggedMiddleware = require("./middlewares/user-logged-middleware");
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use(userLoggedMiddleware);
 app.use(session({
   secret: "Mensaje secreto",
   resave: false,

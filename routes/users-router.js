@@ -4,9 +4,6 @@ const router = express.Router();
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
 const {check} = require('express-validator');
-const guestMiddleware = require("../middlewares/guest-middleware");
-const authMiddleware = require("../middlewares/auth-middleware");
-
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
@@ -23,11 +20,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Register 
-router.get("/register", guestMiddleware, usersController.createUser); 
+router.get("/register", usersController.createUser); 
 router.post("/register", upload.single('image'), usersController.storeUser); 
 
 // Login 
-router.get("/login", guestMiddleware, usersController.loginUser)
+router.get("/login", usersController.loginUser)
 
 router.get("/login", function (req, res){
     if (req.session.numeroVisitas == undefined) {
