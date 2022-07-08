@@ -19,18 +19,18 @@ const productsController = {
         const index = products.findIndex(
         (products) => products.id == req.params.id
         );
-        res.render("productos", { product: products[index],products:products });
+        res.render("producto", { product: products[index],products:products });
     },
     store: (req,res) => {
         const newProduct = req.body;
         if(req.file) {
-            if(newProduct.category=="Tablas de surf"){
-              newProduct.image = "/images/Tablas-de-surf/"+ req.file.filename ;
+            if(newProduct.category=="tablas de surf"){
+              newProduct.image = "/images/tablas-de-surf/"+ req.file.filename ;
             }else {newProduct.image = "/images/Accesorios/"+ req.file.filename ;
              }
         } else { 
             if(newProduct.keels){
-                newProduct.category = "Tablas de surf";
+                newProduct.category = "tablas de surf";
               }else {
                      newProduct.category = "Accesorios";}
             newProduct.image ="/images/default-image.png";
@@ -67,8 +67,8 @@ const productsController = {
         if(req.file) {
             fs.unlinkSync(path.join(__dirname,"../public", products[productIndex].image));
 
-            if(productToEdit.category=="Tablas de surf"){
-                productToEdit.image = "/images/Tablas-de-surf/"+ req.file.filename ;
+            if(productToEdit.category=="tablas de surf"){
+                productToEdit.image = "/images/tablas-de-surf/"+ req.file.filename ;
             }else {
                 productToEdit.image = "/images/Accesorios/"+ req.file.filename ;
              }

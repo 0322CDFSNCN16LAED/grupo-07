@@ -23,15 +23,6 @@ a:link {
 .bg-white{
     background-color: white;
 }
-
-.font-green{
-    color: #c1dd50;
-}
-
-.bg-green{
-    background-color: #c1dd50
-}
-
 .font-yellow{
     color: #ECCF5C;
 }
@@ -39,7 +30,12 @@ a:link {
 .bg-yellow{
     background-color: #ECCF5C;
 }
-
+.font-orange{
+    color: orange;
+}
+.font-red{
+    color: red;
+}
 .font-blue{
     color: #122373;
 }
@@ -61,6 +57,9 @@ a:link {
 .bg-water-green{
     background-color: #0C7256;
 }
+.font-green{
+    color: #0C7256;
+}
 
 .bg-light-gray{
     background-color: lightgray
@@ -73,7 +72,9 @@ a:link {
 .bg-light-blue{
     background-color: #afe0fc;
 }
-
+.font-navy{
+    color: navy;
+}
 
 /* Font size */
 .font-heading {
@@ -138,255 +139,76 @@ a:link {
 
 }
 
-/* html productos */
-
-.banner-producto{
-    padding: 8px;
+/* Productos home*/
+.product{
+    margin-bottom: 8px;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.product div{
+    text-align: center;
+    width: 100%;
     position: relative;
     text-align: center;
-    color: white;
-}
-
-
-.banner-producto img{
-    width: 100%;
-}
-
-.banner-producto div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    color:black;
-}
-
-
-.container{
-    width: 90%;
-    margin:auto;
-    background-color: aliceblue;
-    margin-top: 20px;
-}
-
-.box-producto{
-    width: 100%;
-
-    background-color: white;
-}
-
-.descripcion-productos {
-    display:block;
-    padding: 40px;
-    text-align: center;
-
-}
-
-
-
-.img-productos{
-    
-    justify-content: center
-}
-
-.img-productos-mini{
-    margin: 0px;
-    padding: 5px;
-    width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
-
-
-.img-productos-mini li{
-list-style: none;
-margin: 0px ;
-padding: 0px;
-}
-.img-productos-mini img{
+.product div a{
     width: 100%;
-    border: solid lightseagreen 1px;
-    border-radius: 15%;
+}
+.product div img{
+    padding: 4px;
+    width: 100%;
+}
+.product-div-info p {
+    width: 50%;
+    margin: 0;
+    padding-bottom: 4px;
+}
+/* Banner envio */
+.banner-envio{
+    padding: 8px;
+    background-color: #afe0fc;
 }
 
-
-.img-productos-principal{
+.flex-control-nav{
     width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.flex-control-nav li{
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+}
+
+/* Productos header */
+
+.dropdown {
+    position: relative;
+    font-size: 16px;
     text-align: center;
 }
-.img-productos-principal img{
-    width: 100%;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    text-align: center;
 }
-
-
-.detalles-productos{
-    border: solid lightseagreen 1px;
-    padding: 0px 10px;
-    border-radius: 3%;
-}
-
-.titulo-productos{
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px 0px;
-}
-
-.modelo-producto{
-    font-size: 10px;
-    font-weight: bold;
-    margin: 10px 0px;
-    color: blue;
-
-}
-
-.caract-productos {
-    font-size: 30px;
-    font-weight: bold;
-
-}
-
-   
-.lista-caracteristicas li{
-    font-size: 20px;
-    list-style: none;
-}                  
-
-
-.detalles-productos ul li{
-    font-size: 20px;
-}
-
-.precio-productos{
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0px;
-}
-.contado-productos{
-    font-size: 10px;
-    color:green;
-    margin: 0px;
-}
-.cuotas-productos{
-    font-size: 10px;
-    color:blue;
-    margin: 0px;
-
-}
-
-.agregar-carrito{
-    font-size: 20px;
-    color: black; 
-    margin: 0px 10px;
-    
-}
-.boton-comprar-container{
-    border: solid black 2px;
-    border-radius: 3%; 
-    background-color: cyan;
-}
-
-.boton-comprar{
-    
-    font-weight: bold;
+.dropdown-content a {
+    padding: 10px;
+    margin-top: 8px;
     text-decoration: none;
-    color: black;
-    
-    font-size: 25px;
-    padding: 0px 10px;
-    width: 100%;
+    display: block;
 }
 
-.boton-edit-container{
-    border: solid black 2px;
-    border-radius: 3%; 
-    background-color: coral;
-}
-.boton-edit{
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-    
-    font-size: 15px;
-    padding: 0px 10px;
-    width: 100%;
-}
-
-.boton-delete-container{
-    border: solid black 2px;
-    border-radius: 3%; 
-    background-color: coral;
-}
-.boton-delete {
-    border: none;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 0px 10px;
-    width: 100%;
-    color: black;
-    background-color: rgb(179, 255, 0);
-
-}
-
-
-
-.container-caract-productos{
-    padding: 20px;
-
-}
-
-
-.descripcion-general{
- display:flex;
-
-
-}
-
-.texto-descripcion{
-    width: 100%;
-    font-size: 20px;
-    padding: 20px;
-
-}
-
-
-.medios-pagos{
-    padding: 0px 10px;
-    border-radius: 3%;
-
-}
-.medios-pagos h2 {
- font-size: 15px;
- color: blue;
- text-decoration:underline;
-}
-
-.medios-pagos i{
-   font-size: 15px;
-   color: blue;
-   font-weight: bold;
-}
-
-.tablas-relacionadas{
-
-    padding: 20px;
-}
-
-.accesorios-relacionados{
-    padding: 20px;
-
-}
-
-/* Edit Products*/
-.edit-image img{
-     width:20%;
-}
-
-
-
-/* Products*/
-.product img {
-    aspect-ratio: 4/4;
-}
-
+/**/
 /* Footer*/
 
 .footer-article li a {
@@ -396,16 +218,6 @@ padding: 0px;
 
 .footer-article li {
     list-style: none; /*saqué los dots*/
-}
-
-
-/* background for register.html */
-
-.reg-main {
-    background-image: url(/images/register/reg-background.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 
@@ -512,14 +324,20 @@ padding: 0px;
 }
 
 /* Nosotros */
+.section-nosotros{
+    width: 100%;
+}
 
 .img-nosotros{
+    text-align: center;
     padding: 8px;
     width: 100%;
 }
 
 .img-nosotros img{
     width: 100%;
+    text-align: center;
+    align-items: center;
 }
 
 .datos-nosotros{
@@ -593,8 +411,6 @@ html,body{
 
 footer{
     width:100%;
-    padding:50px 0px 5px;
-    /* background-image: url("/images/login/wave\ 2.svg"); */
     background-size: cover;
 }
     

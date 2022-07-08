@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const multer = require('multer');
-
 const usersController = require("../controllers/usersController");
+const {check} = require('express-validator');
+const guestMiddleware = require("../middlewares/guest-middleware");
+const authMiddleware = require("../middlewares/auth-middleware");
 
-const { check } = require('express-validator');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
@@ -21,30 +22,38 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-///1. /users/login (GET)
-router.get("/login", usersController.loginUser)
-
-const validationResult = [
-    check("firstName").notEmpty().withMessage("Debes completar el nombre."),
-    check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
-];
-
-router.post("/login", validationResult ,usersController.processLogin);
-
-///2. /users/register (GET)
-router.get("/register", usersController.createUser); 
+// Register 
+router.get("/register", guestMiddleware, usersController.createUser); 
 router.post("/register", upload.single('image'), usersController.storeUser); 
 
-///3. /users/:id/edit (GET)
+// Login 
+router.get("/login", guestMiddleware, usersController.loginUser)
+
+router.get("/login", function (req, res){
+    if (req.session.numeroVisitas == undefined) {
+        req.session.numeroVisitas = 0;
+    }
+
+    req.session.numeroVisitas++;
+})
+
+router.post("/login", [
+    check("email").notEmpty(),
+    check("password").notEmpty(),
+    check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
+], usersController.loginProcess);
+
+
+// /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);
 
-////4. /users/:id (PUT)
+// /users/:id (PUT)
 router.put("/:id", upload.single("image"), usersController.updateUser);
 
-///5. /users/:id (DELETE)
-router.delete('/:id/destroy/', usersController.destroyUser);
 
+// Profile
+router.get("/profile", usersController.detailUser);
 
-router.get("/detail", usersController.detailUser)
+router.get("/logout", usersController.logout);
 
 module.exports = router;

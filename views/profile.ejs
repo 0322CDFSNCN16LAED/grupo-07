@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+    <link rel = "stylesheet" href = "/css/profile.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
+    <link rel = "stylesheet" href = "/css/utils.css"/>
+</head>
+<body>
+
+<%- include ('./partials/header') %> 
+
+<main class="form-main p-desktop-45">
+
+    <div class="profile">
+
+        <h2 class="w-100 text-center">Perfil</h2>
+
+        <section class="flex fx-wrap p-desktop-15">
+
+            <% if (user) { %>
+
+            <article class="w-50">
+                <img class="w-100 p-8 p-desktop-25" src="/data/usersimages/" alt="Foto de perfil">
+            </article>
+
+            <article class="flex fx-wrap w-50 fx-align-center">
+                <ul class="no-style w-100">
+                    <li class="w-100 text-center p-8 p-desktop-15"><%= user.firstName %></li>
+                    <li class="w-100 text-center p-8 p-desktop-15"><%= user.lastName %></li>
+                    <li class="w-100 text-center p-8 p-desktop-15"><%= user.email %></li>
+                    <li class="w-100 text-center p-8 p-desktop-15"><%= user.password %></li>
+                </ul>
+            </article>
+            
+            <h3 class="w-100 p-8 mb-0">Datos personales</h3>
+            <article class="flex fx-wrap w-100">
+                <ul class="no-style w-100">
+                    <li class="w-100 p-8"><%= user.dni %></li>
+                    <li class="w-100 p-8"><%= user.address %></li>
+                    <li class="w-100 p-8"><%= user.birthdate %></li>
+                </ul>
+
+            </article>
+            <% } %> 
+            <article class="w-100 flex">
+                <div class="reg-form-box ">
+                    <button class="form-button" type="submit">Editar perfil</button>
+                </div>
+                <div class="reg-form-box ">
+                    <button class="form-button" type="submit" action="/logout" method="POST">Cerrar perfil</button>
+                </div>
+                <div class="reg-form-box">
+                    <button class="form-button" type="reset" >Eliminar perfil</button>
+                </div>                           
+            </article>
+
+        </section>
+    </div>
+    </div>
+</main>
+<%- include ('./partials/footer') %> 
+</body>
+</html>

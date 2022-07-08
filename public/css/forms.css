@@ -1,0 +1,42 @@
+/* Main bg */
+.form-main {
+    background-image: url(/images/register/reg-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 10px;
+}
+
+/* Section */
+.section-form{
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+/* Form */
+.form {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+ /* Inputs */
+.form-inp {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+/* Buttons */
+.form-button {
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    width: 50%;
+    font-size: 16px;
+}
+

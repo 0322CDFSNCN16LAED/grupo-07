@@ -2,25 +2,25 @@
     {
         "firstName": "Delfina",
         "lastName": "Callegari",
-        "dni": "44677585",
-        "direction": "Bs As",
+        "dni": "12345678",
+        "address": "Tigre",
         "email": "delfi@gmail.com",
-        "password": "$2a$10$DO36DLMjXEu9vUvV8lTAUeKfjR4Oaa.g1Df0GJ0QZH1.hsV3iSWI.",
-        "birthdate": "2022-06-06",
+        "password": "$2a$10$CjxL7EAViqfnESeP4884o.a7jCTNvpzYuaBniXdL09MYNe9AFgkD6",
+        "birthdate": "2022-07-03",
         "category": "user",
         "image": "/data/usersimages/default-user.png",
         "id": 1
     },
     {
-        "firstName": "delfina",
-        "lastName": "callegari",
-        "dni": "12345678",
-        "direction": "Bs As",
-        "email": "delfi@gmai.com",
-        "password": "$2a$10$NvQPby/r8JREI.bCPPPkWesSFNQzRUDNkNoWnWXJKKP5Soer7V2om",
-        "birthdate": "2022-06-30",
+        "firstName": "delfi",
+        "lastName": "calle",
+        "email": "delfina@gmail.com",
+        "dni": "1234567",
+        "address": "Bs As",
+        "birthdate": "2022-05-18",
+        "password": "$2a$10$63u9nGkkaQByeG9LmAsc4evzqCIvOCG9G5cDLlv8Y9c.UxgFNG3Jm",
         "category": "user",
-        "image": "/data/usersimages/default-user.png",
+        "image": "/data/usersimages/usuario1657154401051.JPG",
         "id": 2
     }
 ]

@@ -3,51 +3,49 @@
 <html lang="en">
 <head>
 <%- include ('./partials/head') %> 
-<link rel = "stylesheet" href = "/css/register.css"/>
+<link rel = "stylesheet" href = "/css/forms.css"/>
 </head>
 
 <body class="bg-light-gray w-100">
 
     <%- include ('./partials/header') %> 
     
-    <main>
+    <main  class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
 
-<div class="log">
-        
-    <section class="form-login">
-        <h3>Iniciar sesión</h3>
+                <form class="form" action="/users/login" method="POST" enctype="multipart/form-data">
 
-        <% if (typeof errors != "undefined") { %>
-            <p>ERROR</p>
-            <ul>
-                <% for (let i = 0; i < errors.leght; i++){ %>
-                    <li>
-                        <%= errors[i].msg %> 
-                    </li>
-                <% } %> 
-            </ul>
-        <% } %> 
-        
-        <form class="register-form" action="/users/login" method="POST" enctype="multipart/form-data">
+                    <h2 class="w-100">Iniciar sesión</h2>
+    
+                    <div class="w-100 fx-align-center p-8" for="mail">
+                        <input class="form-inp" type="mail" placeholder="Correo electrónico" name="email" id="email" required>
+                    </div>
+                    
+                    <div class="w-100 fx-align-center p-8" for="password">
+                        <input class="form-inp" type="password" placeholder="Escriba su contraseña" name="password" id="password" required>
+                    </div>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Enviar</button>
+                    </div>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="reset" >Resetear</button>
+                    </div>
+                
+                </form>
             
-            <label for="">Usuario:</label>
-            <input type="text" placeholder="Escriba su usuario" name="firstName" required>
-            
-            <label for="">Contraseña:</label>
-            <input type="password" placeholder="Escriba su contraseña" name="password" required>
-            
-            <input type="submit" class="boton" value="Login">
-            
-            <input class="boton2" type="checkbox" checked="checked" name="remember"> Recordarme
-            
-        </form>
-        
-        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-        </div>
-        
+                <div class="w-100 fx-align-center p-8">
+                    <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                </div>
+    
+            </div>
+                        
+        </section>
 
-    </section>
-</div>
 
           
 </main>

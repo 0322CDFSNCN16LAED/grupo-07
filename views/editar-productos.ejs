@@ -3,124 +3,99 @@
 <html lang="en">
 <head>
 <%- include ('./partials/head') %> 
-<link rel = "stylesheet" href = "/css/register.css"/>
+<link rel = "stylesheet" href = "/css/forms.css"/>
 </head>
 
 <body class="bg-light-gray w-100">
 
     <%- include ('./partials/header') %> 
     
-    <main>
+    <main class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
 
-        <div class="">
-            <!--
-             <div class="fb-side-banner">
- 
-             <img  src="/public/images/register/reg-side-banner.jpg" alt="Register">
-             </div> 
-         -->
- 
-            <div class="form-box">
-                <form class="edit-form" action="/productos/<%= productToEdit.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <h2 class="reg-form-title">Editar producto: <%= productToEdit.type %> </h2>
-                    <div class="reg-form-image">
-                         <img>
-                    </div>
-                    <div>
-                    <label for="name" class="form-label">Nombre del producto:</label>
-                    </div>
-                    <div class="reg-form-box">
-                         <input class="reg-inp" type="text" name="type" id="type" placeholder="Nombre del producto" value="<%= productToEdit.type %>">
-                    </div>
-                    <div>
-                    <label for="description" class="form-label">Descripción:</label>
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="text-box" name="description" id="description" placeholder="Descripción" 
-                        value="<%= productToEdit.description %>">
-                    </div>
-                    <div>
-                     <label for="brand" class="form-label">Marca:</label>
-                     </div>
-                     <div class="reg-form-box">
-                     <input class="reg-inp" type="text" name="brand" id="brand" placeholder="Marca"  value="<%= productToEdit.brand %>">
-                    </div>
-                    <div>
-                        <label for="price" class="form-label">Precio:</label>
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="text-box" name="price" id="price" placeholder="Precio"  value="<%= productToEdit.price %>">
-                    </div>
-                     <div>
-                        <label for="discount" class="form-label">Descuento:</label>
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="text-box" name="discount" id="discount" placeholder="Descuento"  value="<%= productToEdit.discount %>">
-                    </div>                
-                    <% if(productToEdit.category=="Tablas de surf"){ %> 
-                        <input type="hidden" value="Tablas de surf" name="category" id="category">
-                        <div>
-                            <label for="category" class="form-label">Nivel de Experiencia:</label>
-                        </div>
-                        <div class="reg-form-box"></div>
-                        <select class="reg-inp" name="expertice" id="expertice">
-                            <option value="Profesional" <% productToEdit.expertice=='Profesional'? "selected" :"" %> >Profesional</option>
-                            <option value="Intermedio" <% productToEdit.expertice=='Intermedio'? "selected" :"" %>>Intermedio</option>
-                            <option value="Principiante" <% productToEdit.expertice=='Principiante'? "selected" :"" %>>Principiante</option>
-                        </select>
-                        <div>
-                            <label for="thickness" class="form-label">Espesor:</label>
-                        </div>
-                        <div class="reg-form-box">
-                            <input class="reg-inp" type="number" step="0.1" name="thickness" id="thickness" placeholder="Espesor"  value="<%= productToEdit.thickness %>">
-                        </div>   
-                        <div>
-                            <label for="long" class="form-label">Largo:</label>
-                        </div>
-                        <div class="reg-form-box">
-                            <input class="reg-inp" type="number" step="0.1" name="long" id="long" placeholder="Largo"  value="<%= productToEdit.long %>">
-                        </div> 
-                        <div>
-                            <label for="volume" class="form-label">Volumen:</label>
-                        </div>
-                    <div class="reg-form-box">
-                       <input class="reg-inp" type="number" step="0.1" name="volume" id="volume" placeholder="Volumen"  value="<%= productToEdit.volume %>">
-                    </div> 
-                    <div>
-                        <label for="material" class="form-label">Material de construccion:</label>
-                    </div>
-                    <div class="reg-form-box">
-                       <input class="reg-inp" type="text" name="material" id="material" placeholder="Material de construccion"  value="<%= productToEdit.material %>">
-                    </div>
-                    <div>
-                        <label for="keels" class="form-label">Quillas:</label>
-                    </div>
-                    <div class="reg-form-box">
-                       <input class="reg-inp" type="text" name="keels" id="keels" placeholder="Cantidad de quillas"  value="<%= productToEdit.keels %>">
-                    </div>        
-                    <% }else{  %>    
-                     <input type="hidden" value="Accesorios" name="category" id="category"> 
-                     <% } %> 
-                     <div>
-                        <label for="image" class="form-label">Cambiar Imagen:</label>
-                        </div>
-                        <div class="reg-form-box">
-                        <input class="reg-inp" type="file" name="image" id="image" placeholder="Imagen del producto"  value="<%= productToEdit.image %>">
-                        </div>
-                        <div class=" edit-image"  >
-                        <img src="<%=productToEdit.image%>" alt="product_image">
-                        </div>
-                    <div class="reg-form-box">
-                         <button class="reg-form-button" type="submit" >Guardar Producto</button>
-                    </div>
-                 </form>
-             </div>
-         </div>
+                <form class="form"  action="/productos/<%= productToEdit.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
-         <div class="register-login-bar">
- 
-         </div>
+                    <h2 class="w-100">Editar producto: <%= productToEdit.type %> </h2>
+                    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" value="<%= productToEdit.type %>">
+                    </div>
 
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" value="<%= productToEdit.description %>">
+                   </div>
+                   
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text" name="brand" id="brand" placeholder="Marca"  value="<%= productToEdit.brand %>">
+                   </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="price" id="price" placeholder="Precio"  value="<%= productToEdit.price %>">
+                   </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="discount" id="discount" placeholder="Descuento"  value="<%= productToEdit.discount %>">
+                   </div>
+                   
+                   <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="image" class="w-100">Cambiar Imagen del Producto: </label>
+                        <div class="w-100 p-8">
+                            <input type="file" name="image" id="image" placeholder="Imagen del producto">
+                        </div>
+                    </div>
+
+                    <% if(productToEdit.category=="Tablas de surf"){ %>
+
+                        <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                            <label for="expertice" class="w-100">Nivel de Experiencia: </label>
+                            <div class="w-100 p-8">
+                                <select name="expertice" id="expertice">
+                                    <option value="Profesional" <% productToEdit.expertice=='Profesional'? "selected" :"" %> >Profesional</option>
+                                    <option value="Intermedio" <% productToEdit.expertice=='Intermedio'? "selected" :"" %>>Intermedio</option>
+                                    <option value="Principiante" <% productToEdit.expertice=='Principiante'? "selected" :"" %>>Principiante</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" name="thickness" id="thickness" placeholder="Espesor" value="<%= productToEdit.thickness %>" required>
+                        </div>
+
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" step="0.1" name="long" id="long" placeholder="Largo"  value="<%= productToEdit.long %>">
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" name="volume" id="volume" placeholder="Volumen" value="<%= productToEdit.volume %>" required>
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="text" name="material" id="material" placeholder="Material de fabricacion" value="<%= productToEdit.material %>" required>
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="text" name="keels" id="keels" placeholder=" Quillas" value="<%= productToEdit.keels %>" required>
+                        </div>
+
+                    <% } %>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Guardar</button>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="reset" >Resetear</button>                    
+                    </div>
+                
+                </form>
+                
+            </div>
+
+                        
+        </section>
 
     </main>
 

@@ -1,0 +1,12 @@
+.profile{
+    padding: 8px;
+    margin: 0;
+    background-color: rgb(175, 224, 252, 0.8);
+    border-radius: 12px;
+}
+
+.no-style{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

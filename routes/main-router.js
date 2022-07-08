@@ -11,7 +11,7 @@ router.get('/', mainController.home);
 // router.get("/register", mainController.register);
 // router.get("/login", mainController.login);
 router.get("/nosotros", mainController.nosotros);
-router.get("/escuelas-de-surf", mainController.escuelas);
+router.get("/escuelas", mainController.escuelas);
 router.get("/carrito", mainController.carrito);
 
 router.get("/contacto", mainController.contacto);

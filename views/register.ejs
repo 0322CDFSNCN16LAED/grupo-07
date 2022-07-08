@@ -2,70 +2,83 @@
 <html lang="en">
 <head>
 <%- include ('./partials/head') %> 
-    <link rel = "stylesheet" href = "/css/register.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
 </head>
 <body>
 
 <%- include ('./partials/header') %> 
 
-    <main class="reg-main">
-        <div class="">
-           <!--
-            <div class="fb-side-banner">
+<main  class="form-main">
+        
+    <section class="section-form">
+        
+        <div class="bg-light-blue br-10">
 
-            <img  src="/public/images/register/reg-side-banner.jpg" alt="Register">
-            </div> 
-        -->
+            <form class="form" action="/users/register" method="POST" enctype="multipart/form-data">
 
-            <div class="form-box">
-                <form class="register-form" action="/users/register" method="POST" enctype="multipart/form-data">
-                    <h2 class="reg-form-title">Formulario de Registro</h2>
-                    <div class="reg-form-image">
-                        <img>
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="text" name="firstName" id="nombre" placeholder="Nombre">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="text" name="lastName" id="apellido" placeholder="Apellido">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="number" name="dni" id="dni" placeholder="Documento">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="text" name="direction" id="direction" placeholder="Direccion">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="mail" name="email" id="email" placeholder="Correo Electrónico">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" required type="password" name="password" id="password" placeholder="Contraseña">
-                    </div>
-                    <div class="reg-inp reg-form-date-select">
-                        <input class="reg-inp" required type="date" name="birthdate" id="nacimiento">
-                    </div>
+                <h2 class="w-100">Registrate</h2>
+                
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="text" name="firstName" id="firstName" placeholder="Nombre">
+                </div>
 
-                    <div class="reg-form-box">
-                        <label for="image" class="form-label">Imagen de Perfil</label>
-                        <input class="reg-inp" type="file" name="image" id="image">
-                   </div>
-                    <div class="reg-form-box">
-                        <input type="checkbox" required>
-                        <label for="checkpoint">Al continuar, doy fe de entender y aceptar la política de privacidad, los términos y condiciones y los términos de uso del sitio web. Al clickear “únete ahora” reconozco aceptar formar parte del programa de beneficios de Take off Surf y recibir ofertas exclusivas en mi correo electrónico. Puede desuscibirse en cualquier momento clickeando elboton “desuscribir” ubicado en el final de los correos electrónicos recibidos.</label>
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="text" name="lastName" id="apellido" placeholder="Apellido">
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" type="mail" placeholder="Correo electrónico" name="email" id="email" required>
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="number" name="dni" id="dni" placeholder="Documento">
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="text" name="address" id="address" placeholder="Direccion">
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="date" name="birthdate" id="nacimiento">
+                </div>
+                
+                <div class="w-100 fx-align-center p-8">
+                    <input class="form-inp" required type="password" name="password" id="password" placeholder="Contraseña">
+                </div>
+
+                <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                    <label for="image" class="w-100">Imagen de Perfil: </label>
+                    <div class="w-100 p-8">
+                        <input type="file" name="image" id="image">
                     </div>
-                    <div class="reg-form-box">
-                        <button class="reg-form-button" type="submit">Enviar</button>
+                </div>
+                
+                <div class="w-100 fx-align-center p-8">
+                    <div class="form-inp flex">
+                        <input class="w-25" type="checkbox" required>
+                        <p class="w-75" for="checkpoint">Al continuar, doy fe de entender y aceptar la política de privacidad, los términos y condiciones y los términos de uso del sitio web. Al clickear “únete ahora” reconozco aceptar formar parte del programa de beneficios de Take off Surf y recibir ofertas exclusivas en mi correo electrónico. Puede desuscibirse en cualquier momento clickeando elboton “desuscribir” ubicado en el final de los correos electrónicos recibidos.</p>
                     </div>
-                    <div class="reg-form-box">
-                        <button class="reg-form-button" type="reset" >Resetear</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <button class="form-button" type="submit">Enviar</button>
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <button class="form-button" type="reset" >Resetear</button>
+                </div>
+            
+            </form>
+        
+
         </div>
-        <div class="register-login-bar">
+                    
+    </section>
 
-        </div>
-    </main>
+
+      
+</main>
+  
 <%- include ('./partials/footer') %> 
 </body>
 </html>

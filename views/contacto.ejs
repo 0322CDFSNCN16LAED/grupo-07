@@ -2,79 +2,80 @@
 <html lang="en">
 <head>
 <%- include ('./partials/head') %> 
-    <link rel = "stylesheet" href = "/css/register.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
     <link rel = "stylesheet" href = "/css/contacto.css"/>
 </head>
-<body>
 
-<%- include ('./partials/header') %> 
+<body class="bg-light-gray w-100">
 
-    <main class="reg-main">
-        <div class="">
- 
-
-            <div class="form-box">
-                <form class="register-form" action="/" method="POST">
-                    <h2 class="reg-form-title">Contactanos</h2>
-                    <div class="reg-form-image">
-                        <img>
-                    </div>
-                    <section class="first-section">
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="text" name="first_name" id="first_name" required placeholder="Nombre">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="text" name="last_name" id="last_name" required placeholder="Apellido">
-                    </div>
-                    </section>
-                    <section class="second-section ">
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
-                    </div>
-                    <div class="reg-form-box">
-                        <input class="reg-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
-                    </div>
-                    <input type="hidden" value= <%= date = new Date().toLocaleDateString() %> name="date">
-                    </section>
-                    <div class="reg-inp reg-form-date-select asunto " >
-                        <input class="reg-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
-                    </div>
-                    <div class="reg-inp reg-form-date-select comments">
-                        <textarea class="reg-inp reg-form-date-select" name="comments" id="comments"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea> 
-                                     
-                    </div>
+    <%- include ('./partials/header') %> 
+    
+    <main  class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
+                
+                <form class="form" action="/" method="POST">
                     
-                    <div class="reg-form-box">
-                        <button class="reg-form-button" type="submit">Enviar</button>
+                    <h2 class="w-100">Contactanos</h2>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="first_name" id="first_name" required placeholder="Nombre">
                     </div>
-                    <div class="reg-form-box">
-                        <button class="reg-form-button" type="reset" value="Resetear" name="resetear">Resetear</button>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="last_name" id="last_name" required placeholder="Apellido">
                     </div>
-                </form>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
+                    </div>
+
+                    <div>
+                        <input type="hidden" value= <%= date = new Date().toLocaleDateString() %> name="date">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8" >
+                        <input class="form-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <textarea class="form-inp" name="comments" id="comments"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea>           
+                    </div>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Enviar</button>
+                    </div>
+                        
+        </section>
+
+        <section class="section-comments">
+            
+            <div class="bg-light-blue br-10">
+
+                <div class="comments">
+                    <h2 class="w-100 text-center">Sus comentarios</h2>
+                    <% comments.forEach(comments => { %>
+                        
+                        <div>
+                            <p>Usuario: <%= comments.first_name %> </p>
+                            <p>Asunto: <%= comments.issue %> </p>
+                            <p>Fecha: <%= comments.date %> </p>
+                            <p>Comentario: <%= comments.comments %> </p>
+                        </div>
+              
+                    <% }) %> 
+                </div>
             </div>
-        </div>
-        <div class="register-login-bar">
 
-
-
-
-        </div>
+        </section>
+        
     </main>
-
-<section class="comments_container">
-    <h2> Sus comentarios</h2>
-    <% comments.forEach(comments => { %> 
-  <div class="comments_box">
-
-    <p>Usuario: <%= comments.first_name %> </p>
-    <p>Asunto: <%= comments.issue %> </p>
-    <p>Fecha: <%= comments.date %> </p>
-    <p>Comentario: <%= comments.comments %> </p>
-
-  </div>
-  <% }) %> 
-
-</section>
 
 <%- include ('./partials/footer') %> 
 </body>

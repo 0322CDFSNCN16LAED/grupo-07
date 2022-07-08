@@ -2,18 +2,15 @@ const path = require('path');
 const fs = require('fs');
 const db = require("../data/db");
 const bcrypt = require('bcryptjs');
-const { validationResult } = require('express-validator');
-
 const users = db.getUsers();
 
 const usersController = {
-
     // Registro: Creación usuario
     createUser: (req, res) => {
         res.render("register");
     },
     
-    /// Registro: Guardado usuario
+    // Registro: Guardado usuario
     storeUser: (req, res) => {
         const newUser=req.body;
         newUser.category= "user";
@@ -37,53 +34,37 @@ const usersController = {
         res.redirect("/");
     },
 
-    //Login
+    // Log In
     loginUser: (req, res) => {
-        res.render("login");
+        return res.render("login");
     },
-  
-    processLogin: (req, res) => {
 
-        let errors = validationResult(req);
+    loginProcess: (req, res) => {
 
-        if (errors.isEmpty()) {
-            let usersJSON = fs.readFileSync("./data/users.json", {errors: errors.erros});
-            
-            let users;
-            
-            if (usersJSON == ""){
-                users = []; 
-            } else {
-                users = JSON.parse(usersJSON);
-            }
+        let userToLogin = db.findByField("email", req.body.email);
 
-            let usuarioALogearse
-            
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].firstName == req.body.firstName){ //Si el nombre es el mismo
-                    if (bcrypt.compareSync(req.body.password, users[i].password)) //Si la contraseña se verifica
-                    usuarioALogearse = users[i];
-                    break;
+        if (userToLogin) {
+            let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password);
+
+            if (passwordOk) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+
+                if (req.body.remember_user){
+                    res.cookies("userEmail", req.body.email, {maxAge: (1000*60)*2})
                 }
+
+                return res.redirect("./users/profile");
             }
-           
-            if (usuarioALogearse == undefined){
-                return res.render("login", {errors: [
-                    {msg: "Credenciales invalidas"}
-                ]});
-            }
-            
-            req.session.usuarioLogueado = usuarioALogearse; 
-            res.render("/");
-            
-            } else {
-                return res.render("login", {errors: errors.erros}); 
-            }       
+        }
+        return res.render("login");
     },
 
     //Usuario: Detalle
     detailUser: (req, res) => {
-        res.render("user-detail"); // pagina sin hacer
+        res.render("profile", {
+            user: req.session.usuarioALogearse, 
+        });
     },
 
     //Usuario: Edición
@@ -97,9 +78,17 @@ const usersController = {
     },
 
     //Usuario: Destrución 
-    destroyUser: (req, res) => {
-        /// elimino usuario
+    deleteUser: (id) => {
+        let allUsers = this.findAll();
+        let findUsers = allUsers.filter(oneUser => oneUser.id !== id);
+        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ""));
     },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect("/");
+    },
+
 
 }
 

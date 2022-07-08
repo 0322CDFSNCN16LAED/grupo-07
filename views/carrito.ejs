@@ -2,7 +2,9 @@
 
 <html lang="en">
 <head>
-<%- include ('./partials/head') %> 
+<%- include ('./partials/head') %>
+<link rel = "stylesheet" href = "/css/forms.css"/>
+<link rel = "stylesheet" href = "/css/carrito.css"/>
 </head>
 
 <body class="bg-light-gray w-100">
@@ -18,12 +20,14 @@
                 <li class="mx-10"><a href="/carrito">Carrito</a></li>
             </ul>
         </div>
-    
-        <div class="banner-carrito">
-            <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf">
-            <div><h2>Carrito</h2></div>
-        </div>
 
+        <article>
+            <h2 class="text-center font-heading">Carrito</h2>
+            <div class="img-nosotros">
+                <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf"/>
+            </div>
+        </article>
+        
         <section class="mb-24">
             <table class="carrito-table">
 
@@ -37,7 +41,7 @@
                 <tr>
                     <th>
                         <a href="">
-                            <img src="/images/tablas/tabla-2.jpg" alt="Imagen tabla de surf">
+                            <img src="/images/tablas-de-surf/tabla-2.jpg" alt="Imagen tabla de surf">
                         </a>
                     </th>
 
@@ -57,45 +61,31 @@
                 <tr>
                     <th>
                         <a href="">
-                            <img src="/images/tablas/tabla-3.jpg" alt="Imagen tabla de surf">
+                            <img src="/images/tablas-de-surf/tabla-3.jpg" alt="Imagen tabla de surf">
                         </a>
                     </th>
+                    <th><input type="number" name="cant-carrito" id="cant-carrito"></th>
+                    <th>$100.000</th>
+                    <th><i class="fas fa-times"></i></th>
+                </tr>
 
-                    <th>
-                        <input type="number" name="cant-carrito" id="cant-carrito">
-                    </th>
-
-                    <th>
-                        $100.000
-                    </th>
-
-                    <th>
-                        <i class="fas fa-times"></i>
-                    </th>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total: $x</th>
+                    <th></th>
                 </tr>      
 
             </table>
+
         </section>
 
-        <div class="flex fx-space-between mb-24 p-8 w-100 fx-right">
-            <table class="text-right">
-                
-                <tr class="flex fx-space-between font-medium">
-                    <th>Envío</th>
-                    <th>$0</th>
-                </tr>                 
-                
-                <tr class="flex fx-space-between font-medium">
-                    <th>Total del pedido:</th>
-                    <th>200.000</th>
-                </tr>
-               
-            </table>
+        <div class="w-100 text-center p-8">
+            <button class="form-button" type="submit"><a href="/productos">Seguir comprando</a></button>
         </div>
-        
-        <div class="mb-24 w-100 p-8 m-center">
-            <button type="submit" href="/productos.html" class="carrito-button">Seguir comprando</button>
-            <button type="submit" href="/pagar.html" class="carrito-button">Pagar</button>            
+
+        <div class="w-100 text-center p-8">
+            <button class="form-button" type="submit"><a href="#">Pagar</a></button>
         </div>
 
     </main>
