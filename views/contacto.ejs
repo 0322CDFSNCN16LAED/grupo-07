@@ -60,16 +60,16 @@
 
                 <div class="comments">
                     <h2 class="w-100 text-center">Sus comentarios</h2>
-                    <% comments.forEach(comments => { %>
+                    <% for (let i=0; i <4;i++) { %>
                         
                         <div>
-                            <p>Usuario: <%= comments.first_name %> </p>
-                            <p>Asunto: <%= comments.issue %> </p>
-                            <p>Fecha: <%= comments.date %> </p>
-                            <p>Comentario: <%= comments.comments %> </p>
+                            <p>Usuario: <%= comments[i].first_name %> </p>
+                            <p>Asunto: <%= comments[i].issue %> </p>
+                            <p>Fecha: <%= comments[i].date %> </p>
+                            <p>Comentario: <%= comments[i].comments %> </p>
                         </div>
               
-                    <% }) %> 
+                    <% } %> 
                 </div>
             </div>
 

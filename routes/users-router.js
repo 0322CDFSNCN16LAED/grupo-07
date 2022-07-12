@@ -4,6 +4,7 @@ const router = express.Router();
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
 const {check} = require('express-validator');
+const logDBMiddleware = require("../middlewares/log-db-middleware");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
@@ -36,7 +37,6 @@ router.get("/login", function (req, res){
 
 router.post("/login", [
     check("email").notEmpty(),
-    check("password").notEmpty(),
     check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
 ], usersController.loginProcess);
 
@@ -49,7 +49,8 @@ router.put("/:id", upload.single("image"), usersController.updateUser);
 
 
 // Profile
-router.get("/profile", usersController.detailUser);
+router.get("/profile", usersController.profile);
+router.get("/profile/:id/", usersController.detailUser);
 
 router.get("/logout", usersController.logout);
 

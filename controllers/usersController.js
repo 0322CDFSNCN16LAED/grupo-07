@@ -3,6 +3,9 @@ const fs = require('fs');
 const db = require("../data/db");
 const bcrypt = require('bcryptjs');
 const users = db.getUsers();
+const User = require("../data/User");
+const { use } = require('../routes/products-router');
+
 
 const usersController = {
     // Registro: Creación usuario
@@ -41,32 +44,27 @@ const usersController = {
 
     loginProcess: (req, res) => {
 
-        let userToLogin = db.findByField("email", req.body.email);
+        let userToLogin = User.findByField("email", req.body.email);
 
         if (userToLogin) {
             let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password);
-
-            if (passwordOk) {
-                delete userToLogin.password;
+            if (passwordOk){
                 req.session.userLogged = userToLogin;
-
-                if (req.body.remember_user){
-                    res.cookies("userEmail", req.body.email, {maxAge: (1000*60)*2})
-                }
-
-                return res.redirect("./users/profile");
+                return res.redirect("./users/profile/"+userToLogin.id);
             }
         }
-        return res.render("login");
     },
 
     //Usuario: Detalle
-    detailUser: (req, res) => {
-        res.render("profile", {
-            user: req.session.usuarioALogearse, 
-        });
+    profile: (req, res) => {
+        return res.render("profile");
     },
-
+    detailUser: function (req, res) {
+        const index = users.findIndex(
+            (users) => users.id == req.params.id
+        );
+        res.render("profile", { users: users[index],users:users });
+    },
     //Usuario: Edición
     editUser: (req, res) => {
         /// edito usuario

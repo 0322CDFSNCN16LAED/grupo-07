@@ -193,13 +193,17 @@ a:link {
 .dropdown {
     position: relative;
     font-size: 16px;
-    text-align: center;
 }
 .dropdown-content {
+    padding-top: 20px;
     display: none;
     position: absolute;
-    padding: 10px;
-    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    text-align: start;
+    font-size: 12px;
+    background-color: #ebebeb;
+    border-radius: 10px;
 }
 .dropdown-content a {
     padding: 10px;
@@ -219,7 +223,6 @@ a:link {
 .footer-article li {
     list-style: none; /*saqué los dots*/
 }
-
 
 /* Carrito */
 .banner-carrito {
