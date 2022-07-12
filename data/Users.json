@@ -1,26 +1,39 @@
 [
-    {
-        "firstName": "Delfina",
-        "lastName": "Callegari",
-        "dni": "12345678",
-        "address": "Tigre",
-        "email": "delfi@gmail.com",
-        "password": "$2a$10$CjxL7EAViqfnESeP4884o.a7jCTNvpzYuaBniXdL09MYNe9AFgkD6",
-        "birthdate": "2022-07-03",
-        "category": "user",
-        "image": "/data/usersimages/default-user.png",
-        "id": 1
-    },
-    {
-        "firstName": "delfi",
-        "lastName": "calle",
-        "email": "delfina@gmail.com",
-        "dni": "1234567",
-        "address": "Bs As",
-        "birthdate": "2022-05-18",
-        "password": "$2a$10$63u9nGkkaQByeG9LmAsc4evzqCIvOCG9G5cDLlv8Y9c.UxgFNG3Jm",
-        "category": "user",
-        "image": "/data/usersimages/usuario1657154401051.JPG",
-        "id": 2
-    }
+  {
+    "firstName": "Delfina",
+    "lastName": "Callegari",
+    "dni": "12345678",
+    "address": "Tigre",
+    "email": "delfi@gmail.com",
+    "password": "$2a$10$CjxL7EAViqfnESeP4884o.a7jCTNvpzYuaBniXdL09MYNe9AFgkD6",
+    "birthdate": "2022-07-03",
+    "category": "user",
+    "image": "/data/usersimages/default-user.png",
+    "id": 1
+  },
+  {
+    "firstName": "delfi",
+    "lastName": "calle",
+    "email": "delfina@gmail.com",
+    "dni": "1234567",
+    "address": "Bs As",
+    "birthdate": "2022-05-18",
+    "password": "$2a$10$63u9nGkkaQByeG9LmAsc4evzqCIvOCG9G5cDLlv8Y9c.UxgFNG3Jm",
+    "category": "user",
+    "image": "/data/usersimages/usuario1657154401051.JPG",
+    "id": 2
+  },
+
+  {
+    "firstName": "Felix",
+    "lastName": "Ugarte",
+    "email": "felix@takeoff.com",
+    "dni": "34343434",
+    "address": "Velez 12",
+    "birthdate": "1989-11-14",
+    "password": "$2a$10$gb47QrxtJzVkvMYgsf3IOOePm/lbFrrBolIHuRxr100S/1LBiETly",
+    "category": "user",
+    "image": "/data/usersimages/default-user.png",
+    "id": 8
+  }
 ]
