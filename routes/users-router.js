@@ -52,27 +52,10 @@ router.post(
 );
 
 // Login
+
 router.get("/login", usersController.loginUser);
 
-router.get("/login", function (req, res) {
-  if (req.session.numeroVisitas == undefined) {
-    req.session.numeroVisitas = 0;
-  }
-
-  req.session.numeroVisitas++;
-});
-
-router.post(
-  "/login",
-  [
-    check("email").notEmpty(),
-    check("password").notEmpty(),
-    check("password")
-      .isLength({ min: 8 })
-      .withMessage("La contraseña debe tener al menos 8 caracteres."),
-  ],
-  usersController.loginProcess
-);
+router.post("/login", usersController.loginProcess);
 
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);

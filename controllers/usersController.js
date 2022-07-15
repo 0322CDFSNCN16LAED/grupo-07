@@ -3,6 +3,7 @@ const fs = require("fs");
 const db = require("../data/db");
 const bcrypt = require("bcryptjs");
 const users = db.getUsers();
+const findBF = db.findByField();
 const { validationResult } = require("express-validator");
 
 const usersController = {
@@ -34,7 +35,7 @@ const usersController = {
 
       db.saveUsers(users);
 
-      res.redirect("/");
+      res.redirect("/users/login");
     } else {
       res.render("register", { errors: errors.array(), old: req.body });
     }
@@ -46,32 +47,28 @@ const usersController = {
   },
 
   loginProcess: (req, res) => {
-    let userToLogin = db.findByField("email", req.body.email);
-
-    if (userToLogin) {
-      let passwordOk = bcrypt.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-
-      if (passwordOk) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-
-        if (req.body.remember_user) {
-          res.cookies("userEmail", req.body.email, { maxAge: 1000 * 60 * 2 });
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let userToLogin = db.findByField("email", req.body.email);
+      if (userToLogin) {
+        const passwordOk = bcrypt.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+        if (passwordOk) {
+          req.session.userLogged = userToLogin;
+          res.redirect("/users/profile");
+          return;
         }
-
-        return res.redirect("./users/profile");
       }
     }
-    return res.render("login");
+    return res.render("login", { error: true });
   },
 
   //Usuario: Detalle
   detailUser: (req, res) => {
-    res.render("profile", {
-      user: req.session.usuarioALogearse,
+    return res.render("profile", {
+      user: req.session.userLogged,
     });
   },
 

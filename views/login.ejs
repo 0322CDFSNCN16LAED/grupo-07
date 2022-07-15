@@ -12,12 +12,10 @@
     <main class="form-main">
       <section class="section-form">
         <div class="bg-light-blue br-10">
-          <form
-            class="form"
-            action="/users/login"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <% if(locals.error) {%>
+          <p class="form-error">Credenciales inválidas</p>
+          <% } %>
+          <form class="form" action="/users/login" method="POST">
             <h2 class="w-100">Iniciar sesión</h2>
 
             <div class="w-100 fx-align-center p-8" for="mail">
@@ -27,7 +25,6 @@
                 placeholder="Correo electrónico"
                 name="email"
                 id="email"
-                required
               />
             </div>
 
@@ -38,7 +35,6 @@
                 placeholder="Escriba su contraseña"
                 name="password"
                 id="password"
-                required
               />
             </div>
 
