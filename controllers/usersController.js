@@ -1,95 +1,107 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 const db = require("../data/db");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const users = db.getUsers();
-const User = require("../data/User");
-const { use } = require('../routes/products-router');
-
+const findBF = db.findByField();
+const { validationResult } = require("express-validator");
 
 const usersController = {
-    // Registro: Creación usuario
-    createUser: (req, res) => {
-        res.render("register");
-    },
-    
-    // Registro: Guardado usuario
-    storeUser: (req, res) => {
-        const newUser=req.body;
-        newUser.category= "user";
-        newUser.password=bcrypt.hashSync(newUser.password,10);
-        if(req.file) { 
-           newUser.image = "/data/usersimages/"+ req.file.filename ;
-        } else { 
-            newUser.image ="/data/usersimages/default-user.png";
-               }
+  // Registro: Creación usuario
+  createUser: (req, res) => {
+    res.render("register");
+  },
 
-        if (users.length) {
-                newUser.id = users[users.length-1].id + 1;
-        } else {
-            newUser.id = 1;
-        }
-        
-        users.push(newUser);
+  // Registro: Guardado usuario
+  storeUser: (req, res) => {
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      const newUser = req.body;
+      newUser.category = "user";
+      newUser.password = bcrypt.hashSync(newUser.password, 10);
+      if (req.file) {
+        newUser.image = "/data/usersimages/" + req.file.filename;
+      } else {
+        newUser.image = "/data/usersimages/default-user.png";
+      }
 
-        db.saveUsers(users);
+      if (users.length) {
+        newUser.id = users[users.length - 1].id + 1;
+      } else {
+        newUser.id = 1;
+      }
 
-        res.redirect("/");
-    },
+      users.push(newUser);
 
-    // Log In
-    loginUser: (req, res) => {
-        return res.render("login");
-    },
+      db.saveUsers(users);
 
-    loginProcess: (req, res) => {
+      res.redirect("/users/login");
+    } else {
+      res.render("register", { errors: errors.array(), old: req.body });
+    }
+  },
 
-        let userToLogin = User.findByField("email", req.body.email);
+  // Log In
+  loginUser: (req, res) => {
+    return res.render("login");
+  },
 
-        if (userToLogin) {
-            let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if (passwordOk){
-                req.session.userLogged = userToLogin;
-                return res.redirect("./users/profile/"+userToLogin.id);
-            }
-        }
-    },
-
-    //Usuario: Detalle
-    profile: (req, res) => {
-        return res.render("profile");
-    },
-    detailUser: function (req, res) {
-        const index = users.findIndex(
-            (users) => users.id == req.params.id
+  loginProcess: (req, res) => {
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let userToLogin = db.findByField("email", req.body.email);
+      if (userToLogin) {
+        const passwordOk = bcrypt.compareSync(
+          req.body.password,
+          userToLogin.password
         );
-        res.render("profile", { users: users[index],users:users });
-    },
-    //Usuario: Edición
-    editUser: (req, res) => {
-        /// edito usuario
-    },
+        if (passwordOk) {
+          req.session.userLogged = userToLogin;
+          res.redirect("/users/profile");
+          return;
+        }
+      }
+    }
+    return res.render("login", { error: true });
+  },
 
-    //Usuario: Actualización cambios
-    updateUser: (req, res) => {
-        /// guardo usuario editado
-    },
+  //Usuario: Detalle
+  detailUser: (req, res) => {
+    res.render("profile", {user: req.session.userLogged});
+  },
 
-    //Usuario: Destrución 
-    deleteUser: (id) => {
-        let allUsers = this.findAll();
-        let findUsers = allUsers.filter(oneUser => oneUser.id !== id);
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ""));
-    },
+  editUser: (req, res) => {
+    
+    let id = req.params.id;
+    
+    let userToEdit = users.find((user) => user.id == id);
 
-    logout: (req, res) => {
-        req.session.destroy();
-        return res.redirect("/");
-    },
+    res.render("edit-user", {user: userToEdit})
+  },
 
+  updateUser: (req, res) => {
 
-}
+    const userIndex = users.findIndex((user)=> user.id == req.params.id);
+        
+    let userEdited = req.body;
 
+    if (req.file) {
+      userEdited.id= users[userIndex].id;
+    
+      users[userIndex]= userEdited;
+  
+    }    
+    db.saveUsers(userEdited);
+    
+    res.redirect("/users/profile", {user: userEdited});
+  },
 
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
+  }
+
+};
 
 module.exports = usersController;
+

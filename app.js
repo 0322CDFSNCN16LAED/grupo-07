@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(session({
   secret: "Mensaje secreto",
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false
 }));
 
 app.set("view engine", "ejs");

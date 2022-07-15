@@ -213,6 +213,13 @@ a:link {
 }
 
 /**/
+.logo-size{
+    width: 50%;
+    padding: 8px;
+    height: 50%;
+}
+
+
 /* Footer*/
 
 .footer-article li a {
