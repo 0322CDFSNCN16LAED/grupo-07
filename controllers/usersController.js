@@ -67,7 +67,7 @@ const usersController = {
 
   //Usuario: Detalle
   detailUser: (req, res) => {
-    res.render("profile", {user: req.session.userLogged});
+    return res.render("profile", {user: req.session.userLogged});
   },
 
   editUser: (req, res) => {
@@ -94,14 +94,7 @@ const usersController = {
     db.saveUsers(userEdited);
     
     res.redirect("/users/profile", {user: userEdited});
-  },
-
-  logout: (req, res) => {
-    req.session.destroy();
-    return res.redirect("/");
   }
-
 };
 
 module.exports = usersController;
-

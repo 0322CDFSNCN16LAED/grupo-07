@@ -1,9 +1,9 @@
 {
-    "firstName": "delfina",
-    "lastName": "callegari",
-    "email": "delfina@gmail.com",
-    "password": "delfi123456789",
-    "dni": "11233456",
-    "address": "Tigre, Bs As",
-    "birthdate": "2022-07-06"
+    "firstName": "Delfina",
+    "lastName": "Callegari",
+    "email": "delfi@gmail.com",
+    "password": "",
+    "dni": "12345678",
+    "address": "Tigre, Buenos Aires",
+    "birthdate": "2022-07-03"
 }
