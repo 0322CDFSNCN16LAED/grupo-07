@@ -6,6 +6,9 @@ const usersController = require("../controllers/usersController");
 const { check } = require("express-validator");
 const { body } = require("express-validator");
 
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authmiddleware");
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
@@ -43,7 +46,7 @@ const validationsRegister = [
 ];
 
 // Register
-router.get("/register", usersController.createUser);
+router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
   "/register",
   upload.single("image"),
@@ -53,7 +56,7 @@ router.post(
 
 // Login
 
-router.get("/login", usersController.loginUser);
+router.get("/login", guestMiddleware, usersController.loginUser);
 
 router.post("/login", usersController.loginProcess);
 
@@ -64,7 +67,7 @@ router.get("/:id/edit/", usersController.editUser);
 router.put("/:id", upload.single("image"), usersController.updateUser);
 
 // Profile
-router.get("/profile", usersController.detailUser);
+router.get("/profile", authMiddleware, usersController.detailUser);
 
 router.get("/logout", usersController.logout);
 

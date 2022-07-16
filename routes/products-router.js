@@ -1,51 +1,52 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const router = express.Router();
-const multer = require('multer');
+const multer = require("multer");
 
-const productsController = require('../controllers/productsController');
-const { notStrictEqual } = require('assert');
+const productsController = require("../controllers/productsController");
+const { notStrictEqual } = require("assert");
+const authMiddleware = require("../middlewares/authmiddleware");
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb)=> {
-        let carpetaDestino;
-        if(req.body.category=="Tablas de surf"){
-            carpetaDestino = path.join(__dirname,"../public/images/Tablas-de-surf/");
-          }else {
-            carpetaDestino = path.join(__dirname,"../public/images/Accesorios/");
-         }
-       
-        cb(null,carpetaDestino);
-    },
-    filename: (req, file, cb)=> {
-        let nombreImagen = "producto" + Date.now() + path.extname(file.originalname)
-        cb(null, nombreImagen)
+  destination: (req, file, cb) => {
+    let carpetaDestino;
+    if (req.body.category == "Tablas de surf") {
+      carpetaDestino = path.join(__dirname, "../public/images/Tablas-de-surf/");
+    } else {
+      carpetaDestino = path.join(__dirname, "../public/images/Accesorios/");
     }
+
+    cb(null, carpetaDestino);
+  },
+  filename: (req, file, cb) => {
+    let nombreImagen =
+      "producto" + Date.now() + path.extname(file.originalname);
+    cb(null, nombreImagen);
+  },
 });
 
 const upload = multer({ storage });
 
 // 1. /productos (GET)
-router.get("/", productsController.index)
+router.get("/", productsController.index);
 
 // 2. /productos/create (GET)
-router.get("/create-accesories", productsController.createAccesories); 
-router.get("/create-tables", productsController.createTables); 
+router.get("/create-accesories", productsController.createAccesories);
+router.get("/create-tables", authMiddleware, productsController.createTables);
 
 // 3. /productos/:id (GET)
 router.get("/:id", productsController.detail);
 
 // 4. /productos (POST)
-router.post("/", upload.single('image'), productsController.store); 
+router.post("/", upload.single("image"), productsController.store);
 
 // 5. /productos/:id/edit (GET)
-router.get("/:id/edit/", productsController.edit);
+router.get("/:id/edit/", authMiddleware, productsController.edit);
 
 // 6. /productos/:id (PUT)
 router.put("/:id/edit/", upload.single("image"), productsController.update);
 
 // 7. /productos/:id (DELETE)
-router.delete('/:id/destroy/', productsController.destroy);
-
+router.delete("/:id/destroy/", authMiddleware, productsController.destroy);
 
 module.exports = router;
