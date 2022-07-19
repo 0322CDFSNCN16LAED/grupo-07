@@ -45,7 +45,6 @@ const validationsRegister = [
     .withMessage("La contraseña debe contener al menos 8 caracteres"),
 ];
 
-<<<<<<< HEAD
 // Register
 router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
@@ -59,20 +58,12 @@ router.post(
 
 router.get("/login", guestMiddleware, usersController.loginUser);
 
-=======
-// users/register
-router.get("/register", usersController.createUser);
-router.post("/register", upload.single("image"), validationsRegister, usersController.storeUser);
-
-// users/login
-router.get("/login", usersController.loginUser);
->>>>>>> 1daf4aabad4b78fa96885d32978eab1e10c87ce4
 router.post("/login", usersController.loginProcess);
 
 // users/profile
 router.get("/profile", usersController.detailUser);
 // users/logout
-router.get("/logout", usersController.logout);
+//router.get("/logout", usersController.logout);
 
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);
@@ -80,13 +71,7 @@ router.get("/:id/edit/", usersController.editUser);
 // /users/:id (PUT)
 router.put("/:id", usersController.updateUser);
 
-<<<<<<< HEAD
 // Profile
 router.get("/profile", authMiddleware, usersController.detailUser);
 
-router.get("/logout", usersController.logout);
-
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 1daf4aabad4b78fa96885d32978eab1e10c87ce4

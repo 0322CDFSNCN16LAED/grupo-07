@@ -1,21 +1,5 @@
 [
     {
-        "id": 4,
-        "type": "Stand Paddle",
-        "description": "feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra",
-        "price": 75048,
-        "discount": 8,
-        "category": "Tablas de surf",
-        "image": "/images/Tablas-de-surf/stand-paddle-8.jpg",
-        "expertice": "Principiante",
-        "brand": "Sharp Eye Surfboards",
-        "long": 8,
-        "thickness": 2,
-        "volume": 58,
-        "material": "Resina poliéster",
-        "keels": "Single (1 quilla)"
-    },
-    {
         "id": 5,
         "type": "Longboard",
         "description": "Longboard para personas con experiencia. Se requiere ser habilidoso para poder moverse con eficacia en el agua.",
@@ -30,22 +14,6 @@
         "volume": 31,
         "material": "Resina epoxi",
         "keels": "Twin (2 quillas)"
-    },
-    {
-        "id": 6,
-        "type": "Evolutiva",
-        "description": "id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
-        "price": 87882,
-        "discount": 1,
-        "category": "Tablas de surf",
-        "image": "/images/Tablas-de-surf/evolutiva-44.jpg",
-        "expertice": "Intermedio",
-        "brand": "Rip Curl",
-        "long": 7,
-        "thickness": 4,
-        "volume": 31,
-        "material": "Resina epoxi",
-        "keels": "Thruster (3 quillas)"
     },
     {
         "id": 7,

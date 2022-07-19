@@ -1,9 +1,11 @@
-{
-    "firstName": "Delfina",
-    "lastName": "Callegari",
-    "email": "delfi@gmail.com",
+[
+  {
+    "firstName": "Felix",
+    "lastName": "Perez",
+    "email": "felix@gmail.com",
     "password": "",
-    "dni": "12345678",
-    "address": "Tigre, Buenos Aires",
-    "birthdate": "2022-07-03"
-}
+    "dni": "34343434",
+    "address": "velez 12",
+    "birthdate": "2022-07-13"
+  }
+]
