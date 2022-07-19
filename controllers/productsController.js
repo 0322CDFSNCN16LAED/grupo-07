@@ -9,6 +9,16 @@ const productsController = {
             products: products,
         });
     },
+    tablas: (req, res) => {
+        res.render("tablas", {
+            products: products,
+        });
+    },
+    accesorios:(req, res) => {
+        res.render("accesorios", {
+            products: products,
+        });
+    },
     createAccesories: (req, res) => {
         res.render("crear-productos-accesories");
     },

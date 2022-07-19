@@ -10,3 +10,15 @@
     margin: 0;
     padding: 0;
 }
+
+.profile-button{
+    padding: 8px;
+}
+
+.profile-button button{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+}

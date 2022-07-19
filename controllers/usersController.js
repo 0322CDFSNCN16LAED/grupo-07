@@ -72,32 +72,34 @@ const usersController = {
 
   //Usuario: Detalle
   detailUser: (req, res) => {
-    return res.render("profile", {
-      user: req.session.userLogged,
-    });
+    return res.render("profile", {user: req.session.userLogged});
   },
 
-  //Usuario: Edición
   editUser: (req, res) => {
-    /// edito usuario
+    
+    let id = req.params.id;
+    
+    let userToEdit = users.find((user) => user.id == id);
+
+    res.render("edit-user", {user: userToEdit})
   },
 
-  //Usuario: Actualización cambios
   updateUser: (req, res) => {
-    /// guardo usuario editado
-  },
 
-  //Usuario: Destrución
-  deleteUser: (id) => {
-    let allUsers = this.findAll();
-    let findUsers = allUsers.filter((oneUser) => oneUser.id !== id);
-    fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ""));
-  },
+    const userIndex = users.findIndex((user)=> user.id == req.params.id);
+        
+    let userEdited = req.body;
 
-  logout: (req, res) => {
-    req.session.destroy();
-    return res.redirect("/");
-  },
+    if (req.file) {
+      userEdited.id= users[userIndex].id;
+    
+      users[userIndex]= userEdited;
+  
+    }    
+    db.saveUsers(userEdited);
+    
+    res.redirect("/users/profile", {user: userEdited});
+  }
 };
 
 module.exports = usersController;

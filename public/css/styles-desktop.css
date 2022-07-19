@@ -47,14 +47,11 @@
         text-align: center;
     }
 
-    .dropdown-content a:hover {
-        align-items: center;
-        text-align: center;
-    }
-
     .dropdown:hover .dropdown-content {
+        transition: all 1220s;
         display: block;
         text-align: center;
+        justify-items: center;
     }
 }
 
