@@ -57,6 +57,11 @@ const usersController = {
         );
         if (passwordOk) {
           req.session.userLogged = userToLogin;
+          if (req.body.recordame != undefined) {
+            res.cookie("recordame", userToLogin.email, {
+              maxAge: 60000,
+            });
+          }
           res.redirect("/users/profile");
           return;
         }
