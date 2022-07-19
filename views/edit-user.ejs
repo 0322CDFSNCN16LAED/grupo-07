@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+    <link rel = "stylesheet" href = "/css/profile.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
+    <link rel = "stylesheet" href = "/css/utils.css"/>
+</head>
+<body>
+
+<%- include ('./partials/header') %> 
+
+<main class="form-main">
+    
+    <section class="section-form">
+
+        <div class="bg-light-blue br-10">
+            
+            <form class="form" action="/users/<%= user.id %>?_method=PUT" method="POST">
+
+                <h2 class="w-100">Editar Perfil</h2>
+
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        Nombre:
+                        <input
+                            type="text"
+                            class="form-inp"
+                            name="firstName"
+                            id="firstName"
+                            placeholder="Nombre"
+                            value="<%= user.firstName%>"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                     <label>
+                        Apellido:
+                        <input
+                            class="form-inp"
+                            type="text"
+                            name="lastName"
+                            id="apellido"
+                            placeholder="Apellido"
+                            value="<%= user.lastName%>"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        Mail:
+                        <input
+                            type="mail"
+                            class="form-inp"
+                            placeholder="Correo electrónico"
+                            name="email"
+                            id="email"
+                            value="<%= user.email%>"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        Contraseña:
+                        <input
+                            type="password"
+                            class="form-inp"
+                            name="password"
+                            id="password"
+                            placeholder="Contraseña"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        DNI:
+                        <input
+                            type="number"
+                            class="form-inp"
+                            name="dni"
+                            id="dni"
+                            placeholder="Documento"
+                            value="<%= user.dni%>"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        Dirección:
+                        <input
+                            type="text"
+                            class="form-inp"
+                            name="address"
+                            id="address"
+                            placeholder="Direccion"
+                            value="<%= user.address%>"
+                        />
+                    </label>
+                </div>
+                <div class="w-100 fx-align-center p-8">
+                    <label>
+                        Nacimiento:
+                        <input
+                            type="date"
+                            class="form-inp"
+                            name="birthdate"
+                            id="nacimiento"
+                            value="<%= user.birthdate%>"
+                        />
+                    </label>
+                </div>
+
+                <div class="w-100 fx-align-center p-8">
+                    <button class="form-button" type="submit">Editar</button>
+                </div>
+      
+                <div class="w-100 fx-align-center p-8">
+                    <button class="form-button" type="reset">Resetear</button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+    
+</main>
+<%- include ('./partials/footer') %> 
+</body>
+</html>
