@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %>
+<link rel = "stylesheet" href = "/css/forms.css"/>
+<link rel = "stylesheet" href = "/css/carrito.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+<%- include ('./partials/header') %> 
+
+    <main class="w-100 p-8 m-center">
+
+        <div class="w-100 p-8 m-center">
+            <ul class="nav-section w-50  mb-8 flex">
+                <li class="mx-10"><a href="/">Inicio</a></li>
+                <li class="mx-10">/</li>
+                <li class="mx-10"><a href="/carrito">Carrito</a></li>
+            </ul>
+        </div>
+
+        <article>
+            <h2 class="text-center font-heading">Carrito</h2>
+            <div class="img-nosotros">
+                <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf"/>
+            </div>
+        </article>
+        
+        <section class="mb-24">
+            <table class="carrito-table">
+
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="">
+                            <img src="/images/tablas-de-surf/tabla-2.jpg" alt="Imagen tabla de surf">
+                        </a>
+                    </th>
+
+                    <th>
+                        <input type="number" name="cant-carrito" id="cant-carrito">
+                    </th>
+
+                    <th>
+                        $100.000
+                    </th>
+
+                    <th>
+                        <i class="fas fa-times"></i>
+                    </th>
+                </tr>      
+
+                <tr>
+                    <th>
+                        <a href="">
+                            <img src="/images/tablas-de-surf/tabla-3.jpg" alt="Imagen tabla de surf">
+                        </a>
+                    </th>
+                    <th><input type="number" name="cant-carrito" id="cant-carrito"></th>
+                    <th>$100.000</th>
+                    <th><i class="fas fa-times"></i></th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total: $x</th>
+                    <th></th>
+                </tr>      
+
+            </table>
+
+        </section>
+
+        <div class="w-100 text-center p-8">
+            <button class="form-button" type="submit"><a href="/productos">Seguir comprando</a></button>
+        </div>
+
+        <div class="w-100 text-center p-8">
+            <button class="form-button" type="submit"><a href="#">Pagar</a></button>
+        </div>
+
+    </main>
+
+<%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>
+
+
+
+
+

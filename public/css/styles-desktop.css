@@ -1,0 +1,57 @@
+@media (min-width: 769px){
+    .product-title{
+        display: none;
+    }
+    .product:hover .product-title{
+        display: block;
+        transition: all .4s ease;
+    }    
+    button:hover{
+        background-color: #4b7994;
+    }
+    .descripcion-productos {
+        display: flex;
+        justify-content: center;
+        margin: 20px ;
+       
+        
+    }
+    .img-productos{
+        width: 100%;
+        
+    }
+  
+    .img-nosotros img{
+        width: 50%;
+    }
+
+    /* Nosotros */
+
+    .datos-nosotros ul li{
+        width: 33%;
+    }
+
+    .datos-nosotros ul li i:hover{
+        color: #4b7994;
+    }
+
+    .section-nosotros p {
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+        font-size: larger;
+    }
+
+    .section-nosotros h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .dropdown:hover .dropdown-content {
+        transition: all 1220s;
+        display: block;
+        text-align: center;
+        justify-items: center;
+    }
+}
+

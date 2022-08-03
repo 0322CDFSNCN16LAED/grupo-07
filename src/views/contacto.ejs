@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/forms.css"/>
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main  class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
+                
+                <form class="form" action="/" method="POST">
+                    
+                    <h2 class="w-100">Contactanos</h2>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="first_name" id="first_name" required placeholder="Nombre">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="last_name" id="last_name" required placeholder="Apellido">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
+                    </div>
+
+                    <div>
+                        <input type="hidden" value= <%= date = new Date().toLocaleDateString() %> name="date">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8" >
+                        <input class="form-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <textarea class="form-inp" name="comments" id="comments"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea>           
+                    </div>
+    
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Enviar</button>
+                    </div>
+                        
+        </section>
+
+        <section class="section-comments">
+            
+            <div class="bg-light-blue br-10">
+
+                <div class="comments">
+                    <h2 class="w-100 text-center">Sus comentarios</h2>
+                    
+                    <% for (let i=0; i <4;i++) { %>
+                        
+                        <div>
+                            <p>Usuario: <%= comments[i].first_name %> </p>
+                            <p>Asunto: <%= comments[i].issue %> </p>
+                            <p>Fecha: <%= comments[i].date %> </p>
+                            <p>Comentario: <%= comments[i].comments %> </p>
+                        </div>
+              
+                    <% } %> 
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+<%- include ('./partials/footer') %> 
+</body>
+</html>

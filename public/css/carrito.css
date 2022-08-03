@@ -1,0 +1,6 @@
+.total{
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    margin: auto;
+}

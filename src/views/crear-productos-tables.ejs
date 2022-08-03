@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/forms.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
+
+                <form class="form" action="/productos" method="POST" enctype="multipart/form-data">
+
+                    <h2 class="w-100">Crear Tablas</h2>
+
+                    <div class="reg-form-image">
+                        <img>
+                    </div>
+                    
+                    <input type="hidden" value="Tablas de surf" name="category">
+                    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" required>
+                    </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
+                   </div>
+                   
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text" name="brand" id="brand" placeholder="Marca" required>
+                   </div>
+                   
+                   <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="image" class="w-100">Imagen del Producto: </label>
+                        <div class="w-100 p-8">
+                            <input type="file" name="image" id="image" placeholder="Imagen del producto">
+                        </div>
+                    </div>
+
+                    <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="expertice" class="w-100">Nivel de Experiencia: </label>
+                        <div class="w-100 p-8">
+                            <select name="expertice" id="expertice">
+                                <option value="Principiante">Principiante</option>
+                                <option value="Intermedio">Intermedio</option>
+                                <option value="Profesional">Profesional</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="number" name="long" id="long" placeholder="Largo" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="number" name="thickness" id="thickness" placeholder="Espesor" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="number" name="volume" id="volume" placeholder="Volumen" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="material" id="material" placeholder="Material de fabricacion" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="keels" id="keels" placeholder=" Quillas" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="price" id="price" placeholder="Precio" required>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="discount" id="discount" placeholder="Descuento" required>
+                    </div>
+                    
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Guardar</button>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="reset" >Resetear</button>
+                    </div>
+
+                </form>
+                
+            </div>
+
+                        
+        </section>
+
+    </main>
+
+
+    <%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>

@@ -1,0 +1,545 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family: "Mukta", sans-serif;
+    font-size: 12px;
+    margin: auto;
+    padding: 0px;   
+    background-color:white;
+}
+
+h1{
+    margin: 0;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+/* Colors */
+.bg-white{
+    background-color: white;
+}
+.font-yellow{
+    color: #ECCF5C;
+}
+
+.bg-yellow{
+    background-color: #ECCF5C;
+}
+.font-orange{
+    color: orange;
+}
+.font-red{
+    color: red;
+}
+.font-blue{
+    color: #122373;
+}
+
+.bg-blue{
+    background-color: #122373;
+}
+
+.font-light-blue{
+    color: #afe0fc;
+}
+
+.header-logo{
+    max-height:100%;
+     min-height:20%;
+     width:50%;
+}
+
+.bg-water-green{
+    background-color: #0C7256;
+}
+.font-green{
+    color: #0C7256;
+}
+
+.bg-light-gray{
+    background-color: lightgray
+}
+
+.bg-gray{
+    background-color: gray;
+}
+
+.bg-light-blue{
+    background-color: #afe0fc;
+}
+.font-navy{
+    color: navy;
+}
+
+/* Font size */
+.font-heading {
+    font-size: 24px;
+    font-weight: bold;
+}
+.font-large {
+    font-size: 18px;
+}  
+.font-medium {
+    font-size: 16px;
+}
+.font-small{
+    font-size: 12px ;
+}
+.font-2em{
+    font-size: 2em;
+}
+
+
+/* Nav */
+.nav-section {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.nav-section li a {
+    color: black;
+    text-decoration: none; /*saqué el subrayado*/
+}
+
+.nav-section li {
+    list-style: none; /*saqué los dots*/
+}
+
+/* Burger menu */
+
+.burger-menu{
+    text-align: center;
+}
+
+.burger-menu i {
+    padding: 8px;
+    background-color: #0C7256;
+    color: #ebebeb;
+    border-radius: 5px;
+}
+
+.descrip-producto {
+    display: flex;
+    justify-content: space-around;
+}
+.descrip-producto p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+}
+.producto h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+/* Productos home*/
+.product{
+    margin-bottom: 8px;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.product div{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product div a{
+    width: 100%;
+}
+.product div img{
+    padding: 4px;
+    width: 100%;
+}
+.product-div-info p {
+    width: 50%;
+    margin: 0;
+    padding-bottom: 4px;
+}
+/* Banner envio */
+.banner-envio{
+    padding: 8px;
+    background-color: #afe0fc;
+}
+
+.flex-control-nav{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.flex-control-nav li{
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+}
+
+/* Productos header */
+
+.dropdown {
+    position: relative;
+    font-size: 16px;
+}
+.dropdown-content {
+    padding-top: 20px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding: 20px;
+    text-align: start;
+    font-size: 12px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+.dropdown-content a {
+    padding: 10px;
+    margin-top: 8px;
+    text-decoration: none;
+    display: block;
+}
+
+/**/
+.logo-size{
+    width: 50%;
+    padding: 8px;
+    height: 50%;
+}
+
+
+/* Footer*/
+
+.footer-article li a {
+    color: black;
+    text-decoration: none; /*saqué el subrayado*/
+}
+
+.footer-article li {
+    list-style: none; /*saqué los dots*/
+}
+
+/* Carrito */
+.banner-carrito {
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-carrito img{
+    width: 100%;
+}
+
+.banner-carrito div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #afe0fc;
+}
+
+.carrito-table{
+    padding: 8px;
+    width: 90%;
+    margin: auto;
+}
+
+.carrito-table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.carrito-table tr th{
+    font-size: 16px;
+    width: 22%;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.carrito-table tr th img{
+    width: 100%;
+    text-align: center;
+}
+
+.carrito-table tr th input{
+    width: 3em;
+    border-color: none;
+}
+
+.carrito-button{
+    width: 100%;
+    padding: 4px;
+    border-radius: 1px;
+    border: none;
+    margin-bottom: 24px;
+    background-color: #afe0fc;
+   
+}
+
+.ocean { 
+    padding: 8px;
+    opacity: 0.5;
+    width:100%;
+    position:relative;
+    bottom:2%;
+    left:0;
+    overflow-x: clip;
+}
+  
+.wave {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg); 
+    position: absolute;
+    bottom: 0;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+  
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+  
+@keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+}
+
+/* Nosotros */
+.section-nosotros{
+    width: 100%;
+}
+
+.img-nosotros{
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+}
+
+.img-nosotros img{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.datos-nosotros{
+    background-color: #afe0fc;
+    width: 100%;
+}
+
+.datos-nosotros ul{
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.datos-nosotros ul li{
+    width: 100%;
+    margin-top: 2px;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.datos-nosotros ul li i{
+    font-size: 2em;
+    width: 100%;
+    padding: 8px;
+}
+
+html,body{
+    margin: 0;
+    
+    font-family: 'Dosis', sans-serif;
+}
+
+.log{
+    display:flex;
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    width:100%;
+}
+.form-login{
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #d1fdff 100%);
+    /*background-color: #afe0fc;*/
+    /*opacity: 50%;*/
+
+    padding: 3%;
+    border-radius: 10px;
+    
+}
+
+
+.boton{
+    background-color: #3c9d79;
+  color: white;
+ 
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 75%;
+}
+
+.boton2 {
+    padding-top: 50px;
+    width: fit-content;
+}
+
+footer{
+    width:100%;
+    background-size: cover;
+}
+    
+
+
+.container_footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box_footer{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.box_footer .logo_footer img{
+    width: 90px;
+}
+
+.box_footer .nosotros{
+    max-width: 350px;
+    margin-top: 10px;
+    font-weight: 500;
+    color:#595757;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.box_footer h2{
+    margin-bottom: 15px;
+    color:black;
+    font-weight: 700;
+    font-size: large;
+}
+
+.box_footer a{
+    margin-top: 10px;
+    color:#595757;
+    font-weight: 600;
+
+}
+
+.box_footer a :hoover{
+    opacity: 0.8;
+
+}
+
+.box_footer a .fab{
+    font-size: 20px;
+
+}
+
+.box_copyright{
+    max-width: 100%;
+    margin:auto;
+    text-align:center;
+    padding: 0px 40px;
+}
+
+.box_copyright p{
+    margin-top: 20px;
+    color:#595757;
+}
+
+.box_copyright hr{
+    border:none;
+    height: 1px;
+    background-color: #595757;
+}
+
+.recordarme{
+    width: 50px;
+}
+
+/* html, body { height: 100%; }*/
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+
+} 
+
+ .ocean {
+  padding: 8px;
+  opacity: 0.5;
+  width:100%;
+  position:relative;
+  bottom:2%;
+  left:0;
+  overflow-x:clip;
+  background: #015871;
+}
+
+.wave {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 8;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  bottom: 0;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}

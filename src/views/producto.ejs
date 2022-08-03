@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+
+<link rel = "stylesheet" href = "/css/producto.css"/>
+<link rel = "stylesheet" href = "/css/forms.css"/>
+
+</head>
+
+<body class="bg-light-gray w-100">
+
+<%- include ('./partials/header') %> 
+
+<main class="form-main">
+
+    <div class="w-100 p-8 m-center">
+        <ul class="nav-section mb-8 flex">
+            <li class="mx-10"><a href="/">Inicio</a></li>
+            <li class="mx-10">/</li>
+            <li class="mx-10">Producto</a></li>
+            <li class="mx-10">/</li>
+            <li class="mx-10"><%= product.category %></a></li>
+        </ul>
+    </div>
+
+    <section class="section-product">
+
+        <div class="blue-container">
+
+            <div class="w-100">
+                <h2 class="product-name"><%= product.type %> - <%= product.brand %></h2>
+            </div>
+
+            <section class="banner-product w-100 w-tablet-50">
+
+                <div class="foto-producto">
+                    <div>
+                        <img class="w-100" src="<%= product.image %>" alt="Tabla 1">
+                    </div>
+
+                    <ul class="img-products-mini">
+                        <li><img src="<%= product.image %> " alt="Tabla 1"></li>
+                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                    </ul>
+                </div>
+              
+            </section>
+
+        
+            <section class= "article-product w-100 w-tablet-50">
+
+                <article class="w-100">
+                    <ul>
+                        <li class="price">$ <%= product.price %></li>
+                        <li>
+                            <%= product.discount %>% OFF en un pago $ <%=Math.ceil(product.price*(100-product.discount)/100) %>
+                        </li>
+                        <li>
+                            12 cuotas fijas de $ <%= Math.ceil(product.price/12) %>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="w-100">
+                    <h2>Medios de pagos</h2>
+                    <div class="icon-container">
+                        <i class="p-8 font-blue fab fa-cc-visa"></i>
+                        <i class="p-8 font-navy fab fa-cc-amex"></i>
+                        <i class="p-8 font-red fab fa-cc-mastercard"></i>
+                        <i class="p-8 font-green far fa-money-bill-alt"></i>
+                    </div>
+                </article>
+
+                <article class="product-buttons">
+                
+                    <div>
+                        <a href="/carrito">
+                            <button type="submit">Agregar al carrito</button>
+                        </a>
+                    </div>
+    
+                    <div>
+                        <a href="/productos/<%=product.id %>/edit ">
+                            <button type="submit">Editar producto</button>
+                        </a>
+                    </div>
+    
+                    <div>
+                        <form action="/productos/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
+                            <button type="submit">Eliminar producto</button>
+                        </form>
+                    </div>
+                </article>
+
+            </section>
+        
+        </div>
+            
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 200"><path fill="#afe0fc" fill-opacity="1" d="M0,32L40,64C80,96,160,160,240,154.7C320,149,400,75,480,90.7C560,107,640,213,720,229.3C800,245,880,171,960,144C1040,117,1120,139,1200,128C1280,117,1360,75,1400,53.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>        
+    
+    </section>
+
+    <div class="flex fx-wrap">
+
+        <section class="section-product w-100 w-desktop-50">
+            <article class="blue-container flex fx-wrap">
+                <ul class="w-100">
+                    <h2>Características</h2>
+                    <li>Marca: <%= product.brand %></li>
+                    <li>Largo: <%= product.long %> pies</li>
+                    <li>Nivel de experiencia: <%= product.expertice %></li>
+                    <li>Espesor: <%= product.thickness %> pulgadas</li>
+                    <li>Volumen: <%= product.volume %> litros</li>
+                    <li>Tipo: <%= product.type %></li>
+                    <li>Material: <%= product.material %></li>
+                    <li>Quillas: <%= product.keels %></li>
+                </ul>
+            </article>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 200"><path fill="#afe0fc" fill-opacity="1" d="M0,32L40,64C80,96,160,160,240,154.7C320,149,400,75,480,90.7C560,107,640,213,720,229.3C800,245,880,171,960,144C1040,117,1120,139,1200,128C1280,117,1360,75,1400,53.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+        </section>
+    
+        <section class="section-product w-desktop-50">
+            <article class="blue-container">
+                <h2 class="w-100">Descripción</h2>
+                <div>
+                    <p><%= product.description %></p>
+                </div>
+            </article>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 200"><path fill="#afe0fc" fill-opacity="1" d="M0,32L40,64C80,96,160,160,240,154.7C320,149,400,75,480,90.7C560,107,640,213,720,229.3C800,245,880,171,960,144C1040,117,1120,139,1200,128C1280,117,1360,75,1400,53.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+        </section>
+
+
+    </div>
+
+    
+    <section class="section-product">
+            
+        <div class="blue-container">
+            
+            <h2 class="w-100">Productos Relacionados </h2>
+    
+            <% products.forEach(products => {%> 
+                <%if(products.category == product.category &&  products.id!=product.id ) {%> 
+                    <div class="w-50 w-desktop-25 p-8">
+                        <article class="product" id="1">
+                            <div>
+                                <a href="/productos/<%= products.id %> ">
+                                    <img class="w-100" src="<%= products.image %>" alt="Imagen de la tabla"/>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+            <% }}) %>
+        
+        </div>
+    </section>
+    
+</main>    
+   
+<%- include ('./partials/footer') %> 
+
+</body>
+</html>

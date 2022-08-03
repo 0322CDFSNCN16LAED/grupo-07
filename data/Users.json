@@ -1,0 +1,26 @@
+[
+    {
+        "firstName": "Delfina",
+        "lastName": "Callegari",
+        "email": "delfina@gmail.com",
+        "dni": "2133228339",
+        "address": "Tigre, Buenos Aires",
+        "birthdate": "2022-08-02",
+        "password": "$2a$10$zFoiGrews2/HQxYWy.9GL.ijZKU6vOfK2vP/XpxXIHxBD17wh0Pt2",
+        "category": "user",
+        "image": "/images/img-surf/img3.jpg",
+        "id": 1
+    },
+    {
+        "firstName": "Jorge",
+        "lastName": "Ramirez",
+        "email": "jorge@gmail.com",
+        "dni": "34567856",
+        "address": "Cordoba, Cordoba",
+        "birthdate": "2022-02-09",
+        "password": "$2a$10$huT6.VjCZ/dGYYYxGX/mpOUy3TuW0PvRenFwZDowV6T4gdnw7auYm",
+        "category": "user",
+        "image": "../data/users-images/default-user.jpg",
+        "id": 2
+    }
+]

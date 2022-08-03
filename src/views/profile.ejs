@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+    <link rel = "stylesheet" href = "/css/profile.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
+    <link rel = "stylesheet" href = "/css/utils.css"/>
+</head>
+<body>
+
+<%- include ('./partials/header') %> 
+
+<main class="form-main p-desktop-45">
+
+    <div class="profile">
+
+        <h2 class="w-100 text-center">Mi Perfil</h2>
+
+        <section class="flex fx-wrap p-desktop-15">
+
+            <article class="w-50">
+                <img class="w-10" src="<%= user.image %> " alt="">
+            </article>
+            
+            <article class="flex fx-wrap w-50 fx-align-center">
+                <ul class="no-style w-100">
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">Nombre:</h3>
+                        <p class="p-10"><%= user.firstName %></p>
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">Apellido:</h3>
+                        <p class="p-10"><%= user.lastName %></p>
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">Mail:</h3>
+                        <p class="p-10"><%= user.email %></p>
+                    </li>
+                </ul>
+            </article>
+            
+            <h2 class="w-100 p-8 mb-0">Datos personales</h3>
+            <article class="flex fx-wrap w-100">
+                <ul class="no-style w-100">
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">DNI:</h3>
+                        <p class="p-10"><%= user.dni %></p>
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">Direccion:</h3>
+                        <p class="p-10"><%= user.address %></p>
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center">
+                        <h3 class="p-10">Nacimiento:</h3>
+                        <p class="p-10"><%= user.birthdate %></p>
+                    </li>
+                </ul>
+
+            </article>
+       
+            <article class="w-100 flex text-center fx-space-between">     
+                <div class="profile-button">
+                    <a href="/users/<%=user.id %>/edit ">
+                        <button type="submit">Editar perfil</button>
+                    </a>
+                </div>
+                <div class="profile-button">
+                    <a href="/users/<%=user.id %>/logout ">
+                        <button type="submit">Cerrar sesión</button>
+                    </a>
+                </div>
+                <div class="profile-button">
+                    <a href="/users/<%=user.id %>/delete ">
+                        <button type="submit">Eliminar perfil</button>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+    </div>
+    </div>
+</main>
+<%- include ('./partials/footer') %> 
+</body>
+</html>
