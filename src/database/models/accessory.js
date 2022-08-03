@@ -1,5 +1,5 @@
 module.exports = function (sequelize, datatypes) {
-    const accessory = sequelize.define(
+    const Accessory = sequelize.define(
         "Accessory",
         {
             id: datatypes.INT(),
@@ -17,5 +17,13 @@ module.exports = function (sequelize, datatypes) {
             updatedAt: "updated_at",
         }
     );
-    return accessory;
+
+    Accessory.associate = function (models) {
+        Accessory.belongsTo(models.Brand, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "id",
+            foreignKey: "brand_id"
+        })
+    }
+
+    return Accessory;
 };

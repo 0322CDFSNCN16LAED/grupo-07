@@ -1,5 +1,5 @@
 module.exports = function (sequelize, datatypes) {
-    const brand = sequelize.define(
+    const Brand = sequelize.define(
         "Brand",
         {
             id: datatypes.INT(11),
@@ -13,5 +13,20 @@ module.exports = function (sequelize, datatypes) {
             updatedAt: "updated_at",
         }
     );
-    return brand;
+
+    Brand.associate = function(models) {
+        Genre.hasMany(models.Table, { 
+            as: "brand_id", 
+            foreignKey: "id"
+        })
+    }
+
+    Brand.associate = function(models) {
+        Genre.hasMany(models.Accesory, { 
+            as: "brand_id", 
+            foreignKey: "id"
+        })
+    }
+
+    return Brand;
 };

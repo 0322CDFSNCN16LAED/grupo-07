@@ -29,13 +29,13 @@ module.exports = function (sequelize, datatypes) {
             updatedAt: "updated_at",
         }
     ); 
-    
+
     Table.associate = function (models) {
-        Table.belongsTo(models.Brand, { 
+        Table.belongsTo(models.Brand, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "id",
             foreignKey: "brand_id"
         })
     }
 
-    return table
+    return Table
 };
