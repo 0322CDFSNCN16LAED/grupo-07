@@ -1,6 +1,6 @@
 module.exports = function (sequelize, datatypes) {
     const accessory = sequelize.define(
-        "Accessories",
+        "Accessory",
         {
             id: datatypes.INT(),
             type: datatypes.VARCHAR(30),

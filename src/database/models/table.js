@@ -1,8 +1,13 @@
 module.exports = function (sequelize, datatypes) {
-    const table = sequelize.define(
-        "Tables",
+    const Table = sequelize.define(
+        "Table",
         {
-            id: datatypes.INT(11),
+            id: {
+                type: dataTypes.INT(11),
+                primaryKey: true,
+                allowNull: false,
+                autoIncrement: true
+            },
             type: datatypes.VARCHAR(30),
             description: datatypes.VARCHAR(1024),
             price: datatypes.DECIMAL(6,2),
@@ -23,6 +28,14 @@ module.exports = function (sequelize, datatypes) {
             createdAt: "created_at",
             updatedAt: "updated_at",
         }
-    );
-    return table;
+    ); 
+    
+    Table.associate = function (models) {
+        Table.belongsTo(models.Brand, { 
+            as: "id",
+            foreignKey: "brand_id"
+        })
+    }
+
+    return table
 };

@@ -1,6 +1,6 @@
 module.exports = function (sequelize, datatypes) {
     const brand = sequelize.define(
-        "Brands",
+        "Brand",
         {
             id: datatypes.INT(11),
             name: datatypes.VARCHAR(30)
