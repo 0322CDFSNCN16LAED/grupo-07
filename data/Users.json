@@ -1,11 +1,35 @@
 [
-  {
-    "firstName": "Felix",
-    "lastName": "Perez",
-    "email": "felix@gmail.com",
-    "password": "",
-    "dni": "34343434",
-    "address": "velez 12",
-    "birthdate": "2022-07-13"
-  }
+    {
+        "firstName": "Felix",
+        "lastName": "Perez",
+        "email": "felix@gmail.com",
+        "password": "",
+        "dni": "34343434",
+        "address": "velez 12",
+        "birthdate": "2022-07-13"
+    },
+    {
+        "firstName": "felix",
+        "lastName": "Ugarte",
+        "email": "felix@gmail.com",
+        "dni": "3434334",
+        "address": "velez 12",
+        "birthdate": "2022-07-13",
+        "password": "$2a$10$xOgLvgTF0iZM4NIpXoYllOxw.duvOx30r.tdYGc6LlPCMf4Ib.ZZq",
+        "category": "user",
+        "image": "/data/usersimages/default-user.png",
+        "id": null
+    },
+    {
+        "firstName": "Felix",
+        "lastName": "lopez",
+        "email": "felix@takeoff.com",
+        "dni": "35353535",
+        "address": "Pellegrini 12",
+        "birthdate": "2022-07-14",
+        "password": "$2a$10$4OGXtOPKJwmobJphylphNOfS1h8TccMJ4N0/0Opn/whayfpiWY6TW",
+        "category": "user",
+        "image": "/data/usersimages/default-user.png",
+        "id": null
+    }
 ]
