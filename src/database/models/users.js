@@ -1,17 +1,15 @@
 module.exports = (sequelize, datatypes) => {
-  const alias = "accesories";
+  const alias = "users";
 
   const cols = {
     id: datatypes.INTEGER,
-    type: datatypes.VARCHAR(30),
-    brandId: {
-      type: datatypes.INTEGER,
-      model: brands,
-      key: "id",
-    },
-    description: datatypes.VARCHAR(1024),
-    price: datatypes.DECIMAL(6, 2),
-    discount: datatypes.DECIMAL(2, 0),
+    firstName: datatypes.VARCHAR(25),
+    lastName: datatypes.VARCHAR(25),
+    email: datatypes.VARCHAR(50),
+    password: datatypes.CHAR(64),
+    dni: datatypes.SMALLINT,
+    imageId: datatypes.INTEGER,
+    birthdate: DATE,
   };
 
   const config = {

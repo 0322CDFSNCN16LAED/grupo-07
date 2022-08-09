@@ -4,11 +4,7 @@ module.exports = (sequelize, datatypes) => {
   const cols = {
     id: datatypes.INTEGER,
     type: datatypes.VARCHAR(30),
-    brandId: {
-      type: datatypes.INTEGER,
-      model: brands,
-      key: "id",
-    },
+    brandId: datatypes.INTEGER,
     description: datatypes.VARCHAR(1024),
     price: datatypes.DECIMAL(6, 2),
     discount: datatypes.DECIMAL(2, 0),

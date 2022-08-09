@@ -5,7 +5,7 @@ const productsRouter = require("./products-router");
 const usersRouter = require("./users-router");
 
 const mainController = require("../controllers/mainController");
-const authMiddleware = require("../middlewares/authmiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 router.get("/", mainController.home);
 

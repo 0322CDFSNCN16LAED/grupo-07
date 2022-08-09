@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const db = require("../data/db");
+const db = require("../../data/db");
 const bcrypt = require("bcryptjs");
 const users = db.getUsers();
 const findBF = db.findByField();
@@ -20,9 +20,9 @@ const usersController = {
       newUser.category = "user";
       newUser.password = bcrypt.hashSync(newUser.password, 10);
       if (req.file) {
-        newUser.image = "/data/usersimages/" + req.file.filename;
+        newUser.image = "../data/users-images/" + req.file.filename;
       } else {
-        newUser.image = "/data/usersimages/default-user.png";
+        newUser.image = "../data/users-images/default-user.jpg";
       }
 
       if (users.length) {

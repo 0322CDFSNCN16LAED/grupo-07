@@ -3,18 +3,10 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: datatypes.INTEGER,
-    userId: {
-      type: datatypes.INTEGER,
-      model: users,
-      key: "id",
-    },
+    userId: datatypes.INTEGER,
     orderDate: datatypes.DATETIME,
     orderStatus: datatypes.VARCHAR(15),
-    addressId: {
-      type: datatypes.INTEGER,
-      model: usersAddress,
-      key: "id",
-    },
+    addressId: datatypes.INTEGER,
     orderTotal: datatypes.DECIMAL(6, 2),
     paymentMethod: datatypes.VARCHAR(15),
   };

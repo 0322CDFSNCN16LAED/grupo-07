@@ -1,4 +1,4 @@
-const db = require("../data/db");
+const db = require("../../data/db");
 const products = db.getProducts();
 const comments = db.getComments();
 

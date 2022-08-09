@@ -20,10 +20,10 @@ app.use(
   })
 );
 
+app.set("views", path.resolve(__dirname, "./src/views"));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
 
-const mainRoutes = require("./routes/main-router");
+const mainRoutes = require("./src/routes/main-router");
 app.use("/", mainRoutes);
 
 const PORT = 3000;

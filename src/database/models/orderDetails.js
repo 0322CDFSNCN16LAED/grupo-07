@@ -3,22 +3,10 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: datatypes.SMALLINT,
-    orderId: {
-      type: datatypes.INTEGER,
-      model: orders,
-      key: "id",
-    },
-    tableId: {
-      type: datatypes.INTEGER,
-      model: tables,
-      key: "id",
-    },
+    orderId: datatypes.INTEGER,
+    tableId: datatypes.INTEGER,
     tableQuantityt: datatypes.TINYINT,
-    accesoryId: {
-      type: datatypes.INTEGER,
-      model: accedories,
-      key: "id",
-    },
+    accesoryId: datatypes.INTEGER,
     accesoryQuantity: datatypes.TINYINT,
   };
 

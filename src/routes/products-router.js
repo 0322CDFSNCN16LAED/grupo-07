@@ -5,15 +5,15 @@ const multer = require("multer");
 
 const productsController = require("../controllers/productsController");
 const { notStrictEqual } = require("assert");
-const authMiddleware = require("../middlewares/authmiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
     if (req.body.category == "Tablas de surf") {
-      carpetaDestino = path.join(__dirname, "../public/images/Tablas-de-surf/");
+      carpetaDestino = path.join(__dirname, "/images/Tablas-de-surf/");
     } else {
-      carpetaDestino = path.join(__dirname, "../public/images/Accesorios/");
+      carpetaDestino = path.join(__dirname, "/images/Accesorios/");
     }
 
     cb(null, carpetaDestino);

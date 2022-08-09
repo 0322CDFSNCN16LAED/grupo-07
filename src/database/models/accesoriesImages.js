@@ -3,16 +3,8 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: datatypes.SMALLINT,
-    accesoryId: {
-      type: datatypes.INTEGER,
-      model: accesories,
-      key: "id",
-    },
-    imageId: {
-      type: datatypes.INTEGER,
-      model: images,
-      key: "id",
-    },
+    accesoryId: datatypes.INTEGER,
+    imageId: datatypes.INTEGER,
   };
 
   const config = {

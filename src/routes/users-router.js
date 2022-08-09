@@ -6,13 +6,13 @@ const usersController = require("../controllers/usersController");
 const { check } = require("express-validator");
 const { body } = require("express-validator");
 
-const guestMiddleware = require("../middlewares/guestMiddleware");
-const authMiddleware = require("../middlewares/authmiddleware");
+const guestMiddleware = require("../../middlewares/guestMiddleware");
+const authMiddleware = require("../../middlewares/authmiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "../data/usersimages/");
+    carpetaDestino = path.join(__dirname, "../../data/usersimages/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {

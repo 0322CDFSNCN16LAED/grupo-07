@@ -3,11 +3,7 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: datatypes.INTEGER,
-    userId: {
-      type: datatypes.INTEGER,
-      model: users,
-      key: "id",
-    },
+    userId: datatypes.INTEGER,
     addressStreet: datatypes.VARCHAR(25),
     addressCity: datatypes.VARCHAR(25),
     addressState: datatypes.VARCHAR(25),
