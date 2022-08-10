@@ -1,19 +1,23 @@
 module.exports = (sequelize, datatypes) => {
-  const alias = "brands";
+  const alias = "Brands";
 
   const cols = {
-    id: datatypes.INTEGER,
-    name: datatypes.VARCHAR(30),
+    id: {
+      type: datatypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true 
+    },
+    name: datatypes.STRING(30),
   };
 
   const config = {
-    tableName: "Brands",
+    tableName: "brands", /*nombre de la tabla en la base de datos*/
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
   };
 
-  const brands = sequelize.define(alias, cols, config);
+  const Brand = sequelize.define(alias, cols, config);
 
-  return brands;
+  return Brand;
 };

@@ -1,24 +1,36 @@
 module.exports = (sequelize, datatypes) => {
-  const alias = "orders";
+  const alias = "Orders";
 
   const cols = {
-    id: datatypes.INTEGER,
-    userId: datatypes.INTEGER,
-    orderDate: datatypes.DATETIME,
-    orderStatus: datatypes.VARCHAR(15),
-    addressId: datatypes.INTEGER,
-    orderTotal: datatypes.DECIMAL(6, 2),
-    paymentMethod: datatypes.VARCHAR(15),
+    id: {
+      type: datatypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true 
+    },
+    user_id: datatypes.INTEGER,
+    order_date: datatypes.DATETIME,
+    order_status: datatypes.STRING(15),
+    address_id: datatypes.INTEGER,
+    order_total: datatypes.DECIMAL(6, 2),
+    payment_method: datatypes.STRING(15),
   };
 
   const config = {
-    tableName: "Orders",
+    tableName: "orders", /*nombre de la tabla en la base de datos*/
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
   };
 
-  const orders = sequelize.define(alias, cols, config);
+  const Order = sequelize.define(alias, cols, config);
 
-  return orders;
+  Order.associate = (models) => {
+
+    Order.belongsTo(models.User, {
+        as: "user",
+        foreignKey: "user_id"
+    });
+  }
+
+  return Order;
 };

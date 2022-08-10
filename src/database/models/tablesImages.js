@@ -1,20 +1,23 @@
 module.exports = (sequelize, datatypes) => {
-  const alias = "tablesImages";
+  const alias = "TablesImages";
 
   const cols = {
-    id: datatypes.INTEGER,
-    tableId: datatypes.INTEGER,
-    imageId: datatypes.INTEGER,
+    id: {
+      type: datatypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true 
+    },
+    url: datatypes.STRING(2038)
   };
 
   const config = {
-    tableName: "TablesImages",
+    tableName: "tables_images", /*nombre de la tabla en la base de datos*/
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
   };
 
-  const tablesImages = sequelize.define(alias, cols, config);
+  const tableImage = sequelize.define(alias, cols, config);
 
-  return tablesImages;
+  return tableImage;
 };
