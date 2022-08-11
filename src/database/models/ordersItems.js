@@ -9,9 +9,10 @@ module.exports = (sequelize, datatypes) => {
     },
     order_id: datatypes.INTEGER,
     table_id: datatypes.INTEGER,
-    table_quantityt: datatypes.TINYINT,
-    accesory_id: datatypes.INTEGER,
-    accesory_quantity: datatypes.TINYINT,
+    table_quantity: datatypes.TINYINT,
+    accessory_id: datatypes.INTEGER,
+    accessory_quantity: datatypes.TINYINT,
+    price: datatypes.DECIMAL(3,2)
   };
 
   const config = {
@@ -21,26 +22,24 @@ module.exports = (sequelize, datatypes) => {
     updatedAt: "updated_at",
   };
 
-  const orderItems = sequelize.define(alias, cols, config);
+  const OrderItems = sequelize.define(alias, cols, config);
 
-  orderItems.associate = (models) => {
+  OrderItems.associate = (models) => {
     
-    orderItems.belongsTo(models.Order, {
+    OrderItems.belongsTo(models.Order, {
         as: "order",
         foreignKey: "order_id"
     });
 
-    orderItems.hasMany(models.Tables, {
+    OrderItems.hasMany(models.Tables, {
       as: "table",
       foreignKey: "table_id"
     });
 
-    orderItems.hasMany(models.Accesories, {
-      as: "accesory",
-      foreignKey: "accesory_id"
+    OrderItems.hasMany(models.Accessories, {
+      as: "accessory",
+      foreignKey: "accessory_id"
     });
   }
-
-
-  return orderItems;
+  return OrderItems;
 };

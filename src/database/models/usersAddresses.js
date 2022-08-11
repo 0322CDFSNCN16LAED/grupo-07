@@ -20,17 +20,14 @@ module.exports = (sequelize, datatypes) => {
     updatedAt: "updated_at",
   };
 
-  const usersAddress = sequelize.define(alias, cols, config);
+  const UsersAddress = sequelize.define(alias, cols, config);
 
-
-  usersAddress.associate = (models) => {
+  UsersAddress.associate = (models) => {
     
-    usersAddress.belongsTo(models.UserImage, {
+    UsersAddress.belongsTo(models.UserImage, {
         as: "user",
         foreignKey: "user_id"
     });
   };
-  
-
-  return usersAddress;
+  return UsersAddress;
 };

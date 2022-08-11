@@ -17,7 +17,7 @@ module.exports = (sequelize, datatypes) => {
     updatedAt: "updated_at",
   };
 
-  const userImage = sequelize.define(alias, cols, config);
+  const UserImage = sequelize.define(alias, cols, config);
 
-  return userImage;
+  return UserImage;
 };

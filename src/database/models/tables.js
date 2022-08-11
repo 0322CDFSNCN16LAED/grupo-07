@@ -17,8 +17,7 @@ module.exports = (sequelize, datatypes) => {
     table_thickness: datatypes.DECIMAL(6,2),
     table_material: datatypes.STRING(30),
     table_keels: datatypes.STRING(30),
-    brand_id: datatypes.INTEGER(11),
-    table_image: datatypes.INTEGER(11),
+    brand_id: datatypes.INTEGER,
   };
 
   const config = {
@@ -30,18 +29,11 @@ module.exports = (sequelize, datatypes) => {
 
   const Table = sequelize.define(alias, cols, config);
 
-
   Table.associate = (models) => {
-    
     Table.belongsTo(models.Brand, {
-        as: "brand",
-        foreignKey: "brand_id"
+      as: "brand",
+      foreignKey: "brand_id",
     });
-    
-    Table.belongsTo(models.TableImage, {
-          as: "image",
-          foreignKey: "table_image"
-      });
   };
 
   return Table;

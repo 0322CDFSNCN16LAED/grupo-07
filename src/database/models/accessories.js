@@ -1,6 +1,6 @@
 module.exports = (sequelize, datatypes) => {
 
-  const alias = "Accesories";
+  const alias = "Accessories";
 
   const cols = {
     id: {
@@ -13,30 +13,24 @@ module.exports = (sequelize, datatypes) => {
     price: datatypes.DECIMAL(6, 2),
     discount: datatypes.DECIMAL(2, 0),
     brand_id: datatypes.INTEGER,
-    accessory_image: datatypes.INTEGER
   };
 
   const config = {
-    tableName: "Accesories", /*nombre de la tabla en la base de datos*/
+    tableName: "Accessories", /*nombre de la tabla en la base de datos*/
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
   };
 
-  const Accesory = sequelize.define(alias, cols, config);
+  const Accessory = sequelize.define(alias, cols, config);
 
-  Accesory.associate = (models) => {
+  Accessory.associate = (models) => {
     
-    Accesory.belongsTo(models.Brand, {
+    Accessory.belongsTo(models.Brand, {
         as: "brand",
         foreignKey: "brand_id"
     });
-    
-    Accesory.belongsTo(models.AccessoryImage, {
-          as: "image",
-          foreignKey: "accessory_image"
-      });
   };
 
-  return Accesory;
+  return Accessory;
 };

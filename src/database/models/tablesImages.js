@@ -1,3 +1,5 @@
+const tables = require("./tables");
+
 module.exports = (sequelize, datatypes) => {
   const alias = "TablesImages";
 
@@ -5,9 +7,10 @@ module.exports = (sequelize, datatypes) => {
     id: {
       type: datatypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true 
+      autoIncrement: true,
     },
-    url: datatypes.STRING(2038)
+    table_id: datatypes.INTEGER,
+    image_id: datatypes.INTEGER,
   };
 
   const config = {
@@ -17,7 +20,17 @@ module.exports = (sequelize, datatypes) => {
     updatedAt: "updated_at",
   };
 
-  const tableImage = sequelize.define(alias, cols, config);
+  const TableImage = sequelize.define(alias, cols, config);
 
-  return tableImage;
+  TableImage.associate = function (models) {
+    TableImage.hasMany(models.Table, {
+      as: "tables",
+      foreignKey: "table_id",
+    }),
+      TableImage.hasMany(models.Image, {
+        as: "images",
+        foreignKey: "images_id",
+      });
+  };
+  return TableImage;
 };

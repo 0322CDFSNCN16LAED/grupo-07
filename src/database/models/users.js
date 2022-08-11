@@ -11,8 +11,8 @@ module.exports = (sequelize, datatypes) => {
     last_name: datatypes.STRING(30),
     email: datatypes.STRING(50),
     password: datatypes.CHAR(64),
-    dni: datatypes.INTEGER(11),
-    image_id: datatypes.INTEGER(11),
+    dni: datatypes.INTEGER,
+    image_id: datatypes.INTEGER,
     birthday: datatypes.DATE
   };
 
@@ -24,7 +24,6 @@ module.exports = (sequelize, datatypes) => {
   };
 
   const User = sequelize.define(alias, cols, config);
-
 
   User.associate = (models) => {
     

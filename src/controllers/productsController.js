@@ -3,6 +3,7 @@ const fs = require("fs");
 const db = require("../../data/db");
 //const Tables = require("../database/models/table")
 const products = db.getProducts();
+//const data = require('../database/models');
 
 const productsController = {
   index: (req, res) => {
@@ -11,9 +12,11 @@ const productsController = {
     });
   },
   tablas: (req, res) => {
-    res.render("tablas", {
+    //data.Table.findAll().then((cualquiera)=>{
+      res.render("tablas", {
       products: products,
-    });
+    })//})
+    ;
   },
   accesorios: (req, res) => {
     res.render("accesorios", {

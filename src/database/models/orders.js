@@ -8,7 +8,7 @@ module.exports = (sequelize, datatypes) => {
       autoIncrement: true 
     },
     user_id: datatypes.INTEGER,
-    order_date: datatypes.DATETIME,
+    order_date: datatypes.DATE,
     order_status: datatypes.STRING(15),
     address_id: datatypes.INTEGER,
     order_total: datatypes.DECIMAL(6, 2),
@@ -25,12 +25,14 @@ module.exports = (sequelize, datatypes) => {
   const Order = sequelize.define(alias, cols, config);
 
   Order.associate = (models) => {
-
     Order.belongsTo(models.User, {
         as: "user",
         foreignKey: "user_id"
     });
-  }
-
+    Order.belongsTo(models.UsersAddresses,{
+      as: "address",
+      foreignKey: "address_id"
+    })
+  };
   return Order;
 };
