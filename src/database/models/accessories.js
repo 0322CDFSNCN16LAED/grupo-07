@@ -26,10 +26,12 @@ module.exports = (sequelize, datatypes) => {
 
   Accessory.associate = (models) => {
     
-    Accessory.belongsTo(models.Brand, {
+    Accessory.hasOne(models.Brand, {
         as: "brand",
         foreignKey: "brand_id"
     });
+    Accessory.belongsToMany(models.Image, {through: models.AccessoryImage });
+    Accessory.belongsToMany(models.Order, {through: models.OrderItems });
   };
 
   return Accessory;

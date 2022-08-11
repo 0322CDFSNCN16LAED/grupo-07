@@ -21,14 +21,16 @@ const config = {
 const AccessoryImage = sequelize.define(alias, cols, config);
 
 AccessoryImage.associate = function (models) {
-  AccessoryImage.hasMany(models.Accessory, {
-    as: "accessory",
-    foreignKey: "accessory_id"
-  }),
-  AccessoryImage.hasMany(models.Image, {
-    as: "image",
-    foreignKey: "image_id"
-  })
+  AccessoryImage.belongsTo(models.Accessory)
+  AccessoryImage.belongsTo(models.Image)
+  // AccessoryImage.hasMany(models.Accessory, {
+  //   as: "accessory",
+  //   foreignKey: "accessory_id"
+  // }),
+  // AccessoryImage.hasMany(models.Image, {
+  //   as: "image",
+  //   foreignKey: "image_id"
+  // })
 }
 
 return AccessoryImage;

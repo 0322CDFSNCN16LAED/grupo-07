@@ -25,21 +25,25 @@ module.exports = (sequelize, datatypes) => {
   const OrderItems = sequelize.define(alias, cols, config);
 
   OrderItems.associate = (models) => {
-    
     OrderItems.belongsTo(models.Order, {
-        as: "order",
-        foreignKey: "order_id"
+      as: "order",
+      foreignKey: "order_id",
     });
 
-    OrderItems.hasMany(models.Tables, {
-      as: "table",
-      foreignKey: "table_id"
-    });
+    OrderItems.belongsTo(models.Tables); //como through table
+    OrderItems.belongsTo(models.Accessory); //como through table
 
-    OrderItems.hasMany(models.Accessories, {
-      as: "accessory",
-      foreignKey: "accessory_id"
-    });
+    OrderItems.belongsTo(models.Order);
+    
+    // OrderItems.hasMany(models.Tables, {
+    //   as: "table",
+    //   foreignKey: "table_id"
+    // });
+
+    // OrderItems.hasMany(models.Accessories, {
+    //   as: "accessory",
+    //   foreignKey: "accessory_id"
+    // });
   }
   return OrderItems;
 };

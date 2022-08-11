@@ -23,14 +23,19 @@ module.exports = (sequelize, datatypes) => {
   const TableImage = sequelize.define(alias, cols, config);
 
   TableImage.associate = function (models) {
-    TableImage.hasMany(models.Table, {
-      as: "tables",
-      foreignKey: "table_id",
-    }),
-      TableImage.hasMany(models.Image, {
-        as: "images",
-        foreignKey: "images_id",
-      });
+
+    TableImage.belongsTo(models.Table);
+    TableImage.belongsTo(models.Image);
+
+
+    // TableImage.hasMany(models.Table, {
+    //   as: "tables",
+    //   foreignKey: "table_id",
+    // }),
+    //   TableImage.hasMany(models.Image, {
+    //     as: "images",
+    //     foreignKey: "images_id",
+    //   });
   };
   return TableImage;
 };

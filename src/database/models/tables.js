@@ -30,10 +30,19 @@ module.exports = (sequelize, datatypes) => {
   const Table = sequelize.define(alias, cols, config);
 
   Table.associate = (models) => {
-    Table.belongsTo(models.Brand, {
+
+    Table.hasOne(models.Brand, {
       as: "brand",
       foreignKey: "brand_id",
     });
+    Table.belongsToMany(models.Image, {
+      through: models.TableImage,
+    });
+    Table.belongsToMany(models.Order, { through: models.OrderItems });
+    // Table.belongsTo(models.Brand, {
+    //   as: "brand",
+    //   foreignKey: "brand_id",
+    // });
   };
 
   return Table;

@@ -18,6 +18,11 @@ module.exports = (sequelize, datatypes) => {
   };
 
   const UserImage = sequelize.define(alias, cols, config);
-
+  
+  UserImage.associate = (models) => {
+    UserImage.belongsTo(models.User, {
+      foreignKey: 'image_id'
+    })
+  }
   return UserImage;
 };

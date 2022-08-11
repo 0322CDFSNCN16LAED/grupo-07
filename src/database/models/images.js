@@ -15,6 +15,13 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: "updated_at",
     }
     const Image = sequelize.define(alias, cols, config);
-
+    Image.associate = function (models) {
+      Image.belongsToMany(models.Accessory, {
+        through: models.AccessoryImage
+      })
+      Image.belongsToMany(models.Table, {
+        through: models.ImagesTable
+      })
+    }
     return Image;
 }

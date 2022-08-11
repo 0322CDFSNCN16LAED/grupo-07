@@ -26,11 +26,13 @@ module.exports = (sequelize, datatypes) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = (models) => {
-    
-    User.belongsTo(models.UserImage, {
-        as: "userImage",
-        foreignKey: "image_id"
+    User.hasMany(models.Order,{
+      foreignKey: 'user_id'
+    })
+    User.hasMany(models.UserAddress, {
+      foreignKey: "user_id",
     });
+    User.hasOne(models.UserImage);
   };
   
   return User;

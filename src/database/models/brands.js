@@ -18,6 +18,9 @@ module.exports = (sequelize, datatypes) => {
   };
 
   const Brand = sequelize.define(alias, cols, config);
-
+  Brand.associate = (models) => {
+    Brand.belongsTo(models.Accessory);
+    Brand.belongsTo(models.Table);
+  }
   return Brand;
 };
