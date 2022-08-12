@@ -19,8 +19,14 @@ module.exports = (sequelize, datatypes) => {
 
   const Brand = sequelize.define(alias, cols, config);
   Brand.associate = (models) => {
-    Brand.belongsTo(models.Accessory);
-    Brand.belongsTo(models.Table);
+    Brand.belongsTo(models.Accessory,{
+      as: "accessories",
+      foreignKey: "accessory_id"
+    });
+    Brand.belongsTo(models.Table,{
+      as: "tables",
+      foreignKey: "table_id"
+    });
   }
   return Brand;
 };

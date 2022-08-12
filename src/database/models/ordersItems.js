@@ -26,15 +26,18 @@ module.exports = (sequelize, datatypes) => {
 
   OrderItems.associate = (models) => {
     OrderItems.belongsTo(models.Order, {
-      as: "order",
-      foreignKey: "order_id",
+      as: "orders",
     });
 
-    OrderItems.belongsTo(models.Tables); //como through table
-    OrderItems.belongsTo(models.Accessory); //como through table
+    OrderItems.belongsTo(models.Table,{
+      as: "tables",
+      foreignKey: "table_id"
+    }); 
+    OrderItems.belongsTo(models.Accessory, {
+      as: "accessories",
+      foreignKey: "accessory_id"
+    });
 
-    OrderItems.belongsTo(models.Order);
-    
     // OrderItems.hasMany(models.Tables, {
     //   as: "table",
     //   foreignKey: "table_id"

@@ -25,14 +25,30 @@ module.exports = (sequelize, datatypes) => {
   const Order = sequelize.define(alias, cols, config);
 
   Order.associate = (models) => {
-    Order.belongsTo(models.User);
-    Order.hasMany(models.UsersAddresses,{
+    Order.belongsTo(models.User,{
+      as: "users",
+      foreignKey: "user_id"
+    });
+    Order.hasMany(models.UsersAddress,{
+      as: "addresses",
       foreignKey: "address_id"
     });
-    Order.belongsToMany(models.Accessory, {through: models.OrderItems });
-    Order.belongsToMany(models.Table, { through: models.OrderItems });
-    Order.hasMany(models.OrderItems,
-      {foreignKey: 'order_id'})
+    Order.belongsToMany(models.Accessory, {
+      as: "accessories",
+      through: models.OrderItems,
+      foreignKey: "order_id",
+      otherKey: "accessory_id"
+    });
+    Order.belongsToMany(models.Table, { 
+      as: "tables",
+      through: models.OrderItems,
+      foreignKey: "order_id",
+      otherKey: "table_id"
+    });
+    Order.hasMany(models.OrderItems,{ 
+      as: "orders_items",
+      foreignKey: "order_id"
+    })
   };
   return Order;
 };

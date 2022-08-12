@@ -27,12 +27,17 @@ module.exports = (sequelize, datatypes) => {
 
   User.associate = (models) => {
     User.hasMany(models.Order,{
+      as: 'orders',
       foreignKey: 'user_id'
     })
     User.hasMany(models.UserAddress, {
+      as: "addresses",
       foreignKey: "user_id",
     });
-    User.hasOne(models.UserImage);
+    User.hasOne(models.UserImage,{
+      as: "images",
+      foreignKey: "user_id"
+    });
   };
   
   return User;

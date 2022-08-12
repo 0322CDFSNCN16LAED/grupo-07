@@ -1,7 +1,7 @@
 module.exports = (sequelize, datatypes) => {
   const alias = "AccessoriesImages";
 
-const cols = {
+  const cols = {
   id: {
       type: datatypes.INTEGER,
       primaryKey: true,
@@ -9,28 +9,26 @@ const cols = {
     },
   accessory_id: datatypes.INTEGER,
   image_id:  datatypes.INTEGER,
-};
+  };
 
-const config = {
+  const config = {
   tableName: "accessories_images", /*nombre de la tabla en la base de datos*/
   timestamps: true,
   createdAt: "created_at",
   updatedAt: "updated_at",
-};
+  };
 
-const AccessoryImage = sequelize.define(alias, cols, config);
+  const AccessoryImage = sequelize.define(alias, cols, config);
 
-AccessoryImage.associate = function (models) {
-  AccessoryImage.belongsTo(models.Accessory)
-  AccessoryImage.belongsTo(models.Image)
-  // AccessoryImage.hasMany(models.Accessory, {
-  //   as: "accessory",
-  //   foreignKey: "accessory_id"
-  // }),
-  // AccessoryImage.hasMany(models.Image, {
-  //   as: "image",
-  //   foreignKey: "image_id"
-  // })
+  AccessoryImage.associate = function (models) {
+  AccessoryImage.belongsTo(models.Accessory,{
+    as: "accessories",
+    foreignKey: "accessories_id"
+  })
+  AccessoryImage.belongsTo(models.Image,{
+    as: "images",
+    foreignKey: "images_id"
+  })
 }
 
 return AccessoryImage;

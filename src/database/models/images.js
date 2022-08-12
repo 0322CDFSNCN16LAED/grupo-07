@@ -16,12 +16,20 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Image = sequelize.define(alias, cols, config);
     Image.associate = function (models) {
+      
       Image.belongsToMany(models.Accessory, {
-        through: models.AccessoryImage
-      })
+        as: "accessories",
+        through: models.AccessoryImage,
+        foreignKey: "image_id",
+        otherKey: "accessory_id"
+      });
+
       Image.belongsToMany(models.Table, {
-        through: models.ImagesTable
+        as: "tables",
+        through: models.ImagesTable,
+        foreignKey: "image_id",
+        otherKey: "table_id"
       })
-    }
+    };
     return Image;
 }

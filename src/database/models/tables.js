@@ -32,17 +32,23 @@ module.exports = (sequelize, datatypes) => {
   Table.associate = (models) => {
 
     Table.hasOne(models.Brand, {
-      as: "brand",
+      as: "brands",
       foreignKey: "brand_id",
     });
+
     Table.belongsToMany(models.Image, {
+      as: "images",
       through: models.TableImage,
+      foreignKey: "table_id",
+      otherKey: "image_id"
     });
-    Table.belongsToMany(models.Order, { through: models.OrderItems });
-    // Table.belongsTo(models.Brand, {
-    //   as: "brand",
-    //   foreignKey: "brand_id",
-    // });
+
+    Table.belongsToMany(models.Order, { 
+      as: "orders",
+      through: models.OrderItems,
+      foreignKey: "table_id",
+      otherKey: "order_id"
+    });
   };
 
   return Table;

@@ -30,8 +30,18 @@ module.exports = (sequelize, datatypes) => {
         as: "brand",
         foreignKey: "brand_id"
     });
-    Accessory.belongsToMany(models.Image, {through: models.AccessoryImage });
-    Accessory.belongsToMany(models.Order, {through: models.OrderItems });
+    Accessory.belongsToMany(models.Image, {
+      as: "images",
+      through: models.AccessoryImage,
+      foreignKey: "accessory_id",
+      otherKey: "image_id"
+    });
+    Accessory.belongsToMany(models.Order, {
+      as: "orders",
+      through: models.OrderItems,
+      foreignKey: "accessory_id",
+      otherKey: "order_id"
+    });
   };
 
   return Accessory;

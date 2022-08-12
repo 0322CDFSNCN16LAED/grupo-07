@@ -24,18 +24,14 @@ module.exports = (sequelize, datatypes) => {
 
   TableImage.associate = function (models) {
 
-    TableImage.belongsTo(models.Table);
-    TableImage.belongsTo(models.Image);
-
-
-    // TableImage.hasMany(models.Table, {
-    //   as: "tables",
-    //   foreignKey: "table_id",
-    // }),
-    //   TableImage.hasMany(models.Image, {
-    //     as: "images",
-    //     foreignKey: "images_id",
-    //   });
+    TableImage.belongsTo(models.Table,{
+      as: "tables",
+      foreignKey: "table_id"
+    });
+    TableImage.belongsTo(models.Image,{
+      as: "images",
+      foreignKey: "image_id"
+    });
   };
   return TableImage;
 };

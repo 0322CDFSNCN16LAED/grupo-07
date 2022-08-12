@@ -24,10 +24,15 @@ module.exports = (sequelize, datatypes) => {
 
   UsersAddress.associate = (models) => {
     
-    UsersAddress.belongsTo(models.User);
+    UsersAddress.belongsTo(models.User,{
+      as: "users",
+      foreignKey: "user_id"
+    });
 
-    UsersAddress.belongsTo(models.Order);
-
+    UsersAddress.belongsTo(models.Order,{
+      as: "orders",
+      foreignKey: "address_id"
+    });
   };
   return UsersAddress;
 };
