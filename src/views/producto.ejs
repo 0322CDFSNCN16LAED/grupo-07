@@ -78,19 +78,19 @@
                 <article class="product-buttons">
                 
                     <div>
-                        <a href="/carrito">
+                        <a href="/tablas/<%=product.id %>/carrito">
                             <button type="submit">Agregar al carrito</button>
                         </a>
                     </div>
     
                     <div>
-                        <a href="/productos/<%=product.id %>/edit ">
+                        <a href="/tablas/<%=product.id %>/edit ">
                             <button type="submit">Editar producto</button>
                         </a>
                     </div>
     
                     <div>
-                        <form action="/productos/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
+                        <form action="/tablas/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
                             <button type="submit">Eliminar producto</button>
                         </form>
                     </div>
@@ -110,11 +110,11 @@
             <article class="blue-container flex fx-wrap">
                 <ul class="w-100">
                     <h2>Características</h2>
-                    <li>Marca: <%= product.brand %></li>
-                    <li>Largo: <%= product.long %> pies</li>
-                    <li>Nivel de experiencia: <%= product.expertice %></li>
-                    <li>Espesor: <%= product.thickness %> pulgadas</li>
-                    <li>Volumen: <%= product.volume %> litros</li>
+                    <li>Marca: <%= product.brand_id %></li>
+                    <li>Largo: <%= product.table_length %> pies</li>
+                    <li>Nivel de experiencia: <%= product.table_expertise %></li>
+                    <li>Espesor: <%= product.table_thickness %> pulgadas</li>
+                    <li>Volumen: <%= product.table_volume %> litros</li>
                     <li>Tipo: <%= product.type %></li>
                     <li>Material: <%= product.material %></li>
                     <li>Quillas: <%= product.keels %></li>
@@ -143,18 +143,18 @@
             
             <h2 class="w-100">Productos Relacionados </h2>
     
-            <% products.forEach(products => {%> 
-                <%if(products.category == product.category &&  products.id!=product.id ) {%> 
+            <% //product.forEach(product => {%> 
+                </div><% //%if(product.category == product.category &&  product.id!=product.id ) {%> 
                     <div class="w-50 w-desktop-25 p-8">
                         <article class="product" id="1">
                             <div>
-                                <a href="/productos/<%= products.id %> ">
-                                    <img class="w-100" src="<%= products.image %>" alt="Imagen de la tabla"/>
+                                <a href="/productos/<%//= product.id %> ">
+                                    <img class="w-100" src="<%//= product.image %>" alt="Imagen de la tabla"/>
                                 </a>
                             </div>
                         </article>
                     </div>
-            <% }}) %>
+            <% //}}) %>
         
         </div>
     </section>

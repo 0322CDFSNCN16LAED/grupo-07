@@ -12,16 +12,15 @@ module.exports = (sequelize, datatypes) => {
 
   const config = {
     tableName: "users_images", /*nombre de la tabla en la base de datos*/
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
+    //createdAt: "created_at",
+    //updatedAt: "updated_at",
   };
 
   const UserImage = sequelize.define(alias, cols, config);
   
   UserImage.associate = (models) => {
-    UserImage.belongsTo(models.User, {
-      as: "users",
+    UserImage.belongsTo(models.Users, {
       foreignKey: 'image_id'
     })
   }

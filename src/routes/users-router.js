@@ -68,10 +68,10 @@ router.get("/profile", usersController.detailUser);
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);
 
+// Profile
+router.get("/profile", authMiddleware, usersController.detailUser);
 // /users/:id (PUT)
 router.put("/:id", usersController.updateUser);
 
-// Profile
-router.get("/profile", authMiddleware, usersController.detailUser);
 
 module.exports = router;

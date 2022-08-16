@@ -1,5 +1,5 @@
 module.exports = (sequelize, datatypes) => {
-  const alias = "ordersItems";
+  const alias = "OrdersItems";
 
   const cols = {
     id: {
@@ -17,27 +17,24 @@ module.exports = (sequelize, datatypes) => {
 
   const config = {
     tableName: "orders_items", /*nombre de la tabla en la base de datos*/
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
+    //createdAt: "created_at",
+    //updatedAt: "updated_at",
   };
 
   const OrderItems = sequelize.define(alias, cols, config);
 
   OrderItems.associate = (models) => {
-    OrderItems.belongsTo(models.Order, {
-      as: "orders",
+    OrderItems.belongsTo(models.Orders, {
+      as: "order",
+      foreignKey: "order_id",
     });
 
-    OrderItems.belongsTo(models.Table,{
-      as: "tables",
-      foreignKey: "table_id"
-    }); 
-    OrderItems.belongsTo(models.Accessory, {
-      as: "accessories",
-      foreignKey: "accessory_id"
-    });
+    OrderItems.belongsTo(models.Tables); //como through table
+    OrderItems.belongsTo(models.Accessories); //como through table
 
+    OrderItems.belongsTo(models.Orders);
+    
     // OrderItems.hasMany(models.Tables, {
     //   as: "table",
     //   foreignKey: "table_id"

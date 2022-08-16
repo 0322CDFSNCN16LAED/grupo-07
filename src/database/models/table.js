@@ -22,33 +22,27 @@ module.exports = (sequelize, datatypes) => {
 
   const config = {
     tableName: "tables", /*nombre de la tabla en la base de datos*/
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
+    //createdAt: "created_at",
+    //updatedAt: "updated_at",
   };
 
   const Table = sequelize.define(alias, cols, config);
 
   Table.associate = (models) => {
 
-    Table.hasOne(models.Brand, {
-      as: "brands",
+    Table.hasOne(models.Brands, {
+      as: "brand",
       foreignKey: "brand_id",
     });
-
-    Table.belongsToMany(models.Image, {
-      as: "images",
-      through: models.TableImage,
-      foreignKey: "table_id",
-      otherKey: "image_id"
+    Table.belongsToMany(models.Images, {
+      through: models.TablesImages,
     });
-
-    Table.belongsToMany(models.Order, { 
-      as: "orders",
-      through: models.OrderItems,
-      foreignKey: "table_id",
-      otherKey: "order_id"
-    });
+    Table.belongsToMany(models.Orders, { through: models.OrdersItems });
+    // Table.belongsTo(models.Brand, {
+    //   as: "brand",
+    //   foreignKey: "brand_id",
+    // });
   };
 
   return Table;

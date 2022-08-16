@@ -18,26 +18,21 @@ module.exports = (sequelize, datatypes) => {
 
   const config = {
     tableName: "users", /*nombre de la tabla en la base de datos*/
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
+    //createdAt: "created_at",
+    //updatedAt: "updated_at",
   };
 
   const User = sequelize.define(alias, cols, config);
 
   User.associate = (models) => {
-    User.hasMany(models.Order,{
-      as: 'orders',
+    User.hasMany(models.Orders,{
       foreignKey: 'user_id'
     })
-    User.hasMany(models.UserAddress, {
-      as: "addresses",
+    User.hasMany(models.UsersAddresses, {
       foreignKey: "user_id",
     });
-    User.hasOne(models.UserImage,{
-      as: "images",
-      foreignKey: "user_id"
-    });
+    User.hasOne(models.UsersImages);
   };
   
   return User;

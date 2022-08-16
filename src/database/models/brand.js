@@ -12,21 +12,16 @@ module.exports = (sequelize, datatypes) => {
 
   const config = {
     tableName: "brands", /*nombre de la tabla en la base de datos*/
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
+    //createdAt: "created_at",
+    //updatedAt: "updated_at",
   };
 
   const Brand = sequelize.define(alias, cols, config);
+
   Brand.associate = (models) => {
-    Brand.belongsTo(models.Accessory,{
-      as: "accessories",
-      foreignKey: "accessory_id"
-    });
-    Brand.belongsTo(models.Table,{
-      as: "tables",
-      foreignKey: "table_id"
-    });
+    Brand.belongsTo(models.Accessories);
+    Brand.belongsTo(models.Tables);
   }
   return Brand;
 };
