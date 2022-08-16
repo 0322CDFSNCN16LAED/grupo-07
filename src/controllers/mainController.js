@@ -25,7 +25,7 @@ const mainController = {
   creacion: function (req, res) {
     res.render("crear-productos");
   },
-  contacto: function (req, res) {
+  /*contacto: function (req, res) {
     const comments = db.getComments();
     res.render("contacto", { comments: comments });
   },
@@ -42,7 +42,7 @@ const mainController = {
     db.saveComments(comments);
 
     res.redirect("contacto");
-  },
+  },*/
 };
 
 module.exports = mainController;

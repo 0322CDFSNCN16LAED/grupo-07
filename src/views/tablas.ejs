@@ -19,27 +19,35 @@
             <span>&nbsp;&nbsp;¡ESTAMOS ENTREGANDO!&nbsp; &nbsp;</span>
         </marquee>
     </div>
+
+    <div class="w-100 p-8 m-center">
+        <ul class="nav-section w-50  mb-8 flex">
+            <li class="mx-10"><a href="/">Inicio</a></li>
+            <li class="mx-10">/</li>
+            <li class="mx-10"><a href="/nosotros">Nosotros</a></li>
+        </ul>
+    </div>
     
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center">Tablas</h2>
-        <% products.forEach(products => {if(products.category =="Tablas de surf") {%> 
+        <% tablas.forEach(tablas => {%> 
             <div class="w-50 w-desktop-25 p-8">
                 <article class="product" id="1">
                     <div>
-                        <a href="/productos/<%= products.id %>">
-                            <img class="w-100" src="<%= products.image %>" alt="Imagen de la tabla"/>
+                        <a href="/tablas/<%= tablas.id %>">
+                            <img class="w-100" src="#" alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="product-div-info">
-                        <h3 class="font-medium w-100 text-center"><%= products.type %> </h3>
-                        <p class="product-title font-large w-50 text-center">$ <%= products.price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= products.discount %> % OFF</p>
+                        <h3 class="font-medium w-100 text-center"><%= tablas.type %> </h3>
+                        <p class="product-title font-large w-50 text-center">$ <%= tablas.price %> </p>
+                        <p class="product-title font-medium w-50 text-center"><%= tablas.discount %> % OFF</p>
                     </div>
                    
                 </article>
             </div>
-            <% }}) %>
+            <% }) %>
 
     </section>
             

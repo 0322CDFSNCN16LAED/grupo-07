@@ -7,7 +7,7 @@ const db = require("../../data/db");
 
 //const Tables = require("../database/models/table")
 const products = db.getProducts();
-//const data = require('../database/models');
+const data = require('../database/models');
 
 const productsController = {
   index: (req, res) => {
@@ -15,30 +15,7 @@ const productsController = {
       products: products,
     });
   },
-  tablas: (req, res) => {
-    //data.Table.findAll().then((cualquiera)=>{
-      res.render("tablas", {
-      products: products,
-    })//})
-    ;
-  },
-  accesorios: (req, res) => {
-    res.render("accesorios", {
-      products: products,
-    });
-  },
-  createAccesories: (req, res) => {
-    res.render("crear-productos-accesories");
-  },
-  createTables: (req, res) => {
-    res.render("crear-productos-tables");
-  },
-  detail: function (req, res) {
-    const index = products.findIndex(
-      (products) => products.id == req.params.id
-    );
-    res.render("producto", { product: products[index], products: products });
-  },
+  
   store: (req, res) => {
     const newProduct = req.body;
     if (req.file) {
