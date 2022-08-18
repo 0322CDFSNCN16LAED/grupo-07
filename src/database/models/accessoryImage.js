@@ -24,7 +24,7 @@ AccessoryImage.associate = function (models) {
 
   AccessoryImage.belongsTo(models.Accessories);
   
-  AccessoryImage.belongsTo(models.Images)
+  AccessoryImage.belongsTo(models.Images);
   // AccessoryImage.hasMany(models.Accessory, {
   //   as: "accessory",
   //   foreignKey: "accessory_id"

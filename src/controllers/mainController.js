@@ -8,9 +8,14 @@ const db = require('../database/models');
 
 const mainController = {
   home: function (req, res) {
-    const products = data.getProducts();
-    res.render("home", { products: products });
-  },
+    let accesories = db.Accessories.findAll()
+    let tables = db.Tables.findAll()
+    Promise.all([accesories,tables])
+    .then(([accesorios,tablas])=>{
+        res.render("home", {accesorios: accesorios, tablas : tablas})
+    });
+},
+
   register: function (req, res) {
     res.render("register");
   },

@@ -7,7 +7,7 @@ const accessoriesController = {
     accessories: (req, res) => {
         db.Accessories.findAll()
         .then((accesorios)=>{
-            res.render("accesorios", {accesorio: accesorios})
+            res.render("accesorios", {accesorios: accesorios})
         });
     },
 
