@@ -1,71 +1,9 @@
-[
-    {
-        "firstName": "Felix",
-        "lastName": "Perez",
-        "email": "felix@gmail.com",
-        "password": "",
-        "dni": "34343434",
-        "address": "velez 12",
-        "birthdate": "2022-07-13"
-    },
-    {
-        "firstName": "felix",
-        "lastName": "Ugarte",
-        "email": "felix@gmail.com",
-        "dni": "3434334",
-        "address": "velez 12",
-        "birthdate": "2022-07-13",
-        "password": "$2a$10$xOgLvgTF0iZM4NIpXoYllOxw.duvOx30r.tdYGc6LlPCMf4Ib.ZZq",
-        "category": "user",
-        "image": "/data/usersimages/default-user.png",
-        "id": null
-    },
-    {
-        "firstName": "Felix",
-        "lastName": "lopez",
-        "email": "felix@takeoff.com",
-        "dni": "35353535",
-        "address": "Pellegrini 12",
-        "birthdate": "2022-07-14",
-        "password": "$2a$10$4OGXtOPKJwmobJphylphNOfS1h8TccMJ4N0/0Opn/whayfpiWY6TW",
-        "category": "user",
-        "image": "/data/usersimages/default-user.png",
-        "id": null
-    },
-    {
-        "firstName": "Delfina",
-        "lastName": "Callegari",
-        "email": "delfina@gmail.com",
-        "dni": "2133228339",
-        "address": "Tigre, Buenos Aires",
-        "birthdate": "2022-08-02",
-        "password": "$2a$10$zFoiGrews2/HQxYWy.9GL.ijZKU6vOfK2vP/XpxXIHxBD17wh0Pt2",
-        "category": "user",
-        "image": "/images/img-surf/img3.jpg",
-        "id": 1
-    },
-    {
-        "firstName": "Jorge",
-        "lastName": "Ramirez",
-        "email": "jorge@gmail.com",
-        "dni": "34567856",
-        "address": "Cordoba, Cordoba",
-        "birthdate": "2022-02-09",
-        "password": "$2a$10$huT6.VjCZ/dGYYYxGX/mpOUy3TuW0PvRenFwZDowV6T4gdnw7auYm",
-        "category": "user",
-        "image": "../data/users-images/default-user.jpg",
-        "id": 2
-    },
-    {
-        "firstName": "a123123213",
-        "lastName": "a12123123",
-        "email": "agustinbenitezls@gmail.com",
-        "dni": "121212122",
-        "address": "agustinbenitezls@gmail.com",
-        "birthdate": "1111-11-11",
-        "password": "$2a$10$SW5mt3rm8zF0ShIxOqcyE.LxFwCNVmMdl5o2cmZC3eAdjDyKw3nsG",
-        "category": "user",
-        "image": "../data/users-images/default-user.jpg",
-        "id": 3
-    }
-]
+{
+    "firstName": "Ruben Dario",
+    "lastName": "Tomasella",
+    "email": "rubentomasella@gmail.com",
+    "password": "",
+    "dni": "5757207",
+    "address": "luis agote",
+    "birthdate": "2022-08-31"
+}

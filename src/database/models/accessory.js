@@ -16,7 +16,7 @@ module.exports = (sequelize, datatypes) => {
   };
 
   const config = {
-    tableName: "Accessories", /*nombre de la tabla en la base de datos*/
+    tableName: "accessories", /*nombre de la tabla en la base de datos*/
     timestamps: false,
     //createdAt: "created_at",
     //updatedAt: "updated_at",

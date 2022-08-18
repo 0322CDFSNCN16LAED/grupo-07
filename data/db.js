@@ -17,17 +17,7 @@ module.exports = {
     fs.writeFileSync(productsFilePath, fileTxt);
   },
 
-  getComments: function () {
-    return JSON.parse(fs.readFileSync(commentsFilePath, "utf-8"));
-  },
-
-  saveComments: function (comments) {
-    const fileTxt = JSON.stringify(comments, null, 4);
-
-    fs.writeFileSync(commentsFilePath, fileTxt);
-  },
-
-  // Buscar al usuario
+   // Buscar al usuario
   getUsers: function () {
     return JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
   },
@@ -42,15 +32,15 @@ module.exports = {
   },
 
   findByPk: function (id) {
-    let allUsers = this.findAll();
-    let userFound = allUsers.find((oneUser) => oneUser.id === id);
-    return userFound;
+ //   let allUsers = this.findAll();
+ //   let userFound = allUsers.find(oneUser => oneUser.id === id);
+//    return userFound;
   },
   findByField: function (field, text) {
-    let allUsers = this.findAll();
-    let userFound = allUsers.find((oneUser) => oneUser[field] === text);
-    return userFound;
-  },
+ //    let allUsers = this.findAll();
+ //    let userFound = allUsers.find(oneUser => oneUser[field] === text);
+ //   return userFound;
+   },
   delete: function (id) {
     let allUsers = this.findAll();
     let finalUsers = allUsers.find((oneUser) => oneUser.id !== id);

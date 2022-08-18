@@ -33,11 +33,7 @@
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="tel" name="tel" id="tel" placeholder="Telefono">
-                    </div>
-
-                    <div>
-                        <input type="hidden" value= <%= date = new Date().toLocaleDateString() %> name="date">
+                        <input class="form-inp" type="tel" name="telefone" id="telefone" placeholder="Telefono">
                     </div>
 
                     <div class="w-100 fx-align-center p-8" >
@@ -45,7 +41,7 @@
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <textarea class="form-inp" name="comments" id="comments"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea>           
+                        <textarea class="form-inp" name="comment" id="comment"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea>           
                     </div>
     
                     <div class="w-100 fx-align-center p-8">
@@ -61,13 +57,13 @@
                 <div class="comments">
                     <h2 class="w-100 text-center">Sus comentarios</h2>
                     
-                    <% for (let i=0; i <4;i++) { %>
+                    <% for (let i=0; i < comments.length;i++) { %>
                         
                         <div>
-                            <p>Usuario: <%= comments[i].first_name %> </p>
+                            <p>Usuario: <%= comments[i].first_name %> <%= comments[i].last_name %> </p>
                             <p>Asunto: <%= comments[i].issue %> </p>
-                            <p>Fecha: <%= comments[i].date %> </p>
-                            <p>Comentario: <%= comments[i].comments %> </p>
+                            <p>Fecha: <%= comments[i].createdAt %> </p>
+                            <p>Comentario: <%= comments[i].comment %> </p>
                         </div>
               
                     <% } %> 
