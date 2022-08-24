@@ -1,12 +1,21 @@
-const db = require("../../data/db");
-const products = db.getProducts();
-const comments = db.getComments();
+const data = require("../../data/db");
+//const products = db.getProducts();
+//const comments = db.getComments();
+const db = require('../database/models');
+
+
+
 
 const mainController = {
   home: function (req, res) {
-    const products = db.getProducts();
-    res.render("home", { products: products });
-  },
+    let accesories = db.Accessories.findAll()
+    let tables = db.Tables.findAll()
+    Promise.all([accesories,tables])
+    .then(([accesorios,tablas])=>{
+        res.render("home", {accesorios: accesorios, tablas : tablas})
+    });
+},
+
   register: function (req, res) {
     res.render("register");
   },
@@ -25,24 +34,19 @@ const mainController = {
   creacion: function (req, res) {
     res.render("crear-productos");
   },
-  /*contacto: function (req, res) {
-    const comments = db.getComments();
-    res.render("contacto", { comments: comments });
-  },
+  contacto: function (req, res) {
+    db.Comments.findAll()
+        .then((comments)=>{
+            res.render("contacto", {comments: comments})
+        });
+    },
   storecoment: function (req, res) {
-    const newComent = req.body;
-
-    if (comments.length) {
-      newComent.id = comments[comments.length - 1].id + 1;
-    } else {
-      newComent.id = 1;
-    }
-    comments.unshift(newComent);
-
-    db.saveComments(comments);
+    db.Comments.create({
+      ...req.body,
+    })
 
     res.redirect("contacto");
-  },*/
+  },
 };
 
 module.exports = mainController;

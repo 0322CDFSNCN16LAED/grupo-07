@@ -45,5 +45,15 @@
     "password": "$2a$10$.kz9Igny8Azz29.8eg1FOeqEjceVT27polayZgDfSBHtz1xgyFy3O",
     "category": "user",
     "image": "../data/users-images/default-user.jpg"
+  },
+
+  {
+    "firstName": "Ruben Dario",
+    "lastName": "Tomasella",
+    "email": "rubentomasella@gmail.com",
+    "password": "",
+    "dni": "5757207",
+    "address": "luis agote",
+    "birthdate": "2022-08-31"
   }
 ]

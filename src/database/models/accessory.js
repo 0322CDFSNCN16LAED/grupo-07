@@ -16,7 +16,7 @@ module.exports = (sequelize, datatypes) => {
   };
 
   const config = {
-    tableName: "Accessories", /*nombre de la tabla en la base de datos*/
+    tableName: "accessories", /*nombre de la tabla en la base de datos*/
     timestamps: false,
     //createdAt: "created_at",
     //updatedAt: "updated_at",
@@ -31,9 +31,13 @@ module.exports = (sequelize, datatypes) => {
         foreignKey: "brand_id"
     });
 
-    Accessory.belongsToMany(models.Images, {through: models.AccessoriesImages });
+    Accessory.belongsToMany(models.Images, {
+      as:'image',
+      through: models.AccessoriesImages });
     
-    Accessory.belongsToMany(models.Orders, {through: models.OrdersItems });
+    Accessory.belongsToMany(models.Orders, {
+      as:'order',
+      through: models.OrdersItems });
   };
 
   return Accessory;
