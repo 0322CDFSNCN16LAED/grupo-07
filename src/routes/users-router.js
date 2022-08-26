@@ -63,7 +63,7 @@ router.post("/login", usersController.loginProcess);
 // users/profile
 router.get("/profile", usersController.detailUser);
 // users/logout
-//router.get("/logout", usersController.logout);
+router.get("/:id/logout", usersController.logoutUser);
 
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);

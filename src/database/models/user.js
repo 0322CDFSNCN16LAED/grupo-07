@@ -14,6 +14,7 @@ module.exports = (sequelize, datatypes) => {
     dni: datatypes.INTEGER,
     image_id: datatypes.INTEGER,
     birthday: datatypes.DATE,
+    address: datatypes.STRING(60),
   };
 
   const config = {

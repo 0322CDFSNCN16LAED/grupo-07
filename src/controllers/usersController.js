@@ -36,6 +36,7 @@ const usersController = {
         dni: req.body.dni,
         image_id: userImage.id,
         birthday: req.body.birthdate,
+        address: req.body.address,
       });
 
       res.redirect("/users/login");
@@ -82,16 +83,40 @@ const usersController = {
     return res.render("profile", { user: req.session.userLogged });
   },
 
-  editUser: (req, res) => {
+  editUser: async (req, res) => {
     let id = req.params.id;
 
-    let userToEdit = users.find((user) => user.id == id);
+    let userToEdit = await db.Users.findOne({
+      where: { id: id },
+    });
 
     res.render("edit-user", { user: userToEdit });
   },
+  updateUser: async (req, res) => {
+    let editingUser = db.Users.findByPk(req.params.id).then()((user) => {
+      user.set(req.body);
+      if (req.file) {
+        user.setUsersImages();
+        user.image_id = userImage.id;
+      }
+      user.save.then(() => {
+        res.redirect("/users/profile" + req.params.id);
+      });
+    });
+  },
 
-  updateUser: (req, res) => {
-    const userIndex = users.findIndex((user) => user.id == req.params.id);
+  logoutUser: (req, res) => {
+    req.session.userLogged = null;
+    res.redirect("/");
+  },
+
+  /*  destroy: (req, res) => {
+    db.Users.findByPk(req.params.id).then()((user) => {
+      user.remo
+  });
+} */
+};
+/* const userIndex = users.findIndex((user) => user.id == req.params.id);
 
     let userEdited = req.body;
 
@@ -102,8 +127,6 @@ const usersController = {
     }
     datab.saveUsers(userEdited);
 
-    res.redirect("/users/profile", { user: userEdited });
-  },
-};
+    res.redirect("/users/profile", { user: userEdited }); */
 
 module.exports = usersController;
