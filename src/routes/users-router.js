@@ -12,7 +12,7 @@ const authMiddleware = require("../../middlewares/authmiddleware");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "../../data/usersimages/");
+    carpetaDestino = path.join(__dirname, "/../../data/users-images/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {
@@ -49,7 +49,7 @@ const validationsRegister = [
 router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
   "/register",
-  upload.single("image"),
+  upload.single("profile_image"),
   validationsRegister,
   usersController.storeUser
 );
@@ -63,7 +63,7 @@ router.post("/login", usersController.loginProcess);
 // users/profile
 router.get("/profile", usersController.detailUser);
 // users/logout
-//router.get("/logout", usersController.logout);
+router.get("/:id/logout", usersController.logoutUser);
 
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);
@@ -72,6 +72,5 @@ router.get("/:id/edit/", usersController.editUser);
 router.get("/profile", authMiddleware, usersController.detailUser);
 // /users/:id (PUT)
 router.put("/:id", usersController.updateUser);
-
 
 module.exports = router;

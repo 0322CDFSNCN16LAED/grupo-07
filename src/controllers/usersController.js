@@ -1,39 +1,40 @@
 const path = require("path");
-const fs = require("fs");
-const db = require("../../data/db");
+const datab = require("../../data/db");
 const bcrypt = require("bcryptjs");
-const users = db.getUsers();
-const findBF = db.findByField();
+//const findBF = datab.findByField();
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
+const { DEFAULT_ECDH_CURVE } = require("tls");
 
 const usersController = {
-  // Registro: Creación usuario
   createUser: (req, res) => {
     res.render("register");
   },
 
   // Registro: Guardado usuario
-  storeUser: (req, res) => {
+
+  storeUser: async (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      const newUser = req.body;
-      newUser.category = "user";
-      newUser.password = bcrypt.hashSync(newUser.password, 10);
+      let newUser = req.body;
       if (req.file) {
-        newUser.image = "../data/users-images/" + req.file.filename;
+        newUser.image = "/../data/users-images/" + req.file.filename;
       } else {
-        newUser.image = "../data/users-images/default-user.jpg";
+        newUser.image = "/../data/users-images/default-user.jpg";
       }
-
-      if (users.length) {
-        newUser.id = users[users.length - 1].id + 1;
-      } else {
-        newUser.id = 1;
-      }
-
-      users.push(newUser);
-
-      db.saveUsers(users);
+      let userImage = await db.UsersImages.create({
+        url: newUser.image,
+      });
+      const user = await db.Users.create({
+        fisrt_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        dni: req.body.dni,
+        image_id: userImage.id,
+        birthday: req.body.birthdate,
+        address: req.body.address,
+      });
 
       res.redirect("/users/login");
     } else {
@@ -46,12 +47,14 @@ const usersController = {
     return res.render("login");
   },
 
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      let userToLogin = db.findByField("email", req.body.email);
+      let userToLogin = await db.Users.findOne({
+        where: { email: req.body.email },
+      });
       if (userToLogin) {
-        const passwordOk = bcrypt.compareSync(
+        let passwordOk = bcrypt.compareSync(
           req.body.password,
           userToLogin.password
         );
@@ -62,6 +65,7 @@ const usersController = {
               maxAge: 60000,
             });
           }
+
           res.redirect("/users/profile");
           return;
         }
@@ -71,35 +75,55 @@ const usersController = {
   },
 
   //Usuario: Detalle
+
   detailUser: (req, res) => {
-    return res.render("profile", {user: req.session.userLogged});
+    return res.render("profile", { user: req.session.userLogged });
   },
 
-  editUser: (req, res) => {
-    
+  editUser: async (req, res) => {
     let id = req.params.id;
-    
-    let userToEdit = users.find((user) => user.id == id);
 
-    res.render("edit-user", {user: userToEdit})
+    let userToEdit = await db.Users.findOne({
+      where: { id: id },
+    });
+
+    res.render("edit-user", { user: userToEdit });
+  },
+  updateUser: async (req, res) => {
+    let editingUser = db.Users.findByPk(req.params.id).then()((user) => {
+      user.set(req.body);
+      if (req.file) {
+        user.setUsersImages();
+        user.image_id = userImage.id;
+      }
+      user.save.then(() => {
+        res.redirect("/users/profile" + req.params.id);
+      });
+    });
   },
 
-  updateUser: (req, res) => {
+  logoutUser: (req, res) => {
+    req.session.userLogged = null;
+    res.redirect("/");
+  },
 
-    const userIndex = users.findIndex((user)=> user.id == req.params.id);
-        
+  /*  destroy: (req, res) => {
+    db.Users.findByPk(req.params.id).then()((user) => {
+      user.remo
+  });
+} */
+};
+/* const userIndex = users.findIndex((user) => user.id == req.params.id);
+
     let userEdited = req.body;
 
     if (req.file) {
-      userEdited.id= users[userIndex].id;
-    
-      users[userIndex]= userEdited;
-  
-    }    
-    db.saveUsers(userEdited);
-    
-    res.redirect("/users/profile", {user: userEdited});
-  }
-};
+      userEdited.id = users[userIndex].id;
+
+      users[userIndex] = userEdited;
+    }
+    datab.saveUsers(userEdited);
+
+    res.redirect("/users/profile", { user: userEdited }); */
 
 module.exports = usersController;

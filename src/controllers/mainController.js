@@ -4,9 +4,9 @@ const mainController = {
   home: function (req, res) {
     let tablas = db.Tables.findAll({limit: 4})
     let accesorios = db.Accessories.findAll({limit: 4})
-
+  
     Promise.all([tablas, accesorios])
-    
+      
     .then(([tablas, accesorios]) => {
       return res.render("home", {
         tablas, accesorios
