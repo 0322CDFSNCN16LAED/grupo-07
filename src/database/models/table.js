@@ -17,11 +17,11 @@ module.exports = (sequelize, datatypes) => {
     table_thickness: datatypes.DECIMAL(6,2),
     table_material: datatypes.STRING(30),
     table_keels: datatypes.STRING(30),
-    brand_id: datatypes.INTEGER,
+    brand_id: datatypes.INTEGER(11),
   };
 
   const config = {
-    tableName: "tables", /*nombre de la tabla en la base de datos*/
+    tableName: "tables",
     timestamps: false,
     //createdAt: "created_at",
     //updatedAt: "updated_at",
@@ -31,18 +31,16 @@ module.exports = (sequelize, datatypes) => {
 
   Table.associate = (models) => {
 
-    Table.hasOne(models.Brands, {
+    Table.belongsTo(models.Brands, {
       as: "brand",
       foreignKey: "brand_id",
     });
     Table.belongsToMany(models.Images, {
-      through: models.TablesImages,
+      through: models.TablesImages
     });
-    Table.belongsToMany(models.Orders, { through: models.OrdersItems });
-    // Table.belongsTo(models.Brand, {
-    //   as: "brand",
-    //   foreignKey: "brand_id",
-    // });
+    Table.belongsToMany(models.Orders, { 
+      through: models.OrdersItems
+    });
   };
 
   return Table;

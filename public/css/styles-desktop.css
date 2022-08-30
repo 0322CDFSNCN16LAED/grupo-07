@@ -1,7 +1,4 @@
 @media (min-width: 769px){
-    .product-title{
-        display: none;
-    }
     .product:hover .product-title{
         display: block;
         transition: all .4s ease;

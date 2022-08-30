@@ -167,6 +167,9 @@ a:link {
     margin: 0;
     padding-bottom: 4px;
 }
+.product-title{
+    display: none;
+}
 /* Banner envio */
 .banner-envio{
     padding: 8px;
@@ -221,7 +224,13 @@ a:link {
 
 
 /* Footer*/
-
+.footer {
+    position: relative;
+}
+.footer section {
+    position: absolute;
+    z-index: 2
+}
 .footer-article li a {
     color: black;
     text-decoration: none; /*saqué el subrayado*/

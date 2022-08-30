@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/forms.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
+
+                <form class="form"  action="/accesorios/<%= accesorio.id %>/edit?_method=PUT" method="POST">
+
+                    <h2 class="w-100">Editar "<%= accesorio.type %>"</h2>
+                    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" value="<%= accesorio.type %>">
+                    </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" value="<%= accesorio.description %>">
+                   </div>
+                   
+                   <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                    <label for="brand_id" class="w-100">Marca: </label>
+                    <div class="w-100 p-8">
+                        <select name="brand_id" id="">
+                            <% brands.forEach(brand => { %>
+                                <option value="<%= brand.id%>"><%= brand.name %> </option>
+                            <% }) %> 
+                        </select>
+                    </div>
+                </div>
+
+
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="price" id="" placeholder="Precio"  value="<%= accesorio.price %>">
+                   </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="discount" id="" placeholder="Descuento"  value="<%= accesorio.discount %>">
+                   </div>
+                   
+                   <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="image" class="w-100">Cambiar Imagen del Producto: </label>
+                        <div class="w-100 p-8">
+                            <input type="file" name="image" id="image" placeholder="Imagen del producto">
+                        </div>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Guardar</button>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="reset" >Resetear</button>                    
+                    </div>
+                
+                </form>
+                
+            </div>
+
+                        
+        </section>
+
+    </main>
+
+
+    <%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>

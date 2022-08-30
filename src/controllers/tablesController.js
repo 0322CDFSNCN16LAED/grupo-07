@@ -1,5 +1,3 @@
-const { table } = require("console");
-const path = require("path");
 const db = require('../database/models');
 
 const tablesController = {
@@ -9,80 +7,111 @@ const tablesController = {
         .then((tablas)=>{
             res.render("tablas", {tablas: tablas})
         });
+
     },
 
     detail: function (req, res) {
         let id = req.params.id;
-
+        let relacionadas = db.Tables.findAll({limit: 4})
+        
         db.Tables.findByPk(id)
-
         .then((tabla)=>{
-            res.render("producto", { product: tabla })
-        })
+            let brand_id = tabla.brand_id;
+            db.Brands.findByPk(brand_id)
+            .then((brand)=>{
+                res.render("producto", { 
+                    product: tabla, 
+                    relatedProduct: relacionadas, 
+                    category: "tablas", 
+                    brand: brand
+                })
+            })      
+            .catch((error) => console.log(error));
+        })    
     },
 
     edit: (req, res) => {
-
         let id = req.params.id;
+        
+        let tabla = db.Tables.findByPk(id)
+        let brands = db.Brands.findAll()
+        
+        Promise.all([tabla, brands])
 
-        db.Tables.findByPk(id)
-
-        .then((tabla)=>{
-            res.render("editar-productos", {productToEdit: tabla})
+        .then(([tabla, brands]) => {
+        res.render("editar-tabla", {tabla, brands})
         })
-    },
 
+        .catch((error) => console.log(error));
+    },
+    
     update: (req, res) => {
-        let id = req.params.id;
-
-        db.Tables.findByPk(id)
-        .then((tabla) => {
-            tabla.update({
-                ...req.body,
-            });
-
-            tabla.save()
-            
-            .then(() => {
-                res.redirect("/tablas/" + req.params.id);
-            });
-        });
-    },
-
-    /*store: (req, res) => {
-        const newTable = req.body;
-
-        if (products.length) {
-          newProduct.id = products[products.length - 1].id + 1;
-        } else {
-          newProduct.id = 1;
-        }
-    
-        products.push(newProduct);
-    
-        db.saveProducts(products);
-    
-        res.redirect("/productos/" + newProduct.id);
-    },*/
-
-    create: (req, res)=>{
+        db.Tables.update({
+            type: req.body.type,
+            description: req.body.description,
+            price: req.body.price,
+            discount: req.body.discount,
+            table_length: req.body.table_length,
+            table_expertise: req.body.table_expertise,
+            table_volume: req.body.table_volume,
+            table_thickness: req.body.table_thickness,
+            table_material: req.body.table_material,
+            table_keels: req.body.table_keels,
+            brand_id: req.body.brand_id
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        
+        .then(() => {
+            res.redirect("/tablas/" + req.params.id);
+        })
     },
 
     destroy: (req, res) => {
         let id = req.params.id;
 
         db.Tables.findByPk(id)
+        
+        .then((tabla) => {
+            tabla.destroy()
+                .then(() => {
+                    res.redirect("/tablas");
+                });
+        });
+    },
 
-        .then((tabla)=>{
-            tabla.crvrv([])
-            .then(()=>{
-                tabla.destroy()
-                .then(()=>{
-                    res.redirect("/tablas")
-                })
-            })
+    add: (req, res) => {
+        db.Brands.findAll()
+        .then((brands)=>{
+            res.render("crear-tabla", {brands})
         })
-    }
+    },
+
+    create: (req, res) => {
+
+        db.Tables.create({
+            type: req.body.type,
+            description: req.body.description,
+            price: req.body.price,
+            discount: req.body.discount,
+            table_length: req.body.table_length,
+            table_expertise: req.body.table_expertise,
+            table_volume: req.body.table_volume,
+            table_thickness: req.body.table_thickness,
+            table_material: req.body.table_material,
+            table_keels: req.body.table_keels,
+            brand_id: req.body.brand_id
+        })
+
+        .then(() => {
+            return res.redirect("/tablas");
+        })
+
+        .catch((error) => res.send(error));
+    },
+
 };
 
 module.exports = tablesController; 

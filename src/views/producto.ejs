@@ -19,9 +19,9 @@
         <ul class="nav-section mb-8 flex">
             <li class="mx-10"><a href="/">Inicio</a></li>
             <li class="mx-10">/</li>
-            <li class="mx-10">Producto</a></li>
+            <li class="mx-10"><a href="/<%=category %>"><%=category %></a></li>
             <li class="mx-10">/</li>
-            <li class="mx-10"><%= product.category %></a></li>
+            <li class="mx-10"><a href="/<%=category %>/<%= product.id %>"><%= product.type %></a></li>
         </ul>
     </div>
 
@@ -30,7 +30,7 @@
         <div class="blue-container">
 
             <div class="w-100">
-                <h2 class="product-name"><%= product.type %> - <%= product.brand %></h2>
+                <h2 class="product-name"><%= product.type %> - <%= brand.name%></h2>
             </div>
 
             <section class="banner-product w-100 w-tablet-50">
@@ -71,26 +71,26 @@
                         <i class="p-8 font-blue fab fa-cc-visa"></i>
                         <i class="p-8 font-navy fab fa-cc-amex"></i>
                         <i class="p-8 font-red fab fa-cc-mastercard"></i>
-                        <i class="p-8 font-green far fa-money-bill-alt"></i>
+                        <i class="p-8 font-green fas fa-money-bill-wave-alt"></i>
                     </div>
                 </article>
 
                 <article class="product-buttons">
                 
                     <div>
-                        <a href="/tablas/<%=product.id %>/carrito">
+                        <a href="/<%= category %>/<%=product.id %>/carrito">
                             <button type="submit">Agregar al carrito</button>
                         </a>
                     </div>
     
                     <div>
-                        <a href="/tablas/<%=product.id %>/edit ">
+                        <a href="/<%= category %>/<%=product.id %>/edit ">
                             <button type="submit">Editar producto</button>
                         </a>
                     </div>
     
                     <div>
-                        <form action="/tablas/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
+                        <form action="/<%= category %>/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
                             <button type="submit">Eliminar producto</button>
                         </form>
                     </div>
@@ -110,14 +110,19 @@
             <article class="blue-container flex fx-wrap">
                 <ul class="w-100">
                     <h2>Características</h2>
-                    <li>Marca: <%= product.brand_id %></li>
-                    <li>Largo: <%= product.table_length %> pies</li>
+                    <% if (category == "tablas"){%>
+                    <li>Modelo: <%= product.type %></li>
+                    <li>Largo: <%= product.table_length %> cm</li>
                     <li>Nivel de experiencia: <%= product.table_expertise %></li>
-                    <li>Espesor: <%= product.table_thickness %> pulgadas</li>
-                    <li>Volumen: <%= product.table_volume %> litros</li>
-                    <li>Tipo: <%= product.type %></li>
-                    <li>Material: <%= product.material %></li>
-                    <li>Quillas: <%= product.keels %></li>
+                    <li>Volumen: <%= product.table_volume %> cm³</li>
+                    <li>Espesor: <%= product.table_thickness %> cm</li>
+                    <li>Material: <%= product.table_material %></li>
+                    <li>Quillas: <%= product.table_keels %></li>
+                    <li>Marca: <%= brand.name %></li>
+                    <%} else { %>
+                    <li>Modelo: <%= product.type %></li>
+                    <li>Marca: <%= brand.name %></li>
+                    <%}%>
                 </ul>
             </article>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 200"><path fill="#afe0fc" fill-opacity="1" d="M0,32L40,64C80,96,160,160,240,154.7C320,149,400,75,480,90.7C560,107,640,213,720,229.3C800,245,880,171,960,144C1040,117,1120,139,1200,128C1280,117,1360,75,1400,53.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
@@ -142,20 +147,18 @@
         <div class="blue-container">
             
             <h2 class="w-100">Productos Relacionados </h2>
-    
-            <% //product.forEach(product => {%> 
-                </div><% //%if(product.category == product.category &&  product.id!=product.id ) {%> 
-                    <div class="w-50 w-desktop-25 p-8">
-                        <article class="product" id="1">
+            <% for (let i = 0; i < relatedProduct.length; i++) {%>
+                <div class="w-50 w-desktop-25 p-8">
+                        <article class="product" id="">
                             <div>
-                                <a href="/productos/<%//= product.id %> ">
-                                    <img class="w-100" src="<%//= product.image %>" alt="Imagen de la tabla"/>
+                                <a href="/<%= category %>/<%= productoRelacionado[i].id %> /">
+                                    <img class="w-100" src="<%=  %>" alt="Imagen de la tabla"/>
                                 </a>
                             </div>
                         </article>
-                    </div>
-            <% //}}) %>
-        
+                </div>
+            <% } %> 
+          
         </div>
     </section>
     

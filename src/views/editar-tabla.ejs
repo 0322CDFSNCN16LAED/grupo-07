@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<%- include ('./partials/head') %> 
+<link rel = "stylesheet" href = "/css/forms.css"/>
+</head>
+
+<body class="bg-light-gray w-100">
+
+    <%- include ('./partials/header') %> 
+    
+    <main class="form-main">
+        
+        <section class="section-form">
+            
+            <div class="bg-light-blue br-10">
+
+                <form class="form"  action="/tablas/<%= tabla.id %>/edit?_method=PUT" method="POST">
+
+                    <h2 class="w-100">Editar "<%= tabla.type %>" </h2>
+                    
+                    <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" value="<%= tabla.type %>">
+                    </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" value="<%= tabla.description %>">
+                   </div>
+                   
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="price" id="" placeholder="Precio"  value="<%= tabla.price %>">
+                   </div>
+
+                   <div class="w-100 fx-align-center p-8">
+                        <input class="form-inp" type="text-box" name="discount" id="" placeholder="Descuento"  value="<%= tabla.discount %>">
+                   </div>
+                   
+                   <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="image" class="w-100">Cambiar Imagen del Producto: </label>
+                        <div class="w-100 p-8">
+                            <input type="file" name="image" id="image" placeholder="Imagen del producto">
+                        </div>
+                    </div>
+
+                    <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                        <label for="brand_id" class="w-100">Marca: </label>
+                        <div class="w-100 p-8">
+                            <select name="brand_id" id="">
+                                <% brands.forEach(brand => { %>
+                                    <option value="<%= brand.id%>"><%= brand.name %> </option>
+                                <% }) %> 
+                            </select>
+                        </div>
+                    </div>
+
+                        <div class="flex fx-wrap w-100 fx-align-center p-8 ">
+                            <label for="table_expertise" class="w-100">Nivel de Experiencia: </label>
+                            <div class="w-100 p-8">
+                                <select name="table_expertise" id="">
+                                    <option value="Profesional" <% tabla.table_expertise=='Profesional'? "selected" :"" %> >Profesional</option>
+                                    <option value="Intermedio" <% tabla.table_expertise=='Intermedio'? "selected" :"" %>>Intermedio</option>
+                                    <option value="Principiante" <% tabla.table_expertise=='Principiante'? "selected" :"" %>>Principiante</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" name="table_thickness" id="" placeholder="Espesor" value="<%= tabla.table_thickness %>" required>
+                        </div>
+
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" step="0.1" name="table_length" id="" placeholder="Largo"  value="<%= tabla.table_length %>">
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="number" name="table_volume" id="" placeholder="Volumen" value="<%= tabla.table_volume %>" required>
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="text" name="table_material" id="" placeholder="Material de fabricacion" value="<%= tabla.table_material %>" required>
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8">
+                            <input class="form-inp" type="text" name="table_keels" id="" placeholder=" Quillas" value="<%= tabla.table_keels %>" required>
+                        </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="submit">Guardar</button>
+                    </div>
+
+                    <div class="w-100 fx-align-center p-8">
+                        <button class="form-button" type="reset" >Resetear</button>                    
+                    </div>
+                
+                </form>
+                
+            </div>
+
+                        
+        </section>
+
+    </main>
+
+
+    <%- include ('./partials/footer') %> 
+    
+</body>
+
+
+</html>

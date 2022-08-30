@@ -23,56 +23,56 @@
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center">Tablas Destacadas</h2>
-        <% for (let i=0; i <4;i++) { if(products[i].category =="Tablas de surf") {%> 
+        <% tablas.forEach (tabla => { %> 
             <div class="w-50 w-desktop-25 p-8">
-                <article class="product" id="1">
+                <article class="product" id="">
                     <div>
-                        <a href="/productos/<%= products[i].id %>">
-                            <img class="w-100" src="<%= products[i].image %>" alt="Imagen de la tabla"/>
+                        <a href="/tablas/<%= tabla.id %> ">
+                            <img class="w-100" src="#" alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="product-div-info">
-                        <h3 class="font-medium w-100 text-center"><%= products[i].type %> </h3>
-                        <p class="product-title font-large w-50 text-center">$ <%= products[i].price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= products[i].discount %> % OFF</p>
+                        <h3 class="font-medium w-100 text-center"><%= tabla.type %> </h3>
+                        <p class="product-title font-large w-50 text-center">$ <%= tabla.price %> </p>
+                        <p class="product-title font-medium w-50 text-center"><%= tabla.discount %> % OFF</p>
                     </div>
                    
                 </article>
             </div>
-            <% }} %>
+            <% }) %>
 
     </section>
 
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center"> Seguí Descubriendo Accesorios </h2>
-        <% products.forEach(products =>{ if(products.category=="Accesorios") {%> 
+        <% accesorios.forEach(accesorio =>{%> 
             <div class="w-50 w-desktop-25 p-8">
                 <article class="product" id="1">
                     <div>
-                        <a href="/productos/<%= products.id %> ">
-                            <img class="w-100" src="<%= products.image %>" alt="Imagen de la tabla"/>
+                        <a href="/accesorios/<%= accesorio.id %> ">
+                            <img class="w-100" src="#" alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="p-relative h-27 flex fx-wrap fx-align-center">
-                        <h3 class="font-medium w-100 text-center"><%= products.type %> </h3>
-                        <p class="product-title font-large w-50 text-center">$ <%= products.price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= products.discount %> % OFF</p>
+                        <h3 class="font-medium w-100 text-center"><%= accesorio.type %> </h3>
+                        <p class="product-title font-large w-50 text-center">$ <%= accesorio.price %> </p>
+                        <p class="product-title font-medium w-50 text-center"><%= accesorio.discount %> % OFF</p>
                     </div>
                    
                 </article>
             </div>
-            <% }}) %>
+            <% }) %>
 
     </section>
             
     <section class="w-100 p-8">
         <h2 class="font-heading mb-8 w-100">Nuestras Marcas</h2>
         <div class="flex fx-align-center">
-            <img class="w-25 p-8" src="/images/marcas/billabong-logo.png" alt="Billabong logo"></a>
-            <img class="w-25 p-8" src="/images/marcas/oneill-logo.png" alt="Oneill logo"></a>
-            <img class="w-25 p-8" src="/images/marcas/quiksilver-Logo.png" alt="Quicksilver logo"></a>
-            <img class="w-25 p-8" src="/images/marcas/rip-curl-logo.png" alt="Rip curl logo"></a>
+            <div class="w-25 p-8 text-center"><img class="w-50" src="/images/marcas/billabong-logo.png" alt="Billabong logo"></a></div>
+            <div class="w-25 p-8 text-center"><img class="w-50" src="/images/marcas/oneill-logo.png" alt="Oneill logo"></a></div>
+            <div class="w-25 p-8 text-center"><img class="w-50" src="/images/marcas/quiksilver-Logo.png" alt="Quicksilver logo"></a></div>
+            <div class="w-25 p-8 text-center"><img class="w-50" src="/images/marcas/rip-curl-logo.png" alt="Rip curl logo"></a></div>
         </div>
     </section>
           

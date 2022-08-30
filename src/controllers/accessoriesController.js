@@ -1,5 +1,3 @@
-const { table } = require("console");
-const path = require("path");
 const db = require('../database/models');
 
 const accessoriesController = {
@@ -13,85 +11,93 @@ const accessoriesController = {
 
     detail: function (req, res) {
         let id = req.params.id;
-
+        let relacionadas = db.Accessories.findAll({limit: 4})
+        
         db.Accessories.findByPk(id)
-
-        .then((accessorio)=>{
-            res.render("producto", { product: accessorio })
-        })
+        .then((accesorio)=>{
+            let brand_id = accesorio.brand_id;
+            db.Brands.findByPk(brand_id)
+            .then((brand)=>{
+                res.render("producto", { 
+                    product: accesorio, 
+                    relatedProduct: relacionadas, 
+                    category: "accesorios", 
+                    brand: brand
+                })
+            })        
+            .catch((error) => console.log(error));
+        })    
     },
 
     edit: (req, res) => {
         let id = req.params.id;
+        
+        let accesorio = db.Accessories.findByPk(id)
+        let brands = db.Brands.findAll()
+        
+        Promise.all([accesorio, brands])
 
-        db.Accessories.findByPk(id)
-
-        .then((accesorio)=>{
-            res.render("editar-productos", {productToEdit: accesorio})
+        .then(([accesorio, brands]) => {
+        res.render("editar-accesorio", {accesorio, brands})
         })
+
+        .catch((error) => console.log(error));
     },
-
-
+    
     update: (req, res) => {
-        let id = req.params.id;
-
-        db.Tables.findByPk(id)
-        .then((tabla) => {
-            tabla.update({
-                ...req.body,
-            });
-
-            if (req.file) {
-                tabla.image = req.file.filename;
+        
+        db.Accessories.update({
+            type: req.body.type,
+            description: req.body.description,
+            price: req.body.price,
+            discount: req.body.discount,
+            brand_id: req.body.brand_id
+        }, {
+            where: {
+                id: req.params.id
             }
-
-            tabla.save()
-            .then(() => {
-                res.redirect("/tablas/" + req.params.id);
-            });
-        });
-    },
-
-
-    create: (req, res) => {
-        db.Accessories.create({
-            ...req.body,
-        }).then(function () {
-            res.redirect("/tablas");
-        });
-    },
-
-    store: (req, res) => {
-        const newTable = req.body;
-
-        if (products.length) {
-          newProduct.id = products[products.length - 1].id + 1;
-        } else {
-          newProduct.id = 1;
-        }
-    
-        products.push(newProduct);
-    
-        db.saveProducts(products);
-    
-        res.redirect("/productos/" + newProduct.id);
+        })
+        
+        .then(() => {
+            res.redirect("/accesorios/" + req.params.id);
+        })
     },
 
     destroy: (req, res) => {
         let id = req.params.id;
 
-        db.Tables.findByPk(id)
+        db.Accessories.findByPk(id)
+        
+        .then((accesorio) => {
+            accesorio.destroy()
+                .then(() => {
+                    res.redirect("/accesorios");
+                });
+        });
+    },
 
-        .then((tabla)=>{
-            tabla.crvrv([])
-            .then(()=>{
-                tabla.destroy()
-                .then(()=>{
-                    res.redirect("/tablas")
-                })
-            })
+    add: (req, res) => {
+        db.Brands.findAll()
+        .then((brands)=>{
+            res.render("crear-accesorio", {brands})
         })
+    },
+
+    create: (req, res) => {
+        
+        db.Accessories.create({
+            type: req.body.type, 
+            description: req.body.description,
+            price: req.body.price,
+            discount: req.body.description,
+            brand_id: req.body.brand_id,
+        })
+        
+        .then(function () {
+            res.redirect("/accesorios");
+        });
     }
+
 };
 
 module.exports = accessoriesController; 

@@ -1,27 +1,33 @@
-const db = require("../../data/db");
-const products = db.getProducts();
-const comments = db.getComments();
+const db = require('../database/models');
 
 const mainController = {
   home: function (req, res) {
-    const products = db.getProducts();
-    res.render("home", { products: products });
+    let tablas = db.Tables.findAll({limit: 4})
+    let accesorios = db.Accessories.findAll({limit: 4})
+
+    Promise.all([tablas, accesorios])
+    
+    .then(([tablas, accesorios]) => {
+      return res.render("home", {
+        tablas, accesorios
+      });
+    })
+    
+    .catch((error) => res.send(error));
   },
-  register: function (req, res) {
-    res.render("register");
-  },
-  login: function (req, res) {
-    res.render("login");
-  },
+
   nosotros: function (req, res) {
     res.render("nosotros");
   },
+  
   escuelas: function (req, res) {
     res.render("escuelas");
   },
+  
   carrito: function (req, res) {
     res.render("carrito");
   },
+  
   creacion: function (req, res) {
     res.render("crear-productos");
   },

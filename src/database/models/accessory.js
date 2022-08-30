@@ -25,15 +25,16 @@ module.exports = (sequelize, datatypes) => {
   const Accessory = sequelize.define(alias, cols, config);
 
   Accessory.associate = (models) => {
-    
-    Accessory.hasOne(models.Brands, {
-        as: "brand",
-        foreignKey: "brand_id"
+    Accessory.belongsTo(models.Brands, {
+      as: "brand",
+      foreignKey: "brand_id",
     });
-
-    Accessory.belongsToMany(models.Images, {through: models.AccessoriesImages });
-    
-    Accessory.belongsToMany(models.Orders, {through: models.OrdersItems });
+    Accessory.belongsToMany(models.Images, {
+      through: models.TablesImages
+    });
+    Accessory.belongsToMany(models.Orders, { 
+      through: models.OrdersItems
+    });
   };
 
   return Accessory;
