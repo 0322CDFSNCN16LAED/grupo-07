@@ -2,6 +2,9 @@
 
 ---
 
+![Azul y Dorado Para Inmobiliarias Portada para LinkedIn (1)](https://user-images.githubusercontent.com/102632013/187766359-ad5ac81d-ad9d-4cf3-8339-31f2076e7f0d.png)
+
+
 ## Breve descripcion del proyecto 
 
 **Take Off Surf** es un e-commerce de tablas de surf. Las mismas pueden ser comerciales como personalizadas, donde a partir de opciones predeterminadas el usuario interactivamente podrá ir diseñando su tabla al mismo tiempo que ve cómo quedaría. 
@@ -12,7 +15,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 
 ---
 
-## Integrantes del equipo :busts_in_silhouette:
+## Integrantes del equipo:
 
 ### Mayra Adamov:
 >Hola! Soy Mayra Adamov, tengo 21 años. Soy de Moron, provincia de Buenos Aires, Argentina. Actualmente estudio Biología en la Universidad de Ciencias Exactas y Naturales. Me interesa bastante el mundo de la programación, ya que esta bastante ligado a mi carrera aunque no lo parezca. Me gusta aprender y poder mejorar cada dia!
@@ -37,14 +40,14 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 ### Swellboards 
 :link: https://swellboards.com/
 
-:heavy_exclamation_mark: Nos gustó:
+Nos gustó:
 El pop-up del chat.
 El reed de las tablas y de las imágenes del sitio (colores llamativos).
 Las actividades extras que ofrecen abajo.
 Buena descripción de producto y fotos (imágenes grandes y coloridas).
 Se expande el menú del header al colocar el mouse sobre él.
 
-:x: No nos gustó:
+No nos gustó:
 La búsqueda, la sección de escuelas y tiendas (poca información).
 No posee sistema de compras (carrito).
 Footer, muy básico.
@@ -53,12 +56,12 @@ No posee redes sociales implementadas.
 ### Wtop 
 :link: https://www.iurop.cl/
 
-:heavy_exclamation_mark: Nos gustó:
+Nos gustó:
 En el footer, agrega una lista de accesos rápidos a determinados items.
 Buen buscador.
 El sistema del carrito de compras, bien implementado.
 
-:x: No nos gustó:
+No nos gustó:
 Las imágenes del slider muy grandes, no caben en la pantalla de la pc.
 Menú del header, poco visible, no resalta.
 Link de redes sociales poco desarrollado.
@@ -67,14 +70,14 @@ Link de redes sociales poco desarrollado.
 ### Erizos store 
 :link: https://www.erizosstore.com/
 
-:heavy_exclamation_mark: Nos gustó:
+Nos gustó:
 El diseño y temática.
 Buen footer y barra de suscripción.
 Tiene un menú por marcas (y una leve descripción de cada una).
 En la parte de “nosotros” tiene un mapa para dónde encontrarlos y sus direcciones (aunque con poco diseño esa parte).
 Posee un slider en el fondo con temas variados(publicaciones sobre surf y otras cosas).
 
-:x: No gustó:
+No nos gustó:
 No posee link de redes sociales.
 Los productos son expuestos en slider.
 Sitio medio oscuro, pocos colores, muy junto todo.
@@ -83,13 +86,13 @@ Sitio medio oscuro, pocos colores, muy junto todo.
 ### Tienda de surf 
 :link: http://www.tiendadesurf.com.ar/index.php/neoprenen.html
 
-:heavy_exclamation_mark: Nos gustó:
+Nos gustó:
 Solo vende cosas de surf.
 
 ### Bai Bai
 :link: https://baibai.surf
 
-:heavy_exclamation_mark: Nos gustó:
+Nos gustó:
 La estética que presentan.
 
 ---
@@ -122,12 +125,6 @@ Mukta:
 https://fonts.google.com/specimen/Mukta
 
 
-### Colors 
+### Paleta Take Off Surf
 
-Negro: black;
-
-
-Celeste: #afe0fc;
-
-
-Azul: #4b7994;
+![Azul y Dorado Para Inmobiliarias Portada para LinkedIn (3)](https://user-images.githubusercontent.com/102632013/187767551-6f4ffb14-315b-43d1-be85-0dfb9fe0a607.png)
