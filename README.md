@@ -124,8 +124,6 @@ https://fonts.google.com/specimen/Mukta
 
 ### Colors 
 
-Verde #C1DD50
-Amarillo #ECCF5C
-Azul oscuro #122373
-Azul #175FAB
-Celeste #20AFD9
+Negro: black;
+Celeste: #afe0fc;
+Azul: #4b7994;
