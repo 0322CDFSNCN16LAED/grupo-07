@@ -35,7 +35,7 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 ---
 
 
-## Inspiración en referentes del mercado :department_store:
+## Inspiración en referentes del mercado
 
 ### Swellboards 
 :link: https://swellboards.com/
