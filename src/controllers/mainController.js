@@ -31,24 +31,39 @@ const mainController = {
   creacion: function (req, res) {
     res.render("crear-productos");
   },
-  /*contacto: function (req, res) {
-    const comments = db.getComments();
-    res.render("contacto", { comments: comments });
+  pregunta: function (req, res) {
+    db.Comments.findAll({limit: 4})
+    .then((comments)=>{
+      res.render("contacto", { comments: comments });
+    })
   },
-  storecoment: function (req, res) {
-    const newComent = req.body;
-
-    if (comments.length) {
-      newComent.id = comments[comments.length - 1].id + 1;
-    } else {
-      newComent.id = 1;
-    }
-    comments.unshift(newComent);
-
-    db.saveComments(comments);
-
-    res.redirect("contacto");
-  },*/
+  crearPregunta: (req,res) => {
+    db.Questions.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      question: req.body.question,
+    })
+    .then(() => {
+      return res.redirect("/contacto");
+    })
+    .catch((error) => res.send(error));
+  },
+  comentario: function (req, res) {
+    db.Comments.findAll({limit: 4})
+    .then((comments)=>{
+      res.render("contacto", { comments: comments });
+    })
+  },
+  crearComentario: (req, res) => {
+    db.Comments.create({
+        comment: req.body.comment,
+    })
+    .then(() => {
+        return res.redirect("/contacto");
+    })
+    .catch((error) => res.send(error));
+}
 };
 
 module.exports = mainController;

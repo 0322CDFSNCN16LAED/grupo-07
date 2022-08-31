@@ -14,29 +14,18 @@
           <p><%= error.msg %></p>
 
           <% }) } %>
-          <form
-            class="form"
-            action="/users/register"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <form class="form" action="/users/register" method="POST" enctype="multipart/form-data" >
+            
             <h2 class="w-100">Registrate</h2>
             <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="text"
-                name="firstName"
-                id="firstName"
-                placeholder="Nombre"
-                value="<%= locals.old && old.firstName ? old.firstName : ''%>"
-              />
+              <input class="form-inp" type="text" name="first_name" id="" placeholder="Nombre"/>
             </div>
 
             <div class="w-100 fx-align-center p-8">
               <input
                 class="form-inp"
                 type="text"
-                name="lastName"
+                name="last_name"
                 id="apellido"
                 placeholder="Apellido"
                 value="<%= locals.old && old.lastName ? old.lastName : ''%>"
@@ -49,7 +38,7 @@
                 type="mail"
                 placeholder="Correo electrónico"
                 name="email"
-                id="email"
+                id=""
                 value="<%= locals.old && old.email ? old.email : ''%>"
               />
             </div>
@@ -59,7 +48,7 @@
                 class="form-inp"
                 type="number"
                 name="dni"
-                id="dni"
+                id=""
                 placeholder="Documento"
                 value="<%= locals.old && old.dni ? old.dni : ''%>"
               />
@@ -68,20 +57,9 @@
             <div class="w-100 fx-align-center p-8">
               <input
                 class="form-inp"
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Direccion"
-                value="<%= locals.old && old.address ? old.address : ''%>"
-              />
-            </div>
-
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
                 type="date"
                 name="birthdate"
-                id="nacimiento"
+                id=""
                 value="<%= locals.old && old.birthdate ? old.birthdate : ''%>"
               />
             </div>
@@ -91,7 +69,7 @@
                 class="form-inp"
                 type="password"
                 name="password"
-                id="password"
+                id=""
                 placeholder="Contraseña"
               />
             </div>

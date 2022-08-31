@@ -41,7 +41,7 @@ a:link {
 }
 
 .bg-blue{
-    background-color: #122373;
+    background-color: #021b5070;
 }
 
 .font-light-blue{
@@ -139,6 +139,7 @@ a:link {
 
 }
 
+
 /* Productos home*/
 .product{
     margin-bottom: 8px;
@@ -227,8 +228,7 @@ a:link {
 .footer {
     position: relative;
 }
-.footer section {
-    position: absolute;
+footer section {
     z-index: 2
 }
 .footer-article li a {

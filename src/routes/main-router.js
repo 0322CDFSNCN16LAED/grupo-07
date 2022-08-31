@@ -17,9 +17,10 @@ router.get("/nosotros", mainController.nosotros);
 router.get("/escuelas", mainController.escuelas);
 router.get("/carrito", /*authMiddleware, */mainController.carrito);
 
-//router.get("/contacto", mainController.contacto);
-//router.post("/", mainController.storecoment);
-
+router.get("/contacto", mainController.comentario);
+router.post("/contacto", mainController.crearComentario);
+router.get("/contacto/pregunta", mainController.pregunta);
+router.post("/contacto/pregunta", mainController.crearPregunta);
 
 router.use("/tablas", tablesRouter);
 router.use("/accesorios", accessoriesRouter);

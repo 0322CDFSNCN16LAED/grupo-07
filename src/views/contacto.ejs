@@ -11,67 +11,112 @@
     <%- include ('./partials/header') %> 
     
     <main  class="form-main">
-        
-        <section class="section-form">
-            
-            <div class="bg-light-blue br-10">
+
+        <div class="w-100 p-8 m-center">
+            <ul class="nav-section w-50  mb-8 flex">
+                <li class="mx-10"><a href="/">Inicio</a></li>
+                <li class="mx-10">/</li>
+                <li class="mx-10"><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="w-100 p-8">
+
+            <section class="comments text-center w-100">
                 
-                <form class="form" action="/" method="POST">
-                    
-                    <h2 class="w-100">Contactanos</h2>
-    
-                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="first_name" id="first_name" required placeholder="Nombre">
-                    </div>
+                <article class="comments-div">
+                    <h2 class="p-10">Contactanos</h2>
 
-                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="last_name" id="last_name" required placeholder="Apellido">
-                    </div>
+                    <form class="form fx-align-center" action="/contacto/pregunta" method="POST">
 
-                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="mail" name="email" id="email" required placeholder="Correo Electrónico">
-                    </div>
-
-                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="tel" name="telefone" id="telefone" placeholder="Telefono">
-                    </div>
-
-                    <div class="w-100 fx-align-center p-8" >
-                        <input class="form-inp" type="asunto" name="issue" id="issue" placeholder="Asunto">
-                    </div>
-
-                    <div class="w-100 fx-align-center p-8">
-                        <textarea class="form-inp" name="comment" id="comment"required rows="10" cols="50" placeholder="Escribe aqui tu comentario"></textarea>           
-                    </div>
-    
-                    <div class="w-100 fx-align-center p-8">
-                        <button class="form-button" type="submit">Enviar</button>
-                    </div>
-                        
-        </section>
-
-        <section class="section-comments">
-            
-            <div class="bg-light-blue br-10">
-
-                <div class="comments">
-                    <h2 class="w-100 text-center">Sus comentarios</h2>
-                    
-                    <% for (let i=0; i < comments.length;i++) { %>
-                        
-                        <div>
-                            <p>Usuario: <%= comments[i].first_name %> <%= comments[i].last_name %> </p>
-                            <p>Asunto: <%= comments[i].issue %> </p>
-                            <p>Fecha: <%= comments[i].createdAt %> </p>
-                            <p>Comentario: <%= comments[i].comment %> </p>
+                        <div class="w-100 w-tablet-33 text-center p-8">
+                            <div class="flex fx-wrap">
+                                <label class="w-100 p-8" for="first_name">Nombre</label>
+                                <input class="text-center w-100 p-8 mx-10" type="text" id="" name="first_name" placeholder="Nombre">
+                            </div>
                         </div>
-              
-                    <% } %> 
-                </div>
-            </div>
+                        <div class="w-100 w-tablet-33 text-center p-8">
+                            <div class="flex fx-wrap">
+                                <label class="w-100  p-8" for="last_name">Apellido</label>
+                                <input class="text-center w-100 p-8 mx-10" type="text" id="" name="last_name" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <div class="w-100 w-tablet-33 text-center p-8">
+                            <div class="flex fx-wrap">
+                                <label class="w-100 p-8" for="email">Mail</label>
+                                <input class="text-center w-100 p-8 mx-10" type="text" id="" name="email" placeholder="Mail">
+                            </div>
+                        </div>
+                        <div class="w-100 text-center p-8">
+                            <div class="flex fx-wrap">
+                                <label class="w-100 p-8" for="question">Tu Pregunta</label>
+                                <input class="text-center w-100 p-8 mx-10" type="text" id="" name="question" placeholder="Pregunta">
+                            </div>
+                        </div>
 
-        </section>
+                        <div class="w-100 fx-align-center p-8 text-center">
+                            <button class="form-button" type="submit">Enviar</button>
+                        </div>
+                    
+                    </form>
+                </article>
+            </section>
+
+            <section class="comments">
+                <div class="comments-div flex fx-wrap">
+                    <article class="w-100 w-tablet-50">
+                        <div>
+                            <h2 class="p-10">Ubicación:</h2>
+                            <p class="p-10">Sebastian Elcano 1827, Acassuso, San Isidro, Buenos Aires</p>
+                        </div>
+                        <div>
+                            <h2 class="p-10">Redes:</h2>
+                            <ul class="p-8 flex fx-wrap">
+                                <li class="form-div"><i class="em-1 p-8 fab fa-instagram"></i><a href="#"> Instagram</a></li>
+                                <li class="form-div"><i class="em-1 p-8 fab fa-facebook-f"></i><a href="#">Facebook</a></li>
+                                <li class="form-div"><i class="em-1 p-8 fab fa-twitter"></i><a href="#">Twiter</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="p-10">Mail:</h2>
+                            <p class="p-10"><a href="#">takeoffsurf@gmail.com</a></p>
+                        </div>
+                    </article>
+                    <article class="w-100 w-tablet-50">
+                        <iframe width="100%"  height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d822.2847108642972!2d-58.489937170804296!3d-34.47400189319658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x639cd81222465e82!2zMzTCsDI4JzI2LjQiUyA1OMKwMjknMjEuOCJX!5e0!3m2!1ses-419!2sar!4v1661966833795!5m2!1ses-419!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </article>
+                </div>
+            </section>
+            
+            <section class="comments">
+                <div class="comments-div">
+                <h2 class="p-10">Sus opiniones:</h2>
+                <div class="p-10">
+                    <% comments.forEach(comment => { %>
+                <div class="p-10 w-100 bg-blue br-10 mb-8">
+                    <p><%= comment.comment %> </p>
+                </div>
+                <% }) %>
+                </div>
+
+                <div>
+                    <form class="form" action="/contacto" method="POST">
+                        
+                        <h2 class="w-100">Dejanos tu opinión:</h2>
         
+                        <div class="w-100 fx-align-center p-8 text-center">
+                            <input class="form-inp text-center" type="text-box" name="comment" id="" placeholder="Tu comentario" required>
+                        </div>
+    
+                        <div class="w-100 fx-align-center p-8 text-center">
+                            <button class="form-button" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+
     </main>
 
 <%- include ('./partials/footer') %> 

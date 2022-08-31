@@ -16,8 +16,8 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Image = sequelize.define(alias, cols, config);
     Image.associate = function (models) {
-      Image.belongsToMany(models.Accessories, {through: models.AccessoriesImages})
-      Image.belongsToMany(models.Tables, {through: models.TablesImages})
+      Image.belongsTo(models.Accessories, {through: models.AccessoriesImages})
+      Image.belongsTo(models.Tables, {through: models.TablesImages})
     }
     return Image;
 }
