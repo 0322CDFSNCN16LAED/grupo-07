@@ -118,12 +118,16 @@ https://trello.com/b/t9s2jP8Q/tablero
 
 ### Font
 
-Mukta
+Mukta: 
 https://fonts.google.com/specimen/Mukta
 
 
 ### Colors 
 
 Negro: black;
+
+
 Celeste: #afe0fc;
+
+
 Azul: #4b7994;
