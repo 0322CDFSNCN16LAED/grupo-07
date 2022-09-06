@@ -23,34 +23,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const validationsRegister = [
-  body("firstName").notEmpty().withMessage("Debes completar el nombre"),
-  body("lastName").notEmpty().withMessage("Debes completar el apellido"),
-  body("email")
-    .notEmpty()
-    .withMessage("Debes completar el email")
-    .bail()
-    .isEmail()
-    .withMessage("El email debe ser con el formato 'juan@example.com'"),
-  body("dni").notEmpty().withMessage("Debes completar el DNI"),
-  body("address").notEmpty().withMessage("Debes completar el domicilio"),
-  body("birthdate")
-    .notEmpty()
-    .withMessage("Debes completar la fecha de nacimiento"),
-  body("password")
-    .notEmpty()
-    .withMessage("Debes completar el password")
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage("La contraseña debe contener al menos 8 caracteres"),
-];
-
 // Register
 router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
   "/register",
   upload.single("profile_image"),
-  validationsRegister,
   usersController.storeUser
 );
 

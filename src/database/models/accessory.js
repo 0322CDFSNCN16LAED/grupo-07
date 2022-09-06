@@ -10,7 +10,7 @@ module.exports = (sequelize, datatypes) => {
     },
     type: datatypes.STRING(30),
     description: datatypes.STRING(1024),
-    price: datatypes.DECIMAL(6, 2),
+    price: datatypes.DECIMAL(),
     discount: datatypes.DECIMAL(2, 0),
     brand_id: datatypes.INTEGER,
   };
@@ -30,7 +30,7 @@ module.exports = (sequelize, datatypes) => {
       foreignKey: "brand_id",
     });
     Accessory.belongsToMany(models.Images, {
-      through: models.TablesImages
+      through: models.AccessoriesImages
     });
     Accessory.belongsToMany(models.Orders, { 
       through: models.OrdersItems

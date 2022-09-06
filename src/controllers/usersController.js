@@ -1,37 +1,31 @@
 const path = require("path");
-const datab = require("../../data/db");
 const bcrypt = require("bcryptjs");
-//const findBF = datab.findByField();
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const { DEFAULT_ECDH_CURVE } = require("tls");
 
 const usersController = {
+  
   createUser: (req, res) => {
     res.render("register");
   },
-
-  // Registro: Guardado usuario
 
   storeUser: async (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       let newUser = req.body;
       if (req.file) {
-        newUser.image = "/../data/users-images/" + req.file.filename;
+        newUser.profile_image = "/../data/users-images/" + req.file.filename;
       } else {
-        newUser.image = "/../data/users-images/default-user.jpg";
+        newUser.profile_image = "/../data/users-images/default-user.jpg";
       }
-      let userImage = await db.UsersImages.create({
-        url: newUser.image,
-      });
       const user = await db.Users.create({
-        fisrt_name: req.body.firstName,
-        last_name: req.body.lastName,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         dni: req.body.dni,
-        image_id: userImage.id,
+        image: newUser.profile_image,
         birthday: req.body.birthdate,
         address: req.body.address,
       });

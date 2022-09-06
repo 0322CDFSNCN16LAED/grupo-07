@@ -13,7 +13,7 @@ module.exports = (sequelize, datatypes) => {
     discount: datatypes.DECIMAL(6,2),
     table_length: datatypes.DECIMAL(6,2),
     table_expertise: datatypes.STRING(30),
-    table_volume: datatypes.DECIMAL(6,2),
+    table_volume: datatypes.DECIMAL(),
     table_thickness: datatypes.DECIMAL(6,2),
     table_material: datatypes.STRING(30),
     table_keels: datatypes.STRING(30),

@@ -17,20 +17,23 @@
           <form class="form" action="/users/register" method="POST" enctype="multipart/form-data" >
             
             <h2 class="w-100">Registrate</h2>
-            <div class="w-100 fx-align-center p-8">
-              <input class="form-inp" type="text" name="first_name" id="" placeholder="Nombre"/>
-            </div>
-
-            <div class="w-100 fx-align-center p-8">
-              <input
+            
+           
+              <div class="w-100 p-8">
+                <input class="form-inp" type="text" name="first_name" id="" placeholder="Nombre" required/>
+              </div>
+              
+              <div class="w-100 fx-align-center p-8">
+                <input
                 class="form-inp"
                 type="text"
                 name="last_name"
-                id="apellido"
+                id=""
                 placeholder="Apellido"
                 value="<%= locals.old && old.lastName ? old.lastName : ''%>"
-              />
-            </div>
+                required
+                />
+              </div>
 
             <div class="w-100 fx-align-center p-8">
               <input
@@ -40,6 +43,19 @@
                 name="email"
                 id=""
                 value="<%= locals.old && old.email ? old.email : ''%>"
+                required
+              />
+            </div>
+
+            <div class="w-100 fx-align-center p-8">
+              <input
+              class="form-inp"
+              type="text"
+              name="address"
+              id=""
+              placeholder="Dirección"
+              value="<%= locals.old && old.lastName ? old.lastName : ''%>"
+              required
               />
             </div>
 
@@ -51,6 +67,7 @@
                 id=""
                 placeholder="Documento"
                 value="<%= locals.old && old.dni ? old.dni : ''%>"
+                required
               />
             </div>
 
@@ -61,6 +78,7 @@
                 name="birthdate"
                 id=""
                 value="<%= locals.old && old.birthdate ? old.birthdate : ''%>"
+                required
               />
             </div>
 
@@ -71,6 +89,7 @@
                 name="password"
                 id=""
                 placeholder="Contraseña"
+                required
               />
             </div>
 

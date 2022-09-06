@@ -104,10 +104,6 @@ const tablesController = {
             table_keels: req.body.table_keels,
             brand_id: req.body.brand_id
         })
-
-        db.Images.create({
-            url: req.body.url,
-        })
         .then(() => {
             return res.redirect("/tablas");
         })
