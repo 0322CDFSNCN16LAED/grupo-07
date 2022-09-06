@@ -14,11 +14,21 @@
           <p><%= error.msg %></p>
 
           <% }) } %>
-          <form class="form" action="/users/register" method="POST" enctype="multipart/form-data" >
-            
+          <form
+            class="form"
+            action="/users/register"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <h2 class="w-100">Registrate</h2>
             <div class="w-100 fx-align-center p-8">
-              <input class="form-inp" type="text" name="first_name" id="" placeholder="Nombre"/>
+              <input
+                class="form-inp"
+                type="text"
+                name="first_name"
+                id=""
+                placeholder="Nombre"
+              />
             </div>
 
             <div class="w-100 fx-align-center p-8">
@@ -53,6 +63,16 @@
                 value="<%= locals.old && old.dni ? old.dni : ''%>"
               />
             </div>
+            <div class="w-100 fx-align-center p-8">
+              <input
+                class="form-inp"
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Domicilio"
+                value="<%= locals.old && old.lastName ? old.lastName : ''%>"
+              />
+            </div>
 
             <div class="w-100 fx-align-center p-8">
               <input
@@ -75,7 +95,9 @@
             </div>
 
             <div class="flex fx-wrap w-100 fx-align-center p-8">
-              <label for="profile_image" class="w-100">Imagen de Perfil: </label>
+              <label for="profile_image" class="w-100"
+                >Imagen de Perfil:
+              </label>
               <div class="w-100 p-8">
                 <input type="file" name="profile_image" id="profile_image" />
               </div>

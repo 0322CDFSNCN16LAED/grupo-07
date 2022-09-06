@@ -27,9 +27,9 @@
                   type="text"
                   class="form-inp"
                   name="firstName"
-                  id="firstName"
+                  id="first_name"
                   placeholder="Nombre"
-                  value="<%= user.fisrt_name%>"
+                  value="<%= user.first_name%>"
                 />
               </label>
             </div>
@@ -39,7 +39,7 @@
                 <input
                   class="form-inp"
                   type="text"
-                  name="lastName"
+                  name="last_name"
                   id="apellido"
                   placeholder="Apellido"
                   value="<%= user.last_name%>"
@@ -67,6 +67,7 @@
                   class="form-inp"
                   name="password"
                   id="password"
+                  value="<%= user.password%>"
                   placeholder="Contraseña"
                 />
               </label>
@@ -118,7 +119,7 @@
                   type="file"
                   name="profile_image"
                   id="profile_image"
-                  value="<%= user.image_id%>"
+                  value="<%= user.image%>"
                 />
               </div>
             </div>

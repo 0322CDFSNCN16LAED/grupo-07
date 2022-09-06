@@ -18,20 +18,17 @@ const usersController = {
     if (errors.isEmpty()) {
       let newUser = req.body;
       if (req.file) {
-        newUser.image = "/../data/users-images/" + req.file.filename;
+        newUser.profile_image = "/images/users-images/" + req.file.filename;
       } else {
-        newUser.image = "/../data/users-images/default-user.jpg";
+        newUser.profile_image = "/images/users-images/default-user.jpg";
       }
-      let userImage = await db.UsersImages.create({
-        url: newUser.image,
-      });
       const user = await db.Users.create({
-        fisrt_name: req.body.firstName,
-        last_name: req.body.lastName,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         dni: req.body.dni,
-        image_id: userImage.id,
+        image: newUser.profile_image,
         birthday: req.body.birthdate,
         address: req.body.address,
       });
@@ -81,23 +78,20 @@ const usersController = {
   },
 
   editUser: async (req, res) => {
-    let id = req.params.id;
-
-    let userToEdit = await db.Users.findOne({
-      where: { id: id },
+    const userToEdit = await db.Users.findOne({
+      where: { id: req.params.id },
     });
 
     res.render("edit-user", { user: userToEdit });
   },
   updateUser: async (req, res) => {
-    let editingUser = db.Users.findByPk(req.params.id).then()((user) => {
+    db.Users.findByPk(req.params.id).then((user) => {
       user.set(req.body);
       if (req.file) {
-        user.setUsersImages();
-        user.image_id = userImage.id;
+        user.image = req.file.name;
       }
-      user.save.then(() => {
-        res.redirect("/users/profile" + req.params.id);
+      user.save().then(() => {
+        res.redirect("/users/profile");
       });
     });
   },

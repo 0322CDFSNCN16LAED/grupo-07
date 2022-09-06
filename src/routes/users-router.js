@@ -12,7 +12,7 @@ const authMiddleware = require("../../middlewares/authmiddleware");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "/../../data/users-images/");
+    carpetaDestino = path.join(__dirname, "/../../public/images/users-images/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {
@@ -24,8 +24,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const validationsRegister = [
-  body("firstName").notEmpty().withMessage("Debes completar el nombre"),
-  body("lastName").notEmpty().withMessage("Debes completar el apellido"),
+  body("first_name").notEmpty().withMessage("Debes completar el nombre"),
+  body("last_name").notEmpty().withMessage("Debes completar el apellido"),
   body("email")
     .notEmpty()
     .withMessage("Debes completar el email")
@@ -33,7 +33,6 @@ const validationsRegister = [
     .isEmail()
     .withMessage("El email debe ser con el formato 'juan@example.com'"),
   body("dni").notEmpty().withMessage("Debes completar el DNI"),
-  body("address").notEmpty().withMessage("Debes completar el domicilio"),
   body("birthdate")
     .notEmpty()
     .withMessage("Debes completar la fecha de nacimiento"),
