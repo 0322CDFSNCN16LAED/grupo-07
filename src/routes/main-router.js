@@ -15,7 +15,7 @@ router.get("/", mainController.home);
 // router.get("/login", mainController.login);
 router.get("/nosotros", mainController.nosotros);
 router.get("/escuelas", mainController.escuelas);
-router.get("/carrito", /*authMiddleware, */mainController.carrito);
+router.get("/carrito", mainController.carrito);
 
 router.get("/contacto", mainController.comentario);
 router.post("/contacto", mainController.crearComentario);

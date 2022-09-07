@@ -5,6 +5,8 @@
 <%- include ('./partials/head') %>
 <link rel = "stylesheet" href = "/css/forms.css"/>
 <link rel = "stylesheet" href = "/css/carrito.css"/>
+<link rel = "stylesheet" href = "/css/nosotros.css"/>
+<script type="application/javascript" src="/public/js/cart.js" async></script>
 </head>
 
 <body class="bg-light-gray w-100">
@@ -38,42 +40,49 @@
                     <th></th>
                 </tr>
 
-                <tr>
-                    <th>
+                <tr class="carrito-item">
+                    <th class="carrito-imagen">
                         <a href="">
                             <img src="/images/tablas-de-surf/tabla-2.jpg" alt="Imagen tabla de surf">
                         </a>
                     </th>
 
-                    <th>
-                        <input type="number" name="cant-carrito" id="cant-carrito">
+                    <th class="carrito-cantidad">
+                        <input class="cant-carrito"  type="number" name="cant-carrito" id="cant-carrito" value="2">
+                    </th>
+
+                    <th class="carrito-precio">
+                        $198857
                     </th>
 
                     <th>
-                        $100.000
-                    </th>
-
-                    <th>
-                        <i class="fas fa-times"></i>
+                        <button class="form-button" type="reset">Quitar</button>
                     </th>
                 </tr>      
 
-                <tr>
-                    <th>
+                <tr class="carrito-item">
+                    <th class="carrito-imagen">
                         <a href="">
                             <img src="/images/tablas-de-surf/tabla-3.jpg" alt="Imagen tabla de surf">
                         </a>
                     </th>
-                    <th><input type="number" name="cant-carrito" id="cant-carrito"></th>
-                    <th>$100.000</th>
-                    <th><i class="fas fa-times"></i></th>
+                    <th class="carrito-cantidad">
+                        <input class="cant-carrito" type="number" name="cant-carrito" id="cant-carrito" value="3">
+                    </th>
+                    <th class="carrito-precio">
+                        $142857
+                    </th>
+                    <th>
+                        <button class="form-button" type="reset">Quitar</button>
+                    </th>
                 </tr>
 
-                <tr>
+                <tr class="carrito-total">
                     <th></th>
                     <th></th>
-                    <th>Total: $x</th>
-                    <th></th>
+                    <th> <span class="carrito-total-precio">$341517</span>
+                    </th>
+                    <th> Total </th>
                 </tr>      
 
             </table>
