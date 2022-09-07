@@ -15,8 +15,7 @@ app.use(
     secret: "Mensaje secreto",
     resave: false,
     saveUninitialized: false,
-  })
-);
+  }));
 
 app.set("views", path.resolve(__dirname, "./src/views"));
 app.set("view engine", "ejs");
