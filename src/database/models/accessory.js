@@ -29,9 +29,7 @@ module.exports = (sequelize, datatypes) => {
       as: "brand",
       foreignKey: "brand_id",
     });
-    Accessory.belongsToMany(models.Images, {
-      through: models.AccessoriesImages
-    });
+    Accessory.hasMany(models.ImagesAccessories);
     Accessory.belongsToMany(models.Orders, { 
       through: models.OrdersItems
     });

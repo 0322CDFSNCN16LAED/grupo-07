@@ -1,25 +1,28 @@
 const path = require("path");
+const datab = require("../../data/db");
 const bcrypt = require("bcryptjs");
+//const findBF = datab.findByField();
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const { DEFAULT_ECDH_CURVE } = require("tls");
 
 const usersController = {
-  
   createUser: (req, res) => {
     res.render("register");
   },
+
+  // Registro: Guardado usuario
 
   storeUser: async (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       let newUser = req.body;
       if (req.file) {
-        newUser.profile_image = "/../data/users-images/" + req.file.filename;
+        newUser.profile_image = "/images/users-images/" + req.file.filename;
       } else {
-        newUser.profile_image = "/../data/users-images/default-user.jpg";
+        newUser.profile_image = "/images/users-images/default-user.jpg";
       }
-      const user = await db.Users.create({
+      db.Users.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
@@ -28,11 +31,14 @@ const usersController = {
         image: newUser.profile_image,
         birthday: req.body.birthdate,
         address: req.body.address,
-      });
+      })
 
-      res.redirect("/users/login");
+      .then(()=>{
+        res.render("register", { errors: errors.array(), old: req.body });
+      })
+
     } else {
-      res.render("register", { errors: errors.array(), old: req.body });
+      res.redirect("/users/login");
     }
   },
 
@@ -74,26 +80,38 @@ const usersController = {
     return res.render("profile", { user: req.session.userLogged });
   },
 
-  editUser: async (req, res) => {
-    let id = req.params.id;
+  editUser: (req, res) => {
+    
+    db.Users.findOne({
+      where: {id: req.params.id}
+    })
+    
+    .then((userToEdit)=>{
+      res.render("edit-user", { user: userToEdit });
+    })
 
-    let userToEdit = await db.Users.findOne({
-      where: { id: id },
-    });
-
-    res.render("edit-user", { user: userToEdit });
+    .catch((error) => console.log(error));
   },
+
   updateUser: async (req, res) => {
-    let editingUser = db.Users.findByPk(req.params.id).then()((user) => {
-      user.set(req.body);
-      if (req.file) {
-        user.setUsersImages();
-        user.image_id = userImage.id;
+
+    db.Users.update({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      dni: req.body.dni,
+      image: newUser.profile_image,
+      birthday: req.body.birthday,
+      address: req.body.address,
+    }, {
+      where: {
+        id: req.params.id
       }
-      user.save.then(() => {
-        res.redirect("/users/profile" + req.params.id);
-      });
-    });
+    })
+    
+    .then(() => {
+      res.redirect("/users/profile");
+    })
   },
 
   logoutUser: (req, res) => {

@@ -2,7 +2,8 @@
 
 <html lang="en">
 <head>
-<%- include ('./partials/head') %>
+    <%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/carousel.css"/>
 </head>
 
 <body class="bg-light-gray w-100">
@@ -19,7 +20,7 @@
             <span>&nbsp;&nbsp;¡ESTAMOS ENTREGANDO!&nbsp; &nbsp;</span>
         </marquee>
     </div>
-
+    
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center">Tablas Destacadas</h2>
@@ -53,7 +54,7 @@
                             <img class="w-100" src="#" alt="Imagen de la tabla"/>
                         </a>
                     </div>
-                    <div class="p-relative h-27 flex fx-wrap fx-align-center">
+                    <div class="product-div-info">
                         <h3 class="font-medium w-100 text-center"><%= accesorio.type %> </h3>
                         <p class="product-title font-large w-50 text-center">$ <%= accesorio.price %> </p>
                         <p class="product-title font-medium w-50 text-center"><%= accesorio.discount %> % OFF</p>
@@ -96,7 +97,7 @@
 </main>
 
 <%- include ('./partials/footer') %> 
-    
+<script src="/js/carousel.js"></script>
 </body>
 
 

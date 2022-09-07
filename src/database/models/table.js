@@ -35,8 +35,9 @@ module.exports = (sequelize, datatypes) => {
       as: "brand",
       foreignKey: "brand_id",
     });
-    Table.belongsToMany(models.Images, {
-      through: models.TablesImages
+    Table.hasMany(models.ImagesTables, {
+      as: "images",
+      attributes: ["url"]
     });
     Table.belongsToMany(models.Orders, { 
       through: models.OrdersItems

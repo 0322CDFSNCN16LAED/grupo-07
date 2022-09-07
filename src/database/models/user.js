@@ -12,7 +12,7 @@ module.exports = (sequelize, datatypes) => {
     email: datatypes.STRING(50),
     password: datatypes.CHAR(64),
     dni: datatypes.INTEGER,
-    image: datatypes.STRING(2038),
+    image: datatypes.INTEGER,
     birthday: datatypes.DATE,
     address: datatypes.STRING(60),
   };
@@ -33,7 +33,6 @@ module.exports = (sequelize, datatypes) => {
     User.hasMany(models.UsersAddresses, {
       foreignKey: "user_id",
     });
-    User.hasOne(models.UsersImages);
   };
 
   return User;

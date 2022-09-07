@@ -13,11 +13,9 @@
     <main class="form-main">
       <section class="section-form">
         <div class="bg-light-blue br-10">
-          <form
-            class="form"
-            action="/users/<%= user.id %>?_method=PUT"
-            method="POST"
-          >
+          
+          <form class="form"  action="/users/:<%= user.id %>/edit?_method=PUT" method="POST">
+         
             <h2 class="w-100">Editar Perfil</h2>
 
             <div class="w-100 fx-align-center p-8">
@@ -26,10 +24,9 @@
                 <input
                   type="text"
                   class="form-inp"
-                  name="firstName"
-                  id="firstName"
+                  name="first_name"
                   placeholder="Nombre"
-                  value="<%= user.fisrt_name%>"
+                  value="<%= user.first_name%>"
                 />
               </label>
             </div>
@@ -39,8 +36,8 @@
                 <input
                   class="form-inp"
                   type="text"
-                  name="lastName"
-                  id="apellido"
+                  name="last_name"
+                  id=""
                   placeholder="Apellido"
                   value="<%= user.last_name%>"
                 />
@@ -54,7 +51,7 @@
                   class="form-inp"
                   placeholder="Correo electrónico"
                   name="email"
-                  id="email"
+                  id=""
                   value="<%= user.email%>"
                 />
               </label>
@@ -66,7 +63,8 @@
                   type="password"
                   class="form-inp"
                   name="password"
-                  id="password"
+                  id=""
+                  value="<%= user.password%>"
                   placeholder="Contraseña"
                 />
               </label>
@@ -78,7 +76,7 @@
                   type="number"
                   class="form-inp"
                   name="dni"
-                  id="dni"
+                  id=""
                   placeholder="Documento"
                   value="<%= user.dni%>"
                 />
@@ -91,7 +89,7 @@
                   type="text"
                   class="form-inp"
                   name="address"
-                  id="address"
+                  id=""
                   placeholder="Direccion"
                   value="<%= user.address%>"
                 />
@@ -103,8 +101,8 @@
                 <input
                   type="date"
                   class="form-inp"
-                  name="birthdate"
-                  id="nacimiento"
+                  name="birthday"
+                  id=""
                   value="<%= user.birthday%>"
                 />
               </label>
@@ -116,21 +114,21 @@
               <div class="w-100 p-8">
                 <input
                   type="file"
-                  name="profile_image"
-                  id="profile_image"
-                  value="<%= user.image_id%>"
+                  name="image"
+                  id=""
+                  value="<%= user.image%>"
                 />
               </div>
             </div>
 
             <div class="w-100 fx-align-center p-8">
-              <a href="/users/<%=user.id %>/edit "></a>
-              <button class="form-button" type="submit">Editar</button>
-            </div>
+              <button class="form-button" type="submit">Guardar</button>
+          </div>
 
-            <div class="w-100 fx-align-center p-8">
-              <button class="form-button" type="reset">Resetear</button>
-            </div>
+          <div class="w-100 fx-align-center p-8">
+              <button class="form-button" type="reset" >Resetear</button>
+          </div>
+
           </form>
         </div>
       </section>

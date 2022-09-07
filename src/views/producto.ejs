@@ -37,14 +37,13 @@
 
                 <div class="foto-producto">
                     <div>
-                        <img class="w-100" src="<%= product.image %>" alt="Tabla 1">
+                        <img class="w-100" src="<%= images.url%>" alt="Tabla 1">
                     </div>
 
                     <ul class="img-products-mini">
-                        <li><img src="<%= product.image %> " alt="Tabla 1"></li>
-                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
-                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
-                        <li><img src="<%= product.image %>" alt="Tabla 1"></li>
+                        <% product.url.forEach((image) => { %>
+                            <li><img src="<%= image.url %> " alt="Tabla 1"></li>
+                        <% }) %>
                     </ul>
                 </div>
               

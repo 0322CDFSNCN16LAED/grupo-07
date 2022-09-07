@@ -14,7 +14,9 @@ const tablesController = {
         let id = req.params.id;
         let relacionadas = db.Tables.findAll({limit: 4})
         
-        db.Tables.findByPk(id)
+        db.Tables.findByPk(id, {
+            include: "images"
+        })
         .then((tabla)=>{
             let brand_id = tabla.brand_id;
             db.Brands.findByPk(brand_id)
@@ -104,6 +106,19 @@ const tablesController = {
             table_keels: req.body.table_keels,
             brand_id: req.body.brand_id
         })
+
+        .then((newTable) => {
+            if (req.file) {req.body.table_url = "/images/tablas/" + req.file.filename;} 
+            else {req.body.table_url = "/images/tablas/default-table.png";}
+
+            db.ImagesTables.create([
+                {table_id: newTable.id, url: req.body.table_url_1},
+                {table_id: newTable.id, url: req.body.table_url_2},
+                {table_id: newTable.id, url: req.body.table_url_3},
+                {table_id: newTable.id, url: req.body.table_url_4},
+            ])
+        })
+
         .then(() => {
             return res.redirect("/tablas");
         })

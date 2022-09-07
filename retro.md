@@ -21,7 +21,7 @@
 
 - Dejar las entregas adicionales para después, porque se van acumulando
 
-
+---
 
 # Retrospectiva Sprint 2
 
@@ -44,6 +44,7 @@
 - Dejar para último momento las tareas asignadas.
 - No comunicarnos con frecuencia.
 
+---
 
 # Retrospectiva Sprint 3
 
@@ -63,3 +64,46 @@
 
 ## Dejar de hacer:
 - Dejar para último momento las tareas asignadas.
+
+---
+
+# Retrospectiva Sprint 4
+
+## Comenzar a hacer: 
+- Organizarnos más.
+- No perder la comunicación.
+
+## Hacer más:
+- Organización en general.
+- Mantener una comunicación más frecuente.
+- Administrar mejor el tiempo para lograr los objetivos planteados para cada Sprint.
+
+## Continuar haciendo:
+- Ayudarnos entre nosotros.
+- Aconsejarnos y acompañarnos unos a los otros.
+
+## Hacer menos:
+- Realizar commits sin previo aviso.
+
+## Dejar de hacer:
+- Dejar para último momento las tareas asignadas.
+- Quedarnos trabados en algún tema y no poder seguir.
+
+---
+
+# Retrospectiva Sprint 5
+
+## Comenzar a hacer: 
+- Buscar información y ejemplos fuera de playground.
+
+## Hacer más:
+- Administrar mejor el tiempo para lograr los objetivos planteados para cada Sprint.
+
+## Continuar haciendo:
+- Comunicarnos ante cualquier duda.
+
+## Hacer menos:
+- No dedicar tanto tiempo al proyecto en lugar de la cursada.
+
+## Dejar de hacer:
+- Atrasarnos tanto con los sprints.

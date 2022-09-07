@@ -1,8 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const authMiddleware = require("../../middlewares/authMiddleware");
+const multer = require("multer");
 
 const tablesController = require("../controllers/tablesController");
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      let carpetaDestino;
+      carpetaDestino = path.join(__dirname, "/../../public/images/tablas/");
+      cb(null, carpetaDestino);
+    },
+    filename: (req, file, cb) => {
+      let nombreImagen = "tabla" + path.extname(file.originalname);
+      cb(null, nombreImagen);
+    },
+});
+  
+const upload = multer({ storage });
 
 // /tablas (GET)
 router.get("/", tablesController.tables);
@@ -11,7 +26,7 @@ router.get("/", tablesController.tables);
 router.get("/crear", tablesController.add);
 
 // /tablas (POST)
-router.post("/crear", /*upload.single("image")*/ tablesController.create);
+router.post("/crear",  upload.array("multi-files"), tablesController.create);
 
 // /tablas/:id/edit (GET)
 router.get("/:id/edit/", tablesController.edit);

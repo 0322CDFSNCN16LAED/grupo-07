@@ -12,7 +12,7 @@ const authMiddleware = require("../../middlewares/authmiddleware");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "/../../data/users-images/");
+    carpetaDestino = path.join(__dirname, "/../../public/images/users-images/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {
@@ -23,11 +23,33 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+const validationsRegister = [
+  body("first_name").notEmpty().withMessage("Debes completar el nombre"),
+  body("last_name").notEmpty().withMessage("Debes completar el apellido"),
+  body("email")
+    .notEmpty()
+    .withMessage("Debes completar el email")
+    .bail()
+    .isEmail()
+    .withMessage("El email debe ser con el formato 'juan@example.com'"),
+  body("dni").notEmpty().withMessage("Debes completar el DNI"),
+  body("birthdate")
+    .notEmpty()
+    .withMessage("Debes completar la fecha de nacimiento"),
+  body("password")
+    .notEmpty()
+    .withMessage("Debes completar el password")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe contener al menos 8 caracteres"),
+];
+
 // Register
 router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
   "/register",
   upload.single("profile_image"),
+  validationsRegister,
   usersController.storeUser
 );
 
@@ -42,12 +64,13 @@ router.get("/profile", usersController.detailUser);
 // users/logout
 router.get("/:id/logout", usersController.logoutUser);
 
+// Profile
+router.get("/profile", authMiddleware, usersController.detailUser);
+
 // /users/:id/edit (GET)
 router.get("/:id/edit/", usersController.editUser);
 
-// Profile
-router.get("/profile", authMiddleware, usersController.detailUser);
-// /users/:id (PUT)
-router.put("/:id", usersController.updateUser);
+// /users/:id/edit (PUT)
+router.put("/:id/edit/", usersController.updateUser);
 
 module.exports = router;
