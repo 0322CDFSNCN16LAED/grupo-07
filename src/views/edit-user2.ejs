@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/contacto.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
+  </head>
+  <body>
+    <%- include ('./partials/header') %>
+
+    <main class="form-main">
+      <section class="section-form">
+        <div class="bg-light-blue br-10">
+          <h2 class="w-100">Editar Perfil</h2>
+          <form
+            class="form"
+            action="/users/<%= user.id %>?_method=PUT"
+            method="POST"
+          >
+          <ul class="no-style w-100">
+
+            
+            <div class="w-100 fx-align-center p-8">
+            <label>
+              Nombre:
+              <input
+              type="text"
+              class="form-inp"
+              name="first_name"
+              id="first_name"
+              placeholder="Nombre"
+              value="<%= user.first_name%>"
+              />
+            </label>
+          </div>
+          <div class="w-100 fx-align-center p-8">
+            <label>
+              Apellido:
+              <input
+              class="form-inp"
+              type="text"
+                  name="last_name"
+                  id="last_name"
+                  placeholder="Apellido"
+                  value="<%= user.last_name%>"
+                />
+              </label>
+            </div>
+            <div class="w-100 fx-align-center p-8">
+              <label>
+                Mail:
+                <input
+                  type="mail"
+                  class="form-inp"
+                  placeholder="Correo electrónico"
+                  name="email"
+                  id="email"
+                  value="<%= user.email%>"
+                />
+              </label>
+            </div>
+            <div class="w-100 fx-align-center p-8">
+              <label>
+                DNI:
+                <input
+                  type="number"
+                  class="form-inp"
+                  name="dni"
+                  id="dni"
+                  placeholder="Documento"
+                  value="<%= user.dni%>"
+                  />
+              </label>
+            </div>
+            <div class="w-100 fx-align-center p-8">
+              <label>
+                Dirección:
+                <input
+                type="text"
+                class="form-inp"
+                  name="address"
+                  id="address"
+                  placeholder="Direccion"
+                  value="<%= user.address%>"
+                />
+              </label>
+            </div>
+            <div class="w-100 fx-align-center p-8">
+              <label>
+                Nacimiento:
+                <input
+                  type="date"
+                  class="form-inp"
+                  name="birthdate"
+                  id="nacimiento"
+                  value="<%= user.birthday%>"
+                />
+              </label>
+            </div>
+            <div class="flex fx-wrap w-100 fx-align-center p-8">
+              <label for="profile_image" class="w-100"
+                >Imagen de Perfil:
+              </label>
+              <img class="flex fx-wrap w-20 fx-align-center" src="<%=user.image%>" alt="">
+              <div class="w-100 p-8">
+                <input
+                type="file"
+                name="profile_image"
+                id="profile_image"
+                value="<%= user.image%>"
+                />
+              </div>
+            </div>
+            
+            <div class="w-100 fx-align-center p-8">
+              <a href="/users/<%=user.id %>/edit "></a>
+              <button class="form-button" type="submit">Editar</button>
+            </div>
+            
+            <div class="w-100 fx-align-center p-8">
+              <button class="form-button" type="reset">Resetear</button>
+            </div>
+          </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+    <%- include ('./partials/footer') %>
+  </body>
+</html>

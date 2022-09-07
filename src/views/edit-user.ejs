@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include ('./partials/head') %>
-    <link rel="stylesheet" href="/css/contacto.css" />
-    <link rel="stylesheet" href="/css/profile.css" />
-    <link rel="stylesheet" href="/css/forms.css" />
-    <link rel="stylesheet" href="/css/utils.css" />
-  </head>
-  <body>
-    <%- include ('./partials/header') %>
+<head>
+<%- include ('./partials/head') %> 
+    <link rel = "stylesheet" href = "/css/contacto.css"/>
+    <link rel = "stylesheet" href = "/css/profile.css"/>
+    <link rel = "stylesheet" href = "/css/forms.css"/>
+    <link rel = "stylesheet" href = "/css/utils.css"/>
+</head>
+<body>
 
-    <main class="form-main">
-      <section class="section-form">
-        <div class="bg-light-blue br-10">
-          <form
-            class="form"
-            action="/users/<%= user.id %>?_method=PUT"
-            method="POST"
-          >
-            <h2 class="w-100">Editar Perfil</h2>
+<%- include ('./partials/header') %> 
 
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Nombre:
-                <input
-                  type="text"
-                  class="form-inp"
-                  name="firstName"
-                  id="first_name"
-                  placeholder="Nombre"
-                  value="<%= user.first_name%>"
-                />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Apellido:
-                <input
-                  class="form-inp"
-                  type="text"
+<main class="form-main p-desktop-45">
+
+    <div class="profile">
+
+        <h2 class="w-100 text-center">Editar Perfil</h2>
+
+        <form
+        action="/users/<%=user.id%>?_method=PUT"
+        method="POST" enctype="multipart/form-data"
+      >
+    
+        <section class="flex fx-wrap p-desktop-15 fx-space-evenly">
+            <article>
+                <div>
+                    <img  class= 'br-10 m-center w-300px' src="<%=user.image%>" alt="">
+                <br>
+                    <label > Cambiar Imagen de Perfil</label>
+                    <input
+                    type="file"
+                    name="profile_image"
+                    id="profile_image"
+                    value="<%= user.image%>"
+                    />
+                </div>
+            </article>
+            <article class="flex fx-wrap w-50 fx-align-center">
+                <h2 class="w-100 p-8 mb-0">Datos personales</h2>
+                <ul class="no-style w-100">
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">Nombre:</h3>
+                        <input
+              type="text"
+              class="form-inp"
+              name="first_name"
+              id="first_name"
+              placeholder="Nombre"
+              value="<%= user.first_name%>"
+              />
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">Apellido:</h3>
+                        <input
+              class="form-inp"
+              type="text"
                   name="last_name"
-                  id="apellido"
+                  id="last_name"
                   placeholder="Apellido"
                   value="<%= user.last_name%>"
                 />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Mail:
-                <input
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">Mail:</h3>
+                        <input
                   type="mail"
                   class="form-inp"
                   placeholder="Correo electrónico"
@@ -57,85 +71,58 @@
                   id="email"
                   value="<%= user.email%>"
                 />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Contraseña:
-                <input
-                  type="password"
-                  class="form-inp"
-                  name="password"
-                  id="password"
-                  value="<%= user.password%>"
-                  placeholder="Contraseña"
-                />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                DNI:
-                <input
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">DNI:</h3>
+                        <input
                   type="number"
                   class="form-inp"
                   name="dni"
                   id="dni"
                   placeholder="Documento"
                   value="<%= user.dni%>"
-                />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Dirección:
-                <input
-                  type="text"
-                  class="form-inp"
+                  />
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">Direccion:</h3>
+                        <input
+                type="text"
+                class="form-inp"
                   name="address"
                   id="address"
                   placeholder="Direccion"
                   value="<%= user.address%>"
                 />
-              </label>
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <label>
-                Nacimiento:
-                <input
+                    </li>
+                    <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
+                        <h3 class="p-10">Nacimiento:</h3>
+                        <input
                   type="date"
                   class="form-inp"
                   name="birthdate"
                   id="nacimiento"
                   value="<%= user.birthday%>"
                 />
-              </label>
-            </div>
-            <div class="flex fx-wrap w-100 fx-align-center p-8">
-              <label for="profile_image" class="w-100"
-                >Imagen de Perfil:
-              </label>
-              <div class="w-100 p-8">
-                <input
-                  type="file"
-                  name="profile_image"
-                  id="profile_image"
-                  value="<%= user.image%>"
-                />
-              </div>
-            </div>
+                    </li>
+                </ul>
 
-            <div class="w-100 fx-align-center p-8">
-              <a href="/users/<%=user.id %>/edit "></a>
-              <button class="form-button" type="submit">Editar</button>
-            </div>
+                <article class="w-100 flex text-center fx-space-between">     
+                    <div class="profile-button">
+                            <button class="form-button" type="submit">Guardar</button>
+                        </a>
+                    </div>
+                    <div class="profile-button">
+                        <button class="form-button" type="reset">Resetear</button>
+                        </a>
+                    </div>
+                </article>
 
-            <div class="w-100 fx-align-center p-8">
-              <button class="form-button" type="reset">Resetear</button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-    <%- include ('./partials/footer') %>
-  </body>
+            </article>
+        </section>
+    </form>    
+    </div>
+    </div>
+</main>
+<%- include ('./partials/footer') %> 
+</body>
 </html>

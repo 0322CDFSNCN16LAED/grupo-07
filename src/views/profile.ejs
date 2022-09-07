@@ -17,13 +17,14 @@
 
         <h2 class="w-100 text-center">Mi Perfil</h2>
 
-        <section class="flex fx-wrap p-desktop-15">
+        <section class="flex fx-wrap p-desktop-15 fx-space-evenly">
 
-            <article class="w-50">
-                <img src="<%=user.image%>" alt="">
-            </article>
-            
-            <article class="flex fx-wrap w-50 fx-align-center">
+            <div>
+                <img  class= 'br-10 m-center w-300px' src="<%=user.image%>" alt="">
+            </div>
+ 
+            <div class="flex fx-wrap w-50 fx-align-center">
+                <h2 class="w-100 p-8 mb-0">Datos personales</h2>
                 <ul class="no-style w-100">
                     <li class="w-100 p-8 flex fx-wrap fx-align-center">
                         <h3 class="p-10">Nombre:</h3>
@@ -37,12 +38,6 @@
                         <h3 class="p-10">Mail:</h3>
                         <p class="p-10"><%= user.email %></p>
                     </li>
-                </ul>
-            </article>
-            
-            <h2 class="w-100 p-8 mb-0">Datos personales</h3>
-            <article class="flex fx-wrap w-100">
-                <ul class="no-style w-100">
                     <li class="w-100 p-8 flex fx-wrap fx-align-center">
                         <h3 class="p-10">DNI:</h3>
                         <p class="p-10"><%= user.dni %></p>
@@ -57,26 +52,26 @@
                     </li>
                 </ul>
 
-            </article>
-       
-            <article class="w-100 flex text-center fx-space-between">     
-                <div class="profile-button">
-                    <a href="/users/<%=user.id %>/edit ">
-                        <button type="submit">Editar perfil</button>
-                    </a>
+                <div class="w-100 flex text-center fx-space-between">     
+                    <div class="profile-button">
+                        <a href="/users/<%=user.id %>/edit ">
+                            <button type="submit">Editar perfil</button>
+                        </a>
+                    </div>
+                    <div class="profile-button">
+                        <a href="/users/<%=user.id %>/logout ">
+                            <button type="submit">Cerrar sesión</button>
+                        </a>
+                    </div>
+                    <div class="profile-button">
+                        <a href="/users/<%=user.id %>/delete ">
+                            <button type="submit">Eliminar perfil</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="profile-button">
-                    <a href="/users/<%=user.id %>/logout ">
-                        <button type="submit">Cerrar sesión</button>
-                    </a>
-                </div>
-                <div class="profile-button">
-                    <a href="/users/<%=user.id %>/delete ">
-                        <button type="submit">Eliminar perfil</button>
-                    </a>
-                </div>
-            </article>
 
+            </div>
+                    
         </section>
     </div>
     </div>

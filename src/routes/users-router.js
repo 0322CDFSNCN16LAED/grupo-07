@@ -8,11 +8,12 @@ const { body } = require("express-validator");
 
 const guestMiddleware = require("../../middlewares/guestMiddleware");
 const authMiddleware = require("../../middlewares/authmiddleware");
+const { dirname } = require("path");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "/../../public/images/users-images/");
+    carpetaDestino = path.join(__dirname, "../../public/images/users-images/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {
@@ -44,6 +45,7 @@ const validationsRegister = [
     .withMessage("La contraseña debe contener al menos 8 caracteres"),
 ];
 
+
 // Register
 router.get("/register", guestMiddleware, usersController.createUser);
 router.post(
@@ -70,6 +72,6 @@ router.get("/:id/edit/", usersController.editUser);
 // Profile
 router.get("/profile", authMiddleware, usersController.detailUser);
 // /users/:id (PUT)
-router.put("/:id", usersController.updateUser);
+router.put("/:id",upload.single("profile_image"), usersController.updateUser);
 
 module.exports = router;
