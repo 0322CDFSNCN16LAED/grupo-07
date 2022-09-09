@@ -24,45 +24,44 @@
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center">Tablas Destacadas</h2>
-        <% tablas.forEach((tabla) => { %> 
+        <% for(let i=0; i<4; i++) {%>
             <div class="w-50 w-desktop-25 p-8">
                 <article class="product" id="">
                     <div>
-                        <a href="/tablas/<%= tabla.id %> ">
-                            <img class="w-100" src="#" alt="Imagen de la tabla"/>
+                        <a href="/tablas/<%= tables[i].id %> ">
+                            <img class="w-100" src="<%= tables[i].tables_images[0]? tables[i].tables_images[0].url: "/images/default.png"%> " alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="product-div-info">
-                        <h3 class="font-medium w-100 text-center"><%= tabla.type %> </h3>
-                        <p class="product-title font-large w-50 text-center">$ <%= tabla.price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= tabla.discount %> % OFF</p>
+                        <h3 class="font-medium w-100 text-center"><%= tables[i].type %> </h3>
+                        <p class="product-title font-large w-50 text-center">$ <%= tables[i].price %> </p>
+                        <p class="product-title font-medium w-50 text-center"><%= tables[i].discount %> % OFF</p>
                     </div>
                 </article>
             </div>
-            <% }) %>
+            <% }%>
 
     </section>
 
     <section class="flex fx-wrap mt-16 fx-align-center">
         
         <h2 class="font-heading mb-8 w-100 text-center"> Seguí Descubriendo Accesorios </h2>
-        <% accesorios.forEach((accesorio) =>{%> 
+        <% for(let i=0; i<4; i++) {%>
             <div class="w-50 w-desktop-25 p-8">
-                <article class="product" id="1">
+                <article class="product" id="">
                     <div>
-                        <a href="/accesorios/<%= accesorio.id %> ">
-                            <img class="w-100" src="#" alt="Imagen de la tabla"/>
+                        <a href="/accesorios/<%= accessories[i].id %> ">
+                            <img class="w-100" src="<%= accessories[i].accessories_images[0]? accessories[i].accessories_images[0].url: "/images/default.png"%> " alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="product-div-info">
-                        <h3 class="font-medium w-100 text-center"><%= accesorio.type %> </h3>
-                        <p class="product-title font-large w-50 text-center">$ <%= accesorio.price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= accesorio.discount %> % OFF</p>
+                        <h3 class="font-medium w-100 text-center"><%= accessories[i].type %> </h3>
+                        <p class="product-title font-large w-50 text-center">$ <%= accessories[i].price %> </p>
+                        <p class="product-title font-medium w-50 text-center"><%= accessories[i].discount %> % OFF</p>
                     </div>
-                   
                 </article>
             </div>
-            <% }) %>
+            <% }%>
 
     </section>
             

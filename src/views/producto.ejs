@@ -37,13 +37,13 @@
 
                 <div class="foto-producto">
                     <div>
-                        <img class="w-100" src="<%= images.url%>" alt="Tabla 1">
+                        <img class="w-100" src="" alt="Tabla 1">
                     </div>
 
                     <ul class="img-products-mini">
-                        <% product.url.forEach((image) => { %>
-                            <li><img src="<%= image.url %> " alt="Tabla 1"></li>
-                        <% }) %>
+                        <%= images.forEach((image)=>{%>
+                            <li><img src="<%= image.url%>" alt=""></li>
+                        <% }) %> 
                     </ul>
                 </div>
               
@@ -139,30 +139,25 @@
 
 
     </div>
-
     
-    <section class="section-product">
-            
-        <div class="blue-container">
-            
-            <h2 class="w-100">Productos Relacionados </h2>
-            <% for (let i = 0; i < relatedProduct.length; i++) {%>
-                <div class="w-50 w-desktop-25 p-8">
-                        <article class="product" id="">
-                            <div>
-                                <a href="/<%= category %>/<%= productoRelacionado[i].id %> /">
-                                    <img class="w-100" src="<%=  %>" alt="Imagen de la tabla"/>
-                                </a>
-                            </div>
-                        </article>
-                </div>
-            <% } %> 
-          
+    <section class="section-product w-100 flex fx-wrap">
+        <h2 class="font-heading mb-8 w-100 text-center">Productos relacionados</h2>
+        <div class="w-100 flex fx-wrap">
+        <% relacionado.forEach((relacionado) => { %> 
+            <div class="p-8 w-50 w-desktop-25">
+                <article class="product">
+                    <div>
+                        <a href="/<%= category %>/<%= relacionado.id %> ">
+                            <img class="w-100" src="#" alt="Imagen"/>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <% }) %>
         </div>
     </section>
-    
 </main>    
-   
+
 <%- include ('./partials/footer') %> 
 
 </body>

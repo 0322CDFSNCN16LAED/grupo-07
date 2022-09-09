@@ -3,41 +3,43 @@ const db = require('../database/models');
 const tablesController = {
 
     tables: (req, res) => {
-        db.Tables.findAll()
+        db.Tables.findAll({include: "tables_images"})
         .then((tablas)=>{
             res.render("tablas", {tablas: tablas})
         });
-
     },
 
     detail: function (req, res) {
-        let id = req.params.id;
-        let relacionadas = db.Tables.findAll({limit: 4})
+        db.Tables.findByPk(req.params.id)
         
-        db.Tables.findByPk(id, {
-            include: "images"
-        })
         .then((tabla)=>{
-            let brand_id = tabla.brand_id;
-            db.Brands.findByPk(brand_id)
-            .then((brand)=>{
-                res.render("producto", { 
-                    product: tabla, 
-                    relatedProduct: relacionadas, 
-                    category: "tablas", 
-                    brand: brand
-                })
-            })      
-            .catch((error) => console.log(error));
-        })    
+            db.Brands.findByPk(tabla.brand_id)
+
+            .then((brand) => {
+                db.ImagesTables.findAll({where: {table_id: req.params.id}})
+
+                .then((images) => {
+                    db.Tables.findAll({where: {brand_id: tabla.brand_id}, limit:4})
+
+                    .then((relacionado)=>{
+                        res.render("producto", {
+                            product: tabla, 
+                            category: "tablas", 
+                            brand,
+                            images,
+                            relacionado
+                        })
+                    })  
+                })      
+            })       
+        })
+        .catch((error) => console.log(error))
     },
 
     edit: (req, res) => {
-        let id = req.params.id;
-        
-        let tabla = db.Tables.findByPk(id)
+        let tabla = db.Tables.findByPk(req.params.id)
         let brands = db.Brands.findAll()
-        
+
         Promise.all([tabla, brands])
 
         .then(([tabla, brands]) => {
@@ -64,6 +66,15 @@ const tablesController = {
             where: {
                 id: req.params.id
             }
+        })
+
+        .then(() => {
+            db.ImagesTables.update({
+                url_1: req.body.url_1,
+                url_2: req.body.url_2,
+                url_3: req.body.url_3,
+                url_4: req.body.url_4
+            })
         })
         
         .then(() => {
@@ -93,6 +104,8 @@ const tablesController = {
 
     create: (req, res) => {
 
+        multifile = req.files;
+
         db.Tables.create({
             type: req.body.type,
             description: req.body.description,
@@ -107,16 +120,13 @@ const tablesController = {
             brand_id: req.body.brand_id
         })
 
-        .then((newTable) => {
-            if (req.file) {req.body.table_url = "/images/tablas/" + req.file.filename;} 
-            else {req.body.table_url = "/images/tablas/default-table.png";}
-
-            db.ImagesTables.create([
-                {table_id: newTable.id, url: req.body.table_url_1},
-                {table_id: newTable.id, url: req.body.table_url_2},
-                {table_id: newTable.id, url: req.body.table_url_3},
-                {table_id: newTable.id, url: req.body.table_url_4},
-            ])
+        .then(() => {
+           db.ImagesTables.create({
+                url_1: req.body.url_1,
+                url_2: req.body.url_2,
+                url_3: req.body.url_3,
+                url_4: req.body.url_4,
+            })
         })
 
         .then(() => {

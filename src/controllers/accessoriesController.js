@@ -3,7 +3,7 @@ const db = require('../database/models');
 const accessoriesController = {
 
     accessories: (req, res) => {
-        db.Accessories.findAll()
+        db.Accessories.findAll({include: "accessories_images"})
         .then((accesorios)=>{
             res.render("accesorios", {accesorios: accesorios})
         });

@@ -3,10 +3,10 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: {
-      type: datatypes.INTEGER,
+      type: datatypes.INTEGER(11),
       primaryKey: true,
       autoIncrement: true 
-    },
+    }, 
     type: datatypes.STRING(30),
     description: datatypes.STRING(1024), 
     price: datatypes.DECIMAL(6,2),
@@ -35,10 +35,12 @@ module.exports = (sequelize, datatypes) => {
       as: "brand",
       foreignKey: "brand_id",
     });
-    Table.hasMany(models.ImagesTables, {
-      as: "images",
-      attributes: ["url"]
+
+    Table.hasMany(models.TablesImages, {
+      foreignKey: "table_id",
+      as: "tables_images"
     });
+
     Table.belongsToMany(models.Orders, { 
       through: models.OrdersItems
     });

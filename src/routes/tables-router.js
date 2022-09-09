@@ -26,7 +26,7 @@ router.get("/", tablesController.tables);
 router.get("/crear", tablesController.add);
 
 // /tablas (POST)
-router.post("/crear",  upload.array("multi-files"), tablesController.create);
+router.post("/crear", tablesController.create);
 
 // /tablas/:id/edit (GET)
 router.get("/:id/edit/", tablesController.edit);
@@ -35,7 +35,7 @@ router.get("/:id/edit/", tablesController.edit);
 router.put("/:id/edit/", tablesController.update);
 
 // /tablas/:id (DELETE)
-router.delete("/:id/destroy/",/* authMiddleware*/ tablesController.destroy);
+router.delete("/:id/destroy/", tablesController.destroy);
 
 // /tablas/:id (GET)
 router.get("/:id", tablesController.detail);

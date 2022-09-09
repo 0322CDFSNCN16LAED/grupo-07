@@ -111,7 +111,7 @@ a:link {
 /* Productos home*/
 .product{
     margin-bottom: 8px;
-    background-color: lightblue;
+    background-color: #afe0fc;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

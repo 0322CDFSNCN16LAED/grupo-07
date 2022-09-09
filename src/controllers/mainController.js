@@ -2,14 +2,15 @@ const db = require('../database/models');
 
 const mainController = {
   home: function (req, res) {
-    let tablas = db.Tables.findAll({limit: 4})
-    let accesorios = db.Accessories.findAll({limit: 4})
-  
-    Promise.all([tablas, accesorios])
+    
+    let tables = db.Tables.findAll({include: "tables_images"})
+    let accessories = db.Accessories.findAll({include: "accessories_images"})
+
+    Promise.all([tables, accessories])
       
-    .then(([tablas, accesorios]) => {
+    .then(([tables, accessories]) => {
       return res.render("home", {
-        tablas, accesorios
+        tables, accessories
       });
     })
     

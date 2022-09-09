@@ -1,5 +1,5 @@
 module.exports = (sequelize, datatypes) => {
-    const alias = "ImagesTables";
+    const alias = "TablesImages";
   
     const cols = {
       id: {
@@ -12,19 +12,19 @@ module.exports = (sequelize, datatypes) => {
     };
   
     const config = {
-      tableName: "images_tables", 
+      tableName: "tables_images", 
       timestamps: false
     };
   
-    const ImageTable = sequelize.define(alias, cols, config);
+    const TableImages = sequelize.define(alias, cols, config);
 
-    ImageTable.associate = (models) => {
+    TableImages.associate = (models) => {
 
-        ImageTable.belongsTo(models.Tables,{
+      TableImages.belongsTo(models.Tables,{
         foreignKey: "table_id",
-        as: 'images'
+        as: 'tables_images'
       });
 
     }
-    return ImageTable;
+    return TableImages;
   };

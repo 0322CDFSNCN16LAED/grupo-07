@@ -4,7 +4,7 @@ module.exports = (sequelize, datatypes) => {
 
   const cols = {
     id: {
-      type: datatypes.INTEGER,
+      type: datatypes.INTEGER(11),
       primaryKey: true,
       autoIncrement: true 
     },
@@ -29,7 +29,12 @@ module.exports = (sequelize, datatypes) => {
       as: "brand",
       foreignKey: "brand_id",
     });
-    Accessory.hasMany(models.ImagesAccessories);
+    
+    Accessory.hasMany(models.AccessoriesImages, {
+      foreignKey: "accessory_id",
+      as: "accessories_images"
+    });
+
     Accessory.belongsToMany(models.Orders, { 
       through: models.OrdersItems
     });

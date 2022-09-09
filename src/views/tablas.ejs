@@ -36,7 +36,7 @@
                 <article class="product" id="1">
                     <div>
                         <a href="/tablas/<%= tablas.id %>">
-                            <img class="w-100" src="<%= tablas.url %> " alt="Imagen de la tabla"/>
+                            <img class="w-100" src="<%= tablas.tables_images[0]? tablas.tables_images[0].url: "/images/default.png"%> " alt="Imagen de la tabla"/>
                         </a>
                     </div>
                     <div class="product-div-info">
