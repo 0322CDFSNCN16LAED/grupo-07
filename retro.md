@@ -107,3 +107,25 @@
 
 ## Dejar de hacer:
 - Atrasarnos tanto con los sprints.
+
+---
+
+# Retrospectiva Sprint 6
+
+## Comenzar a hacer: 
+- Acelerar el ritmo de desarrollo.
+
+## Hacer más:
+- Realizar propuestas con mayor frecuencia para la mejora del proyecto.
+
+## Continuar haciendo:
+- Lograr establecer un criterio de trabajo donde cada uno pueda realizar sus tareas asignadas sin modificar el trabajo de otro compañero.
+- Organizar el trabajo.
+- Juntarnos seguido.
+
+## Hacer menos:
+- Utilizar unicamente el contenido de playground.
+
+## Dejar de hacer:
+- Utilizar palabras en ingles y castellano al mismo tiempo.
+
