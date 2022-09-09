@@ -108,24 +108,28 @@
 ## Dejar de hacer:
 - Atrasarnos tanto con los sprints.
 
+---
+
 # Retrospectiva Sprint 6
 
 ## Comenzar a hacer: 
-- Reuniones cortas para presentar avances y en que se esta trabajando en el momento.
-- Generar plazos para cada parte en desarrollo.
+- Acelerar el ritmo de desarrollo.
 
 ## Hacer más:
-- Organizacion temporal en cuanto a plazos de finalizacion de etapas.
-- Organizar reuniones cortas para el debate de temas puntuales.
+- Realizar propuestas con mayor frecuencia para la mejora del proyecto.
 
 ## Continuar haciendo:
-- Mantener el canal de comunicacion abierto para consultas o establecer reuniones
+- Lograr establecer un criterio de trabajo donde cada uno pueda realizar sus tareas asignadas sin modificar el trabajo de otro compañero.
+- Organizar el trabajo.
+- Juntarnos seguido.
 
 ## Hacer menos:
-- No consultar al realizar un cambio por mas pequeno que sea, en otra area que no sea la que uno esta trabajando.
+- Utilizar unicamente el contenido de playground.
 
 ## Dejar de hacer:
-- Acumular tareas de sprints anteriores
+- Utilizar palabras en ingles y castellano al mismo tiempo.
+
+---
 
 # Retrospectiva Sprint 7
 
@@ -147,4 +151,9 @@
 ## Dejar de hacer:
 - No finalizar tareas de sprints anteriores por mas minimas que sean.
 
+---
+
 # Retrospectiva Sprint 8
+---
+
+
