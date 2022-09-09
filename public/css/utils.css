@@ -1,4 +1,9 @@
 /* Width */
+
+.w-300px {
+    width: 300px;
+}
+
 .w-50{
     width: 50%;
 }
@@ -127,6 +132,8 @@
    
 }
 
+
+
 .fx-space-around{
     align-items: space-around;
 }
@@ -139,6 +146,9 @@
     align-items: flex-start;
 }
 
+.fx-space-evenly{
+    justify-content: space-evenly;
+}
 .fx-space-between{
     justify-content: space-between;
 }

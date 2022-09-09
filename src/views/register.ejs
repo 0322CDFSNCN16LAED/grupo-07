@@ -16,7 +16,7 @@
           <% }) } %>
           <form
             class="form"
-            action="/users/register"
+            action="/usuarios/registro"
             method="POST"
             enctype="multipart/form-data"
           >
@@ -28,6 +28,7 @@
                 name="first_name"
                 id=""
                 placeholder="Nombre"
+                value="<%= locals.old && old.firstName ? old.firstName : ''%>"
               />
             </div>
 
@@ -70,7 +71,7 @@
                 name="address"
                 id="address"
                 placeholder="Domicilio"
-                value="<%= locals.old && old.lastName ? old.lastName : ''%>"
+                value="<%= locals.old && old.address ? old.address : ''%>"
               />
             </div>
 

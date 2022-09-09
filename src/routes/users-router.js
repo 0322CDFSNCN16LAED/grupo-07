@@ -3,16 +3,16 @@ const path = require("path");
 const router = express.Router();
 const multer = require("multer");
 const usersController = require("../controllers/usersController");
-const { check } = require("express-validator");
 const { body } = require("express-validator");
 
 const guestMiddleware = require("../../middlewares/guestMiddleware");
 const authMiddleware = require("../../middlewares/authmiddleware");
 
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "/../../public/images/users-images/");
+    carpetaDestino = path.join(__dirname, "../../public/images/users-images/");
     cb(null, carpetaDestino);
   },
   filename: (req, file, cb) => {
@@ -44,33 +44,28 @@ const validationsRegister = [
     .withMessage("La contraseña debe contener al menos 8 caracteres"),
 ];
 
-// Register
-router.get("/register", guestMiddleware, usersController.createUser);
-router.post(
-  "/register",
-  upload.single("profile_image"),
-  validationsRegister,
-  usersController.storeUser
-);
+// usuarios/registro (GET)
+router.get("/registro", guestMiddleware, usersController.createUser);
 
-// Login
+// usuarios/registro (POST)
+router.post("/registro", upload.single("profile_image"), validationsRegister, usersController.storeUser);
 
+// usuarios/login (GET)
 router.get("/login", guestMiddleware, usersController.loginUser);
 
+// usuarios/login (POST)
 router.post("/login", usersController.loginProcess);
 
-// users/profile
-router.get("/profile", usersController.detailUser);
-// users/logout
+// usuarios/logout (GET)
 router.get("/:id/logout", usersController.logoutUser);
 
-// Profile
-router.get("/profile", authMiddleware, usersController.detailUser);
+// usuarios/:id/editar (GET)
+router.get("/:id/editar/", usersController.editUser);
 
-// /users/:id/edit (GET)
-router.get("/:id/edit/", usersController.editUser);
+// usuarios/perfil (GET)
+router.get("/perfil", authMiddleware, usersController.detailUser);
 
-// /users/:id/edit (PUT)
-router.put("/:id/edit/", usersController.updateUser);
+// usuarios/:id (PUT)
+router.put("/:id",upload.single("profile_image"), usersController.updateUser);
 
 module.exports = router;

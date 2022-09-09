@@ -5,25 +5,39 @@ const usersRouter = require("./users-router");
 const tablesRouter = require("./tables-router");;
 const accessoriesRouter = require("./accessories-router");;
 
-
 const mainController = require("../controllers/mainController");
-//const authMiddleware = require("../../middlewares/authMiddleware");
 
+// /
 router.get("/", mainController.home);
 
-// router.get("/register", mainController.register);
-// router.get("/login", mainController.login);
+// /nosotros
 router.get("/nosotros", mainController.nosotros);
+
+// /escuelas
 router.get("/escuelas", mainController.escuelas);
+
+// /carrito
 router.get("/carrito", mainController.carrito);
 
+// /contacto (GET)
 router.get("/contacto", mainController.comentario);
+
+// /contacto (POST)
 router.post("/contacto", mainController.crearComentario);
+
+// /contacto/pregunta (GET)
 router.get("/contacto/pregunta", mainController.pregunta);
+
+// /contacto/pregunta (POST)
 router.post("/contacto/pregunta", mainController.crearPregunta);
 
+// /tablas
 router.use("/tablas", tablesRouter);
+
+// /accesorios
 router.use("/accesorios", accessoriesRouter);
-router.use("/users", usersRouter);
+
+// /usuarios
+router.use("/usuarios", usersRouter);
 
 module.exports = router;
