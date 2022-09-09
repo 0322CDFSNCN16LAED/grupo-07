@@ -10,23 +10,30 @@ const accessoriesController = {
     },
 
     detail: function (req, res) {
-        let id = req.params.id;
-        let relacionadas = db.Accessories.findAll({limit: 4})
+        db.Accessories.findByPk(req.params.id)
         
-        db.Accessories.findByPk(id)
         .then((accesorio)=>{
-            let brand_id = accesorio.brand_id;
-            db.Brands.findByPk(brand_id)
-            .then((brand)=>{
-                res.render("producto", { 
-                    product: accesorio, 
-                    relatedProduct: relacionadas, 
-                    category: "accesorios", 
-                    brand: brand
-                })
-            })        
-            .catch((error) => console.log(error));
-        })    
+            db.Brands.findByPk(accesorio.brand_id)
+
+            .then((brand) => {
+                db.AccessoriesImages.findAll({where: {accessory_id: req.params.id}})
+
+                .then((images) => {
+                    db.Accessories.findAll({where: {brand_id: accesorio.brand_id}, limit:4, include: "accessories_images"})
+
+                    .then((relacionado)=>{
+                        res.render("producto", {
+                            product: accesorio, 
+                            category: "accesorios", 
+                            brand,
+                            images,
+                            relacionado
+                        })
+                    })  
+                })      
+            })       
+        })
+        .catch((error) => console.log(error))
     },
 
     edit: (req, res) => {

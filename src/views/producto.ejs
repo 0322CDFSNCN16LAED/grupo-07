@@ -34,19 +34,16 @@
             </div>
 
             <section class="banner-product w-100 w-tablet-50">
-
                 <div class="foto-producto">
                     <div>
-                        <img class="w-100" src="" alt="Tabla 1">
+                        <img class="w-100" src="<%= images[0].url%>" alt="Tabla 1">
                     </div>
-
                     <ul class="img-products-mini">
-                        <%= images.forEach((image)=>{%>
-                            <li><img src="<%= image.url%>" alt=""></li>
+                        <% images.forEach((image) => { %>
+                            <li><img src="<%= image.url %> " alt=""></li>
                         <% }) %> 
                     </ul>
                 </div>
-              
             </section>
 
         
@@ -75,19 +72,16 @@
                 </article>
 
                 <article class="product-buttons">
-                
                     <div>
                         <a href="/<%= category %>/<%=product.id %>/carrito">
                             <button type="submit">Agregar al carrito</button>
                         </a>
                     </div>
-    
                     <div>
                         <a href="/<%= category %>/<%=product.id %>/edit ">
                             <button type="submit">Editar producto</button>
                         </a>
                     </div>
-    
                     <div>
                         <form action="/<%= category %>/<%=product.id %>/destroy?_method=DELETE" method="POST" enctype="multipart/form-data">
                             <button type="submit">Eliminar producto</button>
@@ -148,7 +142,11 @@
                 <article class="product">
                     <div>
                         <a href="/<%= category %>/<%= relacionado.id %> ">
-                            <img class="w-100" src="#" alt="Imagen"/>
+                            <% if(category=="tablas"){ %>
+                                <img class="w-100" src="<%= relacionado.tables_images[0]? relacionado.tables_images[0].url: "/images/default.png" %>" alt="Imagen"/>
+                            <%} else { %>
+                                <img class="w-100" src="<%= relacionado.accessories_images[0]? relacionado.accessories_images[0].url: "/images/default.png" %>" alt="Imagen"/>
+                            <%} %>
                         </a>
                     </div>
                 </article>

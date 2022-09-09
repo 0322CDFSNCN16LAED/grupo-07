@@ -16,10 +16,10 @@ const tablesController = {
             db.Brands.findByPk(tabla.brand_id)
 
             .then((brand) => {
-                db.ImagesTables.findAll({where: {table_id: req.params.id}})
+                db.TablesImages.findAll({where: {table_id: req.params.id}})
 
                 .then((images) => {
-                    db.Tables.findAll({where: {brand_id: tabla.brand_id}, limit:4})
+                    db.Tables.findAll({where: {brand_id: tabla.brand_id}, limit:4, include: "tables_images"})
 
                     .then((relacionado)=>{
                         res.render("producto", {
