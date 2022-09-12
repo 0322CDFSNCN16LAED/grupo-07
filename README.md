@@ -13,6 +13,9 @@ También, pagando una suscripción, las diferentes escuelas de surf podrán ofre
 
 Nuestro público objetivo es cualquier persona que tenga interés en surfear. Esto se debe a que ofrecemos desde tablas para principiantes como para profesionales con el fin de encontrar el mejor producto en función de las necesidades del cliente.
 
+![logo-take-off-surf1](https://user-images.githubusercontent.com/102632013/189448652-6cd92acf-c0cd-4c1d-b8f8-86b3b2dc1afa.png)
+
+
 ---
 
 ## Integrantes del equipo:
@@ -103,11 +106,7 @@ Los wireframes del sitio se pueden encontrar en la carpeta Wireframes. Debajo se
 
 ### Wireframes en Figma
 
-Parte 1 - https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf 
-
-Parte 2 - https://www.figma.com/file/zFrWTG7olHnyaq06tPGufP/Take-off-surf-pt.2 
-
-Parte 3 - https://www.figma.com/file/vYhwoxUIWAFfGDa5gkosl2/pt.3?node-id=0%3A1
+https://www.figma.com/file/y2DyHVOVbI3YJOYMCV8bop/Take-off-Surf?node-id=0%3A1
 
 ---
 

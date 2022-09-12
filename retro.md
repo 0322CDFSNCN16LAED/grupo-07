@@ -107,3 +107,53 @@
 
 ## Dejar de hacer:
 - Atrasarnos tanto con los sprints.
+
+---
+
+# Retrospectiva Sprint 6
+
+## Comenzar a hacer: 
+- Acelerar el ritmo de desarrollo.
+
+## Hacer más:
+- Realizar propuestas con mayor frecuencia para la mejora del proyecto.
+
+## Continuar haciendo:
+- Lograr establecer un criterio de trabajo donde cada uno pueda realizar sus tareas asignadas sin modificar el trabajo de otro compañero.
+- Organizar el trabajo.
+- Juntarnos seguido.
+
+## Hacer menos:
+- Utilizar unicamente el contenido de playground.
+
+## Dejar de hacer:
+- Utilizar palabras en ingles y castellano al mismo tiempo.
+
+---
+
+# Retrospectiva Sprint 7
+
+## Comenzar a hacer: 
+- Informar avances en las tareas realizadas y finalizadas para ir avanzando con otras 
+- Informar claramente la tarea tomada y actualizar el trello asi no hay conflictos entre pares.
+
+## Hacer más:
+- Deadline de etapas asiganadas acorde a la complejidad y de ser posible antes del siguiente sprint
+- Reunines en cada deadline para evaluar avances y problemas.
+- Mantener el orden de avance de proyecto 
+
+## Continuar haciendo:
+- Mantener el canal de comunicacion abierto.
+
+## Hacer menos:
+- No comitear cambios en areas del proyecto no asignadas a uno sin informar
+
+## Dejar de hacer:
+- No finalizar tareas de sprints anteriores por mas minimas que sean.
+
+---
+
+# Retrospectiva Sprint 8
+---
+
+
