@@ -36,11 +36,11 @@
             <section class="banner-product w-100 w-tablet-50">
                 <div class="foto-producto">
                     <div>
-                        <img class="w-100" src="<%= images[0].url%>" alt="Tabla 1">
+                        <img class="w-100" src="<%= images[0]? images[0].url: "/images/default.png"%>" alt="Tabla 1">
                     </div>
                     <ul class="img-products-mini">
                         <% images.forEach((image) => { %>
-                            <li><img src="<%= image.url %> " alt=""></li>
+                            <li><img src="<%= image.url%> " alt=""></li>
                         <% }) %> 
                     </ul>
                 </div>
@@ -135,7 +135,7 @@
     </div>
     
     <section class="section-product w-100 flex fx-wrap">
-        <h2 class="font-heading mb-8 w-100 text-center">Productos relacionados</h2>
+        <h2 class="font-heading mb-8 w-100 text-center">Productos relacionados a <%= brand.name %></h2>
         <div class="w-100 flex fx-wrap">
         <% relacionado.forEach((relacionado) => { %> 
             <div class="p-8 w-50 w-desktop-25">

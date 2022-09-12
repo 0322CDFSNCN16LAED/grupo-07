@@ -100,6 +100,19 @@ const accessoriesController = {
             brand_id: req.body.brand_id,
         })
         
+        .then((newAccessory) => {
+
+            let files = req.body.url;
+            
+            files.forEach((file) => {
+                let url = "/images/accesorios/"+file;
+                db.TablesAccessories.create({
+                    url: url,
+                    table_id: newAccessory.id
+                })
+            })
+        }) 
+
         .then(function () {
             res.redirect("/accesorios");
         });

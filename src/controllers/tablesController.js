@@ -103,9 +103,7 @@ const tablesController = {
     },
 
     create: (req, res) => {
-
-        multifile = req.files;
-
+    
         db.Tables.create({
             type: req.body.type,
             description: req.body.description,
@@ -120,12 +118,16 @@ const tablesController = {
             brand_id: req.body.brand_id
         })
 
-        .then(() => {
-           db.ImagesTables.create({
-                url_1: req.body.url_1,
-                url_2: req.body.url_2,
-                url_3: req.body.url_3,
-                url_4: req.body.url_4,
+        .then((newTable) => {
+
+            let files = req.body.url;
+            
+            files.forEach((file) => {
+                let url = "/images/tablas/"+file;
+                db.TablesImages.create({
+                    url: url,
+                    table_id: newTable.id
+                })
             })
         })
 
