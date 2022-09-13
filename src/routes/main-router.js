@@ -3,8 +3,7 @@ const router = express.Router();
 
 const usersRouter = require("./users-router");
 const tablesRouter = require("./tables-router");;
-const accessoriesRouter = require("./accessories-router");;
-
+const accessoriesRouter = require("./accessories-router");
 const mainController = require("../controllers/mainController");
 
 // /
@@ -26,7 +25,7 @@ router.get("/contacto", mainController.comentario);
 router.post("/contacto", mainController.crearComentario);
 
 // /contacto/pregunta (GET)
-router.get("/contacto/pregunta", mainController.pregunta);
+router.get("/contacto/pregunta", mainController.pregunta);    //ruta por get no usada
 
 // /contacto/pregunta (POST)
 router.post("/contacto/pregunta", mainController.crearPregunta);
