@@ -12,10 +12,13 @@
 
       <section class="section-form">
         <div class="bg-light-blue br-10">
-          <% if(locals.errors){ errors.forEach(error => {%>
-          <p><%= error.msg %></p>
 
+          <div>
+            <% if(locals.errors){ errors.forEach(error => {%>
+          <p class="font-navy"><%= error.msg %></p>
           <% }) } %>
+          </div>
+          
           <form
             class="form"
             action="/usuarios/registro"
