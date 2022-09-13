@@ -15,13 +15,17 @@ app.use(
     secret: "Mensaje secreto",
     resave: false,
     saveUninitialized: false,
-  }));
+  })
+);
 
 app.set("views", path.resolve(__dirname, "./src/views"));
 app.set("view engine", "ejs");
 
 const mainRoutes = require("./src/routes/main-router");
 app.use("/", mainRoutes);
+
+const apiRoutes = require("./src/routes/api/apiRoutes");
+app.use("/api", apiRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
