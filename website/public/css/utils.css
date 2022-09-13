@@ -333,4 +333,13 @@
     .desktop-fx{
         display: flex;
     }
+
+
+
+}
+
+.text-danger {
+    font-size: 15px;
+    font-weight: bolder;
+    color: red;
 }

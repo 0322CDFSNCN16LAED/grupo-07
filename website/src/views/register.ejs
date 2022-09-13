@@ -11,7 +11,7 @@
       <section class="section-form">
         <div class="bg-light-blue br-10">
           <% if(locals.errors){ errors.forEach(error => {%>
-          <p><%= error.msg %></p>
+          <p class="text-danger"><%= error.msg %></p>
 
           <% }) } %>
           <form

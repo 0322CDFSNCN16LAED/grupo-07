@@ -16,7 +16,7 @@
             
             <div class="bg-light-blue br-10">
 
-                <form class="form" action="/accesorios/crear" method="POST">
+                <form class="form" action="/accesorios/crear" method="POST" enctype="multipart/form-data">
 
                     <h2 class="w-100">Crear Accesorio</h2>
                     
@@ -45,6 +45,12 @@
                             <% }) %> 
                         </select>
                     </div>
+                    <div class="flex fx-wrap w-100 fx-align-center p-8">
+                        <label for="url" class="w-100">Imagen del producto: </label>
+                             <div class="w-100 p-8">
+                                 <input type="file" name="url" id="" multiple/>
+                             </div>
+                         </div>
                 </div>
 
                     <div class="w-100 fx-align-center p-8">

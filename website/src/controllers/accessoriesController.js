@@ -71,16 +71,14 @@ const accessoriesController = {
     },
 
     destroy: (req, res) => {
-        let id = req.params.id;
-
-        db.Accessories.findByPk(id)
-        
-        .then((accesorio) => {
-            accesorio.destroy()
-                .then(() => {
-                    res.redirect("/accesorios");
+        db.AccessoriesImages.destroy({where: {accessory_id: req.params.id}})
+            .then(() => {
+                db.Accessories.destroy({where: { id: req.params.id}})
+                    .then(() => {
+                        res.redirect("/accesorios");
+                             });
                 });
-        });
+
     },
 
     add: (req, res) => {
@@ -102,20 +100,27 @@ const accessoriesController = {
         
         .then((newAccessory) => {
 
-            let files = req.body.url;
+           if(req.files){
+            let files = req.files;
             
             files.forEach((file) => {
-                let url = "/images/accesorios/"+file;
-                db.TablesAccessories.create({
+                let url = "/images/accesorios/" + file.filename;
+                db.AccessoriesImages.create({
                     url: url,
-                    table_id: newAccessory.id
-                })
-            })
+                    accessory_id: newAccessory.id
+                    })
+              })
+            }else {
+            db.AccessoriesImages.create({
+                url: "/images/accesorios/default.png",
+                accessory_id: newAccessory.id
+                }) }
         }) 
 
         .then(function () {
             res.redirect("/accesorios");
-        });
+        })
+        .catch((error) => res.send(error));
     }
 
 };
