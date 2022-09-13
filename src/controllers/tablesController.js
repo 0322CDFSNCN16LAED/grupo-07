@@ -68,7 +68,16 @@ const tablesController = {
             }
         })
 
-        .then(() => {
+        .then((updatedTable) => {
+            let files = req.body.url;
+            
+            files.forEach((file) => {
+                let url = "/images/tablas/"+file;
+                db.TablesImages.create({
+                    url: url,
+                    table_id: newTable.id
+                })
+            })
             db.ImagesTables.update({
                 url_1: req.body.url_1,
                 url_2: req.body.url_2,

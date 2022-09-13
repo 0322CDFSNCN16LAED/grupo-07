@@ -3,17 +3,24 @@
   <head>
     <%- include ('./partials/head') %>
     <link rel="stylesheet" href="/css/forms.css" />
+    <script src="/js/registerValidation.js"></script>
   </head>
   <body>
     <%- include ('./partials/header') %>
 
     <main class="form-main">
+
       <section class="section-form">
         <div class="bg-light-blue br-10">
-          <% if(locals.errors){ errors.forEach(error => {%>
-          <p><%= error.msg %></p>
 
-          <% }) } %>
+          <div class="w-100 fx-align-center p-8">
+            <% if(locals.errors){ errors.forEach(error => {%>
+              <div>
+                <p class="font-navy"><%= error.msg %></p>
+              </div>
+              <% }) } %>
+          </div>
+
           <form
             class="form"
             action="/usuarios/registro"
@@ -26,7 +33,7 @@
                 class="form-inp"
                 type="text"
                 name="first_name"
-                id=""
+                id="firstName"
                 placeholder="Nombre"
                 value="<%= locals.old && old.firstName ? old.firstName : ''%>"
               />
@@ -37,7 +44,7 @@
                 class="form-inp"
                 type="text"
                 name="last_name"
-                id="apellido"
+                id="lastName"
                 placeholder="Apellido"
                 value="<%= locals.old && old.lastName ? old.lastName : ''%>"
               />
@@ -49,7 +56,7 @@
                 type="mail"
                 placeholder="Correo electrónico"
                 name="email"
-                id=""
+                id="email"
                 value="<%= locals.old && old.email ? old.email : ''%>"
               />
             </div>
@@ -59,7 +66,7 @@
                 class="form-inp"
                 type="number"
                 name="dni"
-                id=""
+                id="dni"
                 placeholder="Documento"
                 value="<%= locals.old && old.dni ? old.dni : ''%>"
               />
@@ -80,7 +87,7 @@
                 class="form-inp"
                 type="date"
                 name="birthdate"
-                id=""
+                id="birthdate"
                 value="<%= locals.old && old.birthdate ? old.birthdate : ''%>"
               />
             </div>
@@ -90,9 +97,15 @@
                 class="form-inp"
                 type="password"
                 name="password"
-                id=""
+                id="password"
                 placeholder="Contraseña"
-              />
+                size="15" 
+                maxlength="64" 
+                />
+            </div>
+            <div class="w-100 fx-align-center p-8">
+              <progress max="100" value="0" id="meter"></progress>
+              <span id="spanPassword"></span>
             </div>
 
             <div class="flex fx-wrap w-100 fx-align-center p-8">

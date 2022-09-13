@@ -40,7 +40,20 @@
   font-size: 16px;
 }
 
-.form-error {
-  width: 100%;
-  color: red;
+.is-valid input,
+.is-valid select {
+  border-color: rgb(37, 92, 212);
+}
+
+.is-invalid input{
+  border-color: rgb(255, 59, 59);
+}
+
+.error {
+  display: none;
+}
+
+.is-invalid .error {
+  display: block;
+  color:  rgb(255, 59, 59);
 }

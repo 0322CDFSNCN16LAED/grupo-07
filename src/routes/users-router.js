@@ -44,6 +44,20 @@ const validationsRegister = [
     .withMessage("La contraseña debe contener al menos 8 caracteres"),
 ];
 
+const validationsLogin = [
+  body("email")
+    .notEmpty()
+    .bail()
+    .isEmail()
+    .withMessage("El email debe ser con el formato 'juan@example.com'"),
+  body("password")
+    .notEmpty()
+    .withMessage("Debes completar el password")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe contener al menos 8 caracteres"),
+];
+
 // usuarios/registro (GET)
 router.get("/registro", guestMiddleware, usersController.createUser);
 
@@ -54,7 +68,7 @@ router.post("/registro", upload.single("profile_image"), validationsRegister, us
 router.get("/login", guestMiddleware, usersController.loginUser);
 
 // usuarios/login (POST)
-router.post("/login", usersController.loginProcess);
+router.post("/login", validationsLogin, usersController.loginProcess);
 
 // usuarios/logout (GET)
 router.get("/:id/logout", usersController.logoutUser);
