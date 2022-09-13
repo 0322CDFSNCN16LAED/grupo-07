@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 
+const path = require("path");
+
 const tablesController = require("../controllers/tablesController");
 
 
@@ -12,7 +14,7 @@ const storage = multer.diskStorage({
       cb(null, carpetaDestino);
     },
     filename: (req, file, cb) => {
-      let nombreImagen = "tabla" +Date.now() + path.extname(file.originalname);
+      let nombreImagen = "tabla" + Date.now() + path.extname(file.originalname);
       cb(null, nombreImagen);
     },
 });

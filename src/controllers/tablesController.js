@@ -92,16 +92,14 @@ const tablesController = {
     },
 
     destroy: (req, res) => {
-        let id = req.params.id;
-
-        db.Tables.findByPk(id)
-        
-        .then((tabla) => {
-            tabla.destroy()
-                .then(() => {
-                    res.redirect("/tablas");
+        db.TablesImages.destroy({where: {table_id: req.params.id}})
+            .then(() => {
+                db.Tables.destroy({where: { id: req.params.id}})
+                    .then(() => {
+                        res.redirect("/tablas");
+                             });
                 });
-        });
+
     },
 
     add: (req, res) => {
@@ -129,15 +127,21 @@ const tablesController = {
 
         .then((newTable) => {
 
-            let files = req.body.url;
-            
+           if(req.files){
+            let files =  req.files;     
             files.forEach((file) => {
-                let url = "/images/tablas/"+file;
+                let url = "/images/tablas/"+file.filename;
                 db.TablesImages.create({
                     url: url,
                     table_id: newTable.id
                 })
             })
+        } else{
+            db.TablesImages.create({
+                url: "/images/tablas/default.png",
+                table_id: newTable.id
+            })
+        }
         })
 
         .then(() => {

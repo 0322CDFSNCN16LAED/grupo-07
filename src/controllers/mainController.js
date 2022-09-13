@@ -32,7 +32,7 @@ const mainController = {
   creacion: function (req, res) {
     res.render("crear-productos");
   },
-  pregunta: function (req, res) {
+  pregunta: function (req, res) {                  // ver uso de este controlador
     db.Comments.findAll({limit: 4})
     .then((comments)=>{
       res.render("contacto", { comments: comments });
