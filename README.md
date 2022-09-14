@@ -4,6 +4,15 @@
 
 ![Azul y Dorado Para Inmobiliarias Portada para LinkedIn (1)](https://user-images.githubusercontent.com/102632013/187766359-ad5ac81d-ad9d-4cf3-8339-31f2076e7f0d.png)
 
+## Visualización del proyecto
+
+### Website
+>https://github.com/0322CDFSNCN16LAED/grupo-07/tree/main/website
+
+### Dashboard
+>https://github.com/0322CDFSNCN16LAED/grupo-07/tree/main/dashboard
+
+---
 
 ## Breve descripcion del proyecto 
 
