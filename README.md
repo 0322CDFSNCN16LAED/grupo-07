@@ -16,9 +16,9 @@
 
 ## Breve descripcion del proyecto 
 
-**Take Off Surf** es un e-commerce de tablas de surf. Las mismas pueden ser comerciales como personalizadas, donde a partir de opciones predeterminadas el usuario interactivamente podrá ir diseñando su tabla al mismo tiempo que ve cómo quedaría. 
+**Take Off Surf** es un e-commerce de tablas de surf y accesorios relacionados con el deporte. 
 
-También, pagando una suscripción, las diferentes escuelas de surf podrán ofrecer información sobre sus servicios a la comunidad surfista.
+También, las diferentes escuelas de surf podrán ofrecer información sobre sus servicios a la comunidad surfista.
 
 Nuestro público objetivo es cualquier persona que tenga interés en surfear. Esto se debe a que ofrecemos desde tablas para principiantes como para profesionales con el fin de encontrar el mejor producto en función de las necesidades del cliente.
 
