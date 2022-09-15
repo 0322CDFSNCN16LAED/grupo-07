@@ -4,7 +4,9 @@
   <head>
     <%- include ('./partials/head') %>
     <link rel="stylesheet" href="/css/forms.css" />
-    <script src="/js/loginValidation.js"></script>
+    <script src="/script/forms.js"></script>
+    <script src="/script/login.js"></script>
+    <script src="/script/validations/loginValidation.js"></script>
   </head>
 
   <body class="bg-light-gray w-100">
@@ -26,14 +28,14 @@
 
             <div class="w-100 fx-align-center p-8" for="mail">
               <input class="form-inp" type="mail" placeholder="Correo electrónico" name="email" id="email"/>
-              <span class="error"></span>
             </div>
-
+            <span class="w-100 text-center" id="spanEmail"></span>
+            
             <div class="w-100 fx-align-center p-8" for="password">
               <input class="form-inp" type="password" placeholder="Escriba su contraseña" name="password" id="password"/>
-              <span class="error"></span>
             </div>
-
+            <span class="w-100 text-center" id="spanPassword"></span>
+            
             <div class="w-100 fx-align-center p-8">
               <input type="checkbox" name="recordame" />
               <label for="">Recordame </label>

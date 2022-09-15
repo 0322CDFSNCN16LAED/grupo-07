@@ -20,7 +20,7 @@ const usersController = {
       } else {
         newUser.profile_image = "/images/users-images/default_user.jpg";
       }
-      const user = await db.Users.create({
+      db.Users.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
@@ -29,9 +29,10 @@ const usersController = {
         image: newUser.profile_image,
         birthday: req.body.birthdate,
         address: req.body.address,
-      });
-
-      res.redirect("/usarios/login");
+      })
+      .then(()=>{
+        res.redirect("/usuarios/login");
+      })
     } else {
       res.render("register", { errors: errors.array(), old: req.body });
     }

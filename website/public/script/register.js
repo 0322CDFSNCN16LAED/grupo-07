@@ -1,16 +1,4 @@
 window.addEventListener('load', () => {
-    
-    const formulario = document.querySelector(".form");
-    const inputs = formulario.querySelectorAll('input');  
-    // Inputs Focus
-    inputs.forEach((input) => {
-        input.addEventListener("focus", function () {
-            input.style.backgroundColor = "rgba(37, 92, 209, 0.397)";
-        });
-        input.addEventListener("blur", function( ) {
-            input.style.backgroundColor = "";
-        });
-    });
 
     const password = document.querySelector("#password");
     const firstName = document.querySelector('#first_name');
@@ -49,15 +37,15 @@ window.addEventListener('load', () => {
 
     dni.addEventListener("keyup", function (){
         const spanDni = document.querySelector('#spanDni');
-        if (dni.value.length = 8){
-            dni.parentElement.classList.add("is-valid");
-            dni.parentElement.classList.remove("is-invalid");
-            spanDni.innerHTML = ""; 
-        } else {
+        if (dni.value.length != 8){
             dni.parentElement.classList.add("is-invalid");
             dni.parentElement.classList.remove("is-valid");
             spanDni.innerHTML = "El DNI contiene 8 digitos";
             spanDni.style.color = "red";
+        } else {
+            dni.parentElement.classList.add("is-valid");
+            dni.parentElement.classList.remove("is-invalid");
+            spanDni.innerHTML = ""; 
     }});
 
     email.addEventListener("change", function (){
@@ -89,13 +77,17 @@ window.addEventListener('load', () => {
     
     const spanPassword = document.querySelector('#spanPassword');
     password.addEventListener("keyup", function (){
-        if (password.value >8){
+        if (password.value.length >= 8){
             password.parentElement.classList.add("is-valid");
             password.parentElement.classList.remove("is-invalid");  
+            spanPassword.innerHTML = "";
         } else {
             password.parentElement.classList.add("is-invalid");
             password.parentElement.classList.remove("is-valid"); 
+            spanPassword.innerHTML = "La contraseña debe tener al menos 8 caracteres";
+            spanPassword.style.color = "red";
     }});
+    
     // Password ayuda al crearla
     password.addEventListener("keyup", function(){
         const meter = document.querySelector("#meter")
