@@ -1,5 +1,5 @@
-window.addEventListener("load", function () {
-
+window.addEventListener('load', () => {
+    
     const formulario = document.querySelector(".form");
     const inputs = formulario.querySelectorAll('input');  
     // Inputs Focus
@@ -13,70 +13,81 @@ window.addEventListener("load", function () {
     });
 
     const password = document.querySelector("#password");
-    const firstName = document.querySelector('#firstName');
-    const lastName = document.querySelector('#lastName');
+    const firstName = document.querySelector('#first_name');
+    const lastName = document.querySelector('#last_name');
     const dni = document.querySelector('#dni');
     const email = document.querySelector('#email');
     const address = document.querySelector('#address');
-    const birthdate = document.querySelector('#birthdate');
 
-    const acceptedExtensions = ['.jpg', '.png', '.gif'];
-    
-    // Inputs en el momento
-    firstName.addEventListener("keyup", function (){
-        if (firstName.value.length > 3){
+    firstName.addEventListener("change", function (){
+        const spanFirstName = document.querySelector('#spanFirstName');
+        if ( firstName.value.length < 3 ){
+            firstName.parentElement.classList.add("is-invalid");
+            firstName.parentElement.classList.remove("is-valid");
+            spanFirstName.innerHTML = "El nombre debe contener al menos 3 letras";
+            spanFirstName.style.color = "red";
+        } else {
             firstName.parentElement.classList.add("is-valid");
             firstName.parentElement.classList.remove("is-invalid");  
-        } else {
-            firstName.parentElement.classList.add("is-invalid");
-            firstName.parentElement.classList.remove("is-valid"); 
-        }});
+            spanFirstName.innerHTML = "";
+        }
+    });
 
-    lastName.addEventListener("keyup", function (){
-        if (lastName.value != ""){
+    lastName.addEventListener("change", function (){
+        const spanLastName = document.querySelector('#spanLastName');
+        if ( lastName.value.length < 3 ){
+            lastName.parentElement.classList.add("is-invalid");
+            lastName.parentElement.classList.remove("is-valid");
+            spanLastName.innerHTML = "El apellido debe contener al menos 3 letras";
+            spanLastName.style.color = "red";
+        } else {
             lastName.parentElement.classList.add("is-valid");
             lastName.parentElement.classList.remove("is-invalid");  
-        } else {
-            lastName.parentElement.classList.add("is-invalid");
-            lastName.parentElement.classList.remove("is-valid"); 
-    }});
+            spanLastName.innerHTML = "";
+        }
+    });
 
     dni.addEventListener("keyup", function (){
-        if (dni.value.length <= 8){
+        const spanDni = document.querySelector('#spanDni');
+        if (dni.value.length = 8){
             dni.parentElement.classList.add("is-valid");
-            dni.parentElement.classList.remove("is-invalid");  
+            dni.parentElement.classList.remove("is-invalid");
+            spanDni.innerHTML = ""; 
         } else {
             dni.parentElement.classList.add("is-invalid");
-            dni.parentElement.classList.remove("is-valid"); 
+            dni.parentElement.classList.remove("is-valid");
+            spanDni.innerHTML = "El DNI contiene 8 digitos";
+            spanDni.style.color = "red";
     }});
 
     email.addEventListener("change", function (){
+        const spanEmail = document.querySelector('#spanEmail');
         if (email.value.length > 10 && email.value.includes("@")){
             email.parentElement.classList.add("is-valid");
             email.parentElement.classList.remove("is-invalid");  
+            spanEmail.innerHTML = "";
         } else {
+            spanEmail.innerHTML = "El email debe ser con el formato 'juan@example.com'";
+            spanEmail.style.color = "red";
             email.parentElement.classList.add("is-invalid");
             email.parentElement.classList.remove("is-valid"); 
     }});
 
     address.addEventListener("keyup", function (){
-        if (address.value.length > 3){
+        const spanAddress = document.querySelector('#spanAddress');
+        if (address.value.length > 6){
             address.parentElement.classList.add("is-valid");
             address.parentElement.classList.remove("is-invalid");  
+            spanAddress.innerHTML = "";
         } else {
+            spanAddress.innerHTML = "Debes ingresar una dirección real";
+            spanAddress.style.color = "red";
             address.parentElement.classList.add("is-invalid");
             address.parentElement.classList.remove("is-valid"); 
     }});
-
-    birthdate.addEventListener("keyup", function (){
-        if (birthdate.value != ""){
-            birthdate.parentElement.classList.add("is-valid");
-            birthdate.parentElement.classList.remove("is-invalid");  
-        } else {
-            birthdate.parentElement.classList.add("is-invalid");
-            birthdate.parentElement.classList.remove("is-valid"); 
-    }});
-
+    
+    
+    const spanPassword = document.querySelector('#spanPassword');
     password.addEventListener("keyup", function (){
         if (password.value >8){
             password.parentElement.classList.add("is-valid");
@@ -85,11 +96,10 @@ window.addEventListener("load", function () {
             password.parentElement.classList.add("is-invalid");
             password.parentElement.classList.remove("is-valid"); 
     }});
-
     // Password ayuda al crearla
     password.addEventListener("keyup", function(){
         const meter = document.querySelector("#meter")
-        const spanPassword = document.querySelector('#spanPassword');
+        
         const medium = new RegExp("(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])");
         const fuerte = new RegExp("(?=.{20,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9])))");
         if (fuerte.test(password.value)) {
@@ -105,37 +115,8 @@ window.addEventListener("load", function () {
         } else {
             spanPassword.innerHTML = "Contraseña debil!"
             spanPassword.style.color = "red";
-            meter.value = 10;
+            meter.value = 20;
             meter.style.color = "red";
         }
     })
-
-    formulario.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const errores = [];
-    
-        //Hacer las validaciones
-        inputs.forEach((input) => {
-            const isValid = validationsLogin.validator(input);
-            if (!isValid) {
-              errores.push(validationsLogin.withMessage);
-              input.parentElement.classList.add("is-invalid");
-              input.parentElement.classList.remove("is-valid");
-              input.parentElement.querySelector(".error").innerHTML =
-              validationsLogin.withMessage;
-              return;
-            }
-          input.parentElement.classList.add("is-valid");
-          input.parentElement.classList.remove("is-invalid");
-          input.parentElement.querySelector(".error").innerHTML = "";
-        });
-    
-        //Si no fallaron las validaciones
-        if (errores.length == 0) {
-          // formulario.submit();
-          console.log("No hay errores, yay!");
-        } else {
-          console.log(errores);
-        }
-      });
-})
+});

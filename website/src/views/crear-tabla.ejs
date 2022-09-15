@@ -4,6 +4,7 @@
 <head>
 <%- include ('./partials/head') %> 
 <link rel = "stylesheet" href = "/css/forms.css"/>
+<script src="/script/validations/tableValidation.js"></script>
 </head>
 
 <body class="bg-light-gray w-100">
@@ -20,19 +21,19 @@
                     
                     <h2 class="w-100">Crear Tabla</h2>
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" required>
+                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" required>
                     </div>
 
                    <div class="w-100 fx-align-center p-8">
-                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" required>
+                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
                    </div>
                    
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="price" id="" placeholder="Precio" required>
+                        <input class="form-inp" type="text-box" name="price" id="number" placeholder="Precio" required>
                    </div>
 
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="discount" id="" placeholder="Descuento" required>
+                        <input class="form-inp" type="text-box" name="discount" id="number" placeholder="Descuento" required>
                    </div>
 
                    <div class="flex fx-wrap w-100 fx-align-center p-8">
@@ -65,15 +66,15 @@
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_length" id="" placeholder="Largo" required>
+                        <input class="form-inp" type="number" name="table_length" id="number" placeholder="Largo" required>
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_thickness" id="" placeholder="Espesor" required>
+                        <input class="form-inp" type="number" name="table_thickness" id="number" placeholder="Espesor" required>
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_volume" id="" placeholder="Volumen" required>
+                        <input class="form-inp" type="number" name="table_volume" id="number" placeholder="Volumen" required>
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
@@ -81,7 +82,7 @@
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="table_keels" id="" placeholder=" Quillas" required>
+                        <input class="form-inp" type="text" name="table_keels" id="number" placeholder=" Quillas" required>
                     </div>
                     
                     <div class="w-100 fx-align-center p-8">
