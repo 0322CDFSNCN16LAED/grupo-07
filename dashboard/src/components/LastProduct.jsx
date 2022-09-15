@@ -13,11 +13,13 @@ export default function LastProduct() {
         />
       </div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-        consequatur explicabo officia inventore libero veritatis iure voluptate
-        reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem
-        culpa citationem ratione aperiam voluptatum non corporis ratione aperiam
-        voluptatum quae dolorem culpa ratione aperiam voluptatum?
+        El “Gun” es un diseño de tablas de surf creado exclusivamente para olas
+        grandes y la mayoría de los surfistas nunca surfean con estas tablas en
+        otras condiciones que no sea ola tamaño XL. Estamos hablando de olas de
+        6 o quizás 12 metros de altura (La ola más grande surfeada fué en Nazaré
+        (Portugal) con 24,3 metros de altura por Rodrigo Coxa). En caso de que
+        seas un valiente de olas grandes te contaremos un poco sobre ellas. Son
+        tablas largas desde 6’6 hasta 10 pies.
       </p>
       <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
         View movie detail

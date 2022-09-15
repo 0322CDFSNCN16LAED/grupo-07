@@ -42,9 +42,6 @@ export default class TablesList extends Component {
                   <tr>
                     <th>Id</th>
                     <th>Tipo de tabla</th>
-                    <th>Precio</th>
-                    <th>Descuento</th>
-                    <th>Marca</th>
                   </tr>
                 </thead>
 
@@ -52,9 +49,6 @@ export default class TablesList extends Component {
                   <tr>
                     <th>Id</th>
                     <th>Tipo de tabla</th>
-                    <th>Precio</th>
-                    <th>Descuento</th>
-                    <th>Marca</th>
                   </tr>
                 </tfoot>
                 <tbody>

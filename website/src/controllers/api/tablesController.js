@@ -4,7 +4,7 @@ module.exports = {
   list: (req, res) => {
     Tables.findAll({
       include: ["brand"],
-      attributes: ["id", "type", "description", "price", "discount"],
+      attributes: ["id", "type"],
     }).then((tablas) => {
       let respuesta = {
         meta: {
@@ -20,9 +20,17 @@ module.exports = {
 
   detailTable: (req, res) => {
     Tables.findOne({
+      attributes: [
+        "id",
+        "type",
+        "description",
+        "price",
+        "discount",
+        "table_length",
+        "table_expertise",
+      ],
       include: ["brand"],
       where: { id: req.params.id },
-      attributes: ["id", "type", "description"],
     }).then((tabla) => {
       res.status(200).json({
         meta: {
