@@ -34,7 +34,7 @@ router.post("/crear", upload.array('url', 4), tablesController.create);
 router.get("/:id/edit/", tablesController.edit);
 
 // /tablas/:id/edit (PUT)
-router.put("/:id/edit/", tablesController.update);
+router.put("/:id/edit/",  upload.array('url', 4), tablesController.update);
 
 // /tablas/:id (DELETE)
 router.delete("/:id/destroy/", tablesController.destroy);

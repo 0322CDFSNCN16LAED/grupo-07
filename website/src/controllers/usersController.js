@@ -6,7 +6,7 @@ const { DEFAULT_ECDH_CURVE } = require("tls");
 
 const usersController = {
   createUser: (req, res) => {
-    res.render("register");
+    res.render("register", { user: req.session.userLogged });
   },
 
   // Registro: Guardado usuario
@@ -40,7 +40,7 @@ const usersController = {
 
   // Log In
   loginUser: (req, res) => {
-    return res.render("login");
+    return res.render("login", {user: req.session.userLogged});
   },
 
   loginProcess: async (req, res) => {
@@ -73,7 +73,7 @@ const usersController = {
   //Usuario: Detalle
 
   detailUser: (req, res) => {
-    return res.render("profile", { user: req.session.userLogged });
+    return res.render("profile", {user: req.session.userLogged});
   },
 
   //Usuario: Edicion de datos

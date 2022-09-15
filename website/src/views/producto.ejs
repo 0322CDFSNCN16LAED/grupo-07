@@ -52,9 +52,11 @@
                 <article class="w-100">
                     <ul>
                         <li class="price">$ <%= product.price %></li>
+                        <% if (product.discount) {%> 
                         <li>
                             <%= product.discount %>% OFF en un pago $ <%=Math.ceil(product.price*(100-product.discount)/100) %>
                         </li>
+                        <% } %> 
                         <li>
                             12 cuotas fijas de $ <%= Math.ceil(product.price/12) %>
                         </li>
@@ -73,7 +75,7 @@
 
                 <article class="product-buttons">
                     <div>
-                        <a href="/<%= category %>/<%=product.id %>/carrito">
+                        <a href="/carrito"> <!--<%= category %>/<%=product.id %>/-->
                             <button type="submit">Agregar al carrito</button>
                         </a>
                     </div>

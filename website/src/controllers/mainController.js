@@ -10,7 +10,7 @@ const mainController = {
       
     .then(([tables, accessories]) => {
       return res.render("home", {
-        tables, accessories
+        tables, accessories, user: req.session.userLogged
       });
     })
     
@@ -18,24 +18,20 @@ const mainController = {
   },
 
   nosotros: function (req, res) {
-    res.render("nosotros");
+    res.render("nosotros", {user: req.session.userLogged});
   },
   
   escuelas: function (req, res) {
-    res.render("escuelas");
+    res.render("escuelas", {user: req.session.userLogged});
   },
   
   carrito: function (req, res) {
-    res.render("carrito");
-  },
-  
-  creacion: function (req, res) {
-    res.render("crear-productos");
+    res.render("carrito", {user: req.session.userLogged});
   },
   pregunta: function (req, res) {                  // ver uso de este controlador
     db.Comments.findAll({limit: 4})
     .then((comments)=>{
-      res.render("contacto", { comments: comments });
+      res.render("contacto", { comments: comments, user: req.session.userLogged });
     })
   },
   crearPregunta: (req,res) => {
@@ -44,6 +40,7 @@ const mainController = {
       last_name: req.body.last_name,
       email: req.body.email,
       question: req.body.question,
+      user: req.session.userLogged
     })
     .then(() => {
       return res.redirect("/contacto");
@@ -53,7 +50,7 @@ const mainController = {
   comentario: function (req, res) {
     db.Comments.findAll({limit: 4})
     .then((comments)=>{
-      res.render("contacto", { comments: comments });
+      res.render("contacto", { comments: comments, user: req.session.userLogged });
     })
   },
   crearComentario: (req, res) => {

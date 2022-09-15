@@ -5,7 +5,7 @@ const accessoriesController = {
     accessories: (req, res) => {
         db.Accessories.findAll({include: "accessories_images"})
         .then((accesorios)=>{
-            res.render("accesorios", {accesorios: accesorios})
+            res.render("accesorios", {accesorios: accesorios, user: req.session.userLogged})
         });
     },
 
@@ -23,12 +23,13 @@ const accessoriesController = {
 
                     .then((relacionado)=>{
                         res.render("producto", {
-                            product: accesorio, 
-                            category: "accesorios", 
-                            brand,
-                            images,
-                            relacionado
-                        })
+                          product: accesorio,
+                          category: "accesorios",
+                          brand,
+                          images,
+                          relacionado,
+                          user: req.session.userLogged,
+                        });
                     })  
                 })      
             })       
@@ -45,7 +46,7 @@ const accessoriesController = {
         Promise.all([accesorio, brands])
 
         .then(([accesorio, brands]) => {
-        res.render("editar-accesorio", {accesorio, brands})
+        res.render("editar-accesorio", {accesorio, brands, user: req.session.userLogged})
         })
 
         .catch((error) => console.log(error));
@@ -98,7 +99,7 @@ const accessoriesController = {
     add: (req, res) => {
         db.Brands.findAll()
         .then((brands)=>{
-            res.render("crear-accesorio", {brands})
+            res.render("crear-accesorio", {brands, user: req.session.userLogged})
         })
     },
 

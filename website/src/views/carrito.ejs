@@ -6,98 +6,137 @@
 <link rel = "stylesheet" href = "/css/forms.css"/>
 <link rel = "stylesheet" href = "/css/carrito.css"/>
 <link rel = "stylesheet" href = "/css/nosotros.css"/>
-<script type="application/javascript" src="/public/js/cart.js" async></script>
+<script type="application/javascript" src="/script/cart.js" async></script>
 </head>
 
 <body class="bg-light-gray w-100">
 
 <%- include ('./partials/header') %> 
 
-    <main class="w-100 p-8 m-center">
+<main class="w-100 p-8 m-center">
 
-        <div class="w-100 p-8 m-center">
-            <ul class="nav-section w-50  mb-8 flex">
-                <li class="mx-10"><a href="/">Inicio</a></li>
-                <li class="mx-10">/</li>
-                <li class="mx-10"><a href="/carrito">Carrito</a></li>
-            </ul>
+    <div class="w-100 p-8 m-center">
+        <ul class="nav-section w-50  mb-8 flex">
+            <li class="mx-10"><a href="/">Inicio</a></li>
+            <li class="mx-10">/</li>
+            <li class="mx-10"><a href="/carrito">Carrito</a></li>
+        </ul>
+    </div>
+
+    <article>
+        <h2 class="text-center font-heading">Carrito</h2>
+        <div class="img-nosotros">
+            <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf"/>
         </div>
+    </article>
+    
+    <section class="mb-24">
+        <table class="carrito-table">
 
-        <article>
-            <h2 class="text-center font-heading">Carrito</h2>
-            <div class="img-nosotros">
-                <img src="/images/img-surf/banner-carrito.jpg" alt="Imagen surf"/>
-            </div>
-        </article>
-        
-        <section class="mb-24">
-            <table class="carrito-table">
+            <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th></th>
+            </tr>
 
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
+            <tr class="carrito-item">
+                <th class="carrito-imagen">
+                    <a href="/tablas/1">
+                        <img src="/images/tablas/tabla-1.jpg" alt="Imagen tabla de surf">
+                    </a>
+                </th>
 
-                <tr class="carrito-item">
-                    <th class="carrito-imagen">
-                        <a href="">
-                            <img src="/images/tablas-de-surf/tabla-2.jpg" alt="Imagen tabla de surf">
-                        </a>
-                    </th>
+                <th class="carrito-nombre">
+                    <a href="/tablas/1">
+                        Longboard 1.1 
+                    </a>
+                </th>
 
-                    <th class="carrito-cantidad">
-                        <input class="cant-carrito"  type="number" name="cant-carrito" id="cant-carrito" value="2">
-                    </th>
+                <th class="carrito-cantidad">
+                    <input class="cant-carrito"  type="number" name="cant-carrito" id="cant-carrito" value="2">
+                </th>
 
-                    <th class="carrito-precio">
-                        $198857
-                    </th>
+                <th class="carrito-precio">
+                    $554555
+                </th>
 
-                    <th>
-                        <button class="form-button" type="reset">Quitar</button>
-                    </th>
-                </tr>      
+                <th>
+                    <button class="form-button quitar-btn" type="reset">Quitar</button>
+                </th>
+            </tr>      
 
-                <tr class="carrito-item">
-                    <th class="carrito-imagen">
-                        <a href="">
-                            <img src="/images/tablas-de-surf/tabla-3.jpg" alt="Imagen tabla de surf">
-                        </a>
-                    </th>
-                    <th class="carrito-cantidad">
-                        <input class="cant-carrito" type="number" name="cant-carrito" id="cant-carrito" value="3">
-                    </th>
-                    <th class="carrito-precio">
-                        $142857
-                    </th>
-                    <th>
-                        <button class="form-button" type="reset">Quitar</button>
-                    </th>
-                </tr>
+            <tr class="carrito-item">
+                <th class="carrito-imagen">
+                    <a href="/tablas/6">
+                        <img src="/images/tablas/tabla-6.jpg" alt="Imagen tabla de surf">
+                    </a>
+                </th>
+                <th class="carrito-nombre">
+                    <a href="/tablas/6">
+                        Tabla Pro 54 - Chilli Surfboards 
+                    </a>
+                </th>
+                <th class="carrito-cantidad">
+                    <input class="cant-carrito" type="number" name="cant-carrito" id="cant-carrito" value="3">
+                </th>
+                <th class="carrito-precio">
+                    $346544
+                </th>
+                <th>
+                    <button class="form-button quitar-btn" type="reset">Quitar</button>
+                </th>
+            </tr>
 
-                <tr class="carrito-total">
-                    <th></th>
-                    <th></th>
-                    <th> <span class="carrito-total-precio">$341517</span>
-                    </th>
-                    <th> Total </th>
-                </tr>      
+            <tr class="carrito-item">
+                <th class="carrito-imagen">
+                    <a href="/accesorios/3">
+                        <img src="/images/accesorios/funda-1.jpg" alt="Funda tabla de surf">
+                    </a>
+                </th>
 
-            </table>
+                <th class="carrito-nombre">
+                    <a href="/accesorios/3">
+                        Funda - Camarón Brujo
+                    </a>
+                </th>
 
-        </section>
+                <th class="carrito-cantidad">
+                    <input class="cant-carrito"  type="number" name="cant-carrito" id="cant-carrito" value="2">
+                </th>
 
-        <div class="w-100 text-center p-8">
-            <button class="form-button" type="submit"><a href="/productos">Seguir comprando</a></button>
-        </div>
+                <th class="carrito-precio">
+                    $1456
+                </th>
 
-        <div class="w-100 text-center p-8">
-            <button class="form-button" type="submit"><a href="#">Pagar</a></button>
-        </div>
+                <th>
+                    <button class="form-button quitar-btn" type="reset">Quitar</button>
+                </th>
+            </tr>
 
-    </main>
+            <tr class="carrito-total">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th> <span class="carrito-total-precio">$901099</span>
+                </th>
+                <th> Total </th>
+            </tr>      
+
+        </table>
+
+    </section>
+
+    <div class="w-100 text-center p-8">
+        <button class="form-button" type="submit"><a href="/tablas">Seguir comprando</a></button>
+    </div>
+
+    <div class="w-100 text-center p-8">
+        <button class="form-button" type="submit"><a href="/">Confirmar orden</a></button>
+    </div>
+
+</main>
 
 <%- include ('./partials/footer') %> 
     

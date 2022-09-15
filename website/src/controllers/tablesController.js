@@ -5,7 +5,7 @@ const tablesController = {
     tables: (req, res) => {
         db.Tables.findAll({include: "tables_images"})
         .then((tablas)=>{
-            res.render("tablas", {tablas: tablas})
+            res.render("tablas", {tablas: tablas, user: req.session.userLogged})
         });
     },
 
@@ -27,7 +27,8 @@ const tablesController = {
                             category: "tablas", 
                             brand,
                             images,
-                            relacionado
+                            relacionado,
+                            user: req.session.userLogged
                         })
                     })  
                 })      
@@ -43,7 +44,7 @@ const tablesController = {
         Promise.all([tabla, brands])
 
         .then(([tabla, brands]) => {
-        res.render("editar-tabla", {tabla, brands})
+        res.render("editar-tabla", {tabla, brands, user: req.session.userLogged})
         })
 
         .catch((error) => console.log(error));
@@ -100,7 +101,7 @@ const tablesController = {
     add: (req, res) => {
         db.Brands.findAll()
         .then((brands)=>{
-            res.render("crear-tabla", {brands})
+            res.render("crear-tabla", {brands, user: req.session.userLogged})
         })
     },
 
