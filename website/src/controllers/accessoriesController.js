@@ -64,7 +64,22 @@ const accessoriesController = {
                 id: req.params.id
             }
         })
-        
+
+        .then((updatedAccessory) => {
+            let files =  req.files;   
+            if (files){
+                files.forEach((file) => {
+                    let url = "/images/accesorios/"+file.filename;
+                    db.AccessoriesImages.update({
+                        url: url
+                    }, {
+                        where: {
+                            accessory_id: updatedAccessory.id
+                        }
+                    })
+                })
+            }  
+        })
         .then(() => {
             res.redirect("/accesorios/" + req.params.id);
         })
@@ -72,13 +87,12 @@ const accessoriesController = {
 
     destroy: (req, res) => {
         db.AccessoriesImages.destroy({where: {accessory_id: req.params.id}})
+        .then(() => {
+            db.Accessories.destroy({where: { id: req.params.id}})
             .then(() => {
-                db.Accessories.destroy({where: { id: req.params.id}})
-                    .then(() => {
-                        res.redirect("/accesorios");
-                             });
-                });
-
+                res.redirect("/accesorios");
+            });
+        });
     },
 
     add: (req, res) => {
@@ -99,30 +113,30 @@ const accessoriesController = {
         })
         
         .then((newAccessory) => {
+            let files =  req.files;
 
-           if(req.files){
-            let files = req.files;
-            
-            files.forEach((file) => {
-                let url = "/images/accesorios/" + file.filename;
-                db.AccessoriesImages.create({
-                    url: url,
-                    accessory_id: newAccessory.id
+            if(files){  
+                files.forEach((file) => {
+                    let url = "/images/accesorios/"+file.filename;
+                    db.AccessoriesImages.create({
+                        url: url,
+                        table_id: newAccessory.id
                     })
-              })
-            }else {
-            db.AccessoriesImages.create({
-                url: "/images/accesorios/default.png",
-                accessory_id: newAccessory.id
-                }) }
-        }) 
-
-        .then(function () {
-            res.redirect("/accesorios");
+                })
+            } else{
+                db.AccessoriesImages.create({
+                    url: "/images/accesorios/default.png",
+                    table_id: newAccessory.id
+                })
+            }
         })
-        .catch((error) => res.send(error));
-    }
+        
+        .then(() => {
+            return res.redirect("/accesorios");
+        })
 
+        .catch((error) => res.send(error));
+    },
 };
 
 module.exports = accessoriesController; 

@@ -7,7 +7,8 @@ const { body } = require("express-validator");
 
 const guestMiddleware = require("../../middlewares/guestMiddleware");
 const authMiddleware = require("../../middlewares/authmiddleware");
-
+const loginValidator = require("../../middlewares/validations/loginValidator");
+const registerValidator = require("../../middlewares/validations/registerValidator");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -23,38 +24,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const validationsRegister = [
-  body("first_name").notEmpty().withMessage("Debes completar el nombre"),
-  body("last_name").notEmpty().withMessage("Debes completar el apellido"),
-  body("email")
-    .notEmpty()
-    .withMessage("Debes completar el email")
-    .bail()
-    .isEmail()
-    .withMessage("El email debe ser con el formato 'juan@example.com'"),
-  body("dni").notEmpty().withMessage("Debes completar el DNI"),
-  body("birthdate")
-    .notEmpty()
-    .withMessage("Debes completar la fecha de nacimiento"),
-  body("password")
-    .notEmpty()
-    .withMessage("Debes completar el password")
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage("La contraseña debe contener al menos 8 caracteres"),
-];
-
 // usuarios/registro (GET)
 router.get("/registro", guestMiddleware, usersController.createUser);
 
 // usuarios/registro (POST)
-router.post("/registro", upload.single("profile_image"), validationsRegister, usersController.storeUser);
+router.post("/registro", upload.single("profile_image"), registerValidator, usersController.storeUser);
 
 // usuarios/login (GET)
 router.get("/login", guestMiddleware, usersController.loginUser);
 
 // usuarios/login (POST)
-router.post("/login", usersController.loginProcess);
+router.post("/login", loginValidator, usersController.loginProcess);
 
 // usuarios/logout (GET)
 router.get("/:id/logout", usersController.logoutUser);

@@ -4,6 +4,9 @@
   <head>
     <%- include ('./partials/head') %>
     <link rel="stylesheet" href="/css/forms.css" />
+    <script src="/script/forms.js"></script>
+    <script src="/script/login.js"></script>
+    <script src="/script/validations/loginValidation.js"></script>
   </head>
 
   <body class="bg-light-gray w-100">
@@ -11,33 +14,28 @@
 
     <main class="form-main">
       <section class="section-form">
+
         <div class="bg-light-blue br-10">
-          <% if(locals.error) {%>
-          <p class="form-error">Credenciales inválidas</p>
-          <% } %>
-          <form class="form" action="/usuarios/login" method="POST">
+          
+          <div class="w-100 fx-align-center p-8">
+            <% if(locals.errors){ errors.forEach(error => {%>
+              <p class="font-navy"><%= error.msg %></p>
+              <% }) } %>
+          </div>
+          
+          <form class="form" action="/usuarios/login" method="POST" id="form">
             <h2 class="w-100">Iniciar sesión</h2>
 
             <div class="w-100 fx-align-center p-8" for="mail">
-              <input
-                class="form-inp"
-                type="mail"
-                placeholder="Correo electrónico"
-                name="email"
-                id="email"
-              />
+              <input class="form-inp" type="mail" placeholder="Correo electrónico" name="email" id="email"/>
             </div>
-
+            <span class="w-100 text-center" id="spanEmail"></span>
+            
             <div class="w-100 fx-align-center p-8" for="password">
-              <input
-                class="form-inp"
-                type="password"
-                placeholder="Escriba su contraseña"
-                name="password"
-                id="password"
-              />
+              <input class="form-inp" type="password" placeholder="Escriba su contraseña" name="password" id="password"/>
             </div>
-
+            <span class="w-100 text-center" id="spanPassword"></span>
+            
             <div class="w-100 fx-align-center p-8">
               <input type="checkbox" name="recordame" />
               <label for="">Recordame </label>

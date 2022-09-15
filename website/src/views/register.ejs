@@ -3,108 +3,72 @@
   <head>
     <%- include ('./partials/head') %>
     <link rel="stylesheet" href="/css/forms.css" />
+    <script src="/script/forms.js"></script>
+    <script src="/script/register.js"></script>
+    <script src="/script/validations/registerValidation.js"></script>
   </head>
+
   <body>
     <%- include ('./partials/header') %>
 
     <main class="form-main">
+
       <section class="section-form">
+        
         <div class="bg-light-blue br-10">
-          <% if(locals.errors){ errors.forEach(error => {%>
-          <p class="text-danger"><%= error.msg %></p>
 
-          <% }) } %>
-          <form
-            class="form"
-            action="/usuarios/registro"
-            method="POST"
-            enctype="multipart/form-data"
-          >
-            <h2 class="w-100">Registrate</h2>
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="text"
-                name="first_name"
-                id=""
-                placeholder="Nombre"
-                value="<%= locals.old && old.firstName ? old.firstName : ''%>"
-              />
-            </div>
+            <% if(locals.errors){ errors.forEach(error => {%>
+              <p class="font-navy"><%= error.msg %></p>
+            <% }) } %>
+          
+          <form class="form" action="/usuarios/registro" method="POST" enctype="multipart/form-data">
+          <h2 class="w-100">Registrate</h2>
 
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="text"
-                name="last_name"
-                id="apellido"
-                placeholder="Apellido"
-                value="<%= locals.old && old.lastName ? old.lastName : ''%>"
-              />
-            </div>
+          <div class="w-100 fx-align-center p-8">
+            <input class="form-inp" type="text" name="first_name" id="first_name" placeholder="Nombre" value="<%= locals.old && old.firstName ? old.firstName : ''%>" />
+          </div>
+          <span class="w-100 text-center" id="spanFirstName"></span>
 
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="mail"
-                placeholder="Correo electrónico"
-                name="email"
-                id=""
-                value="<%= locals.old && old.email ? old.email : ''%>"
-              />
-            </div>
+          <div class="w-100 fx-align-center p-8">
+              <input class="form-inp" type="text" name="last_name" id="last_name" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : ''%>" />
+          </div>
+          <span class="w-100 text-center" id="spanLastName"></span>
 
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="number"
-                name="dni"
-                id=""
-                placeholder="Documento"
-                value="<%= locals.old && old.dni ? old.dni : ''%>"
-              />
-            </div>
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Domicilio"
-                value="<%= locals.old && old.address ? old.address : ''%>"
-              />
-            </div>
+          <div class="w-100 fx-align-center p-8">
+              <input class="form-inp" type="mail" placeholder="Correo electrónico" name="email" id="email" value="<%= locals.old && old.email ? old.email : ''%>" />
+          </div>
+          <span class="w-100 text-center" id="spanEmail"></span>
 
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="date"
-                name="birthdate"
-                id=""
-                value="<%= locals.old && old.birthdate ? old.birthdate : ''%>"
-              />
-            </div>
+          <div class="w-100 fx-align-center p-8">
+              <input class="form-inp" type="number" name="dni" id="dni" placeholder="Documento" value="<%= locals.old && old.dni ? old.dni : ''%>" />
+          </div>
+          <span class="w-100 text-center" id="spanDni"></span>
+          
+          <div class="w-100 fx-align-center p-8">
+              <input class="form-inp" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && old.address ? old.address : ''%>"/>
+          </div>
+          <span class="w-100 text-center" id="spanAddress"></span>
 
-            <div class="w-100 fx-align-center p-8">
-              <input
-                class="form-inp"
-                type="password"
-                name="password"
-                id=""
-                placeholder="Contraseña"
-              />
-            </div>
+          <div class="w-100 fx-align-center p-8">
+            <input class="form-inp" type="date" name="birthdate" id="birthdate" value="<%= locals.old && old.birthdate ? old.birthdate : ''%>" />
+          </div>
 
-            <div class="flex fx-wrap w-100 fx-align-center p-8">
-              <label for="profile_image" class="w-100"
-                >Imagen de Perfil:
-              </label>
+          <div class="w-100 fx-align-center p-8">
+              <input class="form-inp" type="password" name="password" id="password" placeholder="Contraseña" size="15" maxlength="64"/>
+          </div>
+          <div class="w-100 fx-align-center p-8">
+              <progress max="100" value="0" id="meter"></progress>
+              <span id="spanPassword"></span>
+          </div>
+
+          <div class="flex fx-wrap w-100 fx-align-center p-8">
+              <label for="profile_image" class="w-100">Imagen de Perfil:</label>
               <div class="w-100 p-8">
                 <input type="file" name="profile_image" id="profile_image" />
               </div>
-            </div>
-
-            <div class="w-100 fx-align-center p-8">
+          </div>
+          
+          <div class="w-100 fx-align-center p-8">
               <div class="form-inp flex">
                 <input class="w-25" type="checkbox" required />
                 <p class="w-75" for="checkpoint">
@@ -121,7 +85,7 @@
             </div>
 
             <div class="w-100 fx-align-center p-8">
-              <button class="form-button" type="submit">Enviar</button>
+              <button class="form-button" type="submit" id="submit">Enviar</button>
             </div>
 
             <div class="w-100 fx-align-center p-8">

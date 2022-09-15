@@ -67,16 +67,21 @@ const tablesController = {
                 id: req.params.id
             }
         })
-
-        .then(() => {
-            db.ImagesTables.update({
-                url_1: req.body.url_1,
-                url_2: req.body.url_2,
-                url_3: req.body.url_3,
-                url_4: req.body.url_4
-            })
+        .then((updatedTable) => {
+            let files =  req.files;   
+            if (files){
+                files.forEach((file) => {
+                    let url = "/images/tablas/"+file.filename;
+                    db.TablesImages.update({
+                        url: url
+                    }, {
+                        where: {
+                            table_id: updatedTable.id
+                        }
+                    })
+                })
+            }  
         })
-        
         .then(() => {
             res.redirect("/tablas/" + req.params.id);
         })
@@ -84,13 +89,12 @@ const tablesController = {
 
     destroy: (req, res) => {
         db.TablesImages.destroy({where: {table_id: req.params.id}})
+        .then(() => {
+            db.Tables.destroy({where: { id: req.params.id}})
             .then(() => {
-                db.Tables.destroy({where: { id: req.params.id}})
-                    .then(() => {
-                        res.redirect("/tablas");
-                             });
-                });
-
+                res.redirect("/tablas");
+            });
+        });
     },
 
     add: (req, res) => {
@@ -117,22 +121,22 @@ const tablesController = {
         })
 
         .then((newTable) => {
+            let files =  req.files;
 
-           if(req.files){
-            let files =  req.files;     
-            files.forEach((file) => {
-                let url = "/images/tablas/"+file.filename;
+            if(files){  
+                files.forEach((file) => {
+                    let url = "/images/tablas/"+file.filename;
+                    db.TablesImages.create({
+                        url: url,
+                        table_id: newTable.id
+                    })
+                })
+            } else{
                 db.TablesImages.create({
-                    url: url,
+                    url: "/images/tablas/default.png",
                     table_id: newTable.id
                 })
-            })
-        } else{
-            db.TablesImages.create({
-                url: "/images/tablas/default.png",
-                table_id: newTable.id
-            })
-        }
+            }
         })
 
         .then(() => {
