@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import Table from "./table";
+import TableDetailInDb from "./tableDetailInDb";
 
 const EXPRESS_HOST = "http://localhost:3001";
 
@@ -8,7 +8,7 @@ export default class TableDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableDetail: {},
+      tableDetail: null,
       id: props.match.params.id,
     };
   }
@@ -25,7 +25,7 @@ export default class TableDetail extends Component {
   }
 
   render() {
-    if (!this.state.table) {
+    if (!this.state.tableDetail) {
       return <p>Cargando...</p>;
     }
     return (
@@ -48,9 +48,11 @@ export default class TableDetail extends Component {
                   <tr>
                     <th>Id</th>
                     <th>Tipo de tabla</th>
+                    <th>Descripción</th>
                     <th>Precio</th>
                     <th>Descuento</th>
-                    <th>Marca</th>
+                    <th>Tamaño</th>
+                    <th>Categoría</th>
                   </tr>
                 </thead>
 
@@ -58,12 +60,16 @@ export default class TableDetail extends Component {
                   <tr>
                     <th>Id</th>
                     <th>Tipo de tabla</th>
+                    <th>Descripción</th>
                     <th>Precio</th>
                     <th>Descuento</th>
-                    <th>Marca</th>
+                    <th>Tamaño</th>
+                    <th>Categoría</th>
                   </tr>
                 </tfoot>
-                <tbody>{this.state.tableDetail}</tbody>
+                <tbody>
+                  <TableDetailInDb {...this.state.tableDetail} />
+                </tbody>
               </table>
             </div>
           </div>
