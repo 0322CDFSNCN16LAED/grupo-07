@@ -1,79 +1,5 @@
-const validations = [
-    {
-      inputName: "firstName",
-      validations: [
-        {
-          validator: isEmpty,
-          errorMsg: "Titulo no puede ser vacío",
-        },
-      ],
-    },
-    {
-        inputName: "lastName",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "email",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "dni",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "address",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "birthdate",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "password",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-      {
-        inputName: "profile_image",
-        validations: [
-          {
-            validator: isEmpty,
-            errorMsg: "Titulo no puede ser vacío",
-          },
-        ],
-      },
-  ];
-
-    const formulario = document.querySelector(".form")
+window.onload = function () {
+const formulario = document.querySelector(".form")
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -88,10 +14,57 @@ const validations = [
                 input.classList.add('is-invalid');  
             }
         })
+
+        let type = formulario.querySelector("input #type");
+        let description = formulario.querySelector("input #description");
+        let numbers = formulario.querySelectorAll("input #number");
+
+        if (type.value.trim() == ""){
+          errors.push("Nombre tabla vacío");
+            type.parentElement.classList.add("is-invalid");
+            type.parentElement.classList.remove("is-valid");
+            type.parentElement.innerHTML = "El nombre de la tabla no debe estar vacio"
+        } else if (type.value.length < 6){
+          errors.push("Nombre tabla < 6");
+            type.parentElement.classList.add("is-invalid");
+            type.parentElement.classList.remove("is-valid");
+            type.parentElement.innerHTML = "El nombre de la tabla debe tener al menos 6 letras."
+        } else {
+            type.parentElement.classList.add("is-valid");
+            type.parentElement.classList.remove("is-invalid");
+            type.parentElement.innerHTML = "";
+        }
+
+        if (description.value.trim() == ""){
+          errors.push("Descripción tabla vacío");
+            description.parentElement.classList.add("is-invalid");
+            description.parentElement.classList.remove("is-valid");
+            description.parentElement.innerHTML = "La descripción de la tabla no debe estar vacio y debe contener al menos 20 caracteres."
+        } else if (description.value.length < 20){
+          errors.push("La descripción de la tabla es muy corta");
+            description.parentElement.classList.add("is-invalid");
+            description.parentElement.classList.remove("is-valid");
+            description.parentElement.innerHTML = "La descripción de la tabla es muy corta"
+        } else {
+            description.parentElement.classList.add("is-valid");
+            description.parentElement.classList.remove("is-invalid");
+            description.parentElement.innerHTML = "";
+        }
+       
+        if (numbers.value.trim() == "") {
+          errors.push("Input tabla vacío");
+            numbers.parentElement.classList.add("is-invalid");
+            numbers.parentElement.classList.remove("is-valid");
+            numbers.parentElement.innerHTML = "El campo no debe estár vacío."
+        } else {
+            numbers.parentElement.classList.add("is-valid");
+            numbers.parentElement.classList.remove("is-invalid");
+            numbers.parentElement.innerHTML = "";
+        }
         
         if (Object.values(errors).length == 0) formulario.submit();
     });
-
+  }
 
 
 
