@@ -35,7 +35,9 @@
                     <div class="product-div-info">
                         <h3 class="font-medium w-100 text-center"><%= tables[i].type %> </h3>
                         <p class="product-title font-large w-50 text-center">$ <%= tables[i].price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= tables[i].discount %> % OFF</p>
+                        <% if (tables[i].discount) {%> 
+                            <p class="product-title font-medium font-navy w-50 text-center"><%= tables[i].discount %> % OFF</p>
+                        <% } %> 
                     </div>
                 </article>
             </div>
@@ -49,7 +51,7 @@
         <% for(let i=0; i<4; i++) {%>
             <div class="w-50 w-desktop-25 p-8">
                 <article class="product" id="">
-                    <div>
+                    <div class="product-image">
                         <a href="/accesorios/<%= accessories[i].id %> ">
                             <img class="w-100" src="<%= accessories[i].accessories_images[0]? accessories[i].accessories_images[0].url: "/images/default.png"%> " alt="Imagen de la tabla"/>
                         </a>
@@ -57,7 +59,9 @@
                     <div class="product-div-info">
                         <h3 class="font-medium w-100 text-center"><%= accessories[i].type %> </h3>
                         <p class="product-title font-large w-50 text-center">$ <%= accessories[i].price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= accessories[i].discount %> % OFF</p>
+                        <% if (accessories[i].discount) {%> 
+                            <p class="product-title font-medium font-navy w-50 text-center"><%= accessories[i].discount %> % OFF</p>
+                        <% } %>                       
                     </div>
                 </article>
             </div>

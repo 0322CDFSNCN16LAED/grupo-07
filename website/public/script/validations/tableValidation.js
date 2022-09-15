@@ -39,11 +39,16 @@ window.addEventListener('load', () => {
             type.parentElement.innerHTML = "";
         }
 
-        if (description.value.trim() == "" || description.value.length < 20){
-            errores.push("Nombre tabla vacío");
+        if (description.value.trim() == ""){
+            errores.push("Descripción tabla vacío");
             description.parentElement.classList.add("is-invalid");
             description.parentElement.classList.remove("is-valid");
             description.parentElement.innerHTML = "La descripción de la tabla no debe estar vacio y debe contener al menos 20 caracteres."
+        } else if (description.value.length < 20){
+            errores.push("La descripción de la tabla es muy corta");
+            description.parentElement.classList.add("is-invalid");
+            description.parentElement.classList.remove("is-valid");
+            description.parentElement.innerHTML = "La descripción de la tabla es muy corta"
         } else {
             description.parentElement.classList.add("is-valid");
             description.parentElement.classList.remove("is-invalid");
@@ -51,7 +56,7 @@ window.addEventListener('load', () => {
         }
        
         if (numbers.value.trim() == "") {
-            errores.push("Nombre tabla vacío");
+            errores.push("Input tabla vacío");
             numbers.parentElement.classList.add("is-invalid");
             numbers.parentElement.classList.remove("is-valid");
             numbers.parentElement.innerHTML = "El campo no debe estár vacío."

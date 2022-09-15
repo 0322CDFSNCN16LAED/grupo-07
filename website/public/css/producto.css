@@ -122,3 +122,10 @@
     font-size: 24px;
 }
 
+.product-image{
+    position: absolute;
+}
+
+.product-image img {
+    position: relative;
+}

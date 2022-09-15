@@ -31,6 +31,11 @@
             ><i class="em-1 p-8 far fa-address-book"></i>Contactanos</a
           >
         </li>
+        <% if(user) { %>
+          <li class="p-8 login-link">
+            <a href="/usuarios/perfil"><i class="em-1 p-8 fas fa-user"></i>Perifl</a>
+          </li>
+        <% } else {%> 
         <li class="p-8 login-link">
           <a href="/usuarios/login"
             ><i class="em-1 p-8 fas fa-user"></i>Iniciar sesión</a
@@ -41,6 +46,7 @@
             ><i class="em-1 p-8 fas fa-user-plus"></i>Registrate</a
           >
         </li>
+        <% } %> 
       </ul>
     </nav>
   </div>

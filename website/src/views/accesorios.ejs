@@ -42,7 +42,9 @@
                     <div class="product-div-info">
                         <h3 class="font-medium w-100 text-center"><%= accesorio.type %> </h3>
                         <p class="product-title font-large w-50 text-center">$ <%= accesorio.price %> </p>
-                        <p class="product-title font-medium w-50 text-center"><%= accesorio.discount %> % OFF</p>
+                        <% if (accesorio.discount) {%> 
+                            <p class="product-title font-medium font-navy w-50 text-center"><%= accesorio.discount %> % OFF</p>
+                        <% } %> 
                     </div>
                    
                 </article>
