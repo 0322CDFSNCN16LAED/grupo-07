@@ -37,3 +37,4 @@ const validations = [
         
         if (Object.values(errors).length == 0) formulario.submit();
     });
+})
