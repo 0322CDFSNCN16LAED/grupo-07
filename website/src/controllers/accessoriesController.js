@@ -23,12 +23,13 @@ const accessoriesController = {
 
                     .then((relacionado)=>{
                         res.render("producto", {
-                            product: accesorio, 
-                            category: "accesorios", 
-                            brand,
-                            images,
-                            relacionado
-                        })
+                          product: accesorio,
+                          category: "accesorios",
+                          brand,
+                          images,
+                          relacionado,
+                          user: req.session.userLogged,
+                        });
                     })  
                 })      
             })       

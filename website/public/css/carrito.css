@@ -1,5 +1,19 @@
 
 /* Carrito */
+
+.quitar-btn {
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    width: 50%;
+    font-size: 16px;
+}
+
+#cant-carrito{
+    width: 50px;
+}
+
 .banner-carrito {
     padding: 8px;
     position: relative;
@@ -67,21 +81,7 @@
     font-size: larger;
     margin: auto;
 }
-<<<<<<< HEAD
-a{
+
+a {
     color: black;
-=======
-
-.quitar-btn {
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
-    width: 50%;
-    font-size: 16px;
-}
-
-#cant-carrito{
-    width: 90px;
->>>>>>> 7d04295893e873bb9759f2d75c92038ec6330eb3
 }
