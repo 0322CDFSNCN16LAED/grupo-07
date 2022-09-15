@@ -48,7 +48,14 @@ function actualizarTotal() {
     let cantidad = elementoQty.value;
     total = total + precio * cantidad;
   }
+
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("carrito-total-precio")[0].innerText =
     "$" + total;
+
+  if (carritoFilas.length == 0) {
+    alert("Tu carrito se encuentra vacío");
+  } else {
+    console.log(carritoFilas.length);
+  }
 }
