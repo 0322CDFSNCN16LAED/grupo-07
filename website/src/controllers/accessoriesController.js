@@ -71,16 +71,13 @@ const accessoriesController = {
             if (files){
                 files.forEach((file) => {
                     let url = "/images/accesorios/"+file.filename;
-                    db.AccessoriesImages.update({
-                        url: url
-                    }, {
-                        where: {
-                            accessory_id: updatedAccessory.id
-                        }
-                    })
-                })
-            }  
-        })
+                    db.AccessoriesImages.create({
+                        url: url,
+                        accessory_id: updatedAccessory.id
+                    }
+                )})
+        }})
+        
         .then(() => {
             res.redirect("/accesorios/" + req.params.id);
         })
