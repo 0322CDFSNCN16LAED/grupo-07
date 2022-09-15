@@ -1,5 +1,6 @@
 import React from "react";
 import logoTakeOff from "../assets/images/logo-take-off-surf.png";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -41,27 +42,21 @@ function Sidebar() {
 
       {/* <!-- Nav Item - Pages --> */}
       <li className="nav-item">
-        <a className="nav-link collapsed" href="/">
+        <Link className="nav-link collapsed" to="/tablas">
           <i className="fas fa-fw fa-folder"></i>
           <span>Tablas</span>
-        </a>
+        </Link>
       </li>
 
       {/* <!-- Nav Item - Charts --> */}
       <li className="nav-item">
-        <a className="nav-link" href="/">
+        <Link className="nav-link" to="/accesorios">
           <i className="fas fa-fw fa-chart-area"></i>
           <span>Accesorios</span>
-        </a>
+        </Link>
       </li>
 
       {/* <!-- Nav Item - Tables --> */}
-      <li className="nav-item">
-        <a className="nav-link" href="/">
-          <i className="fas fa-fw fa-table"></i>
-          <span>Usuarios</span>
-        </a>
-      </li>
 
       {/* <!-- Divider --> */}
       <hr className="sidebar-divider d-none d-md-block" />

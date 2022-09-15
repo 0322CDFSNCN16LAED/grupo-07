@@ -1,70 +1,40 @@
 import "./App.css";
-
 import Sidebar from "./components/Sidebar";
-import MiniCard from "./components/MiniCard";
-import MediumCard from "./components/MediumCard";
-import BigCard from "./components/BigCard";
+import TablesList from "./components/tables/tablesList";
+import AccessoriesList from "./components/accessories/accessoriesList";
+import TableDetail from "./components/tables/tableDetail";
+import Dashboard from "./components/Dashboard";
+import { Route, Switch } from "react-router-dom";
 
-const miniCards = [
-  {
-    id: 1,
-    title: "Total de usuarios",
-    value: 25,
-  },
-  {
-    id: 2,
-    title: "Total de productos",
-    value: 78,
-  },
-  {
-    id: 3,
-    title: "Total de tablas",
-    value: 56,
-  },
-  {
-    id: 4,
-    title: "Total de accesorios",
-    value: 22,
-  },
-];
 function App() {
   return (
     <div id="wrapper">
+      {/* <!-- Sidebar --> */}
       <Sidebar />
-
-      {/* <!-- Content Row Top --> */}
-      <div className="container-fluid">
-        <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+      {/* <!-- End of Sidebar --> */}
+      <div id="content-wrapper" className="d-flex flex-column">
+        {/* <!-- Main Content --> */}
+        <div id="content">
+          {/* <!-- Content Row Top --> */}
+          <div className="container-fluid">
+            <Switch>
+              <Route path="/" component={Dashboard} exact={true} />
+              <Route path="/tablas" component={TablesList} exact={true} />
+              <Route path="/accesorios" component={AccessoriesList} />
+              <Route path="/tablas/:id" component={TableDetail} />
+              <Route component={Dashboard} />
+            </Switch>
+          </div>
         </div>
 
-        {/* <!-- Content Row Movies--> */}
-        <div className="row">
-          {/* <!-- Total usuarios --> */}
-          {miniCards.map((data) => {
-            return <MiniCard {...data} key={data.id} />;
-          })}
-        </div>
-
-        {/* <!-- End movies in Data Base --> */}
-
-        {/* <!-- Content Row Last Movie in Data Base --> */}
-        <div className="row">
-          {/* <!-- Last Movie in DB --> */}
-          <BigCard />
-          {/* <!-- End content row last movie in Data Base -->
-           */}
-          {/* <!-- Genres in DB --> */}
-          <MediumCard />
-          {/* <!-- Footer --> */}
-          <footer className="sticky-footer bg-white w-100">
-            <div className="container my-auto">
-              <div className="copyright text-center my-auto">
-                <span>Copyright &copy; Dashboard 2021</span>
-              </div>
+        {/* <!-- Footer --> */}
+        <footer className="sticky-footer bg-white w-100">
+          <div className="container my-auto">
+            <div className="copyright text-center my-auto">
+              <span>Copyright &copy; Dashboard 2021</span>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
