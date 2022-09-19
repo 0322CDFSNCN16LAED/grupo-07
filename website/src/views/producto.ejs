@@ -79,6 +79,7 @@
                             <button type="submit">Agregar al carrito</button>
                         </a>
                     </div>
+                    <% if(user) { %> 
                     <div>
                         <a href="/<%= category %>/<%=product.id %>/edit ">
                             <button type="submit">Editar producto</button>
@@ -89,6 +90,7 @@
                             <button type="submit">Eliminar producto</button>
                         </form>
                     </div>
+                    <% } %> 
                 </article>
 
             </section>

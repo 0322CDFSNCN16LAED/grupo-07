@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
     
     const email = document.querySelector('#email');
     const password = document.querySelector("#password");
+    const spanPassword = document.querySelector('#spanPassword');
 
     email.addEventListener("change", function (){
         const spanEmail = document.querySelector('#spanEmail');
@@ -16,7 +17,6 @@ window.addEventListener('load', () => {
             email.parentElement.classList.remove("is-valid"); 
     }});
     
-    const spanPassword = document.querySelector('#spanPassword');
     password.addEventListener("keyup", function (){
         if (password.value.length >= 8){
             password.parentElement.classList.add("is-valid");

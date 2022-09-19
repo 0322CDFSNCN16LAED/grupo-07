@@ -129,3 +129,9 @@
 .product-image img {
     position: relative;
 }
+
+.img-products-mini-edit{
+    display: flex;
+    
+    width: 10%;
+}

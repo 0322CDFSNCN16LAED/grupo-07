@@ -62,12 +62,12 @@ const usersController = {
             });
           }
 
-          res.redirect("/usuarios/perfil");
-          return;
+          return res.render("profile", {user: req.session.userLogged});
+          
         }
       }
     }
-    return res.render("login", { error: true });
+    return res.render("login", { error: true, user: "" });
   },
 
   //Usuario: Detalle
