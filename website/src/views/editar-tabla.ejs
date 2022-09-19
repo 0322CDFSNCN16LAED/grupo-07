@@ -16,7 +16,13 @@
             
             <div class="bg-light-blue br-10">
 
-                <form class="form"  action="/tablas/<%= tabla.id %>/edit?_method=PUT" method="POST">
+                <div class="w-100 fx-align-center p-8">
+                    <% if(locals.errors){ errors.forEach(error => {%>
+                      <p class="font-navy"><%= error.msg %></p>
+                      <% }) } %>
+                  </div>
+
+                <form class="form"  action="/tablas/<%= tabla.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
                     <h2 class="w-100">Editar "<%= tabla.type %>" </h2>
                     

@@ -18,22 +18,31 @@
             
             <div class="bg-light-blue br-10">
 
+                <div class="w-100 fx-align-center p-8">
+                    <% if(locals.errors){ errors.forEach(error => {%>
+                      <p class="font-navy"><%= error.msg %></p>
+                      <% }) } %>
+                  </div>
+
                 <form class="form" action="/accesorios/crear" method="POST" enctype="multipart/form-data">
 
                     <h2 class="w-100">Crear Accesorio</h2>
                     
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" required>
+                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" 
+                        value="<%= locals.old && old.type ? old.type : ''%>"required>
                     </div>
                     <span class="w-100 text-center" id="spanType"></span>
 
                    <div class="w-100 fx-align-center p-8">
-                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
+                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" 
+                       value="<%= locals.old && old.description ? old.description : ''%>"required>
                    </div>
                    <span class="w-100 text-center" id="spanDescription"></span>
 
                    <div class="w-100 fx-align-center p-8">
-                    <input class="form-inp" type="text-box" name="price" id="number" placeholder="Precio" required>
+                    <input class="form-inp" type="text-box" name="price" id="price" placeholder="Precio" 
+                    value="<%= locals.old && old.price ? old.price : ''%>"required>
                    </div>
                    <span class="w-100 text-center" id="spanNumber"></span>
 

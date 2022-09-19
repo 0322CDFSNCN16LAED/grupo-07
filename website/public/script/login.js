@@ -18,6 +18,7 @@ window.addEventListener('load', () => {
     }});
     
     const spanPassword = formulario.querySelector('#spanPassword');
+    
     password.addEventListener("keyup", function (){
         if (password.value.length >= 8){
             password.parentElement.classList.add("is-valid");

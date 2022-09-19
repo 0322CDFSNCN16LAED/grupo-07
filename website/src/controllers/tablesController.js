@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { validationResult } = require("express-validator");
 
 const tablesController = {
 
@@ -40,52 +41,54 @@ const tablesController = {
     edit: (req, res) => {
         let tabla = db.Tables.findByPk(req.params.id)
         let brands = db.Brands.findAll()
-
+    
         Promise.all([tabla, brands])
 
-        .then(([tabla, brands]) => {
+        .then(([tabla, brands,]) => {
+          
         res.render("editar-tabla", {tabla, brands, user: req.session.userLogged})
         })
 
         .catch((error) => console.log(error));
     },
     
-    update: (req, res) => {
-        db.Tables.update({
-            type: req.body.type,
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.discount,
-            table_length: req.body.table_length,
-            table_expertise: req.body.table_expertise,
-            table_volume: req.body.table_volume,
-            table_thickness: req.body.table_thickness,
-            table_material: req.body.table_material,
-            table_keels: req.body.table_keels,
-            brand_id: req.body.brand_id
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then((updatedTable) => {
-            let files =  req.files;   
-            if (files){
-                files.forEach((file) => {
+    update: async (req, res) => {
+        const tabla = req.body;
+        tabla.id=req.params.id;
+
+
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+              const tableUpdated = 
+              await db.Tables.update({
+                                type: req.body.type,
+                                description: req.body.description,
+                                price: req.body.price,
+                                discount: req.body.discount,
+                                table_length: req.body.table_length,
+                                table_expertise: req.body.table_expertise,
+                                table_volume: req.body.table_volume,
+                                table_thickness: req.body.table_thickness,
+                                table_material: req.body.table_material,
+                                table_keels: req.body.table_keels,
+                                brand_id: req.body.brand_id
+                             },{where: { id: req.params.id}})
+            if(req.files.length!=0){
+                db.TablesImages.destroy({where: {table_id: req.params.id}})
+                req.files.forEach((file) => {
                     let url = "/images/tablas/"+file.filename;
-                    db.TablesImages.update({
-                        url: url
-                    }, {
-                        where: {
-                            table_id: updatedTable.id
-                        }
-                    })
-                })
-            }  
-        })
-        .then(() => {
-            res.redirect("/tablas/" + req.params.id);
-        })
+                     db.TablesImages.create({
+                                            url: url,
+                                            table_id: req.params.id
+                                          })
+                             })
+            }                   
+             res.redirect("/tablas/"+ req.params.id);
+        } else{ 
+            const brands = await db.Brands.findAll()
+        
+            res.render("editar-tabla", { errors: errors.array(), tabla: tabla, brands: brands, user: req.session.userLogged }) }
     },
 
     destroy: (req, res) => {
@@ -105,46 +108,42 @@ const tablesController = {
         })
     },
 
-    create: (req, res) => {
-    
-        db.Tables.create({
-            type: req.body.type,
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.discount,
-            table_length: req.body.table_length,
-            table_expertise: req.body.table_expertise,
-            table_volume: req.body.table_volume,
-            table_thickness: req.body.table_thickness,
-            table_material: req.body.table_material,
-            table_keels: req.body.table_keels,
-            brand_id: req.body.brand_id
-        })
-
-        .then((newTable) => {
-            let files =  req.files;
-
-            if(files){  
-                files.forEach((file) => {
+    create: async (req, res) => {
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+              const tableCreated = 
+              await db.Tables.create({
+                                type: req.body.type,
+                                description: req.body.description,
+                                price: req.body.price,
+                                discount: req.body.discount,
+                                table_length: req.body.table_length,
+                                table_expertise: req.body.table_expertise,
+                                table_volume: req.body.table_volume,
+                                table_thickness: req.body.table_thickness,
+                                table_material: req.body.table_material,
+                                table_keels: req.body.table_keels,
+                                brand_id: req.body.brand_id
+                             })
+            if(req.files){  
+                req.files.forEach((file) => {
                     let url = "/images/tablas/"+file.filename;
-                    db.TablesImages.create({
-                        url: url,
-                        table_id: newTable.id
-                    })
-                })
+                     db.TablesImages.create({
+                                            url: url,
+                                            table_id: tableCreated.id
+                                          })
+                             })
             } else{
-                db.TablesImages.create({
-                    url: "/images/tablas/default.png",
-                    table_id: newTable.id
-                })
+                const tableImg = await db.TablesImages.create({
+                                url: "/images/tablas/default.png",
+                                table_id: newTable.id
+                            })
             }
-        })
-
-        .then(() => {
-            return res.redirect("/tablas");
-        })
-
-        .catch((error) => res.send(error));
+                     
+             res.redirect("/tablas");
+        } else{ 
+            const brands = await db.Brands.findAll()
+            res.render("crear-tabla", { errors: errors.array(), old: req.body, brands: brands, user: req.session.userLogged }) }
     },
 
 };

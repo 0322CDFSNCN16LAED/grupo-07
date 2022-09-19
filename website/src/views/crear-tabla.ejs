@@ -18,26 +18,36 @@
             
             <div class="bg-light-blue br-10">
 
+                <div class="w-100 fx-align-center p-8">
+                    <% if(locals.errors){ errors.forEach(error => {%>
+                      <p class="font-navy"><%= error.msg %></p>
+                      <% }) } %>
+                  </div>
+
                 <form class="form" action="/tablas/crear" method="POST" enctype="multipart/form-data">
                     
                     <h2 class="w-100">Crear Tabla</h2>
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" required>
+                        <input class="form-inp" type="text" name="type" id="type" placeholder="Nombre del producto" 
+                        value="<%= locals.old && old.type ? old.type : ''%>" required>
                     </div>
                     <span class="w-100 text-center" id="spanType"></span>
 
                    <div class="w-100 fx-align-center p-8">
-                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" required>
+                       <input class="form-inp" type="text-box" name="description" id="description" placeholder="Descripción" 
+                       value="<%= locals.old && old.description ? old.description : ''%>"required>
                    </div>
                    <span class="w-100 text-center" id="spanDescription"></span>
                    
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="price" id="number" placeholder="Precio" required>
+                        <input class="form-inp" type="number" name="price" id="number" placeholder="Precio" 
+                        value="<%= locals.old && old.price ? old.price : ''%>"required>
                    </div>
                    <span class="w-100 text-center" id="spanNumber"></span>
 
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="discount" id="" placeholder="Descuento">
+                        <input class="form-inp" type="number" name="discount" id="number" placeholder="Descuento"
+                        value="<%= locals.old && old.discount ? old.discount : ''%>" required>
                    </div>
                    <span class="w-100 text-center" id="spanNumber"></span>
 
@@ -71,27 +81,32 @@
                     </div>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_length" id="number" placeholder="Largo" required>
+                        <input class="form-inp" type="number" name="table_length" id="number" placeholder="Largo"
+                        value="<%= locals.old && old.table_length ? old.table_length : ''%>" required>
                     </div>
                     <span class="w-100 text-center" id="spanNumber"></span>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_thickness" id="number" placeholder="Espesor" required>
+                        <input class="form-inp" type="number" name="table_thickness" id="number" placeholder="Espesor"
+                        value="<%= locals.old && old.table_thickness ? old.table_thickness : ''%>" required>
                     </div>
                     <span class="w-100 text-center" id="spanNumber"></span>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="number" name="table_volume" id="number" placeholder="Volumen" required>
+                        <input class="form-inp" type="number" name="table_volume" id="number" placeholder="Volumen" 
+                        value="<%= locals.old && old.table_volume ? old.table_volume : ''%>"required>
                     </div>
                     <span class="w-100 text-center" id="spanNumber"></span>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="table_material" id="" placeholder="Material de fabricacion" required>
+                        <input class="form-inp" type="text" name="table_material" id="" placeholder="Material de fabricacion" 
+                        value="<%= locals.old && old.table_material ? old.table_material : ''%>"required>
                     </div>
                     <span class="w-100 text-center" id="spanNumber"></span>
 
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="table_keels" id="number" placeholder=" Quillas" required>
+                        <input class="form-inp" type="number" name="table_keels" id="number" placeholder=" Quillas"
+                        value="<%= locals.old && old.table_keels? old.table_keels: ''%>" required>
                     </div>
                     <span class="w-100 text-center" id="spanNumber"></span>
                     

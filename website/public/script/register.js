@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
     const dni = document.querySelector('#dni');
     const email = document.querySelector('#email');
     const address = document.querySelector('#address');
+    
 
     firstName.addEventListener("change", function (){
         const spanFirstName = document.querySelector('#spanFirstName');
@@ -91,7 +92,6 @@ window.addEventListener('load', () => {
     // Password ayuda al crearla
     password.addEventListener("keyup", function(){
         const meter = document.querySelector("#meter")
-        
         const medium = new RegExp("(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])");
         const fuerte = new RegExp("(?=.{20,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9])))");
         if (fuerte.test(password.value)) {
@@ -111,4 +111,6 @@ window.addEventListener('load', () => {
             meter.style.color = "red";
         }
     })
+
+
 });

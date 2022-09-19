@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { validationResult } = require("express-validator");
 
 const accessoriesController = {
 
@@ -52,36 +53,42 @@ const accessoriesController = {
         .catch((error) => console.log(error));
     },
     
-    update: (req, res) => {
-        
-        db.Accessories.update({
-            type: req.body.type,
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.discount,
-            brand_id: req.body.brand_id
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
+    update: async (req, res) => {
+        const accesorio = req.body;
+        accesorio.id=req.params.id;
 
-        .then((updatedAccessory) => {
-            let files =  req.files;   
-            if (files){
-                files.forEach((file) => {
-                    let url = "/images/accesorios/"+file.filename;
-                    db.AccessoriesImages.create({
-                        url: url,
-                        accessory_id: updatedAccessory.id
-                    }
-                )})
-        }})
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+               const accessoryUpdated= await  db.Accessories.update({
+                                type: req.body.type,
+                                description: req.body.description,
+                                price: req.body.price,
+                                discount: req.body.discount,
+                                brand_id: req.body.brand_id
+                            }, {
+                                where: {
+                                    id: req.params.id
+                                }
+                            })          
+             
+            if (req.files.length!=0){
+                    db.AccessoriesImages.destroy({where: {accessory_id: req.params.id}})
+                    req.files.forEach((file) => {
+                        let url = "/images/accesorios/"+ file.filename;
+                        db.AccessoriesImages.create({
+                            url: url,
+                            accessory_id: req.params.id
+                                     })
+                            })
+                        }           
         
-        .then(() => {
             res.redirect("/accesorios/" + req.params.id);
-        })
+        } else{ 
+            const brands = await db.Brands.findAll()
+        
+            res.render("editar-accesorio", { errors: errors.array(), accesorio: accesorio, brands: brands, user: req.session.userLogged }) }
     },
+    
 
     destroy: (req, res) => {
         db.AccessoriesImages.destroy({where: {accessory_id: req.params.id}})
@@ -100,41 +107,44 @@ const accessoriesController = {
         })
     },
 
-    create: (req, res) => {
+    create: async (req, res) => {
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
         
-        db.Accessories.create({
-            type: req.body.type, 
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.description,
-            brand_id: req.body.brand_id,
-        })
-        
-        .then((newAccessory) => {
-            let files =  req.files;
-
-            if(files){  
-                files.forEach((file) => {
-                    let url = "/images/accesorios/"+file.filename;
-                    db.AccessoriesImages.create({
-                        url: url,
-                        table_id: newAccessory.id
+            const newAccessory= await db.Accessories.create({
+                        type: req.body.type, 
+                        description: req.body.description,
+                        price: req.body.price,
+                        discount: req.body.description,
+                        brand_id: req.body.brand_id,
                     })
-                })
-            } else{
-                db.AccessoriesImages.create({
-                    url: "/images/accesorios/default.png",
-                    table_id: newAccessory.id
-                })
-            }
-        })
-        
-        .then(() => {
-            return res.redirect("/accesorios");
-        })
 
-        .catch((error) => res.send(error));
-    },
+                    if(req.files.lenght!=0){  
+                        req.files.forEach((file) => {
+                            let url = "/images/accesorios/"+file.filename;
+                            db.AccessoriesImages.create({
+                                url: url,
+                                accessory_id: newAccessory.id
+                            })
+                        })
+                    } else{
+                        db.AccessoriesImages.create({
+                            url: "/images/accesorios/default.png",
+                            accessory_id: newAccessory.id
+                        })
+                    }
+
+                res.redirect("/accesorios");
+
+                }else{
+                    const brands = await db.Brands.findAll()
+                    res.render("crear-accesorio", { errors: errors.array(), old: req.body, brands: brands, user: req.session.userLogged }) 
+                    }
+                },
+
+            
+      
+    
 };
 
 module.exports = accessoriesController; 

@@ -1,26 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-
 const path = require("path");
 
-const accessoriesController = require("../controllers/accessoriesController");
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      let carpetaDestino;
-      carpetaDestino = path.join(__dirname, "../../public/images/accesorios/");
-      cb(null, carpetaDestino);
-    },
-    filename: (req, file, cb) => {
-      let nombreImagen = "accesorio" + Date.now() + path.extname(file.originalname);
-      cb(null, nombreImagen);
-    },
-});
-  
+const accessoryCreateMiddleware = require ("../../middlewares/validations/products/accessoryCreateMiddeleware")
+const accessoryEditMiddleware = require ("../../middlewares/validations/products/accessoryEditMiddeleware")
+const storage = require ("../../middlewares/MulterMiddleware/storageAccessory")
 const upload = multer({ storage });
 
-
+const accessoriesController = require("../controllers/accessoriesController");
 
 // /accesorios (GET)
 router.get("/", accessoriesController.accessories);
@@ -29,13 +17,13 @@ router.get("/", accessoriesController.accessories);
 router.get("/crear", accessoriesController.add);
 
 // /accesorios (POST)
-router.post("/crear", upload.array('url', 4), accessoriesController.create);
+router.post("/crear", upload.array('url', 4),accessoryCreateMiddleware, accessoriesController.create);
 
 // /accesorios/:id/edit (GET)
 router.get("/:id/edit/", accessoriesController.edit);
 
 // /accesorios/:id/edit (PUT)
-router.put("/:id/edit/", accessoriesController.update);
+router.put("/:id/edit/", upload.array('url', 4), accessoryEditMiddleware, accessoriesController.update);
 
 // /accesorios/:id (DELETE)
 router.delete("/:id/destroy/",/* authMiddleware*/ accessoriesController.destroy);

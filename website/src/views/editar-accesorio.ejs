@@ -15,17 +15,23 @@
         <section class="section-form">
             
             <div class="bg-light-blue br-10">
+                <div class="w-100 fx-align-center p-8">
 
-                <form class="form"  action="/accesorios/<%= accesorio.id %>/edit?_method=PUT" method="POST">
+                    <% if(locals.errors){ errors.forEach(error => {%>
+                      <p class="font-navy"><%= error.msg %></p>
+                      <% }) } %>
+                  </div>
+
+                <form class="form"  action="/accesorios/<%= accesorio.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
                     <h2 class="w-100">Editar "<%= accesorio.type %>"</h2>
                     
                     <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" value="<%= accesorio.type %>">
+                        <input class="form-inp" type="text" name="type" id="" placeholder="Nombre del producto" value="<%= accesorio.type %>"require>
                     </div>
 
                    <div class="w-100 fx-align-center p-8">
-                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" value="<%= accesorio.description %>">
+                       <input class="form-inp" type="text-box" name="description" id="" placeholder="Descripción" value="<%= accesorio.description %>" require>
                    </div>
                    
                    <div class="flex fx-wrap w-100 fx-align-center p-8 ">
@@ -41,11 +47,11 @@
 
 
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="price" id="" placeholder="Precio"  value="<%= accesorio.price %>">
+                        <input class="form-inp" type="number" name="price" id="" placeholder="Precio"  value="<%= accesorio.price %>" require>
                    </div>
 
                    <div class="w-100 fx-align-center p-8">
-                        <input class="form-inp" type="text-box" name="discount" id="" placeholder="Descuento"  value="<%= accesorio.discount %>">
+                        <input class="form-inp" type="number" name="discount" id="" placeholder="Descuento"  value="<%= accesorio.discount %>" require>
                    </div>
                    
                    <div class="flex fx-wrap w-100 fx-align-center p-8">
