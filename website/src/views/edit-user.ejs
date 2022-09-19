@@ -17,8 +17,12 @@
 
         <h2 class="w-100 text-center">Editar Perfil</h2>
 
+        <% if(locals.errors){ errors.forEach(error => {%>
+            <p class="font-navy"><%= error.msg %></p>
+          <% }) } %>
+
         <form
-        action="/usuarios/<%=user.id%>?_method=PUT"
+        action="/usuarios/<%= user.id%>?_method=PUT"
         method="POST" enctype="multipart/form-data"
       >
     
@@ -47,7 +51,7 @@
               name="first_name"
               id="first_name"
               placeholder="Nombre"
-              value="<%= user.first_name%>"
+              value="<%= locals.old && old.first_name ? old.first_name : user.first_name%>"
               />
                     </li>
                     <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
@@ -58,7 +62,7 @@
                   name="last_name"
                   id="last_name"
                   placeholder="Apellido"
-                  value="<%= user.last_name%>"
+                  value="<%= locals.old && old.last_name ? old.last_name: user.last_name%>"
                 />
                     </li>
                     <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
@@ -69,7 +73,7 @@
                   placeholder="Correo electrónico"
                   name="email"
                   id="email"
-                  value="<%= user.email%>"
+                  value="<%= locals.old && old.email ? old.email : user.email%>"
                 />
                     </li>
                     <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
@@ -80,7 +84,7 @@
                   name="dni"
                   id="dni"
                   placeholder="Documento"
-                  value="<%= user.dni%>"
+                  value="<%= locals.old && old.dni ? old.dni : user.dni%>"
                   />
                     </li>
                     <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
@@ -91,7 +95,7 @@
                   name="address"
                   id="address"
                   placeholder="Direccion"
-                  value="<%= user.address%>"
+                  value="<%= locals.old && old.address ? old.address : user.address%>"
                 />
                     </li>
                     <li class="w-100 p-8 flex fx-wrap fx-align-center fx-space-between">
@@ -101,7 +105,7 @@
                   class="form-inp"
                   name="birthdate"
                   id="nacimiento"
-                  value="<%= user.birthday%>"
+                  value="<%= locals.old && old.birthdate ? old.birthdate : user.birthdate %>"
                 />
                     </li>
                 </ul>

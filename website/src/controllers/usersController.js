@@ -87,26 +87,30 @@ const usersController = {
   },
 
   updateUser: async (req, res) => {
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
       
-      if (req.file) {
-            await db.Users.update({image: "/images/users-images/" + req.file.filename},
-            { where: {id: req.params.id}});
-          }
-      await db.Users.update({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        dni: req.body.dni,
-        birthday: req.body.birthdate,
-        address: req.body.address,
-      },{ where: {id: req.params.id}});
-     
-      const useredited = await db.Users.findOne({
-        where: { id: req.params.id }})
+          if (req.file) {
+                await db.Users.update({image: "/images/users-images/" + req.file.filename},
+                { where: {id: req.params.id}});
+              }
+          await db.Users.update({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            dni: req.body.dni,
+            birthday: req.body.birthdate,
+            address: req.body.address,
+          },{ where: {id: req.params.id}});
+        
+          const useredited = await db.Users.findOne({
+            where: { id: req.params.id }})
 
-      res.render("profile", { user: useredited});
+          res.render("profile", { user: useredited});
 
-  },    
+        } else {
+          res.render("edit-user", { errors: errors.array(), old: req.body, user: req.session.userLogged})}
+      },    
 
   logoutUser: (req, res) => {
     req.session.userLogged = null;

@@ -7,20 +7,11 @@ const { body } = require("express-validator");
 
 const guestMiddleware = require("../../middlewares/guestMiddleware");
 const authMiddleware = require("../../middlewares/authmiddleware");
-const loginValidator = require("../../middlewares/validations/loginValidator");
-const registerValidator = require("../../middlewares/validations/registerValidator");
+const loginUserValidator = require("../../middlewares/validations/users/loginUserValidator");
+const registerUserValidator = require("../../middlewares/validations/users/registerUserValidator");
+const editUserValidator = require ("../../middlewares/validations/users/editUserValidator")
+const storage = require("../../middlewares/MulterMiddleware/storageUsers")
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    let carpetaDestino;
-    carpetaDestino = path.join(__dirname, "../../public/images/users-images/");
-    cb(null, carpetaDestino);
-  },
-  filename: (req, file, cb) => {
-    let nombreImagen = "usuario" + Date.now() + path.extname(file.originalname);
-    cb(null, nombreImagen);
-  },
-});
 
 const upload = multer({ storage });
 
@@ -28,13 +19,13 @@ const upload = multer({ storage });
 router.get("/registro", guestMiddleware, usersController.createUser);
 
 // usuarios/registro (POST)
-router.post("/registro", upload.single("profile_image"), registerValidator, usersController.storeUser);
+router.post("/registro", upload.single("profile_image"), registerUserValidator, usersController.storeUser);
 
 // usuarios/login (GET)
 router.get("/login", guestMiddleware, usersController.loginUser);
 
 // usuarios/login (POST)
-router.post("/login", loginValidator, usersController.loginProcess);
+router.post("/login", loginUserValidator, usersController.loginProcess);
 
 // usuarios/logout (GET)
 router.get("/:id/logout", usersController.logoutUser);
@@ -46,6 +37,6 @@ router.get("/:id/editar/", usersController.editUser);
 router.get("/perfil", authMiddleware, usersController.detailUser);
 
 // usuarios/:id (PUT)
-router.put("/:id",upload.single("profile_image"), usersController.updateUser);
+router.put("/:id",upload.single("profile_image"),editUserValidator, usersController.updateUser);
 
 module.exports = router;
