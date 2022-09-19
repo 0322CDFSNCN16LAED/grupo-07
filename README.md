@@ -29,9 +29,6 @@ Nuestro público objetivo es cualquier persona que tenga interés en surfear. Es
 
 ## Integrantes del equipo:
 
-### Mayra Adamov:
->Hola! Soy Mayra Adamov, tengo 21 años. Soy de Moron, provincia de Buenos Aires, Argentina. Actualmente estudio Biología en la Universidad de Ciencias Exactas y Naturales. Me interesa bastante el mundo de la programación, ya que esta bastante ligado a mi carrera aunque no lo parezca. Me gusta aprender y poder mejorar cada dia!
-
 ### Felix Ugarte:
 >Hola! Mi nombre es Félix Ugarte y soy de General Rodríguez de la Provincia de Buenos Aires pero vivo hace más de 10 años en Capital Federal. Tengo 32 años. Me decidí finalmente a estudiar programación entendiendo lo importante que puede llegar a ser hoy en día saber sobre este amplio mundo el cual es totalmente nuevo en mi vida. Si es posible y se logra dar, me gustaría cambiar de trabajo hacia este nuevo rumbo y ver hacia donde me lleva.
 
