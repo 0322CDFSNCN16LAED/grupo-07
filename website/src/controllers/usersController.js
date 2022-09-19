@@ -34,7 +34,7 @@ const usersController = {
         res.redirect("/usuarios/login");
       })
     } else {
-      res.render("register", { errors: errors.array(), old: req.body });
+      res.render("register", { errors: errors.array(), old: req.body, user: req.session.userLogged});
     }
   },
 
@@ -67,7 +67,7 @@ const usersController = {
         }
       }
     }
-    return res.render("login", { error: true });
+    return res.render("login", { error: true, user: req.session.userLogged });
   },
 
   //Usuario: Detalle
@@ -83,7 +83,7 @@ const usersController = {
       where: { id: req.params.id },
     });
 
-    res.render("edit-user", { user: userToEdit });
+    res.render("edit-user", { user: userToEdit});
   },
 
   updateUser: async (req, res) => {

@@ -1,10 +1,11 @@
 window.addEventListener('load', () => {
     
-    const email = document.querySelector('#email');
-    const password = document.querySelector("#password");
+    const formulario = document.querySelector(".form")
+    const email = formulario.querySelector('#email');
+    const password = formulario.querySelector("#password");
 
     email.addEventListener("change", function (){
-        const spanEmail = document.querySelector('#spanEmail');
+        const spanEmail = formulario.querySelector('#spanEmail');
         if (email.value.length > 10 && email.value.includes("@")){
             email.parentElement.classList.add("is-valid");
             email.parentElement.classList.remove("is-invalid");  
@@ -16,7 +17,7 @@ window.addEventListener('load', () => {
             email.parentElement.classList.remove("is-valid"); 
     }});
     
-    const spanPassword = document.querySelector('#spanPassword');
+    const spanPassword = formulario.querySelector('#spanPassword');
     password.addEventListener("keyup", function (){
         if (password.value.length >= 8){
             password.parentElement.classList.add("is-valid");

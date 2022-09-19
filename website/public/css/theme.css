@@ -360,3 +360,11 @@ body {
   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
 
 } 
+
+.profile-img{
+    margin: 8px;
+    text-align: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}

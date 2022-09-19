@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
         if (type.value.length < 6){
             type.parentElement.classList.add("is-invalid");
             type.parentElement.classList.remove("is-valid");
-            spanType.innerHTML = "El nombre de la tabla debe tener al menos 6 letras."
+            spanType.innerHTML = "El nombre del producto debe tener al menos 6 letras."
             spanType.style.color = "red";
         } else {
             type.parentElement.classList.add("is-valid");
@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
     })
 
     description.addEventListener("change", function (){
-        const spanDescription = formulario.querySelector("#spanType")
+        const spanDescription = formulario.querySelector("#spanDescription")
         if (description.value.length < 20){
             description.parentElement.classList.add("is-invalid");
             description.parentElement.classList.remove("is-valid");
@@ -36,10 +36,10 @@ window.addEventListener('load', () => {
     numbers.forEach((number) => {
         number.addEventListener("change", function (){
             const spanNumber = document.querySelectorAll("#spanNumber")
-            if (number.value.trim() == "") {
+            if (number.value.length=0){
                 number.parentElement.classList.add("is-invalid");
                 number.parentElement.classList.remove("is-valid");
-                spanNumber.innerHTML = "El campo no debe estár vacío."
+                spanNumber.innerHTML = "El campo debe contener números"
                 spanNumber.style.color = "red"
             } else {
                 number.parentElement.classList.add("is-valid");
