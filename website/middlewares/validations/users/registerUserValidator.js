@@ -1,4 +1,5 @@
 const { body } = require("express-validator");
+const db = require("../../../src/database/models");
 
 const registerUserValidator = [
   body("first_name")
@@ -15,7 +16,7 @@ const registerUserValidator = [
     .bail()
     .isEmail()
     .withMessage("El email debe ser con el formato 'juan@example.com'"),
-  
+ 
   body("dni")
     .notEmpty()
     .withMessage("Debes completar el DNI"),
@@ -43,7 +44,7 @@ const registerUserValidator = [
                   { 
                      throw new Error('Las extensiones de archivo permitidas son: .jpg ,.jpeg ,.bmp ,.png');
                   }}
-                  return true })
+                 return true })
       .custom((value,{req})=>{
         if(req.file){
               const maxFileSize= 2000000   
@@ -51,6 +52,8 @@ const registerUserValidator = [
                   { throw new Error('El tamano de los archivos debe ser menor a 2 MB');
                  } }
                  return true })
-];
+
+        
+]
   
 module.exports = registerUserValidator; 

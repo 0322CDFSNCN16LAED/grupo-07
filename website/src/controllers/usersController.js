@@ -3,6 +3,9 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const { DEFAULT_ECDH_CURVE } = require("tls");
+const { default: isFQDN } = require("validator/lib/isFQDN");
+const fs = require('fs')
+const path = require("path");
 
 const usersController = {
   createUser: (req, res) => {
@@ -20,20 +23,29 @@ const usersController = {
       } else {
         newUser.profile_image = "/images/users-images/default_user.jpg";
       }
-      db.Users.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        dni: req.body.dni,
-        image: newUser.profile_image,
-        birthday: req.body.birthdate,
-        address: req.body.address,
-      })
-      .then(()=>{
-        res.redirect("/usuarios/login");
-      })
+      if(!db.Users.findOne({wher:{email:req.body.email}})){
+
+                    db.Users.create({
+                      first_name: req.body.first_name,
+                      last_name: req.body.last_name,
+                      email: req.body.email,
+                      password: bcrypt.hashSync(req.body.password, 10),
+                      dni: req.body.dni,
+                      image: newUser.profile_image,
+                      birthday: req.body.birthdate,
+                      address: req.body.address,
+                    })
+                    .then(()=>{
+                      res.redirect("/usuarios/login");
+                    })}else{ error= [{msg:"Email ya registrado"}];
+                             res.render("register", { errors: error , old: req.body, user: req.session.userLogged}); }
     } else {
+      errors.array().forEach(error => {
+                                error.param=='profile_image';
+                                fs.unlinkSync(path.join(__dirname, "../../public/images/users-images/") + req.file.filename)
+                                console.log('File removed')
+                            })
+                            
       res.render("register", { errors: errors.array(), old: req.body, user: req.session.userLogged});
     }
   },
